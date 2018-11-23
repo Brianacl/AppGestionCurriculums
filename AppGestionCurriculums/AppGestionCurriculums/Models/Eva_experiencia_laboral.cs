@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppGestionCurriculums.Models
 {
-    class Eva_experiencia_laboral
+    public class Eva_experiencia_laboral
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int16 IdCurriculo { get; set; }
