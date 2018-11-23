@@ -16,8 +16,8 @@ namespace AppGestionCurriculums.Models
         public string Siglas { get; set; }
         public DateTime FechaIni { get; set; }
         public DateTime FechaFin { get; set; }
-        public Int16 IdTIpoGenGiro { get; set; }
-        public Int16 IdGenGiro { get; set; }
+        public Int16 IdTipoGenGiro { get; set; } //fk no se de donde 
+        public Int16 IdGenGiro { get; set; } //fk no se de donde
         public DateTime FechaReg { get; set; }
         public DateTime FechaUltMod { get; set; }
         public string UsuarioReg { get; set; }
