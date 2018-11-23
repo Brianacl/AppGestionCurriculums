@@ -1,1 +1,10 @@
 .vs/
+.gitignore
+AppGestionCurriculums/AppGestionCurriculums.UWP/bin/
+AppGestionCurriculums/AppGestionCurriculums.UWP/obj/
+AppGestionCurriculums/AppGestionCurriculums.iOS/bin/
+AppGestionCurriculums/AppGestionCurriculums.iOS/obj/
+AppGestionCurriculums/AppGestionCurriculums.Android/bin/
+AppGestionCurriculums/AppGestionCurriculums.Android/obj/
+AppGestionCurriculums/AppGestionCurriculums/bin/
+AppGestionCurriculums/AppGestionCurriculums/obj/
