@@ -15,3 +15,16 @@ C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\XamlC.stamp
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.dll
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.pdb
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.deps.json
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.AssemblyInfoInputs.cache
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.AssemblyInfo.cs
