@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-11-25T22:14:34.442</Modified>
+      <Modified>2018-11-26T01:36:28.569</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-11-25T22:14:31.478</Modified>
+      <Modified>2018-11-26T01:36:26.175</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\autofac\4.8.1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -853,7 +853,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-11-25T22:14:11.826</Modified>
+      <Modified>2018-11-26T01:36:08.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -1016,11 +1016,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-11-25T22:14:30.671</Modified>
+      <Modified>2018-11-26T01:36:25.661</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-11-25T22:14:30.673</Modified>
+      <Modified>2018-11-26T01:36:25.662</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1097,7 +1097,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-11-25T22:14:34.429</Modified>
+      <Modified>2018-11-26T01:36:28.559</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

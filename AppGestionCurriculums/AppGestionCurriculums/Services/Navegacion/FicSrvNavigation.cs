@@ -1,5 +1,6 @@
 ﻿using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.ViewModels;
+using AppGestionCurriculums.Views.Eva_grado_estudios;
 using AppGestionCurriculums.Views.Eva_idiomas;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmEvaCurriculoIdiomasList),typeof(FicViEvaCurriculoIdiomasList) },
             { typeof(FicVmEvaCurriculoIdiomasItem),typeof(FicViEvaCurriculoIdiomasItem) },
             { typeof(FicVmEvaCurriculoIdiomasDetalle),typeof(FicViEvaCurriculoIdiomasDetalle) },
+            { typeof(FicVmGradoEstudiosList),typeof(FicViGradoEstudiosList) },
+            { typeof(FicVmGradoEstudiosItem),typeof(FicViGradoEstudiosItem) },
+            { typeof(FicVmGradoEstudiosDetalle),typeof(FicViGradoEstudiosDetalle) },
             /*{ typeof(FicVmExportarWebApi),typeof(ViExportarWebApi) },
             { typeof(FicVmImportarWebApi),typeof(ViImportarWebApi) },*/
         };

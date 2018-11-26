@@ -19,10 +19,13 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoIdiomasItem>();
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoIdiomasDetalle>();
             //FicContainerBuilder.RegisterType<FicVmCatEdificiosDetalle>();
+            FicContainerBuilder.RegisterType<FicVmGradoEstudiosList>();
+            FicContainerBuilder.RegisterType<FicVmGradoEstudiosItem>();
+            FicContainerBuilder.RegisterType<FicVmGradoEstudiosDetalle>();
 
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCurriculoIdiomas>().As<IFicSrvCurriculoIdiomas>().SingleInstance();
-            //FicContainerBuilder.RegisterType<SrvExportarWebApi>().As<IFicSrvExportarWebApi>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvGradoEstudios>().As<IFicSrvGradoEstudios>().SingleInstance();
 
             if (FicIContainer != null) FicIContainer.Dispose();
 
@@ -42,6 +45,21 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmEvaCurriculoIdiomasDetalle FicVmIdiomasDetalle
         {
             get { return FicIContainer.Resolve<FicVmEvaCurriculoIdiomasDetalle>(); }
+        }
+
+        public FicVmGradoEstudiosList FicVmGradoEstudiosList
+        {
+            get { return FicIContainer.Resolve<FicVmGradoEstudiosList>(); }
+        }
+
+        public FicVmGradoEstudiosItem FicVmGradoEstudiosItem
+        {
+            get { return FicIContainer.Resolve<FicVmGradoEstudiosItem>(); }
+        }
+
+        public FicVmGradoEstudiosDetalle FicVmGradoEstudiosDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmGradoEstudiosDetalle>(); }
         }
     }//Fin clase
 }

@@ -18,3 +18,6 @@ C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\XamlC.stamp
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.dll
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.pdb
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosDetalle.xaml.g.cs
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosItem.xaml.g.cs
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosList.xaml.g.cs

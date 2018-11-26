@@ -28,4 +28,16 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosDetalle.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosItem.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosList.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosList.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
