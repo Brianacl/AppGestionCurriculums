@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "Autofac/4.9.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
       "Microsoft.Data.Sqlite.Core/2.2.0-preview3-35497": {
         "type": "package",
         "dependencies": {
@@ -255,13 +268,13 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/12.0.1-beta1": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -309,6 +322,77 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/16.3.0.35-beta": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfDataGrid/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.GridCommon": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.SfNumericTextBox": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -343,6 +427,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {
@@ -428,6 +521,28 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Memory.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -612,7 +727,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Autofac": "4.9.0-beta1",
+          "Microsoft.EntityFrameworkCore": "2.2.0-preview3-35497",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.0-preview3-35497",
+          "Newtonsoft.Json": "12.0.1-beta1",
+          "Syncfusion.Xamarin.SfDataGrid": "16.3.0.35-beta",
+          "System.Net.Http": "4.3.4",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -624,6 +744,19 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "Autofac/4.9.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
       "Microsoft.Data.Sqlite.Core/2.2.0-preview3-35497": {
         "type": "package",
         "dependencies": {
@@ -877,13 +1010,13 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/12.0.1-beta1": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -931,6 +1064,77 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/16.3.0.35-beta": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfDataGrid/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.GridCommon": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.SfNumericTextBox": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -965,6 +1169,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {
@@ -1050,6 +1263,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Memory.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {}
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -1224,7 +1449,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Autofac": "4.9.0-beta1",
+          "Microsoft.EntityFrameworkCore": "2.2.0-preview3-35497",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.0-preview3-35497",
+          "Newtonsoft.Json": "12.0.1-beta1",
+          "Syncfusion.Xamarin.SfDataGrid": "16.3.0.35-beta",
+          "System.Net.Http": "4.3.4",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -1236,6 +1466,19 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "Autofac/4.9.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
       "Microsoft.Data.Sqlite.Core/2.2.0-preview3-35497": {
         "type": "package",
         "dependencies": {
@@ -1489,13 +1732,13 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/12.0.1-beta1": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -1543,6 +1786,77 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/16.3.0.35-beta": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfDataGrid/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.GridCommon": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.SfNumericTextBox": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -1577,6 +1891,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {
@@ -1662,6 +1985,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Memory.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -1836,7 +2171,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Autofac": "4.9.0-beta1",
+          "Microsoft.EntityFrameworkCore": "2.2.0-preview3-35497",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.0-preview3-35497",
+          "Newtonsoft.Json": "12.0.1-beta1",
+          "Syncfusion.Xamarin.SfDataGrid": "16.3.0.35-beta",
+          "System.Net.Http": "4.3.4",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -1848,6 +2188,19 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "Autofac/4.9.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
       "Microsoft.Data.Sqlite.Core/2.2.0-preview3-35497": {
         "type": "package",
         "dependencies": {
@@ -2101,13 +2454,13 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/12.0.1-beta1": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -2155,6 +2508,77 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/16.3.0.35-beta": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfDataGrid/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.GridCommon": "16.3.0.35-beta",
+          "Syncfusion.Xamarin.SfNumericTextBox": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.35-beta": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.3.0.35-beta",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -2189,6 +2613,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {
@@ -2274,6 +2707,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Memory.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -2448,7 +2893,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Autofac": "4.9.0-beta1",
+          "Microsoft.EntityFrameworkCore": "2.2.0-preview3-35497",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.0-preview3-35497",
+          "Newtonsoft.Json": "12.0.1-beta1",
+          "Syncfusion.Xamarin.SfDataGrid": "16.3.0.35-beta",
+          "System.Net.Http": "4.3.4",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -2461,6 +2911,22 @@
     }
   },
   "libraries": {
+    "Autofac/4.9.0-beta1": {
+      "sha512": "ELArZEhLmHfl9zv1jht61Fd9qi8qJ3etbs2vRZUnutlG1dVofK+lKDlfyEh+Jfx8RNLxps0PbbgUTaHM6OA+og==",
+      "type": "package",
+      "path": "autofac/4.9.0-beta1",
+      "files": [
+        ".signature.p7s",
+        "autofac.4.9.0-beta1.nupkg.sha512",
+        "autofac.nuspec",
+        "lib/net45/Autofac.dll",
+        "lib/net45/Autofac.pdb",
+        "lib/net45/Autofac.xml",
+        "lib/netstandard1.1/Autofac.dll",
+        "lib/netstandard1.1/Autofac.pdb",
+        "lib/netstandard1.1/Autofac.xml"
+      ]
+    },
     "Microsoft.Data.Sqlite.Core/2.2.0-preview3-35497": {
       "sha512": "J3PBz+3mR4ixLwrML8B+6hcl3KZkKuUYqQE6OBTXDe7Hdkhv542UfaSAQuNFELczCghaTFpcFuvmTjpqnHOXrA==",
       "type": "package",
@@ -2708,28 +3174,42 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
+    "Newtonsoft.Json/12.0.1-beta1": {
+      "sha512": "cmCtkmZzWoHcwh96riskpZW9RqrAERDTCrWWXwfTdnKqOUIy2AMFF6Jje2jjKIoSVekwoTmf+WRr9cGRx8hRsQ==",
       "type": "package",
-      "path": "newtonsoft.json/9.0.1",
+      "path": "newtonsoft.json/12.0.1-beta1",
       "files": [
+        ".signature.p7s",
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.pdb",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.pdb",
         "lib/net35/Newtonsoft.Json.xml",
         "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.pdb",
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.pdb",
         "lib/net45/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.pdb",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.9.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1-beta1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -2828,6 +3308,168 @@
         "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll",
         "sqlitepclraw.provider.sqlite3.ios_unified.1.1.11.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.ios_unified.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/16.3.0.35-beta": {
+      "sha512": "Ac/odobywxjU1OCBPyKdHFJKavsgHt03zLGj9Vz/Ra7p0xqUOHd/xODEsKfUxJL9jPpserOVZGpMlhYvnZanXw==",
+      "type": "package",
+      "path": "syncfusion.licensing/16.3.0.35-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.16.3.0.35-beta.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.Core/16.3.0.35-beta": {
+      "sha512": "d/CryajSEVZq5CLd4FRQc7tdeuJ4bsYWkIOuxRQY7OgFX2cQPwp5K2+9/ygbyjo2dgqM90We8LBjEr90oh+aZQ==",
+      "type": "package",
+      "path": "syncfusion.xamarin.core/16.3.0.35-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.xml",
+        "syncfusion.xamarin.core.16.3.0.35-beta.nupkg.sha512",
+        "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.GridCommon/16.3.0.35-beta": {
+      "sha512": "JTQeHEuZpW412+mSdaoXgiUcXM+ab+hl1OKETKefMlsnZydxf4eCbCPBClEYxFm5SN2ERxvCHr3hZQVMIU2RQw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.gridcommon/16.3.0.35-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "syncfusion.xamarin.gridcommon.16.3.0.35-beta.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfDataGrid/16.3.0.35-beta": {
+      "sha512": "WLZF/zi8vH+8uS3yzG3ICiaFxFvumAgicbkJvZ9VGL0/J+ooc85fTY/aa1KwhFY1/N3eKxza9V3wePl6FgFDxQ==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfdatagrid/16.3.0.35-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Data.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.Data.Portable.dll",
+        "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Data.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.Data.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfDataGrid.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Data.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.Data.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.Data.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfDataGrid.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Data.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Data.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfDataGrid.XForms.xml",
+        "lib/uap10.0/Syncfusion.Data.Portable.XML",
+        "lib/uap10.0/Syncfusion.Data.Portable.dll",
+        "lib/uap10.0/Syncfusion.SfDataGrid.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfDataGrid.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfDataGrid.XForms.xml",
+        "syncfusion.xamarin.sfdatagrid.16.3.0.35-beta.nupkg.sha512",
+        "syncfusion.xamarin.sfdatagrid.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.35-beta": {
+      "sha512": "7uS60pz0G+buUbwrdyByMd3CSFbbTMV8xtn9kUaWTLRM43iRuV02oipHAA7uXgvqW6CDepm2zHdtWa1wmHbe/g==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfnumerictextbox/16.3.0.35-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.XML",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericTextBox.iOS.dll",
+        "lib/netstandard1.0/Syncfusion.SfNumericTextBox.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfNumericTextBox.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNumericTextBox.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNumericTextBox.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Properties/Syncfusion.SfInput.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfShared.UWP.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xbf",
+        "lib/uap10.0/Syncfusion.SfNumericTextBox.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfNumericTextBox.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfNumericTextBox.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Properties/Syncfusion.SfShared.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xbf",
+        "syncfusion.xamarin.sfnumerictextbox.16.3.0.35-beta.nupkg.sha512",
+        "syncfusion.xamarin.sfnumerictextbox.nuspec"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -2993,6 +3635,63 @@
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.ComponentModel/4.0.1": {
+      "sha512": "oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
+      "type": "package",
+      "path": "system.componentmodel/4.0.1",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.ComponentModel.dll",
+        "lib/netstandard1.3/System.ComponentModel.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.ComponentModel.dll",
+        "ref/netcore50/System.ComponentModel.xml",
+        "ref/netcore50/de/System.ComponentModel.xml",
+        "ref/netcore50/es/System.ComponentModel.xml",
+        "ref/netcore50/fr/System.ComponentModel.xml",
+        "ref/netcore50/it/System.ComponentModel.xml",
+        "ref/netcore50/ja/System.ComponentModel.xml",
+        "ref/netcore50/ko/System.ComponentModel.xml",
+        "ref/netcore50/ru/System.ComponentModel.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.xml",
+        "ref/netstandard1.0/System.ComponentModel.dll",
+        "ref/netstandard1.0/System.ComponentModel.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.4.0.1.nupkg.sha512",
+        "system.componentmodel.nuspec"
       ]
     },
     "System.ComponentModel.Annotations/4.5.0": {
@@ -3469,6 +4168,47 @@
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Net.Http/4.3.4": {
+      "sha512": "Fj7e73NNHwof97gFPTJuq8gv6G895yxkZt14DVnZdEh4gvKl8WrksCwNjIp/JeYX/yu/qxM/iOv9ai+ZY3Fp7Q==",
+      "type": "package",
+      "path": "system.net.http/4.3.4",
+      "files": [
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/Xamarinmac20/_._",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.Http.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/Xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.Http.dll",
+        "ref/netcore50/System.Net.Http.dll",
+        "ref/netstandard1.1/System.Net.Http.dll",
+        "ref/netstandard1.3/System.Net.Http.dll",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
+        "runtimes/win/lib/net46/System.Net.Http.dll",
+        "runtimes/win/lib/netcore50/System.Net.Http.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
+        "system.net.http.4.3.4.nupkg.sha512",
+        "system.net.http.nuspec"
       ]
     },
     "System.Reflection.TypeExtensions/4.1.0": {

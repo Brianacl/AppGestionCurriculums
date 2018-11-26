@@ -9,8 +9,9 @@ namespace AppGestionCurriculums.Models
     public class Eva_curriculo_referencias
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Int16 IdCurriculo { get; set; }
         public Int16 IdReferencia { get; set; }
+        public Int16 IdCurriculo { get; set; } //fk
+        
         public Int16 IdTipoGenParentezco { get; set; } //fk no se de donde
         public Int16 IdGenParentezco { get; set; } //fk no se donde
         public string Nombre { get; set; }
@@ -27,7 +28,7 @@ namespace AppGestionCurriculums.Models
         public string UsuarioReg { get; set; }
         public DateTime FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public bool Activo { get; set; }
+        public bool Borrado { get; set; }
     }
 }

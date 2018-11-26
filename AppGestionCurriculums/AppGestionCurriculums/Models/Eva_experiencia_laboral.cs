@@ -9,8 +9,9 @@ namespace AppGestionCurriculums.Models
     public class Eva_experiencia_laboral
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Int16 IdCurriculo { get; set; }
         public Int16 IdExperiencia { get; set; }
+        public Int16 IdCurriculo { get; set; }//fk
+        
         public string DesOrganizacion { get; set; }
         public string Detalle { get; set; }
         public string Siglas { get; set; }
@@ -22,7 +23,7 @@ namespace AppGestionCurriculums.Models
         public DateTime FechaUltMod { get; set; }
         public string UsuarioReg { get; set; }
         public string UsurioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public bool Activo { get; set; }
+        public bool Borrado { get; set; }
     }
 }
