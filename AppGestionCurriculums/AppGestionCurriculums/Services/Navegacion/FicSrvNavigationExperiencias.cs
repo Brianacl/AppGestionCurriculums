@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Views.Navegacion;
-using AppGestionCurriculums.ViewModels.Navegacion;
 using AppGestionCurriculums.ViewModels;
 using Xamarin.Forms;
-using AppGestionCurriculums.Views.Experiencias;
+using AppGestionCurriculums.Views.Eva_Experiencias;
+using AppGestionCurriculums.Views.Eva_Referencias;
 
 
 
@@ -16,13 +16,13 @@ namespace AppGestionCurriculums.Services.Navegacion
     {
         private IDictionary<Type, Type> FicViewModelRouting = new Dictionary<Type, Type>()
         {
-            { typeof(FicVmExperienciasList), typeof(FicViExperienciasList)},
-            { typeof(FicVmExperienciasItem), typeof(FicViExperienciasItem)},
-            { typeof(FicVmExperienciasDetalle), typeof(FicViExperienciasDetalle)},
+            { typeof(FicVmEvaExperienciaLaboralList), typeof(FicViEvaExperienciaLaboralList)},
+            { typeof(FicVmEvaExperienciaLaboralItem), typeof(FicViEvaExperienciaLaboralItem)},
+            { typeof(FicVmEvaExperienciaLaboralDetalle), typeof(FicViEvaExperienciaLaboralDetalle)},
 
-            { typeof(FicVmReferenciasList), typeof(FicViReferenciasList)},
-            { typeof(FicVmReferenciasItem), typeof(FicViReferenciasItem)},
-            { typeof(FicVmReferenciasDetalle), typeof(FicViReferenciasDetalle)},
+            { typeof(FicVmEvaCurriculoReferenciasList), typeof(FicViEvaCurriculoReferenciasList)},
+            { typeof(FicVmEvaCurriculoReferenciasItem), typeof(FicViEvaCurriculoReferenciasItem)},
+            { typeof(FicVmEvaCurriculoReferenciasDetalle), typeof(FicViEvaCurriculoReferenciasDetalle)},
 
         };
 
