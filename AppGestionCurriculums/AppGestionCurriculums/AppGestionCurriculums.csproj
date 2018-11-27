@@ -20,8 +20,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Navegacion\" />
-    <Folder Include="Views\Eva_Experiencias\" />
-    <Folder Include="Views\Eva_Referencias\" />
+    <EmbeddedResource Update="Views\Eva_Experiencias\FicViEvaExperienciaLaboralDetalle.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_Experiencias\FicViEvaExperienciaLaboralItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_Experiencias\FicViEvaExperienciaLaboralList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_Referencias\FicViEvaCurriculoReferenciasDetalle.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_Referencias\FicViEvaCurriculoReferenciasItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_Referencias\FicViEvaCurriculoReferenciasList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

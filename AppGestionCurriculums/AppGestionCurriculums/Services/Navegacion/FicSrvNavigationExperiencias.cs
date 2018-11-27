@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using AppGestionCurriculums.Interfaces.Navegacion;
-using AppGestionCurriculums.Views.Navegacion;
 using AppGestionCurriculums.ViewModels;
 using Xamarin.Forms;
 using AppGestionCurriculums.Views.Eva_Experiencias;
