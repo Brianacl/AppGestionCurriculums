@@ -32,7 +32,7 @@ namespace AppGestionCurriculums.ViewModels
             set
             {
                 FicGradoEstudioSeleccionado = value;
-                RaisePropertyChanged("FicGradoEstudioSeleccionado");
+                RaisePropertyChanged();
             }
         }
 

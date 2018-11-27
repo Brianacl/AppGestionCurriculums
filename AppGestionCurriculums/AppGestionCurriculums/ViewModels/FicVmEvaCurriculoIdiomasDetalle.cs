@@ -32,7 +32,7 @@ namespace AppGestionCurriculums.ViewModels
             set
             {
                 FicIdiomaSeleccionado = value;
-                RaisePropertyChanged("FicIdiomaSeleccionado");
+                RaisePropertyChanged();
             }
         }
 
