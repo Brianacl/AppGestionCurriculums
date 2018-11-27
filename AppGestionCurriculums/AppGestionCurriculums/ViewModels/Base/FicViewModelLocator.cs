@@ -22,10 +22,15 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosList>();
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosItem>();
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosDetalle>();
+            //------------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmFuncionesList>();
+            FicContainerBuilder.RegisterType<FicVmFuncionesItem>();
+            FicContainerBuilder.RegisterType<FicVmFuncionesDetalle>();
 
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCurriculoIdiomas>().As<IFicSrvCurriculoIdiomas>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvGradoEstudios>().As<IFicSrvGradoEstudios>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvFunciones>().As<IFicSrvFunciones>().SingleInstance();
 
             if (FicIContainer != null) FicIContainer.Dispose();
 
@@ -60,6 +65,21 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmGradoEstudiosDetalle FicVmGradoEstudiosDetalle
         {
             get { return FicIContainer.Resolve<FicVmGradoEstudiosDetalle>(); }
+        }
+
+        public FicVmFuncionesList FicVmFuncionesList
+        {
+            get { return FicIContainer.Resolve<FicVmFuncionesList>(); }
+        }
+
+        public FicVmFuncionesItem FicVmFuncionesItem
+        {
+            get { return FicIContainer.Resolve<FicVmFuncionesItem>(); }
+        }
+
+        public FicVmFuncionesDetalle FicVmFuncionesDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmFuncionesDetalle>(); }
         }
     }//Fin clase
 }

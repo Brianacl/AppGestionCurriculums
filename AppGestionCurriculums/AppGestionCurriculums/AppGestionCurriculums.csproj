@@ -30,6 +30,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesDetalle.xaml.cs">
+      <DependentUpon>FicViFuncionesDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesItem.xaml.cs">
+      <DependentUpon>FicViFuncionesItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesList.xaml.cs">
+      <DependentUpon>FicViFuncionesList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosDetalle.xaml.cs">
       <DependentUpon>FicViGradoEstudiosDetalle.xaml</DependentUpon>
     </Compile>

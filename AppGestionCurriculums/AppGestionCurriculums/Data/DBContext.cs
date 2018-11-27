@@ -46,6 +46,7 @@ namespace AppGestionCurriculums.Data
 
         public DbSet<Eva_carrera_grado_estudios> eva_grado_estudios { get; set; }
         public DbSet<Eva_curriculo_idiomas> eva_curriculo_idiomas { get; set; }
+        public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,6 +57,9 @@ namespace AppGestionCurriculums.Data
 
                 modelBuilder.Entity<Eva_curriculo_idiomas>()
                     .HasKey(c => new { c.IdIdioma });
+
+                modelBuilder.Entity<Eva_actividades_funciones>()
+                    .HasKey(c => new { c.IdFuncionAct });
             }
             catch(Exception e)
             {

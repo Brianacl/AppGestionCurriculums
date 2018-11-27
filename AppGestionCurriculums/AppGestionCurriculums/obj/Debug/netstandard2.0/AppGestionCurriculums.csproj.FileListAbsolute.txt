@@ -21,3 +21,6 @@ C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosDetalle.xaml.g.cs
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosItem.xaml.g.cs
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_grado_estudios\FicViGradoEstudiosList.xaml.g.cs
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_funciones\FicViFuncionesDetalle.xaml.g.cs
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_funciones\FicViFuncionesItem.xaml.g.cs
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_funciones\FicViFuncionesList.xaml.g.cs

@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppGestionCurriculums.Views.Eva_idiomas;
 using AppGestionCurriculums.Views.Eva_grado_estudios;
+using AppGestionCurriculums.Views.Eva_funciones;
 
 namespace AppGestionCurriculums.Views
 {
@@ -39,6 +40,9 @@ namespace AppGestionCurriculums.Views
                         break;
                     case (int)MenuItemType.GradoEstudios:
                         MenuPages.Add(id, new NavigationPage(new FicViGradoEstudiosList(null)));
+                        break;
+                    case (int)MenuItemType.Funciones:
+                        MenuPages.Add(id, new NavigationPage(new FicViFuncionesList(null)));
                         break;
                 }
             }
