@@ -49,6 +49,7 @@ namespace AppGestionCurriculums.ViewModels
 
 
         }
+        
 
         public Eva_curriculo_referencias SelectedReferencia
         {
@@ -61,7 +62,7 @@ namespace AppGestionCurriculums.ViewModels
                 if(value != null)
                 {
                     _FicDataGrid_SelectedReferencia = value;
-                    RaisePropertyChanged();
+                    RaisePropertyChanged("SelectedReferencia");
                 }
             }
         }

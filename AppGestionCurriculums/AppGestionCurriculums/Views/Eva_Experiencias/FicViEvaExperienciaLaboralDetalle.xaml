@@ -3,10 +3,90 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.Eva_Experiencias.FicViEvaExperienciaLaboralDetalle">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="StartAndExpand" Padding="20">
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="IdCurriculo" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.IdCurriculo}" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="IdExperiencia" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.IdReferencia}" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="DesOrganizacion" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.DesOrganizacion}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Detalle" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.Detalle}" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Siglas" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.Siglas}" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="FechaIni" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.FechaIni}" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="FechaFin" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.FechaFin}" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="IdTipoGenGiro" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.IdTipoGenGiro}" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="IdGenGiro" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.IdGenGiro}" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="UsuarioReg" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.UsuarioReg}" Grid.Row="7" Grid.Column="1"/>
+
+                <Label Text="UsuarioMod" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.UsuarioMod}" Grid.Row="7" Grid.Column="1"/>
+
+                <Label Text="FechaReg" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.FechaReg}" Grid.Row="8" Grid.Column="1"/>
+
+                <Label Text="FechaUltMod" Grid.Row="12" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.FechaUltMod}" Grid.Row="8" Grid.Column="1"/>
+
+                <Label Text="Activo" Grid.Row="13" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.Activo}" Grid.Row="9" Grid.Column="1"/>
+
+                <Label Text="Borrado" Grid.Row="14" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperienciaLaboral.Borrado}" Grid.Row="9" Grid.Column="1"/>
+
+            </Grid>
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnEliminar" BackgroundColor="#F44336" TextColor="White" Text="Eliminar" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Button Text="Regresar" Command="{Binding FicMetCancelCommand}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

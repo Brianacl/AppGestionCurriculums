@@ -28,3 +28,13 @@ C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGe
 C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.AssemblyInfoInputs.cache
 C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.AssemblyInfo.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Experiencias\FicViEvaExperienciaLaboralDetalle.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Experiencias\FicViEvaExperienciaLaboralItem.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Experiencias\FicViEvaExperienciaLaboralList.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Referencias\FicViEvaCurriculoReferenciasDetalle.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Referencias\FicViEvaCurriculoReferenciasItem.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\Eva_Referencias\FicViEvaCurriculoReferenciasList.xaml.g.cs
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.dll
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.pdb
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.pdb
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\XamlC.stamp

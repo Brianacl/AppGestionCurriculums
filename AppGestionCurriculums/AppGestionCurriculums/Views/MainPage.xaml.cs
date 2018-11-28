@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppGestionCurriculums.Views.Eva_Experiencias;
+using AppGestionCurriculums.Views.Eva_Referencias;
 
 namespace AppGestionCurriculums.Views
 {
@@ -32,6 +34,12 @@ namespace AppGestionCurriculums.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.ExperienciaLaboral:
+                        MenuPages.Add(id, new NavigationPage(new FicViEvaExperienciaLaboralList(null)));
+                        break;
+                    case (int)MenuItemType.CurriculoReferencia:
+                        MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoReferenciasList(null)));
+                       break;
                 }
             }
 

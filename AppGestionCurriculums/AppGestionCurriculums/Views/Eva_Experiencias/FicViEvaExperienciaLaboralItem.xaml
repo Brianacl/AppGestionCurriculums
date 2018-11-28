@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.Eva_Experiencias.FicViEvaExperienciaLaboralItem">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Nueva Experiencia Laboral"/>
+
+                <Label Text="IdCurriculo"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.IdCurriculo}"/>
+
+                <Label Text="IdExperiencia"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.IdExperiencia}"/>
+
+                <Label Text="DesOrganizacion"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.DesOrganizacion}"/>
+
+                <Label Text="Siglas"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.Siglas}"/>
+
+                <Label Text="Fecha de Registro"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.FechaReg}"/>
+
+                <Label Text="Usuario"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.UsuarioReg}"/>
+
+                <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+
+        </ScrollView>    
     </ContentPage.Content>
 </ContentPage>

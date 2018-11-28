@@ -2,13 +2,22 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppGestionCurriculums.Views;
+using AppGestionCurriculums.ViewModels.Base;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppGestionCurriculums
 {
     public partial class App : Application
     {
+        private static FicViewModelLocator FicLocalVmLocator;
 
+        public static FicViewModelLocator FicVmLocator
+        {
+            get
+            {
+                return FicLocalVmLocator = FicLocalVmLocator ?? new FicViewModelLocator();
+            }
+        }
         public App()
         {
             InitializeComponent();

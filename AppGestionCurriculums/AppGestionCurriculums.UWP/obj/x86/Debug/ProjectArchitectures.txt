@@ -1,1 +1,1 @@
-C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\AppGestionCurriculums.UWP.csproj;x86
+C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\AppGestionCurriculums.UWP.csproj;x86

@@ -36,7 +36,7 @@ namespace AppGestionCurriculums.ViewModels
             set
             {
                 FicExperienciaLaboralSeleccionado = value;
-                RaisePropertyChanged("FicExperienciaLaboralSeleccionado");
+                RaisePropertyChanged();
             }
         }
 

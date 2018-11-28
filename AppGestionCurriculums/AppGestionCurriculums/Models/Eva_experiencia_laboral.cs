@@ -22,7 +22,7 @@ namespace AppGestionCurriculums.Models
         public DateTime FechaReg { get; set; }
         public DateTime FechaUltMod { get; set; }
         public string UsuarioReg { get; set; }
-        public string UsurioMod { get; set; }
+        public string UsuarioMod { get; set; }
         public bool Activo { get; set; }
         public bool Borrado { get; set; }
     }

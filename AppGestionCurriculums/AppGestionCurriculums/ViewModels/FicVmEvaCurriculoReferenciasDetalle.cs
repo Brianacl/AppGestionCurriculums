@@ -34,7 +34,7 @@ namespace AppGestionCurriculums.ViewModels
             set
             {
                 FicReferenciaSeleccionado = value;
-                RaisePropertyChanged("FicReferenciaSeleccionado");
+                RaisePropertyChanged();
             }
         }
 

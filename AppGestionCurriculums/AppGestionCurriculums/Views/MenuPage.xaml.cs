@@ -19,7 +19,9 @@ namespace AppGestionCurriculums.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.ExperienciaLaboral, Title="Lista de Experiencia Laboral"},
+                new HomeMenuItem {Id = MenuItemType.CurriculoReferencia,Title="Lista de Curriculo Referencia"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

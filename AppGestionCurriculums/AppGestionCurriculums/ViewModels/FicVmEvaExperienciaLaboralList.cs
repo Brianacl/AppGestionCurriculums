@@ -58,7 +58,7 @@ namespace AppGestionCurriculums.ViewModels
                 if(value != null)
                 {
                     _FicDataGrid_SelectedExperienciaLaboral = value;
-                    RaisePropertyChanged("SelecteeExperienciaLaboral");
+                    RaisePropertyChanged("SelectedExperienciaLaboral");
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace AppGestionCurriculums.ViewModels
             get
             {
                 return _FicEditExperienciaLaboralCommand = _FicEditExperienciaLaboralCommand ??
-                    new FicVmDelegateCommand(FicEditExperienciaLaboral);
+                    new FicVmDelegateCommand(FicMetEditExperienciaLaboral);
             }
         }
         public ICommand FicMetDetalleExperienciaLaboralICommand
@@ -84,7 +84,7 @@ namespace AppGestionCurriculums.ViewModels
             get
             {
                 return _FicDetalleExperienciaLaboralCommand = _FicDetalleExperienciaLaboralCommand ??
-                    new FicVmDelegateCommand(FicDetalleExperienciaLaboral);
+                    new FicVmDelegateCommand(FicMetDetalleExperienciaLaboral);
             }
         }
 
@@ -93,7 +93,7 @@ namespace AppGestionCurriculums.ViewModels
             get
             {
                 return _FicDeleteExperienciaLaboralCommand = _FicDeleteExperienciaLaboralCommand ??
-                    new FicVmDelegateCommand(FicDeleteExperienciaLaboral);
+                    new FicVmDelegateCommand(FicMetDeleteExperienciaLaboral);
             }
 
         }

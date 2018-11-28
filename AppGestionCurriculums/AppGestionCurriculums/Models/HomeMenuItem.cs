@@ -7,7 +7,9 @@ namespace AppGestionCurriculums.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        ExperienciaLaboral,
+        CurriculoReferencia
     }
     public class HomeMenuItem
     {

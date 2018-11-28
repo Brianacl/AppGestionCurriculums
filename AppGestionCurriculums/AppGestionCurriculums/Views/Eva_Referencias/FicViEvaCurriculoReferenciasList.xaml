@@ -1,12 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="AppGestionCurriculums.Views.Eva_Referencias.FicViEvaCurriculoReferenciasList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Nuevo"
+            Command="{Binding FicMetAddExperienciaLaboralICommand}">
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditExperienciaLaboralICommand}">
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleExperienciaLaboralICommand}">
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Eliminar"
+            Command="{Binding FicMetDeleteExperienciaLaboralICommand}">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <SearchBar HorizontalOptions="FillAndExpand"
+                       Placeholder="Filtrar Información"
+                       PlaceholderColor="Red"
+                       x:Name="SearchBar"/>
+            <syncfusion:SfDataGrid
+               ColumnSizer="Star"
+               AutoGenerateColumns="False"
+               AllowSorting="False"
+               ItemsSource="{Binding SourceReferencias, UpdateSourceEventName=RaisePropertyChanged}"
+               SelectedItem="{Binding SelectedReferencia}"
+               SelectionMode="Single">
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdReferencia"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Nombre" MappingName="Nombre"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Paterno" MappingName="ApPaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Materno" MappingName="ApMaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Teléfono" MappingName="Telefono"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Email" MappingName="Email"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Domicilio" MappingName="Domicilio"/>
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

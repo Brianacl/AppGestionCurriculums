@@ -3,10 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.Eva_Referencias.FicViEvaCurriculoReferenciasItem">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Nueva Referencia"/>
+
+                <Label Text="IdCurriculo"/>
+                <Entry Text="{Binding NuevoReferencia.IdCurriculo}"/>
+
+                <Label Text="IdReferencia"/>
+                <Entry Text="{Binding NuevoReferencia.IdReferencia}"/>
+                
+                <Label Text="Nombre"/>
+                <Entry Text="{Binding NuevoReferencia.Nombre}"/>
+
+                <Label Text="Apellido Paterno"/>
+                <Entry Text="{Binding NuevoReferencia.ApPaterno}"/>
+
+                <Label Text="Apellido Materno"/>
+                <Entry Text="{Binding NuevoReferencia.ApMaterno}"/>
+
+                <Label Text="Telefono"/>
+                <Entry Text="{Binding NuevoReferencia.Telefono}"/>
+
+                <Label Text="Email"/>
+                <Entry Text="{Binding NuevoReferencia.Email}"/>
+
+                <Label Text="Domicilio"/>
+                <Entry Text="{Binding NuevoReferencia.Domicilio}"/>
+
+                <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
