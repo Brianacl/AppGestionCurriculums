@@ -1,4 +1,4 @@
-﻿using AppGestionCurriculums.ViewModels;
+﻿using AppGestionCurriculums.ViewModels.GradoEstudios;
 using System;
 using System.Collections.Generic;
 using System.Linq;

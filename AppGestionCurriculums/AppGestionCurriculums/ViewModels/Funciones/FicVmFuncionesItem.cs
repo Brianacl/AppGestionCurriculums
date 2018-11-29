@@ -8,30 +8,30 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.Funciones
 {
-    public class FicVmGradoEstudiosItem : FicViewModelBase
+    public class FicVmFuncionesItem : FicViewModelBase
     {
-        private Eva_carrera_grado_estudios Fic_NuevoGradoEstudio;
+        private Eva_actividades_funciones Fic_NuevaFuncion;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
-        private IFicSrvGradoEstudios IFicSrvGradoEstudios;
+        private IFicSrvFunciones IFicSrvFunciones;
 
-        public FicVmGradoEstudiosItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvGradoEstudios IFicSrvGradoEstudios)
+        public FicVmFuncionesItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvFunciones IFicSrvFunciones)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
-            this.IFicSrvGradoEstudios = IFicSrvGradoEstudios;
+            this.IFicSrvFunciones = IFicSrvFunciones;
         }
 
-        public Eva_carrera_grado_estudios NuevoGradoEstudio
+        public Eva_actividades_funciones NuevaFuncion
         {
-            get { return Fic_NuevoGradoEstudio; }
+            get { return Fic_NuevaFuncion; }
             set
             {
-                Fic_NuevoGradoEstudio = value;
+                Fic_NuevaFuncion = value;
                 RaisePropertyChanged();
             }
         }//Fin NuevoIdioma
@@ -40,11 +40,11 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                var FicGradoEstudioSeleccionado = FicPaNavigationContext as Eva_carrera_grado_estudios;
+                var FicFuncionSeleccionado = FicPaNavigationContext as Eva_actividades_funciones;
 
-                if (FicGradoEstudioSeleccionado != null)
+                if (FicFuncionSeleccionado != null)
                 {
-                    NuevoGradoEstudio = FicGradoEstudioSeleccionado;
+                    NuevaFuncion = FicFuncionSeleccionado;
                 }
 
 
@@ -69,7 +69,7 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                await IFicSrvGradoEstudios.FicMetInsertNewGradoEstudios(NuevoGradoEstudio);
+                await IFicSrvFunciones.FicMetInsertNewFuncion(NuevaFuncion);
                 IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)

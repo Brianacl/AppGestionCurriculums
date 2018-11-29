@@ -1,37 +1,36 @@
-﻿using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+﻿using AppGestionCurriculums.ViewModels.Proyectos;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppGestionCurriculums.Views.Eva_idiomas
+namespace AppGestionCurriculums.Views.Eva_proyectos
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FicViEvaCurriculoIdiomasDetalle : ContentPage
+	public partial class FicViProyectosDetalle : ContentPage
 	{
         private object FicLoParameter { get; set; }
 
-        public FicViEvaCurriculoIdiomasDetalle (object FicNavigationContext)
+        public FicViProyectosDetalle (object FicNavigationContext)
 		{
 			InitializeComponent ();
-
             btnEliminar.Clicked += btnEliminar_Clicked;
 
             FicLoParameter = FicNavigationContext;
-            BindingContext = App.FicVmLocator.FicVmIdiomasDetalle;
+            BindingContext = App.FicVmLocator.FicVmProyectosDetalle;
         }
 
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasDetalle;
+            var FicViewModel = BindingContext as FicVmProyectosDetalle;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
         }
 
         private async void btnEliminar_Clicked(object sender, EventArgs e)
         {
-            bool res = await DisplayAlert("Aviso", "Se va a eliminar este idioma del curriculum, ¿Está seguro?", "Si", "No");
+            bool res = await DisplayAlert("Aviso", "Se va a eliminar esta función, ¿Está seguro?", "Si", "No");
             if (res)
             {
-                var viewModel = BindingContext as FicVmEvaCurriculoIdiomasDetalle;
+                var viewModel = BindingContext as FicVmProyectosDetalle;
                 viewModel.DeleteCommandExecute();
             }
         }

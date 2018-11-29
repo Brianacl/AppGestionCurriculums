@@ -38,22 +38,22 @@
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.Detalle}" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Text="Fecha registro" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.FechaReg}" Grid.Row="5" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.FechaReg}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="Fecha modificación" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.FechaUltMod}" Grid.Row="6" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.FechaUltMod}" Grid.Row="4" Grid.Column="1"/>
 
                 <Label Text="Registro usuario" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.UsuarioReg}" Grid.Row="7" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.UsuarioReg}" Grid.Row="5" Grid.Column="1"/>
 
                 <Label Text="Modifico usuario" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.UsuarioMod}" Grid.Row="8" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.UsuarioMod}" Grid.Row="6" Grid.Column="1"/>
 
                 <Label Text="Activo" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.Activo}" Grid.Row="9" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.Activo}" Grid.Row="7" Grid.Column="1"/>
 
                 <Label Text="Borrado" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.Borrado}" Grid.Row="10" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosFuncion.Borrado}" Grid.Row="8" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

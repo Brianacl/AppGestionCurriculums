@@ -1,37 +1,37 @@
-﻿using AppGestionCurriculums.ViewModels.Base;
-using AppGestionCurriculums.Models;
+﻿using AppGestionCurriculums.Interfaces;
 using AppGestionCurriculums.Interfaces.Navegacion;
-using AppGestionCurriculums.Interfaces;
-using System.Windows.Input;
+using AppGestionCurriculums.Models;
+using AppGestionCurriculums.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
-using System;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.Funciones
 {
-    public class FicVmEvaCurriculoIdiomasDetalle : FicViewModelBase
+    public class FicVmFuncionesDetalle : FicViewModelBase
     {
-        public Eva_curriculo_idiomas FicIdiomaSeleccionado;
+        public Eva_actividades_funciones FicFuncionSeleccionado;
 
         private ICommand FicDeleteCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
-        private IFicSrvCurriculoIdiomas IFicSrvCurriculoIdiomas;
+        private IFicSrvFunciones IFicSrvFunciones;
 
-        public FicVmEvaCurriculoIdiomasDetalle(IFicSrvNavigation IFicSrvNavigation, IFicSrvCurriculoIdiomas IFicSrvCurriculoIdiomas)
+        public FicVmFuncionesDetalle(IFicSrvNavigation IFicSrvNavigation, IFicSrvFunciones IFicSrvFunciones)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
-            this.IFicSrvCurriculoIdiomas = IFicSrvCurriculoIdiomas;
+            this.IFicSrvFunciones = IFicSrvFunciones;
         }
 
-        public Eva_curriculo_idiomas FicDatosIdioma
+        public Eva_actividades_funciones FicDatosFuncion
         {
-            get {return FicIdiomaSeleccionado;}
+            get { return FicFuncionSeleccionado; }
             set
             {
-                FicIdiomaSeleccionado = value;
+                FicFuncionSeleccionado = value;
                 RaisePropertyChanged();
             }
         }
@@ -40,11 +40,11 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                var FicIdioma = FicPaNavigationContext as Eva_curriculo_idiomas;
+                var FicFunciones = FicPaNavigationContext as Eva_actividades_funciones;
 
-                if (FicIdioma != null)
+                if (FicFunciones != null)
                 {
-                    FicDatosIdioma = FicIdioma;
+                    FicDatosFuncion = FicFunciones;
                 }
 
                 base.OnAppearing(FicPaNavigationContext);
@@ -68,7 +68,7 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                await IFicSrvCurriculoIdiomas.FicMetDeleteIdioma(FicDatosIdioma);
+                await IFicSrvFunciones.FicMetDeleteFuncion(FicDatosFuncion);
                 IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)

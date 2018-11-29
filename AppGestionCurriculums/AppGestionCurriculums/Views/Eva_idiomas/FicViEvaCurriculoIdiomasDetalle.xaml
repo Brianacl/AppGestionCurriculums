@@ -40,23 +40,23 @@
                 <Label Text="Idioma nativo" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
                 <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.Nativo}" Grid.Row="3" Grid.Column="1"/>
 
-                <Label Text="Fecha registro" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.FechaReg}" Grid.Row="5" Grid.Column="1"/>
+                <Label Text="Fecha registro" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.FechaReg}" Grid.Row="4" Grid.Column="1"/>
 
-                <Label Text="Fecha modificación" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.FechaUltMod}" Grid.Row="6" Grid.Column="1"/>
+                <Label Text="Fecha modificación" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.FechaUltMod}" Grid.Row="5" Grid.Column="1"/>
 
-                <Label Text="Registro usuario" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.UsuarioReg}" Grid.Row="7" Grid.Column="1"/>
+                <Label Text="Registro usuario" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.UsuarioReg}" Grid.Row="6" Grid.Column="1"/>
 
-                <Label Text="Modifico usuario" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.UsuarioMod}" Grid.Row="8" Grid.Column="1"/>
+                <Label Text="Modifico usuario" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.UsuarioMod}" Grid.Row="7" Grid.Column="1"/>
 
-                <Label Text="Activo" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.Activo}" Grid.Row="9" Grid.Column="1"/>
+                <Label Text="Activo" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.Activo}" Grid.Row="8" Grid.Column="1"/>
 
-                <Label Text="Borrado" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.Borrado}" Grid.Row="10" Grid.Column="1"/>
+                <Label Text="Borrado" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosIdioma.Borrado}" Grid.Row="9" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

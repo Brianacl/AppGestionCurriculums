@@ -9,7 +9,7 @@ using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Interfaces;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
 {
     public class FicVmEvaCurriculoIdiomasList : FicViewModelBase
     {

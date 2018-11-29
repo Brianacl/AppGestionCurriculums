@@ -22,7 +22,8 @@ namespace AppGestionCurriculums.Views
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.ListaIdiomas, Title= "Lista idiomas"},
                 new HomeMenuItem {Id = MenuItemType.GradoEstudios, Title="Lista grado de estudios"},
-                new HomeMenuItem {Id = MenuItemType.Funciones, Title="Lista de funciones"}
+                new HomeMenuItem {Id = MenuItemType.Funciones, Title="Lista de funciones"},
+                new HomeMenuItem {Id = MenuItemType.Proyectos, Title="Lista proyectos"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

@@ -10,7 +10,8 @@ namespace AppGestionCurriculums.Models
         About,
         ListaIdiomas,
         GradoEstudios,
-        Funciones
+        Funciones,
+        Proyectos
     }
     public class HomeMenuItem
     {

@@ -48,5 +48,14 @@
     <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosList.xaml.cs">
       <DependentUpon>FicViGradoEstudiosList.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosDetalle.xaml.cs">
+      <DependentUpon>FicViProyectosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosItem.xaml.cs">
+      <DependentUpon>FicViProyectosItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosList.xaml.cs">
+      <DependentUpon>FicViProyectosList.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

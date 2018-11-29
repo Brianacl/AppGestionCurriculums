@@ -8,72 +8,73 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.GradoEstudios
 {
-    public class FicVmGradoEstudiosDetalle : FicViewModelBase
+    public class FicVmGradoEstudiosItem : FicViewModelBase
     {
-        public Eva_carrera_grado_estudios FicGradoEstudioSeleccionado;
+        private Eva_carrera_grado_estudios Fic_NuevoGradoEstudio;
 
-        private ICommand FicDeleteCommand;
+        private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
         private IFicSrvGradoEstudios IFicSrvGradoEstudios;
 
-        public FicVmGradoEstudiosDetalle(IFicSrvNavigation IFicSrvNavigation, IFicSrvGradoEstudios IFicSrvGradoEstudios)
+        public FicVmGradoEstudiosItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvGradoEstudios IFicSrvGradoEstudios)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvGradoEstudios = IFicSrvGradoEstudios;
         }
 
-        public Eva_carrera_grado_estudios FicDatosGradoEstudio
+        public Eva_carrera_grado_estudios NuevoGradoEstudio
         {
-            get { return FicGradoEstudioSeleccionado; }
+            get { return Fic_NuevoGradoEstudio; }
             set
             {
-                FicGradoEstudioSeleccionado = value;
+                Fic_NuevoGradoEstudio = value;
                 RaisePropertyChanged();
             }
-        }
+        }//Fin NuevoIdioma
 
         public async override void OnAppearing(object FicPaNavigationContext)
         {
             try
             {
-                var FicGradoEstudio = FicPaNavigationContext as Eva_carrera_grado_estudios;
+                var FicGradoEstudioSeleccionado = FicPaNavigationContext as Eva_carrera_grado_estudios;
 
-                if (FicGradoEstudio != null)
+                if (FicGradoEstudioSeleccionado != null)
                 {
-                    FicDatosGradoEstudio = FicGradoEstudio;
+                    NuevoGradoEstudio = FicGradoEstudioSeleccionado;
                 }
+
 
                 base.OnAppearing(FicPaNavigationContext);
             }
             catch (Exception e)
             {
-                await new Page().DisplayAlert("ALERTA ITEM", e.Message.ToString(), "OK");
+                await new Page().DisplayAlert("ALERTA - OnAppearing", e.Message.ToString(), "OK");
             }
         }
 
-        public ICommand FicMetDeleteCommand
+        public ICommand FicMetSaveCommand
         {
             get
             {
-                return FicDeleteCommand = FicDeleteCommand ??
-                  new FicVmDelegateCommand(DeleteCommandExecute);
+                return FicSaveCommand = FicSaveCommand ??
+                  new FicVmDelegateCommand(SaveCommandExecute);
             }
         }
 
-        public async void DeleteCommandExecute()
+        private async void SaveCommandExecute()
         {
             try
             {
-                await IFicSrvGradoEstudios.FicMetDeleteGradoEstudios(FicDatosGradoEstudio);
+                await IFicSrvGradoEstudios.FicMetInsertNewGradoEstudios(NuevoGradoEstudio);
                 IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {
-                await new Page().DisplayAlert("ALERTA - Delete", e.Message.ToString(), "OK");
+                await new Page().DisplayAlert("ALERTA - SaveCommand", e.Message.ToString(), "OK");
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using AppGestionCurriculums.ViewModels.Funciones;
+﻿using AppGestionCurriculums.ViewModels.Proyectos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppGestionCurriculums.Views.Eva_funciones
+namespace AppGestionCurriculums.Views.Eva_proyectos
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FicViFuncionesItem : ContentPage
+	public partial class FicViProyectosItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
 
-        public FicViFuncionesItem (object FicNavigationContext)
+        public FicViProyectosItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
             FicLoParameter = FicNavigationContext;
-            BindingContext = App.FicVmLocator.FicVmFuncionesItem;
+            BindingContext = App.FicVmLocator.FicVmProyectosItem;
         }
 
         async void metodo_regresar(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace AppGestionCurriculums.Views.Eva_funciones
 
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmFuncionesItem;
+            var FicViewModel = BindingContext as FicVmProyectosItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
         }

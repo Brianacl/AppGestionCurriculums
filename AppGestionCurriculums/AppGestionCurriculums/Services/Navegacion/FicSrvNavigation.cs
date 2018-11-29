@@ -1,8 +1,13 @@
 ﻿using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.ViewModels;
+using AppGestionCurriculums.ViewModels.Proyectos;
+using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+using AppGestionCurriculums.ViewModels.Funciones;
+using AppGestionCurriculums.ViewModels.GradoEstudios;
 using AppGestionCurriculums.Views.Eva_funciones;
 using AppGestionCurriculums.Views.Eva_grado_estudios;
 using AppGestionCurriculums.Views.Eva_idiomas;
+using AppGestionCurriculums.Views.Eva_proyectos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +29,9 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmFuncionesList),typeof(FicViFuncionesList) },
             { typeof(FicVmFuncionesItem),typeof(FicViFuncionesItem) },
             { typeof(FicVmFuncionesDetalle),typeof(FicViFuncionesDetalle) },
+            { typeof(FicVmProyectosList),typeof(FicViProyectosList) },
+            { typeof(FicVmProyectosItem),typeof(FicViProyectosItem) },
+            { typeof(FicVmProyectosDetalle),typeof(FicViProyectosDetalle) },
             /*{ typeof(FicVmExportarWebApi),typeof(ViExportarWebApi) },
             { typeof(FicVmImportarWebApi),typeof(ViImportarWebApi) },*/
         };

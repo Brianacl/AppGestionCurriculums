@@ -1,37 +1,37 @@
-﻿using AppGestionCurriculums.Interfaces;
-using AppGestionCurriculums.Interfaces.Navegacion;
+﻿using AppGestionCurriculums.ViewModels.Base;
 using AppGestionCurriculums.Models;
-using AppGestionCurriculums.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using AppGestionCurriculums.Interfaces;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
 {
-    public class FicVmFuncionesItem : FicViewModelBase
+    public class FicVmEvaCurriculoIdiomasItem : FicViewModelBase
     {
-        private Eva_actividades_funciones Fic_NuevaFuncion;
+        private Eva_curriculo_idiomas Fic_NuevoIdioma;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
-        private IFicSrvFunciones IFicSrvFunciones;
+        private IFicSrvCurriculoIdiomas IFicSrvCurriculoIdiomas;
 
-        public FicVmFuncionesItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvFunciones IFicSrvFunciones)
+        public FicVmEvaCurriculoIdiomasItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvCurriculoIdiomas IFicSrvCurriculoIdiomas)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
-            this.IFicSrvFunciones = IFicSrvFunciones;
+            this.IFicSrvCurriculoIdiomas = IFicSrvCurriculoIdiomas;
         }
 
-        public Eva_actividades_funciones NuevaFuncion
+        public Eva_curriculo_idiomas NuevoIdioma
         {
-            get { return Fic_NuevaFuncion; }
+            get { return Fic_NuevoIdioma; }
             set
             {
-                Fic_NuevaFuncion = value;
+                Fic_NuevoIdioma = value;
                 RaisePropertyChanged();
             }
         }//Fin NuevoIdioma
@@ -40,11 +40,11 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                var FicFuncionSeleccionado = FicPaNavigationContext as Eva_actividades_funciones;
+                var FicIdiomaSeleccionado = FicPaNavigationContext as Eva_curriculo_idiomas;
 
-                if (FicFuncionSeleccionado != null)
+                if (FicIdiomaSeleccionado != null)
                 {
-                    NuevaFuncion = FicFuncionSeleccionado;
+                    NuevoIdioma = FicIdiomaSeleccionado;
                 }
 
 
@@ -69,8 +69,8 @@ namespace AppGestionCurriculums.ViewModels
         {
             try
             {
-                await IFicSrvFunciones.FicMetInsertNewFuncion(NuevaFuncion);
-                IFicSrvNavigation.FicMetNavigateBack();
+                await IFicSrvCurriculoIdiomas.FicMetInsertNewIdioma(NuevoIdioma);
+                //IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {

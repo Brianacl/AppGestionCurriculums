@@ -8,72 +8,73 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.Proyectos
 {
-    public class FicVmFuncionesDetalle : FicViewModelBase
+    public class FicVmProyectosItem : FicViewModelBase
     {
-        public Eva_actividades_funciones FicFuncionSeleccionado;
+        private Eva_proyectos Fic_NuevoProyecto;
 
-        private ICommand FicDeleteCommand;
+        private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
-        private IFicSrvFunciones IFicSrvFunciones;
+        private IFicSrvProyectos IFicSrvProyectos;
 
-        public FicVmFuncionesDetalle(IFicSrvNavigation IFicSrvNavigation, IFicSrvFunciones IFicSrvFunciones)
+        public FicVmProyectosItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvProyectos IFicSrvProyectos)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
-            this.IFicSrvFunciones = IFicSrvFunciones;
+            this.IFicSrvProyectos = IFicSrvProyectos;
         }
 
-        public Eva_actividades_funciones FicDatosFuncion
+        public Eva_proyectos NuevoProyecto
         {
-            get { return FicFuncionSeleccionado; }
+            get { return Fic_NuevoProyecto; }
             set
             {
-                FicFuncionSeleccionado = value;
+                Fic_NuevoProyecto = value;
                 RaisePropertyChanged();
             }
-        }
+        }//Fin NuevoIdioma
 
         public async override void OnAppearing(object FicPaNavigationContext)
         {
             try
             {
-                var FicFunciones = FicPaNavigationContext as Eva_actividades_funciones;
+                var FicProyectoSeleccionado = FicPaNavigationContext as Eva_proyectos;
 
-                if (FicFunciones != null)
+                if (FicProyectoSeleccionado != null)
                 {
-                    FicDatosFuncion = FicFunciones;
+                    NuevoProyecto = FicProyectoSeleccionado;
                 }
+
 
                 base.OnAppearing(FicPaNavigationContext);
             }
             catch (Exception e)
             {
-                await new Page().DisplayAlert("ALERTA ITEM", e.Message.ToString(), "OK");
+                await new Page().DisplayAlert("ALERTA - OnAppearing", e.Message.ToString(), "OK");
             }
         }
 
-        public ICommand FicMetDeleteCommand
+        public ICommand FicMetSaveCommand
         {
             get
             {
-                return FicDeleteCommand = FicDeleteCommand ??
-                  new FicVmDelegateCommand(DeleteCommandExecute);
+                return FicSaveCommand = FicSaveCommand ??
+                  new FicVmDelegateCommand(SaveCommandExecute);
             }
         }
 
-        public async void DeleteCommandExecute()
+        private async void SaveCommandExecute()
         {
             try
             {
-                await IFicSrvFunciones.FicMetDeleteFuncion(FicDatosFuncion);
+                await IFicSrvProyectos.FicMetInsertNewProyecto(NuevoProyecto);
                 IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {
-                await new Page().DisplayAlert("ALERTA - Delete", e.Message.ToString(), "OK");
+                await new Page().DisplayAlert("ALERTA - SaveCommand", e.Message.ToString(), "OK");
             }
         }
 

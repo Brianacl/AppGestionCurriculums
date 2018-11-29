@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels
+namespace AppGestionCurriculums.ViewModels.Funciones
 {
     public class FicVmFuncionesList : FicViewModelBase
     {
