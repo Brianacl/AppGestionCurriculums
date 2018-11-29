@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.Eva_funciones.FicViFuncionesList">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem
+            Name="Nuevo"
+            Command="{Binding FicMetAddFuncionICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditFuncionICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleFuncionICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Eliminar"
+            Command="{Binding FicMetDeleteICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar información"
+                PlaceholderColor="Red"
+                x:Name="SearchBar">
+                </SearchBar>
+
+                <syncfusion:SfDataGrid
+                
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SourceFunciones,
+                                UpdateSourceEventName=RaisePropertyChanged}"
+                SelectedItem="{Binding SelectedFuncion}"
+                SelectionMode="Single">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdFuncionAct"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÓN" MappingName="DesActividad"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DETALLE" MappingName="Detalle"/>
+                </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

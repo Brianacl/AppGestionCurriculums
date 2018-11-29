@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Eva_funciones.FicViFuncionesItem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Nueva función" />
+
+                <Label Text="Descripción" />
+                <Entry Text="{Binding NuevaFuncion.DesActividad}"/>
+
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevaFuncion.Detalle}"/>
+
+                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
