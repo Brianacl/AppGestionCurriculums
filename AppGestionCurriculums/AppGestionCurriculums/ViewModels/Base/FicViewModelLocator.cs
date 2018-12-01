@@ -4,6 +4,8 @@ using AppGestionCurriculums.Services;
 using AppGestionCurriculums.Services.Navegacion;
 using AppGestionCurriculums.ViewModels.Proyectos;
 using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 using AppGestionCurriculums.ViewModels.Funciones;
 using AppGestionCurriculums.ViewModels.GradoEstudios;
 using Autofac;
@@ -22,7 +24,7 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoIdiomasList>();
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoIdiomasItem>();
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoIdiomasDetalle>();
-            //FicContainerBuilder.RegisterType<FicVmCatEdificiosDetalle>();
+            //-----------------------------------------------------------
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosList>();
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosItem>();
             FicContainerBuilder.RegisterType<FicVmGradoEstudiosDetalle>();
@@ -34,12 +36,23 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmProyectosList>();
             FicContainerBuilder.RegisterType<FicVmProyectosItem>();
             FicContainerBuilder.RegisterType<FicVmProyectosDetalle>();
+            //-------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasList>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasItem>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasDetalle>();
+            //-----------------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosList>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosItem>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosDetalle>();
+
 
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCurriculoIdiomas>().As<IFicSrvCurriculoIdiomas>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvGradoEstudios>().As<IFicSrvGradoEstudios>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvFunciones>().As<IFicSrvFunciones>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvProyectos>().As<IFicSrvProyectos>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCurriculoHerrmaientas>().As<IFicSrvCurriculoHerramientas>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCurriculoConocimientos>().As<IFicSrvCurriculoConocimientos>().SingleInstance();
 
             if (FicIContainer != null) FicIContainer.Dispose();
 
@@ -104,6 +117,36 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmProyectosDetalle FicVmProyectosDetalle
         {
             get { return FicIContainer.Resolve<FicVmProyectosDetalle>(); }
+        }
+        
+        public FicVmEvaCurriculoHerramientasList FicVmHerramientasList
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasList>(); }
+        }
+
+        public FicVmEvaCurriculoHerramientasItem FicVmHerramientasItem
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasItem>(); }
+        }
+
+        public FicVmEvaCurriculoHerramientasDetalle FicVmHerramientasDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasDetalle>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosList FicVmConocimientosList
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosList>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosItem FicVmConocimientosItem
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosItem>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosDetalle FicVmConocimientosDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosDetalle>(); }
         }
     }//Fin clase
 }

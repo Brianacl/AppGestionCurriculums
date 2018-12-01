@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppGestionCurriculums.Views.Eva_idiomas;
+using AppGestionCurriculums.Views.Eva_grado_estudios;
+using AppGestionCurriculums.Views.Eva_funciones;
+using AppGestionCurriculums.Views.Eva_proyectos;
+using AppGestionCurriculums.Views.Eva_herramientas;
+using AppGestionCurriculums.Views.Eva_conocimientos;
 
 namespace AppGestionCurriculums.Views
 {
@@ -31,6 +37,24 @@ namespace AppGestionCurriculums.Views
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        break;
+                    case (int)MenuItemType.ListaIdiomas:
+                        MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoIdiomasList(null)));
+                        break;
+                    case (int)MenuItemType.GradoEstudios:
+                        MenuPages.Add(id, new NavigationPage(new FicViGradoEstudiosList(null)));
+                        break;
+                    case (int)MenuItemType.Funciones:
+                        MenuPages.Add(id, new NavigationPage(new FicViFuncionesList(null)));
+                        break;
+                    case (int)MenuItemType.Proyectos:
+                        MenuPages.Add(id, new NavigationPage(new FicViProyectosList(null)));
+                        break;
+                    case (int)MenuItemType.Herramientas:
+                        MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoHerramientasList(null)));
+                        break;
+                    case (int)MenuItemType.Conocimientos:
+                        MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoConocimientosList(null)));
                         break;
                 }
             }
