@@ -1,4 +1,6 @@
 ﻿using AppGestionCurriculums.Models;
+using AppGestionCurriculums.Views.CurriculumsPersonas;
+using AppGestionCurriculums.Views.Competencias;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -31,6 +33,12 @@ namespace AppGestionCurriculums.Views
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        break;
+                    case (int)MenuItemType.CurriculumsPersonas:
+                        MenuPages.Add(id, new NavigationPage(new FicViCurriculumsPersonasList(null)));
+                        break;
+                    case (int)MenuItemType.Competencias:
+                        MenuPages.Add(id, new NavigationPage(new FicViCompetenciasList(null)));
                         break;
                 }
             }

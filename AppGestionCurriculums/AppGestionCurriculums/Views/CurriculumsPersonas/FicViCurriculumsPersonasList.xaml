@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViCurriculumsPersonasList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleCurriculumsPersonasICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+            <Button Text="Competencias" Command="{Binding FicListCompetenciasICommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar información"
+                PlaceholderColor="Red"
+                x:Name="SearchBar">
+                </SearchBar>
+
+                <syncfusion:SfDataGrid
+                
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SourceCurriculumsPersonas,
+                                UpdateSourceEventName=RaisePropertyChanged}"
+                SelectedItem="{Binding SelectedCurriculumsPersonas}"
+                SelectionMode="Single">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDCURRICULO" MappingName="IdPersona"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDPERSONA" MappingName="IdPersona"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NOMBRE" MappingName="Nombre"/>
+                        
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO" MappingName="ApPaterno"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

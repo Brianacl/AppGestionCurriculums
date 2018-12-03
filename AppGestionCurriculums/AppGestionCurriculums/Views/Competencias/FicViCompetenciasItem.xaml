@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Competencias.FicViCompetenciasItem">
+  <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label  Text="Nueva Competencia" />
+
+                <Label Text="Dominio" />
+                <Entry Text="{Binding NuevaCompetencia.Dominio}"/>
+
+                <Label Text="Descripción" />
+                <Entry Text="{Binding NuevaCompetencia.DesCompetencia}"/>
+                
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevaCompetencia.Detalle}"/>
+
+                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
