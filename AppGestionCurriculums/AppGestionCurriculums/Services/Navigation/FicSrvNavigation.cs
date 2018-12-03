@@ -19,7 +19,6 @@ namespace AppGestionCurriculums.Services.Navigation
             { typeof(FicVmCompetenciasItem), typeof(FicViCompetenciasItem) },
             { typeof(FicVmCompetenciasDetalle),typeof(FicViCompetenciasDetalle) },
             { typeof(FicVmCurriculumsPersonasList),typeof(FicViCurriculumsPersonasList) },
-           // { typeof(FicVmCurriculumsPersonasItem), typeof(FicViCurriculumsPersonasItem) },
             { typeof(FicVmCurriculumsPersonasDetalle),typeof(FicViCurriculumsPersonasDetalle) }
         };
         #region // METODOS DE IMPLEMENTACION DE LA INTERFACE -> IFicSrvNavigationInventario

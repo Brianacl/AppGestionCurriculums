@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-03T05:54:59.373</Modified>
+      <Modified>2018-12-03T17:32:45.899</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-03T05:54:55.479</Modified>
+      <Modified>2018-12-03T17:32:40.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\.nuget\packages\autofac\4.8.1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -861,7 +861,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-12-03T05:54:30.442</Modified>
+      <Modified>2018-12-03T17:32:11.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -1024,11 +1024,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-03T05:54:54.526</Modified>
+      <Modified>2018-12-03T17:32:39.535</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-03T05:54:54.526</Modified>
+      <Modified>2018-12-03T17:32:39.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1133,7 +1133,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-03T05:54:59.354</Modified>
+      <Modified>2018-12-03T17:32:45.871</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

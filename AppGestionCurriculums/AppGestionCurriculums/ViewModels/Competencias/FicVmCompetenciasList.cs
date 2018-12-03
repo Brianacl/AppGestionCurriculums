@@ -1,7 +1,9 @@
 ﻿using AppGestionCurriculums.Interfaces.Competencias;
 using AppGestionCurriculums.Interfaces.Navigation;
 using AppGestionCurriculums.Models;
+using AppGestionCurriculums.Services.CurriculumsPersonas;
 using AppGestionCurriculums.ViewModels.Base;
+using AppGestionCurriculums.ViewModels.CurriculumsPersonas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +18,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
     {
 
         public ObservableCollection<Eva_curriculo_competencias> _FicDataGrid_SourceCompetencias;
+        public int IdPersona;
         public Eva_curriculo_competencias _FicDataGrid_SelectedCompetencias;
         private ICommand _FicAddCompetenciasCommand;
         private ICommand _FicEditCompetenciasCommand;
@@ -23,11 +26,13 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         private ICommand _FicDeleteCompetenciasCommand;
         private IFicSrvNavigation IFicLoSrvNavigation;
         private IFicSrvCompetencias IFicLoSrvCompetencias;
+        private FicVmCurriculumsPersonasList vmPersonas;
         public FicVmCompetenciasList(IFicSrvNavigation IFicSrvNavigation, IFicSrvCompetencias IFicSrvCompetencias)
         {
             IFicLoSrvNavigation = IFicSrvNavigation;
             IFicLoSrvCompetencias = IFicSrvCompetencias;
             _FicDataGrid_SourceCompetencias = new ObservableCollection<Eva_curriculo_competencias>();
+            //IdPersona = vmPersonas.IdSeleccionadoPersona;
         }
         public ObservableCollection<Eva_curriculo_competencias> SourceCompetencias
         {
@@ -98,7 +103,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             {
                 if (_FicDataGrid_SelectedCompetencias != null)
                 {
-                    await IFicLoSrvCompetencias.FicMetDeleteCompetencia(_FicDataGrid_SelectedCompetencias);
+                    await IFicLoSrvCompetencias.FicMetDeleteCompetencias(_FicDataGrid_SelectedCompetencias);
                     _FicDataGrid_SelectedCompetencias = null;
                 }
                 else
@@ -142,7 +147,8 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                 {
                     foreach (Eva_curriculo_competencias competencias in source_local_inv)
                     {
-                        SourceCompetencias.Add(competencias);
+                            SourceCompetencias.Add(competencias);
+                    
                     }
                 }//No llena el grid, llena el observableCollection para poder hacer el binding
             }

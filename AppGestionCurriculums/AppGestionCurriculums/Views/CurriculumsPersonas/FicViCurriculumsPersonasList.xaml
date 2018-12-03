@@ -5,8 +5,8 @@
              x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViCurriculumsPersonasList">
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Name="Detalle"
-            Command="{Binding FicMetDetalleCurriculumsPersonasICommand}">
+            Name="Competencias"
+            Command="{Binding FicListCompetenciasICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -18,7 +18,7 @@
 
         <ContentPage.Content>
             <StackLayout Padding="10">
-            <Button Text="Competencias" Command="{Binding FicListCompetenciasICommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            <Button Text="Detalle" Command="{Binding FicMetDetalleCurriculumsPersonasICommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="End"/>
             <SearchBar
                 HorizontalOptions="FillAndExpand"
                 Placeholder="Filtrar información"

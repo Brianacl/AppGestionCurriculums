@@ -19,11 +19,11 @@ namespace AppGestionCurriculums.Services.CurriculumsPersonas
         public FicSrvCurriculumsPersonas()
         {
             FicLoBDContext = new FicDBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());           
-            FicLoBDContext.AddData("1", "1", "1","14401007", "Betsy", "Sanchez","Carrillo","SACB9606264H6","SACB960626MNTNRT03","1996-06-26","F", DateTime.Today.ToString(), DateTime.Today.ToString(),"Beth","Beth", "1", "0");
-            FicLoBDContext.AddData("2", "2", "2", "14401010", "Cristobal", "Vega", "Luna", "VELC9604124H6", "VELC960412MNTNRT03", "1996-04-12", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
-            FicLoBDContext.AddData("3", "3", "3", "14400446", "Brian", "Casas", "Lopez", "CALB9603214H6", "CALB960321MNTNRT03", "1996-03-21", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
-            FicLoBDContext.AddData("4", "4", "4", "14400968", "Jesus", "Monroy", "Salcedo", "MOSJ9504284H6", "MOSJ950428MNTNRT03", "1996-04-28", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
-            FicLoBDContext.AddData("5", "5", "5", "14400941", "Jorge", "Alegria", "Jimenez", "ALJJ9601204H6", "ALJJ960120MNTNRT03", "1996-01-20", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
+            FicLoBDContext.AddData("1", "1", "1","14401007", "Betsy", "Sanchez","Carrillo","SACB9606264H6","SACB960626MNTNRT03","26/06/1996","F", DateTime.Today.ToString(), DateTime.Today.ToString(),"Beth","Beth", "1", "0");
+            FicLoBDContext.AddData("2", "2", "2", "14401010", "Cristobal", "Vega", "Luna", "VELC9604124H6", "VELC960412MNTNRT03", "12/04/1996", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
+            FicLoBDContext.AddData("3", "3", "3", "14400446", "Brian", "Casas", "Lopez", "CALB9603214H6", "CALB960321MNTNRT03", "21/03/1996", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
+            FicLoBDContext.AddData("4", "4", "4", "14400968", "Jesus", "Monroy", "Salcedo", "MOSJ9504284H6", "MOSJ950428MNTNRT03", "28/04/1996", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
+            FicLoBDContext.AddData("5", "5", "5", "14400941", "Jorge", "Alegria", "Jimenez", "ALJJ9601204H6", "ALJJ960120MNTNRT03", "20/01/1996", "M", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
             FicLoBDContext.AddData2("1", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
             FicLoBDContext.AddData2("2", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");
             FicLoBDContext.AddData2("3", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "1", "0");

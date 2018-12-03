@@ -5,18 +5,18 @@
   <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label  Text="Nueva Competencia" />
+                <Label  Text="Nueva Competencias" />
 
                 <Label Text="Dominio" />
-                <Entry Text="{Binding NuevaCompetencia.Dominio}"/>
+                <Entry Text="{Binding NuevaCompetencias.Dominio}"/>
 
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevaCompetencia.DesCompetencia}"/>
+                <Entry Text="{Binding NuevaCompetencias.DesCompetencia}"/>
                 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevaCompetencia.Detalle}"/>
+                <Entry Text="{Binding NuevaCompetencias.Detalle}"/>
 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Guardar"  Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

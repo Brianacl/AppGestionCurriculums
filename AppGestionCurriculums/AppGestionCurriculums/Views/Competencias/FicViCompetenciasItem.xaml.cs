@@ -19,16 +19,11 @@ namespace AppGestionCurriculums.Views.Competencias
             FicLoParameter = navigationContext;
             BindingContext = App.FicVmLocator.FicVmCompetenciasItem;
 		}
-        async void metodo_regresar(object sender, EventArgs e)
-        {
-            //await Navigation.PopModalAsync();
-        }
 
         protected override void OnAppearing()
         {
             var FicViewModel = BindingContext as FicVmCompetenciasItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
-
         }
     }
 }

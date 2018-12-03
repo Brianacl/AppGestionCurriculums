@@ -12,10 +12,8 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
     public class FicVmCurriculumsPersonasDetalle : FicVmBase
     {
-        //private Eva_curriculo_persona Fic_Eva_curriculo_personas_item;
         private Rh_cat_personas Fic_rh_cat_personas;
 
-        private ICommand FicDeleteCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicLoSrvNavigation;
@@ -26,17 +24,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             IFicLoSrvNavigation = IFicSrvNavigation;
             IFicLoSrvCurriculumsPersonas = IFicSrvCurriculumsPersonas;
 
-        }
-        /*
-        public Rh_cat_personas DatosCPersona
-        {
-            get { return Fic_Eva_curriculo_personas_item; }
-            set
-            {
-                Fic_Eva_curriculo_personas_item = value;
-                RaisePropertyChanged();
-            }
-        }*/
+        }    
 
         public Rh_cat_personas DatosPersona
         {
@@ -47,14 +35,6 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
                 RaisePropertyChanged();
             }
         }
-       /* public ICommand FicMetDeleteCommand
-        {
-           get
-            {
-                return FicDeleteCommand = FicDeleteCommand ??
-                  new FicVmDelegateCommand(DeleteCommandExecute);
-            }
-        }*/
 
         public ICommand FicMetCancelCommand
         {
@@ -79,18 +59,6 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             {
                 await new Page().DisplayAlert("ALERTA", e.Message.ToString(), "OK");
             }
-        }
-        public async void DeleteCommandExecute()
-        {
-           /* try
-            {
-                await IFicLoSrvCurriculumsPersonas.FicMetDeleteCurriculumPersona(DatosPersona);
-                IFicLoSrvNavigation.FicMetNavigateBack();
-            }
-            catch (Exception e)
-            {
-                await new Page().DisplayAlert("ALERTA", e.Message.ToString() + " 7", "OK");
-            }*/
         }
 
         private void CancelCommandExecute()

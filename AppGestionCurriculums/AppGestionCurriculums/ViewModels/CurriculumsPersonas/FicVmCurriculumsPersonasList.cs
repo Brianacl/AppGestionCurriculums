@@ -112,7 +112,6 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         {
             if (_FicDataGrid_SelectedCurriculumsPersonas != null)
             {
-
                 IFicSrvLoNavigation.FicMetNavigateTo<FicVmCompetenciasList>
                     (_FicDataGrid_SelectedCurriculumsPersonas);
             }

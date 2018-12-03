@@ -14,7 +14,6 @@ namespace AppGestionCurriculums.Views.CurriculumsPersonas
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FicViCurriculumsPersonasList : ContentPage
 	{
-        //public ObservableCollection<string> Items { get; set; }
 
         public FicViCurriculumsPersonasList(object navigationContext)
         {

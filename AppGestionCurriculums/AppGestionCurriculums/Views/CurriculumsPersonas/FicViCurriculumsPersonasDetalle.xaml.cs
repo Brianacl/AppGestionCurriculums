@@ -17,7 +17,6 @@ namespace AppGestionCurriculums.Views.CurriculumsPersonas
         public FicViCurriculumsPersonasDetalle (object FicNavigationContext)
 		{
 			InitializeComponent ();
-            //btnEliminar.Clicked += btnEliminar_Clicked;
 
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmCurriculumsPersonasDetalle;
@@ -27,15 +26,5 @@ namespace AppGestionCurriculums.Views.CurriculumsPersonas
             var FicViewModel = BindingContext as FicVmCurriculumsPersonasDetalle;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
         }
-        /*
-        private async void btnEliminar_Clicked(object sender, EventArgs e)
-        {
-            bool res = await DisplayAlert("Aviso", "Se va a eliminar esta función, ¿Está seguro?", "Si", "No");
-            if (res)
-            {
-                var viewModel = BindingContext as FicVmCurriculumsPersonasDetalle;
-                viewModel.DeleteCommandExecute();
-            }
-        }*/
     }
 }

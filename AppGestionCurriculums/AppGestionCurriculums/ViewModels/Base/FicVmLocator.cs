@@ -29,9 +29,7 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmCompetenciasList>();
             FicContainerBuilder.RegisterType<FicVmCompetenciasItem>();
             FicContainerBuilder.RegisterType<FicVmCompetenciasDetalle>();
-            //FicContainerBuilder.RegisterType<FicVmCompetenciasNuevo>();
             FicContainerBuilder.RegisterType<FicVmCurriculumsPersonasList>();
-            //FicContainerBuilder.RegisterType<FicVmCurriculumsPersonasItem>();
             FicContainerBuilder.RegisterType<FicVmCurriculumsPersonasDetalle>();
             //------------------------- INTERFACE SERVICES OF THE VIEW MODELS -----------------------------------
             //FIC: se procede a registrar la interface con la que se comunican las ViewModels con los Servicios 
@@ -41,8 +39,6 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCompetencias>().As<IFicSrvCompetencias>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCurriculumsPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
-            //FicContainerBuilder.RegisterType<FicSrvPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
-            //FicContainerBuilder.RegisterType<FicSrvExportarWebApi>().As<IFicSrvExportarWebApi>().SingleInstance();
 
             //FIC: se asigna o se libera el contenedor
             //-------------------------------------------
@@ -75,12 +71,7 @@ namespace AppGestionCurriculums.ViewModels.Base
         {
             get { return FicContainer.Resolve<FicVmCurriculumsPersonasList>(); }
         }
-        /*
-        public FicVmCurriculumsPersonasItem FicVmCurriculumsPersonasItem
-        {
-            get { return FicContainer.Resolve<FicVmCurriculumsPersonasItem>(); }
-        }
-        */
+
         public FicVmCurriculumsPersonasDetalle FicVmCurriculumsPersonasDetalle
         {
             get { return FicContainer.Resolve<FicVmCurriculumsPersonasDetalle>(); }

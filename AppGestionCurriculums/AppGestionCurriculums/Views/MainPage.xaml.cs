@@ -37,9 +37,9 @@ namespace AppGestionCurriculums.Views
                     case (int)MenuItemType.CurriculumsPersonas:
                         MenuPages.Add(id, new NavigationPage(new FicViCurriculumsPersonasList(null)));
                         break;
-                    case (int)MenuItemType.Competencias:
+                   /* case (int)MenuItemType.Competencias:
                         MenuPages.Add(id, new NavigationPage(new FicViCompetenciasList(null)));
-                        break;
+                        break;*/
                 }
             }
 

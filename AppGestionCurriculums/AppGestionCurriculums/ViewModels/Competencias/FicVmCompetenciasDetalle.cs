@@ -69,7 +69,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         {
             try
             {
-                await IFicLoSrvCompetencias.FicMetDeleteCompetencia(DatosCompetencia);
+                await IFicLoSrvCompetencias.FicMetDeleteCompetencias(DatosCompetencia);
                 IFicLoSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)

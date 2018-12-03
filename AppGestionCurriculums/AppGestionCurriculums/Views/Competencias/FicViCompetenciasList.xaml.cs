@@ -13,7 +13,6 @@ namespace AppGestionCurriculums.Views.Competencias
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FicViCompetenciasList : ContentPage
     {
-        //public ObservableCollection<string> Items { get; set; }
 
         public FicViCompetenciasList(object navigationContext)
         {

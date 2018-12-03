@@ -30,7 +30,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
 
         }
 
-        public Eva_curriculo_competencias NuevaCompetencia
+        public Eva_curriculo_competencias NuevaCompetencias
         {
             get { return Fic_Eva_curriculo_competencias_item; }
             set
@@ -44,16 +44,15 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         {
             try
             {
-                var FicCompetenciaSeleccionada = navigationContext as Eva_curriculo_competencias;
+                var FicCompetenciasSeleccionada = navigationContext as Eva_curriculo_competencias;
                 
-                if (FicCompetenciaSeleccionada != null)
+                if (FicCompetenciasSeleccionada != null)
                 {
-                    NuevaCompetencia = FicCompetenciaSeleccionada;
+                    NuevaCompetencias = FicCompetenciasSeleccionada;
                 }
 
 
                 base.OnAppearing(navigationContext);
-                //Fic_Eva_curriculo_competencias_item = new Eva_curriculo_competencias();
             }
             catch (Exception e)
             {
@@ -74,11 +73,8 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         {
             try
             {
-                await IFicLoSrvCompetencias.FicMetInsertCompetencia(NuevaCompetencia);
-                //IFicLoSrvNavigation.FicMetNavigateTo<FicVmCompetenciasList>(null);
-                //await Application.Current.MainPage.DisplayAlert("ALERTA", "Registro exitoso", "OK");
+                await IFicLoSrvCompetencias.FicMetInsertCompetencias(NuevaCompetencias);
                 IFicLoSrvNavigation.FicMetNavigateBack();
-                //NuevaCompetencia = new Eva_curriculo_competencias();
             }
             catch (Exception e)
             {

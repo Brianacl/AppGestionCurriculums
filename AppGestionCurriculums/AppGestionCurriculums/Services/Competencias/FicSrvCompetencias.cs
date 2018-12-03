@@ -22,21 +22,22 @@ namespace AppGestionCurriculums.Services.Competencias
         }//Fin del constructor
         public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias()
         {
-            return await (from eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias select eva_curriculo_competencias).AsNoTracking().ToListAsync();
+            return await (from Eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
         }
-        public async Task FicMetInsertCompetencia(Eva_curriculo_competencias FicInsertCompetencias)
+        public async Task FicMetInsertCompetencias(Eva_curriculo_competencias FicInsertCompetencias)
         {
             try
             {
-                var FicSourceCompetenciaExist = await (
+                var FicSourceCompetenciasExist = await (
                        from competencias in FicLoBDContext.eva_curriculo_competencias 
                        where competencias.IdCompetencia == FicInsertCompetencias.IdCompetencia
                        select competencias
                         ).FirstOrDefaultAsync();
-                if (FicSourceCompetenciaExist == null)
+                if (FicSourceCompetenciasExist == null)
                 {
-                    FicInsertCompetencias.FechaReg = DateTime.Now;
-                    FicInsertCompetencias.FechaUltMod = DateTime.Now;
+                    FicInsertCompetencias.IdCurriculo = 1;
+                    FicInsertCompetencias.FechaReg = DateTime.Today;
+                    FicInsertCompetencias.FechaUltMod = DateTime.Today;
                     FicInsertCompetencias.UsuarioReg = "Beth";
                     FicInsertCompetencias.UsuarioMod = "Beth";
                     FicInsertCompetencias.Activo = true;
@@ -45,9 +46,9 @@ namespace AppGestionCurriculums.Services.Competencias
                 }
                 else
                 {
-                    FicInsertCompetencias.IdCompetencia = FicSourceCompetenciaExist.IdCompetencia;
+                    FicInsertCompetencias.IdCompetencia = FicSourceCompetenciasExist.IdCompetencia;
                     FicInsertCompetencias.FechaUltMod = DateTime.Now;
-                    FicLoBDContext.Entry(FicSourceCompetenciaExist).State = EntityState.Detached;
+                    FicLoBDContext.Entry(FicSourceCompetenciasExist).State = EntityState.Detached;
                     FicLoBDContext.Update(FicInsertCompetencias);
                 }
                 await FicLoBDContext.SaveChangesAsync();
@@ -57,19 +58,19 @@ namespace AppGestionCurriculums.Services.Competencias
                 await new Page().DisplayAlert("ALERTA - SrvInsert", e.Message.ToString(), "OK");
             }
         }//Insertar nuevo
-        public async Task FicMetDeleteCompetencia(Eva_curriculo_competencias deleteCompetencia)
+        public async Task FicMetDeleteCompetencias(Eva_curriculo_competencias deletecompetencias)
         {
             using (IDbContextTransaction transaction = FicLoBDContext.Database.BeginTransaction())
             {
                 try
                 {
-                    if (await ExistCompetencia(deleteCompetencia))
+                    if (await ExistCompetencias(deletecompetencias))
                     {
                         await new Page().DisplayAlert("ALERTA", "No se encontró el registro", "OK");
                         return;
                     }//BUSCAR SI YA SE INSERTO UN REGISTRO
-                    FicLoBDContext.Entry(deleteCompetencia).State = EntityState.Detached;
-                    FicLoBDContext.Remove(deleteCompetencia);
+                    FicLoBDContext.Entry(deletecompetencias).State = EntityState.Detached;
+                    FicLoBDContext.Remove(deletecompetencias);
                     await FicLoBDContext.SaveChangesAsync();
                     transaction.Commit(); //CONFIRMA/GUARDA
                     return;
@@ -81,17 +82,13 @@ namespace AppGestionCurriculums.Services.Competencias
                 }
             }//ENTRA EN CONTEXTO DE TRANSACIONES
         }//Fin delete
-        private async Task<bool> ExistCompetencia(Eva_curriculo_competencias existCompetencia)
+        private async Task<bool> ExistCompetencias(Eva_curriculo_competencias existCompetencias)
         {
-            return await (from competencia in FicLoBDContext.eva_curriculo_competencias
-                          where competencia.IdCompetencia == existCompetencia.IdCompetencia
-                          select competencia).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
+            return await (from competencias in FicLoBDContext.eva_curriculo_competencias
+                          where competencias.IdCompetencia == existCompetencias.IdCompetencia
+                          select competencias).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
-        /*
-        public Task FicMetUpdateCompetencia(Eva_curriculo_competencias ficPa_Eva_curriculo_competencias)
-        {
-            throw new NotImplementedException();
-        }*/
+
     }
 
     

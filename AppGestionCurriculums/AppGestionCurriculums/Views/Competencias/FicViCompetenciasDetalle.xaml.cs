@@ -33,7 +33,7 @@ namespace AppGestionCurriculums.Views.Competencias
 
         private async void btnEliminar_Clicked(object sender, EventArgs e)
         {
-            bool res = await DisplayAlert("Aviso", "Se va a eliminar esta función, ¿Está seguro?", "Si", "No");
+            bool res = await DisplayAlert("Aviso", "Se va a eliminar esta competencia, ¿Está seguro?", "Si", "No");
             if (res)
             {
                 var viewModel = BindingContext as FicVmCompetenciasDetalle;
