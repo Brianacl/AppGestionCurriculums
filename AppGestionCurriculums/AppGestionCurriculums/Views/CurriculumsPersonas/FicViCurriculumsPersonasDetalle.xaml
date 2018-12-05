@@ -3,10 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViCurriculumsPersonasDetalle">
   <ContentPage.Content>
-        <StackLayout
+        <ScrollView>
+            <StackLayout
         VerticalOptions="StartAndExpand"
         Padding="20">
-            
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                <!--<Button x:Name="btnEliminar" BackgroundColor="#F44336" TextColor="White" Text="Eliminar" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+             -->
+                <Button Text="Ver Domicilio" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+                <Button Text="Ver Telefono" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
+                <Button Text="Ver Dirección web" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="3" VerticalOptions="Center"/>
+            </Grid>
             <Grid Padding="16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -84,5 +100,6 @@
              -->   <Button Text="Regresar" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
             </Grid>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

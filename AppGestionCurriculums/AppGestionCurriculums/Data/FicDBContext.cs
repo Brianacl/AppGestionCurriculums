@@ -50,7 +50,7 @@ namespace AppGestionCurriculums.Data
             }
         }//CONFIGURACION DE LA CONEXION
         
-        public void AddData(string idDom,string idTel,string idDir,string numCtrl,string nom,string apPat,string apMat,string rfc,string curp,string fnac,string sex,string freg,string fmod,string ureg,string umod,string act,string bor)
+        public void AddDataPersonas(string idDom,string idTel,string idDir,string numCtrl,string nom,string apPat,string apMat,string rfc,string curp,string fnac,string sex,string freg,string fmod,string ureg,string umod,string act,string bor)
         {
             int numPersonas=0;
             using (SqliteConnection db =
@@ -91,7 +91,7 @@ namespace AppGestionCurriculums.Data
 
         }
 
-        public void AddData2(string idPer, string freg, string fmod, string ureg, string umod, string act, string bor)
+        public void AddDataCurriculo(string idPer, string freg, string fmod, string ureg, string umod, string act, string bor)
         {
             int numPersonas = 0;
             using (SqliteConnection db =
@@ -115,6 +115,109 @@ namespace AppGestionCurriculums.Data
                     insertCommand.Parameters.AddWithValue("@Entry15", umod);
                     insertCommand.Parameters.AddWithValue("@Entry16", act);
                     insertCommand.Parameters.AddWithValue("@Entry17", bor);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+
+        }
+
+        public void AddDataDomicilio(string idDom, string dom, string eCalle1, string eCalle2, string cp, string pais, string estado, string mun, string colonia, string freg, string fmod, string ureg, string umod, string act, string bor)
+        {
+            int numPersonas = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                // Use parameterized query to prevent SQL injection attacks
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Rh_cat_domicilios;";
+                numPersonas = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numPersonas <= 4)
+                {
+                    insertCommand.CommandText = "INSERT INTO Rh_cat_domicilios (IdDomicilio,Domicilio,EntreCalle1,EntreCalle2,CodigoPostal,Pais,Estado, Municipio,Colonia,FechaReg, FechaUltMod,UsuarioReg,UsuarioMod,Activo,Borrado) VALUES (@Entry1,@Entry2,@Entry3,@Entry4,@Entry5,@Entry6,@Entry7,@Entry8,@Entry9,@Entry10,@Entry11,@Entry12,@Entry13,@Entry14,@Entry15);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", idDom);
+                    insertCommand.Parameters.AddWithValue("@Entry2", dom);
+                    insertCommand.Parameters.AddWithValue("@Entry3", eCalle1);
+                    insertCommand.Parameters.AddWithValue("@Entry4", eCalle2);
+                    insertCommand.Parameters.AddWithValue("@Entry5", cp);
+                    insertCommand.Parameters.AddWithValue("@Entry6", pais);
+                    insertCommand.Parameters.AddWithValue("@Entry7", estado);
+                    insertCommand.Parameters.AddWithValue("@Entry8", mun);
+                    insertCommand.Parameters.AddWithValue("@Entry9", colonia);
+                    insertCommand.Parameters.AddWithValue("@Entry10", freg);
+                    insertCommand.Parameters.AddWithValue("@Entry11", fmod);
+                    insertCommand.Parameters.AddWithValue("@Entry12", ureg);
+                    insertCommand.Parameters.AddWithValue("@Entry13", umod);
+                    insertCommand.Parameters.AddWithValue("@Entry14", act);
+                    insertCommand.Parameters.AddWithValue("@Entry15", bor);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+
+        }
+
+        public void AddDataTelefono(string idTel, string numTel, string freg, string fmod, string ureg, string umod, string act, string bor)
+        {
+            int numPersonas = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                // Use parameterized query to prevent SQL injection attacks
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Rh_cat_telefonos;";
+                numPersonas = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numPersonas <= 4)
+                {
+                    insertCommand.CommandText = "INSERT INTO Rh_cat_telefonos (IdTelefono,NumTelefono,FechaReg, FechaUltMod,UsuarioReg,UsuarioMod,Activo,Borrado) VALUES (@Entry1,@Entry2,@Entry10,@Entry11,@Entry12,@Entry13,@Entry14,@Entry15);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", idTel);
+                    insertCommand.Parameters.AddWithValue("@Entry2", numTel);
+                    insertCommand.Parameters.AddWithValue("@Entry10", freg);
+                    insertCommand.Parameters.AddWithValue("@Entry11", fmod);
+                    insertCommand.Parameters.AddWithValue("@Entry12", ureg);
+                    insertCommand.Parameters.AddWithValue("@Entry13", umod);
+                    insertCommand.Parameters.AddWithValue("@Entry14", act);
+                    insertCommand.Parameters.AddWithValue("@Entry15", bor);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+
+        }
+
+        public void AddDataDirWeb(string idDirWeb, string dirWeb, string freg, string fmod, string ureg, string umod, string act, string bor)
+        {
+            int numPersonas = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                // Use parameterized query to prevent SQL injection attacks
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Rh_cat_dir_web;";
+                numPersonas = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numPersonas <= 4)
+                {
+                    insertCommand.CommandText = "INSERT INTO Rh_cat_dir_web (IdDirweb,DireccionWeb,FechaReg, FechaUltMod,UsuarioReg,UsuarioMod,Activo,Borrado) VALUES (@Entry1,@Entry2,@Entry10,@Entry11,@Entry12,@Entry13,@Entry14,@Entry15);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", idDirWeb);
+                    insertCommand.Parameters.AddWithValue("@Entry2", dirWeb);
+                    insertCommand.Parameters.AddWithValue("@Entry10", freg);
+                    insertCommand.Parameters.AddWithValue("@Entry11", fmod);
+                    insertCommand.Parameters.AddWithValue("@Entry12", ureg);
+                    insertCommand.Parameters.AddWithValue("@Entry13", umod);
+                    insertCommand.Parameters.AddWithValue("@Entry14", act);
+                    insertCommand.Parameters.AddWithValue("@Entry15", bor);
                     insertCommand.ExecuteReader();
                 }
                 db.Close();

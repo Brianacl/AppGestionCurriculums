@@ -37,3 +37,6 @@ C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGe
 C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.pdb
 C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\AppGestionCurriculums.csprojAssemblyReference.cache
+C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\CurriculumsPersonas\FicViPersonaDirWebDetalle.xaml.g.cs
+C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\CurriculumsPersonas\FicViPersonaDomicilioDetalle.xaml.g.cs
+C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\obj\Debug\netstandard2.0\Views\CurriculumsPersonas\FicViPersonaTelefonoDetalle.xaml.g.cs

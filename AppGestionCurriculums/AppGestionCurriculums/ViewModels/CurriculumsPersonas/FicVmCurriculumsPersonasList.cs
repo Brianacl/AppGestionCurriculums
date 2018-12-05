@@ -22,6 +22,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         public Rh_cat_personas _FicDataGrid_SelectedPersonas;
         private ICommand _FicDetalleCurriculumsPersonasCommand;
         private ICommand _FicListCompetenciasCommand;
+        private ICommand _FicSelectPersonasCommand;
         private IFicSrvNavigation IFicSrvLoNavigation;
         private IFicSrvCurriculumsPersonas IFicSrvLoCurriculumsPersonas;
         public FicVmCurriculumsPersonasList(IFicSrvNavigation IFicSrvNavigation, IFicSrvCurriculumsPersonas IFicSrvCurriculumsPersonas)
@@ -88,6 +89,25 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             }
         }
 
+        public ICommand FicMetIdSeleccionadoPersonasICommand
+        {
+            get
+            {
+                return _FicSelectPersonasCommand = _FicSelectPersonasCommand ??
+                    new FicVmDelegateCommand(FicMetIdSeleccionadoPersonas);
+            }
+        }
+
+        private async void FicMetIdSeleccionadoPersonas()
+        {
+            if (_FicDataGrid_SelectedCurriculumsPersonas != null)
+            {
+                IFicSrvLoNavigation.FicMetNavigateTo<FicVmCompetenciasList>
+                    (_FicDataGrid_SelectedCurriculumsPersonas);
+            }
+            else
+                await new Page().DisplayAlert("ALERTA - seleccion", "Para ir a competencias primero seleccione un registro", "OK");
+        }
         private async void FicMetDetalleCurriculumsPersonas()
         {
             if (_FicDataGrid_SelectedCurriculumsPersonas != null)
@@ -114,6 +134,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             {
                 IFicSrvLoNavigation.FicMetNavigateTo<FicVmCompetenciasList>
                     (_FicDataGrid_SelectedCurriculumsPersonas);
+                await new Page().DisplayAlert("ALERTA - competencias", "estoy mandando algo "+ _FicDataGrid_SelectedCurriculumsPersonas.IdPersona, "OK");
             }
             else
                 await new Page().DisplayAlert("ALERTA - competencias", "Para ir a competencias primero seleccione un registro", "OK");

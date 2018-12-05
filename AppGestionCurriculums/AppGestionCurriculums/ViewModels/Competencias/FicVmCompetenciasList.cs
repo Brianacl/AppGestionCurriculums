@@ -19,6 +19,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
 
         public ObservableCollection<Eva_curriculo_competencias> _FicDataGrid_SourceCompetencias;
         public int IdPersona;
+        private Rh_cat_personas Fic_rh_cat_personas;
         public Eva_curriculo_competencias _FicDataGrid_SelectedCompetencias;
         private ICommand _FicAddCompetenciasCommand;
         private ICommand _FicEditCompetenciasCommand;
@@ -49,6 +50,16 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                 }
             }
         }//Fin SourceIdiomas
+
+        public Rh_cat_personas DatosPersona
+        {
+            get { return Fic_rh_cat_personas; }
+            set
+            {
+                Fic_rh_cat_personas = value;
+                RaisePropertyChanged();
+            }
+        }
         public Eva_curriculo_competencias SelectedCompetencias
         {
             get
@@ -137,17 +148,26 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             else
                 await new Page().DisplayAlert("ALERTA", "Para ver los detalles primero seleccione un registro", "OK");
         }
-        public async override void OnAppearing(object context)
+        public async override void OnAppearing(object navigationContext)
         {
             try
             {
+                var FicCurriculumPersonaSeleccionado = navigationContext as Rh_cat_personas;
+                await new Page().DisplayAlert("ALERTA - competencias", "estoy recibiendo algo " + FicCurriculumPersonaSeleccionado.IdPersona, "OK");
+                if (FicCurriculumPersonaSeleccionado != null)
+                {
+                    DatosPersona = FicCurriculumPersonaSeleccionado;
+                }
+
+                base.OnAppearing(navigationContext);
+
                 SourceCompetencias.Clear();
-                var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListCompetencias();
+                var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListCompetencias(DatosPersona.IdPersona);
                 if (source_local_inv != null)
                 {
                     foreach (Eva_curriculo_competencias competencias in source_local_inv)
                     {
-                            SourceCompetencias.Add(competencias);
+                       SourceCompetencias.Add(competencias);
                     
                     }
                 }//No llena el grid, llena el observableCollection para poder hacer el binding

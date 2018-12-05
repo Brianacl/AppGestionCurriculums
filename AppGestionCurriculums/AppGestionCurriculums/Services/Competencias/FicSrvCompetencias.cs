@@ -16,13 +16,17 @@ namespace AppGestionCurriculums.Services.Competencias
     public class FicSrvCompetencias : IFicSrvCompetencias
     {
         private readonly FicDBContext FicLoBDContext;
+        public short idCurriculo;
         public FicSrvCompetencias()
         {
             FicLoBDContext = new FicDBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
         }//Fin del constructor
-        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias()
+        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(short id)
         {
-            return await (from Eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
+            idCurriculo = id;
+            return await (from Eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias
+                          where Eva_curriculo_competencias.IdCurriculo == id
+                          select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
         }
         public async Task FicMetInsertCompetencias(Eva_curriculo_competencias FicInsertCompetencias)
         {
@@ -35,7 +39,7 @@ namespace AppGestionCurriculums.Services.Competencias
                         ).FirstOrDefaultAsync();
                 if (FicSourceCompetenciasExist == null)
                 {
-                    FicInsertCompetencias.IdCurriculo = 1;
+                    FicInsertCompetencias.IdCurriculo = idCurriculo;
                     FicInsertCompetencias.FechaReg = DateTime.Today;
                     FicInsertCompetencias.FechaUltMod = DateTime.Today;
                     FicInsertCompetencias.UsuarioReg = "Beth";
