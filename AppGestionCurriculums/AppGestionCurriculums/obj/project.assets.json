@@ -47,10 +47,12 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -187,10 +189,11 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+      "sha512": "oYfHpCY9i9wN4vLllsIhzDZY5iOCUtZ3RHxID1fiXOcf7yL9UA16NUsI8opoNmpv1Ru2lTGG9ZKKT1sYS6DLjA==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
@@ -219,13 +222,11 @@
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -345,23 +346,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\titab\\.nuget\\packages\\": {},
+    "C:\\Users\\Betsy Sanchez\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj",
+      "projectUniqueName": "C:\\Users\\Betsy Sanchez\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj",
       "projectName": "AppGestionCurriculums",
-      "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj",
-      "packagesPath": "C:\\Users\\titab\\.nuget\\packages\\",
-      "outputPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\obj\\",
+      "projectPath": "C:\\Users\\Betsy Sanchez\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj",
+      "packagesPath": "C:\\Users\\Betsy Sanchez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Betsy Sanchez\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\titab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Betsy Sanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
