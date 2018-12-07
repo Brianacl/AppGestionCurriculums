@@ -2,12 +2,16 @@
 using AppGestionCurriculums.ViewModels;
 using AppGestionCurriculums.ViewModels.Proyectos;
 using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 using AppGestionCurriculums.ViewModels.Funciones;
 using AppGestionCurriculums.ViewModels.GradoEstudios;
 using AppGestionCurriculums.Views.Eva_funciones;
 using AppGestionCurriculums.Views.Eva_grado_estudios;
 using AppGestionCurriculums.Views.Eva_idiomas;
 using AppGestionCurriculums.Views.Eva_proyectos;
+using AppGestionCurriculums.Views.Eva_herramientas;
+using AppGestionCurriculums.Views.Eva_conocimientos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,6 +36,12 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmProyectosList),typeof(FicViProyectosList) },
             { typeof(FicVmProyectosItem),typeof(FicViProyectosItem) },
             { typeof(FicVmProyectosDetalle),typeof(FicViProyectosDetalle) },
+            { typeof(FicVmEvaCurriculoHerramientasList),typeof(FicViEvaCurriculoHerramientasList) },
+            { typeof(FicVmEvaCurriculoHerramientasItem),typeof(FicViEvaCurriculoHerramientasItem) },
+            { typeof(FicVmEvaCurriculoHerramientasDetalle),typeof(FicViEvaCurriculoHerramientasDetalle) },
+            { typeof(FicVmEvaCurriculoConocimientosList),typeof(FicViEvaCurriculoHerramientasList) },
+            { typeof(FicVmEvaCurriculoConocimientosItem),typeof(FicViEvaCurriculoConocimientosItem) },
+            { typeof(FicVmEvaCurriculoConocimientosDetalle),typeof(FicViEvaCurriculoConocimientosItem) },
             /*{ typeof(FicVmExportarWebApi),typeof(ViExportarWebApi) },
             { typeof(FicVmImportarWebApi),typeof(ViImportarWebApi) },*/
         };

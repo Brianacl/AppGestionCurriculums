@@ -13,8 +13,8 @@
                 <Label Text="Nivel de dominio" />
                 <Entry Text="{Binding NuevoHerramienta.Dominio}"/>
 
-                <Label Text="¿Es su herramienta nativo?" />
-                <Entry Text="{Binding NuevoHerramienta.Nativo}"/>
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevoHerramienta.Detalle}"/>
 
                 <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->

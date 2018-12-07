@@ -13,8 +13,8 @@
                 <Label Text="Nivel de dominio" />
                 <Entry Text="{Binding NuevoConocimiento.Dominio}"/>
 
-                <Label Text="¿Es su conocimiento nativo?" />
-                <Entry Text="{Binding NuevoConocimiento.Nativo}"/>
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevoConocimiento.Detalle}"/>
 
                 <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->

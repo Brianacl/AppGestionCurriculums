@@ -37,8 +37,8 @@
                 <Label Text="Nivel de dominio" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosHerramienta.Dominio}" Grid.Row="2" Grid.Column="1"/>
 
-                <Label Text="Herramienta nativo" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
-                <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosHerramienta.Nativo}" Grid.Row="3" Grid.Column="1"/>
+                <Label Text="Detalle" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosHerramienta.Detalle}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="Fecha registro" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosHerramienta.FechaReg}" Grid.Row="4" Grid.Column="1"/>

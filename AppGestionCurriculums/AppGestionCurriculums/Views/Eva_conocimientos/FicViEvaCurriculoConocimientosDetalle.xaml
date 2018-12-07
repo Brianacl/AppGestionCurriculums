@@ -37,8 +37,8 @@
                 <Label Text="Nivel de dominio" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Dominio}" Grid.Row="2" Grid.Column="1"/>
 
-                <Label Text="Conocimiento nativo" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
-                <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Nativo}" Grid.Row="3" Grid.Column="1"/>
+                <Label Text="Detalle" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Detalle}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="Fecha registro" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.FechaReg}" Grid.Row="4" Grid.Column="1"/>
