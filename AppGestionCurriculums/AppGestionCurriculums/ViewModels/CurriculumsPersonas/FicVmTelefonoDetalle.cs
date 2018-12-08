@@ -12,23 +12,23 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
     public class FicVmTelefonoDetalle : FicVmBase
     {
-        private Rh_cat_telefonos Fic_rh_cat_telefonos;
+        private Rh_cat_telefonos Fic_rh_cat_telefono;
 
         private ICommand FicCancelCommand;
 
-        private IFicSrvNavigation IFicLoSrvNavigation;      
+        private IFicSrvNavigation IFicLoSrvNavigation;
 
         public FicVmTelefonoDetalle(IFicSrvNavigation IFicSrvNavigation)
         {
             IFicLoSrvNavigation = IFicSrvNavigation;
-        }    
+        }
 
-        public Rh_cat_telefonos DatosPersona
+        public Rh_cat_telefonos DatosTelefono
         {
-            get { return Fic_rh_cat_telefonos; }
+            get { return Fic_rh_cat_telefono; }
             set
             {
-                Fic_rh_cat_telefonos = value;
+                Fic_rh_cat_telefono = value;
                 RaisePropertyChanged();
             }
         }
@@ -37,17 +37,17 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         {
             get { return FicCancelCommand = FicCancelCommand ?? new FicVmDelegateCommand(CancelCommandExecute); }
         }
-  
+
 
         public async override void OnAppearing(object navigationContext)
         {
             try
             {
-                var FicTelefonoSeleccionado = navigationContext as Rh_cat_telefonos;
+                var FicTelefonoPersonaSeleccionado = navigationContext as Rh_cat_telefonos ;
 
-                if (FicTelefonoSeleccionado != null)
+                if (FicTelefonoPersonaSeleccionado != null)
                 {
-                    DatosPersona = FicTelefonoSeleccionado;
+                    DatosTelefono = FicTelefonoPersonaSeleccionado;
                 }
 
                 base.OnAppearing(navigationContext);

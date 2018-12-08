@@ -2,11 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViPersonaDomicilioDetalle">
-  <ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout
         VerticalOptions="StartAndExpand"
         Padding="20">
+                <StackLayout>
+                    <Label Text="Detalle Domicilio." Style="{StaticResource LabelStyle}" />
+                </StackLayout>
                 <Grid Padding="16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -30,49 +42,49 @@
                 </Grid.ColumnDefinitions>
                 <!--ID-->
                 <Label Text="Id" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.IdDomicilio}" Grid.Row="0" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.IdDomicilio}" Grid.Row="0" Grid.Column="1"/>
 
                 <Label Text="Domicilio" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Domicilio}" Grid.Row="1" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Domicilio}" Grid.Row="1" Grid.Column="1"/>
 
                 <Label Text="Entre Calle 1" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.EntreCalle1}" Grid.Row="2" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.EntreCalle1}" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Text="Entre Calle 2" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.EntreCalle2}" Grid.Row="3" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.EntreCalle2}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="Codigo Postal" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.CodigoPostal}" Grid.Row="4" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.CodigoPostal}" Grid.Row="4" Grid.Column="1"/>
 
                 <Label Text="Colonia" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Colonia}" Grid.Row="5" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Colonia}" Grid.Row="5" Grid.Column="1"/>
 
                 <Label Text="Municipio" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Municipio}" Grid.Row="6" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Municipio}" Grid.Row="6" Grid.Column="1"/>
 
                 <Label Text="Estado" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Estado}" Grid.Row="7" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Estado}" Grid.Row="7" Grid.Column="1"/>
 
                 <Label Text="Pais" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Pais}" Grid.Row="8" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Pais}" Grid.Row="8" Grid.Column="1"/>
 
                     <Label Text="Fecha de registro" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
-                    <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaReg}" Grid.Row="9" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.FechaReg}" Grid.Row="9" Grid.Column="1"/>
 
                 <Label Text="Fecha de modificación" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaUltMod}" Grid.Row="10" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.FechaUltMod}" Grid.Row="10" Grid.Column="1"/>
 
                 <Label Text="Usuario registro" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioReg}" Grid.Row="11" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.UsuarioReg}" Grid.Row="11" Grid.Column="1"/>
 
                 <Label Text="Usuario modificó" Grid.Row="12" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioMod}" Grid.Row="12" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.UsuarioMod}" Grid.Row="12" Grid.Column="1"/>
 
                 <Label Text="Activo" Grid.Row="13" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Activo}" Grid.Row="13" Grid.Column="1"/>
+                    <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Activo}" Grid.Row="13" Grid.Column="1"/>
 
                 <Label Text="Borrado" Grid.Row="14" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Borrado}" Grid.Row="14" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosDomicilio.Borrado}" Grid.Row="14" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

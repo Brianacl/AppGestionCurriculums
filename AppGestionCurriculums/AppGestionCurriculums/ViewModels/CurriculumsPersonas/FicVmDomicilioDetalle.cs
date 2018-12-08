@@ -22,8 +22,8 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         {
             IFicLoSrvNavigation = IFicSrvNavigation;
         }    
-
-        public Rh_cat_domicilios DatosPersona
+       
+        public Rh_cat_domicilios DatosDomicilio
         {
             get { return Fic_rh_cat_domicilio; }
             set
@@ -47,7 +47,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 
                 if (FicDomicilioPersonaSeleccionado != null)
                 {
-                    DatosPersona = FicDomicilioPersonaSeleccionado;
+                    DatosDomicilio = FicDomicilioPersonaSeleccionado;
                 }
 
                 base.OnAppearing(navigationContext);

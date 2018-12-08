@@ -2,28 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViCurriculumsPersonasDetalle">
-  <ContentPage.Content>
+  
+        <ContentPage.ToolbarItems>
+            <ToolbarItem
+            Name="Ver Domicilio"
+            Command="{Binding FicMetDomicilioPersonasICommand}">
+
+                <ToolbarItem.Icon>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="UWP" Value="Assets/detalle.png" />
+                    </OnPlatform>
+                </ToolbarItem.Icon>
+            </ToolbarItem>
+        <ToolbarItem
+            Name="Ver Telefono"
+                Command="{Binding FicMetTelefonoPersonasICommand}">
+
+            <ToolbarItem.Icon>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="UWP" Value="Assets/detalle.png" />
+                    </OnPlatform>
+                </ToolbarItem.Icon>
+            </ToolbarItem>
+
+            <ToolbarItem
+            Name="Ver Dirección Web"
+               Command="{Binding FicMetDirWebPersonasICommand}">
+
+                <ToolbarItem.Icon>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="UWP" Value="Assets/detalle.png" />
+                    </OnPlatform>
+                </ToolbarItem.Icon>
+            </ToolbarItem>
+       
+        </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout
         VerticalOptions="StartAndExpand"
         Padding="20">
-            <Grid Padding="16">
-                <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    </Grid.ColumnDefinitions>
-                <!--<Button x:Name="btnEliminar" BackgroundColor="#F44336" TextColor="White" Text="Eliminar" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
-             -->
-                <Button Text="Ver Domicilio" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
-                <Button Text="Ver Telefono" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
-                <Button Text="Ver Dirección web" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="3" VerticalOptions="Center"/>
-            </Grid>
-            <Grid Padding="16">
+                <StackLayout>
+                    <Label Text="Detalle Persona." Style="{StaticResource LabelStyle}" />
+                </StackLayout>
+                <Grid Padding="16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -63,28 +94,31 @@
                 <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Sexo}" Grid.Row="5" Grid.Column="1"/>
 
                 <Label Text="CURP" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.CURP}" Grid.Row="6" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.RFC}" Grid.Row="6" Grid.Column="1"/>
 
-                <Label Text="Fecha Nacimiento" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaNac}" Grid.Row="7" Grid.Column="1"/>
+                <Label Text="CURP" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.CURP}" Grid.Row="7" Grid.Column="1"/>
+
+                <Label Text="Fecha Nacimiento" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaNac}" Grid.Row="8" Grid.Column="1"/>
                 
-                <Label Text="Fecha de registro" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaReg}" Grid.Row="8" Grid.Column="1"/>
+                <Label Text="Fecha de registro" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaReg}" Grid.Row="9" Grid.Column="1"/>
 
-                <Label Text="Fecha de modificación" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaUltMod}" Grid.Row="9" Grid.Column="1"/>
+                <Label Text="Fecha de modificación" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.FechaUltMod}" Grid.Row="10" Grid.Column="1"/>
 
-                <Label Text="Usuario registro" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioReg}" Grid.Row="10" Grid.Column="1"/>
+                <Label Text="Usuario registro" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioReg}" Grid.Row="11" Grid.Column="1"/>
 
-                <Label Text="Usuario modificó" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioMod}" Grid.Row="11" Grid.Column="1"/>
+                <Label Text="Usuario modificó" Grid.Row="12" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.UsuarioMod}" Grid.Row="12" Grid.Column="1"/>
 
-                <Label Text="Activo" Grid.Row="12" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Activo}" Grid.Row="12" Grid.Column="1"/>
+                <Label Text="Activo" Grid.Row="13" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Activo}" Grid.Row="13" Grid.Column="1"/>
 
-                <Label Text="Borrado" Grid.Row="13" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Borrado}" Grid.Row="13" Grid.Column="1"/>
+                <Label Text="Borrado" Grid.Row="14" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosPersona.Borrado}" Grid.Row="14" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

@@ -27,7 +27,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
 
         }
 
-        public Eva_curriculo_competencias DatosCompetencia
+        public Eva_curriculo_competencias  DatosCompetencia
         {
             get { return Fic_Eva_curriculo_competencias_item; }
             set

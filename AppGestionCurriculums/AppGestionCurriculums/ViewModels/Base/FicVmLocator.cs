@@ -34,6 +34,7 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmDireccionWebDetalle>();
             FicContainerBuilder.RegisterType<FicVmDomicilioDetalle>();
             FicContainerBuilder.RegisterType<FicVmTelefonoDetalle>();
+            FicContainerBuilder.RegisterType<FicVmCurriculumsPersonasItem>();
             //------------------------- INTERFACE SERVICES OF THE VIEW MODELS -----------------------------------
             //FIC: se procede a registrar la interface con la que se comunican las ViewModels con los Servicios 
             //para poder ejecutar las tareas (metodos o funciones, etc) del servicio en cuestion.
@@ -78,6 +79,11 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmCurriculumsPersonasDetalle FicVmCurriculumsPersonasDetalle
         {
             get { return FicContainer.Resolve<FicVmCurriculumsPersonasDetalle>(); }
+        }
+
+        public FicVmCurriculumsPersonasItem FicVmCurriculumsPersonasItem
+        {
+            get { return FicContainer.Resolve<FicVmCurriculumsPersonasItem>(); }
         }
 
         public FicVmDireccionWebDetalle FicVmDireccionWebDetalle

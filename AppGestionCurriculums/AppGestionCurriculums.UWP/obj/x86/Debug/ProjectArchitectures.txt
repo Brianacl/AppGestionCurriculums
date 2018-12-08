@@ -1,1 +1,1 @@
-C:\Users\salinass\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\AppGestionCurriculums.UWP.csproj;x86
+C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\AppGestionCurriculums.UWP.csproj;x86

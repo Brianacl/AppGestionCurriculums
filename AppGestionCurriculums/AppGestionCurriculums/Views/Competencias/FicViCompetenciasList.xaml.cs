@@ -1,4 +1,5 @@
 ﻿using AppGestionCurriculums.ViewModels.Competencias;
+using AppGestionCurriculums.ViewModels.CurriculumsPersonas;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

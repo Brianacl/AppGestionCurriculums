@@ -9,12 +9,12 @@ using Xamarin.Forms;
 
 namespace AppGestionCurriculums.Data
 {
-    public class FicDBContext : DbContext
+    public class DBContext : DbContext
     {
         private readonly string FicDataBasePath;
         public Boolean alreadyDBcreated;
 
-        public FicDBContext(string FicPaDataBasePath)
+        public DBContext(string FicPaDataBasePath)
         {
             alreadyDBcreated = true;
             FicDataBasePath = FicPaDataBasePath;
@@ -50,7 +50,7 @@ namespace AppGestionCurriculums.Data
             }
         }//CONFIGURACION DE LA CONEXION
         
-        public void AddDataPersonas(string idDom,string idTel,string idDir,string numCtrl,string nom,string apPat,string apMat,string rfc,string curp,string fnac,string sex,string freg,string fmod,string ureg,string umod,string act,string bor)
+        public void AddDataPersonas(int idDom, int idTel, int idDir,string numCtrl,string nom,string apPat,string apMat,string rfc,string curp,string fnac,string sex,string freg,string fmod,string ureg,string umod,string act,string bor)
         {
             int numPersonas=0;
             using (SqliteConnection db =
@@ -90,8 +90,8 @@ namespace AppGestionCurriculums.Data
             }
 
         }
-
-        public void AddDataCurriculo(string idPer, string freg, string fmod, string ureg, string umod, string act, string bor)
+        
+        public void AddDataCurriculo(int idPer, string freg, string fmod, string ureg, string umod, string act, string bor)
         {
             int numPersonas = 0;
             using (SqliteConnection db =
@@ -122,7 +122,7 @@ namespace AppGestionCurriculums.Data
 
         }
 
-        public void AddDataDomicilio(string idDom, string dom, string eCalle1, string eCalle2, string cp, string pais, string estado, string mun, string colonia, string freg, string fmod, string ureg, string umod, string act, string bor)
+        public void AddDataDomicilio(int idDom, string dom, string eCalle1, string eCalle2, string cp, string pais, string estado, string mun, string colonia, string freg, string fmod, string ureg, string umod, string act, string bor)
         {
             int numPersonas = 0;
             using (SqliteConnection db =
@@ -161,7 +161,7 @@ namespace AppGestionCurriculums.Data
 
         }
 
-        public void AddDataTelefono(string idTel, string numTel, string freg, string fmod, string ureg, string umod, string act, string bor)
+        public void AddDataTelefono(int idTel, string numTel, string freg, string fmod, string ureg, string umod, string act, string bor)
         {
             int numPersonas = 0;
             using (SqliteConnection db =
@@ -193,7 +193,7 @@ namespace AppGestionCurriculums.Data
 
         }
 
-        public void AddDataDirWeb(string idDirWeb, string dirWeb, string freg, string fmod, string ureg, string umod, string act, string bor)
+        public void AddDataDirWeb(int idDirWeb, string dirWeb, string freg, string fmod, string ureg, string umod, string act, string bor)
         {
             int numPersonas = 0;
             using (SqliteConnection db =
@@ -241,21 +241,21 @@ namespace AppGestionCurriculums.Data
                 modelBuilder.Entity<Rh_cat_telefonos>().HasKey(pk => new { pk.IdTelefono });
                 modelBuilder.Entity<Rh_cat_domicilios>().HasKey(pk => new { pk.IdDomicilio });
                 modelBuilder.Entity<Rh_cat_dir_web>().HasKey(pk => new { pk.IdDirWeb });
-                /*
-                modelBuilder.Entity<Eva_curriculo_competencias>().HasOne(f => eva_curriculo_persona).WithMany().
+                
+                modelBuilder.Entity<Eva_curriculo_competencias>().HasOne(f => f.eva_curriculo_persona).WithMany().
                     HasForeignKey(f => new { f.IdCurriculo });
 
-                modelBuilder.Entity<Eva_curriculo_persona>().HasOne(f => rh_cat_personas).WithMany().
+                modelBuilder.Entity<Eva_curriculo_persona>().HasOne(f => f.rh_cat_personas).WithMany().
                     HasForeignKey(f => new { f.IdPersona });
 
-                modelBuilder.Entity<Rh_cat_telefonos>().HasOne(f => rh_cat_personas).WithMany().
+                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_telefonos).WithMany().
                      HasForeignKey(f => new { f.IdTelefono});
 
-                modelBuilder.Entity<Rh_cat_domicilios>().HasOne(f => rh_cat_personas).WithMany().
+                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_domicilios).WithMany().
                      HasForeignKey(f => new { f.IdDomicilio });
 
-                modelBuilder.Entity<Rh_cat_dir_web>().HasOne(f => rh_cat_personas).WithMany().
-                     HasForeignKey(f => new { f.IdDirWeb });*/
+                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_dir_web).WithMany().
+                     HasForeignKey(f => new { f.IdDirWeb });
             }
             catch (Exception e)
             {

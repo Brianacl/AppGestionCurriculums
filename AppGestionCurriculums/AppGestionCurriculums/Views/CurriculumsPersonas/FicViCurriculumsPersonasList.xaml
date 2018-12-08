@@ -57,21 +57,30 @@
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Asignar Curriculo"
+            Command="{Binding FicMetAsignarCurriculumsPersonasICommand}">
 
-        <ContentPage.Content>
-            <StackLayout Padding="10">
-            <Grid Padding="16">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                </Grid.ColumnDefinitions>
-                <Button Text="Detalle" Command="{Binding FicMetDetalleCurriculumsPersonasICommand}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
-            </Grid>
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleCurriculumsPersonasICommand}">
+
+        <ToolbarItem.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="UWP" Value="Assets/detalle.png" />
+            </OnPlatform>
+        </ToolbarItem.Icon>
+    </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
 
             <SearchBar
                 HorizontalOptions="FillAndExpand"
@@ -92,10 +101,11 @@
                     <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDCURRICULO" MappingName="IdPersona"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDPERSONA" MappingName="IdPersona"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NUM. CONTROL" MappingName="NumControl"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NOMBRE" MappingName="Nombre"/>
-                        
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO" MappingName="ApPaterno"/>
-                    </syncfusion:SfDataGrid.Columns>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO PAT." MappingName="ApPaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO MAT." MappingName="ApMaterno"/>
+                </syncfusion:SfDataGrid.Columns>
                 </syncfusion:SfDataGrid>
             </StackLayout>
     </ContentPage.Content>

@@ -10,6 +10,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using System.Linq;
 using AppGestionCurriculums.ViewModels.Competencias;
+using AppGestionCurriculums.Interfaces.Competencias;
 
 namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
@@ -21,10 +22,13 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         public Rh_cat_personas _FicDataGrid_SelectedCurriculumsPersonas;
         public Rh_cat_personas _FicDataGrid_SelectedPersonas;
         private ICommand _FicDetalleCurriculumsPersonasCommand;
+        private ICommand _FicAsignarCurriculumsPersonasCommand;
         private ICommand _FicListCompetenciasCommand;
-        private ICommand _FicSelectPersonasCommand;
+        private ICommand _FicDomicilioPersonasCommand;
+        private Int16 IdDetallePersona;
         private IFicSrvNavigation IFicSrvLoNavigation;
         private IFicSrvCurriculumsPersonas IFicSrvLoCurriculumsPersonas;
+        private IFicSrvCompetencias IFicLoSrvCompetencias;
         public FicVmCurriculumsPersonasList(IFicSrvNavigation IFicSrvNavigation, IFicSrvCurriculumsPersonas IFicSrvCurriculumsPersonas)
         {
             IFicSrvLoNavigation = IFicSrvNavigation;
@@ -32,6 +36,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 
             _FicDataGrid_SourceCurriculumsPersonas = new ObservableCollection<Rh_cat_personas>();
             _FicDataGrid_SourcePersonas = new ObservableCollection<Rh_cat_personas>();
+            IdDetallePersona = 0;
         }
         public ObservableCollection<Rh_cat_personas> SourceCurriculumsPersonas
         {
@@ -48,7 +53,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
                 }
             }
         }//Fin SourceCurriculoPersonas
-
+        /*
         public ObservableCollection<Rh_cat_personas> SourcePersonas
         {
             get
@@ -64,10 +69,11 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
                 }
             }
         }//Fin SourceCurriculoPersonas
+        */
         public Rh_cat_personas SelectedCurriculumsPersonas
         {
             get
-            {
+            {              
                 return _FicDataGrid_SelectedCurriculumsPersonas;
             }
             set
@@ -75,10 +81,15 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
                 if (value != null)
                 {
                     _FicDataGrid_SelectedCurriculumsPersonas = value;
+                    IdDetallePersona = _FicDataGrid_SelectedCurriculumsPersonas.IdPersona;
                     RaisePropertyChanged();
                 }
             }//ITEM SELECCIONADO
         }//Fin de SelectedItem
+        /// <summary>
+        /// DOMICILIO PERSONA
+        /// </summary>
+        
 
         public ICommand FicMetDetalleCurriculumsPersonasICommand
         {
@@ -89,25 +100,6 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             }
         }
 
-        public ICommand FicMetIdSeleccionadoPersonasICommand
-        {
-            get
-            {
-                return _FicSelectPersonasCommand = _FicSelectPersonasCommand ??
-                    new FicVmDelegateCommand(FicMetIdSeleccionadoPersonas);
-            }
-        }
-
-        private async void FicMetIdSeleccionadoPersonas()
-        {
-            if (_FicDataGrid_SelectedCurriculumsPersonas != null)
-            {
-                IFicSrvLoNavigation.FicMetNavigateTo<FicVmCompetenciasList>
-                    (_FicDataGrid_SelectedCurriculumsPersonas);
-            }
-            else
-                await new Page().DisplayAlert("ALERTA - seleccion", "Para ir a competencias primero seleccione un registro", "OK");
-        }
         private async void FicMetDetalleCurriculumsPersonas()
         {
             if (_FicDataGrid_SelectedCurriculumsPersonas != null)
@@ -117,6 +109,26 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
             }
             else
                 await new Page().DisplayAlert("ALERTA - detalle", "Para ver los detalles primero seleccione un registro", "OK");
+        }
+
+        public ICommand FicMetAsignarCurriculumsPersonasICommand
+        {
+            get
+            {
+                return _FicAsignarCurriculumsPersonasCommand = _FicAsignarCurriculumsPersonasCommand ??
+                    new FicVmDelegateCommand(FicMetAsignarCurriculumsPersonas);
+            }
+        }
+
+        private async void FicMetAsignarCurriculumsPersonas()
+        {
+            if (_FicDataGrid_SelectedCurriculumsPersonas != null)
+            {
+                IFicSrvLoNavigation.FicMetNavigateTo<FicVmCurriculumsPersonasItem>
+                    (_FicDataGrid_SelectedCurriculumsPersonas);
+            }
+            else
+                await new Page().DisplayAlert("ALERTA - asignar", "Para asignar un curriculo primero seleccione un registro", "OK");
         }
 
         public ICommand FicListCompetenciasICommand
@@ -132,15 +144,17 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         {
             if (_FicDataGrid_SelectedCurriculumsPersonas != null)
             {
+                //Rh_cat_personas persona = new Rh_cat_personas();
+               // persona = _FicDataGrid_SelectedCurriculumsPersonas;
+                //IEnumerable<Eva_curriculo_competencias> dom = IFicLoSrvCompetencias.FicMetGetListCompetencias(_FicDataGrid_SelectedCurriculumsPersonas).Result;
                 IFicSrvLoNavigation.FicMetNavigateTo<FicVmCompetenciasList>
                     (_FicDataGrid_SelectedCurriculumsPersonas);
-                await new Page().DisplayAlert("ALERTA - competencias", "estoy mandando algo "+ _FicDataGrid_SelectedCurriculumsPersonas.IdPersona, "OK");
             }
             else
                 await new Page().DisplayAlert("ALERTA - competencias", "Para ir a competencias primero seleccione un registro", "OK");
         }
        
-        public async override void OnAppearing(object context)
+        public async override void OnAppearing(object navigationContext)
         {
             try
             {

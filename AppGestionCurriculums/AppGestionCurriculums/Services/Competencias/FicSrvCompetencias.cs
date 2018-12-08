@@ -15,17 +15,18 @@ namespace AppGestionCurriculums.Services.Competencias
 {
     public class FicSrvCompetencias : IFicSrvCompetencias
     {
-        private readonly FicDBContext FicLoBDContext;
+        private readonly DBContext FicLoBDContext;
         public short idCurriculo;
         public FicSrvCompetencias()
         {
-            FicLoBDContext = new FicDBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
+            FicLoBDContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
         }//Fin del constructor
-        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(short id)
+        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Rh_cat_personas persona)
         {
-            idCurriculo = id;
+            idCurriculo = ObtenerCurriculo(persona);
             return await (from Eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias
-                          where Eva_curriculo_competencias.IdCurriculo == id
+                          join Eva_curriculo_persona in FicLoBDContext.eva_curriculo_persona on Eva_curriculo_competencias.IdCurriculo equals Eva_curriculo_persona.IdCurriculo
+                          where Eva_curriculo_persona.IdPersona == persona.IdPersona
                           select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
         }
         public async Task FicMetInsertCompetencias(Eva_curriculo_competencias FicInsertCompetencias)
@@ -39,13 +40,14 @@ namespace AppGestionCurriculums.Services.Competencias
                         ).FirstOrDefaultAsync();
                 if (FicSourceCompetenciasExist == null)
                 {
+                    
                     FicInsertCompetencias.IdCurriculo = idCurriculo;
                     FicInsertCompetencias.FechaReg = DateTime.Today;
                     FicInsertCompetencias.FechaUltMod = DateTime.Today;
                     FicInsertCompetencias.UsuarioReg = "Beth";
                     FicInsertCompetencias.UsuarioMod = "Beth";
-                    FicInsertCompetencias.Activo = true;
-                    FicInsertCompetencias.Borrado = false;
+                    FicInsertCompetencias.Activo = "S";
+                    FicInsertCompetencias.Borrado = "N";
                     await FicLoBDContext.AddAsync(FicInsertCompetencias);
                 }
                 else
@@ -91,6 +93,25 @@ namespace AppGestionCurriculums.Services.Competencias
             return await (from competencias in FicLoBDContext.eva_curriculo_competencias
                           where competencias.IdCompetencia == existCompetencias.IdCompetencia
                           select competencias).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
+        }//BUSCA SI EXISTE UN REGISTRO
+
+        private short ObtenerCurriculo(Rh_cat_personas obtId)
+        {
+             var s= (from competencias in FicLoBDContext.eva_curriculo_persona
+                          where competencias.IdPersona == obtId.IdPersona
+                          select competencias).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
+            if (s == true)
+            {
+                var c = (from competencias in FicLoBDContext.eva_curriculo_persona
+                         where competencias.IdPersona == obtId.IdPersona
+                         select competencias).AsNoTracking().ToString();
+                return Int16.Parse(c);
+            }
+            else
+            {
+                return 0;
+            }
+            
         }//BUSCA SI EXISTE UN REGISTRO
 
     }
