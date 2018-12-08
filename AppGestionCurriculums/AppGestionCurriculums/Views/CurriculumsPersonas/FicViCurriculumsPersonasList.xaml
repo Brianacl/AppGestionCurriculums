@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.CurriculumsPersonas.FicViCurriculumsPersonasList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Competencias"
+            Command="{Binding FicListCompetenciasICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Grado de estudios">
+            <!--Command="{Binding FicListCompetenciasICommand}"-->
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Idiomas">
+            <!--Command="{Binding FicListCompetenciasICommand}"-->
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Experiencia laboral">
+            <!--Command="{Binding FicListCompetenciasICommand}"-->
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Referencias">
+            <!--Command="{Binding FicListCompetenciasICommand}"-->
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Asignar Curriculo"
+            Command="{Binding FicMetAsignarCurriculumsPersonasICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleCurriculumsPersonasICommand}">
+
+        <ToolbarItem.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="UWP" Value="Assets/detalle.png" />
+            </OnPlatform>
+        </ToolbarItem.Icon>
+    </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar información"
+                PlaceholderColor="Red"
+                x:Name="SearchBar">
+                </SearchBar>
+
+                <syncfusion:SfDataGrid
+                
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SourceCurriculumsPersonas,
+                                UpdateSourceEventName=RaisePropertyChanged}"
+                SelectedItem="{Binding SelectedCurriculumsPersonas}"
+                SelectionMode="Single">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDCURRICULO" MappingName="IdPersona"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IDPERSONA" MappingName="IdPersona"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NUM. CONTROL" MappingName="NumControl"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NOMBRE" MappingName="Nombre"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO PAT." MappingName="ApPaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO MAT." MappingName="ApMaterno"/>
+                </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
