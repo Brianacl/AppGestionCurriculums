@@ -20,8 +20,15 @@ namespace AppGestionCurriculums.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+<<<<<<< HEAD
                 new HomeMenuItem {Id = MenuItemType.CurriculumsPersonas, Title="CurriculumsPersonas" }
                 //new HomeMenuItem {Id = MenuItemType.Competencias, Title="Competencias" }
+=======
+                new HomeMenuItem {Id = MenuItemType.ListaIdiomas, Title= "Lista idiomas"},
+                new HomeMenuItem {Id = MenuItemType.GradoEstudios, Title="Lista grado de estudios"},
+                new HomeMenuItem {Id = MenuItemType.Funciones, Title="Lista de funciones"},
+                new HomeMenuItem {Id = MenuItemType.Proyectos, Title="Lista proyectos"}
+>>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
             };
 
             ListViewMenu.ItemsSource = menuItems;

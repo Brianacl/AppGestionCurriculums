@@ -11,10 +11,13 @@ namespace AppGestionCurriculums
     {
         private static FicVmLocator FicLocalVmLocator;
 
-        public static FicVmLocator FicVmLocator
+        private static FicViewModelLocator FicLocalVmLocator;
+
+        public static FicViewModelLocator FicVmLocator
         {
-            get { return FicLocalVmLocator = FicLocalVmLocator ?? new FicVmLocator(); }
+            get { return FicLocalVmLocator = FicLocalVmLocator ?? new FicViewModelLocator(); }
         }
+
         public App()
         {
             InitializeComponent();
