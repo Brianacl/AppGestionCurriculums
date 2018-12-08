@@ -224,38 +224,79 @@ namespace AppGestionCurriculums.Data
             }
 
         }
+        //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
         public DbSet<Eva_curriculo_persona> eva_curriculo_persona { get; set; }
         public DbSet<Rh_cat_personas> rh_cat_personas { get; set; }
         public DbSet<Rh_cat_domicilios> rh_cat_domicilios { get; set; }
         public DbSet<Rh_cat_telefonos> rh_cat_telefonos { get; set; }
         public DbSet<Rh_cat_dir_web> rh_cat_dir_web { get; set; }
+        //Brian
+        public DbSet<Eva_carrera_grado_estudios> eva_grado_estudios { get; set; }
+        public DbSet<Eva_curriculo_idiomas> eva_curriculo_idiomas { get; set; }
+        public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
+        public DbSet<Eva_proyectos> eva_proyectos { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
             try
             {
-                modelBuilder.Entity<Eva_curriculo_competencias>().HasKey(pk => new { pk.IdCompetencia });
-                modelBuilder.Entity<Eva_curriculo_persona>().HasKey(pk => new { pk.IdCurriculo });
-                modelBuilder.Entity<Rh_cat_personas>().HasKey(pk => new { pk.IdPersona });
-                modelBuilder.Entity<Rh_cat_telefonos>().HasKey(pk => new { pk.IdTelefono });
-                modelBuilder.Entity<Rh_cat_domicilios>().HasKey(pk => new { pk.IdDomicilio });
-                modelBuilder.Entity<Rh_cat_dir_web>().HasKey(pk => new { pk.IdDirWeb });
-                
-                modelBuilder.Entity<Eva_curriculo_competencias>().HasOne(f => f.eva_curriculo_persona).WithMany().
-                    HasForeignKey(f => new { f.IdCurriculo });
+                //Primary keys
+                //Betsy
+                modelBuilder.Entity<Eva_curriculo_competencias>()
+                    .HasKey(pk => new { pk.IdCompetencia });
 
-                modelBuilder.Entity<Eva_curriculo_persona>().HasOne(f => f.rh_cat_personas).WithMany().
-                    HasForeignKey(f => new { f.IdPersona });
+                modelBuilder.Entity<Eva_curriculo_persona>()
+                    .HasKey(pk => new { pk.IdCurriculo });
 
-                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_telefonos).WithMany().
-                     HasForeignKey(f => new { f.IdTelefono});
+                modelBuilder.Entity<Rh_cat_personas>()
+                    .HasKey(pk => new { pk.IdPersona });
 
-                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_domicilios).WithMany().
-                     HasForeignKey(f => new { f.IdDomicilio });
+                modelBuilder.Entity<Rh_cat_telefonos>()
+                    .HasKey(pk => new { pk.IdTelefono });
 
-                modelBuilder.Entity<Rh_cat_personas>().HasOne(f => f.rh_cat_dir_web).WithMany().
-                     HasForeignKey(f => new { f.IdDirWeb });
+                modelBuilder.Entity<Rh_cat_domicilios>()
+                    .HasKey(pk => new { pk.IdDomicilio });
+
+                modelBuilder.Entity<Rh_cat_dir_web>()
+                    .HasKey(pk => new { pk.IdDirWeb });
+
+                //Brian
+                modelBuilder.Entity<Eva_carrera_grado_estudios>()
+                      .HasKey(c => new { c.IdGradoEstudio });
+
+                modelBuilder.Entity<Eva_curriculo_idiomas>()
+                    .HasKey(c => new { c.IdIdioma });
+
+                modelBuilder.Entity<Eva_actividades_funciones>()
+                    .HasKey(c => new { c.IdFuncionAct });
+
+                modelBuilder.Entity<Eva_proyectos>()
+                    .HasKey(c => new { c.IdProyecto });
+
+
+                //Foreign keys
+                //Betsy
+                modelBuilder.Entity<Eva_curriculo_competencias>()
+                    .HasOne(f => f.eva_curriculo_persona)
+                    .WithMany()
+                    .HasForeignKey(f => new { f.IdCurriculo });
+
+                modelBuilder.Entity<Eva_curriculo_persona>()
+                    .HasOne(f => f.rh_cat_personas).WithMany()
+                    .HasForeignKey(f => new { f.IdPersona });
+
+                modelBuilder.Entity<Rh_cat_personas>()
+                    .HasOne(f => f.rh_cat_telefonos).WithMany()
+                    .HasForeignKey(f => new { f.IdTelefono});
+
+                modelBuilder.Entity<Rh_cat_personas>()
+                    .HasOne(f => f.rh_cat_domicilios).WithMany()
+                    .HasForeignKey(f => new { f.IdDomicilio });
+
+                modelBuilder.Entity<Rh_cat_personas>()
+                    .HasOne(f => f.rh_cat_dir_web).WithMany()
+                    .HasForeignKey(f => new { f.IdDirWeb });
             }
             catch (Exception e)
             {

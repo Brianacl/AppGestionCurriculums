@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
-    public class FicVmDireccionWebDetalle : FicVmBase
+    public class FicVmDireccionWebDetalle : FicViewModelBase
     {
         private Rh_cat_dir_web Fic_rh_cat_dir_web;
 

@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
-    public class FicVmCurriculumsPersonasDetalle : FicVmBase
+    public class FicVmCurriculumsPersonasDetalle : FicViewModelBase
     {
         private Rh_cat_personas Fic_rh_cat_personas;
 

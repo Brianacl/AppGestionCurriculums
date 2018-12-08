@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
@@ -14,7 +14,7 @@ using AppGestionCurriculums.Interfaces.Competencias;
 
 namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
-    public class FicVmCurriculumsPersonasList : FicVmBase
+    public class FicVmCurriculumsPersonasList : FicViewModelBase
     {
         
         public ObservableCollection<Rh_cat_personas> _FicDataGrid_SourceCurriculumsPersonas;
@@ -24,11 +24,11 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
         private ICommand _FicDetalleCurriculumsPersonasCommand;
         private ICommand _FicAsignarCurriculumsPersonasCommand;
         private ICommand _FicListCompetenciasCommand;
-        private ICommand _FicDomicilioPersonasCommand;
+        
         private Int16 IdDetallePersona;
         private IFicSrvNavigation IFicSrvLoNavigation;
         private IFicSrvCurriculumsPersonas IFicSrvLoCurriculumsPersonas;
-        private IFicSrvCompetencias IFicLoSrvCompetencias;
+        
         public FicVmCurriculumsPersonasList(IFicSrvNavigation IFicSrvNavigation, IFicSrvCurriculumsPersonas IFicSrvCurriculumsPersonas)
         {
             IFicSrvLoNavigation = IFicSrvNavigation;
@@ -53,23 +53,7 @@ namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
                 }
             }
         }//Fin SourceCurriculoPersonas
-        /*
-        public ObservableCollection<Rh_cat_personas> SourcePersonas
-        {
-            get
-            {
-                return _FicDataGrid_SourcePersonas;
-            }
-            set
-            {
-                if (_FicDataGrid_SourcePersonas != value)
-                {
-                    _FicDataGrid_SourcePersonas = value;
-                    RaisePropertyChanged("SourcePersonas");
-                }
-            }
-        }//Fin SourceCurriculoPersonas
-        */
+       
         public Rh_cat_personas SelectedCurriculumsPersonas
         {
             get

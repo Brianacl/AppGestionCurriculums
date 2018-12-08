@@ -1,5 +1,4 @@
 ﻿using AppGestionCurriculums.Interfaces.Navegacion;
-using AppGestionCurriculums.ViewModels;
 using AppGestionCurriculums.ViewModels.Proyectos;
 using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
 using AppGestionCurriculums.ViewModels.Funciones;
@@ -12,6 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using AppGestionCurriculums.ViewModels.Competencias;
+using AppGestionCurriculums.ViewModels.CurriculumsPersonas;
+using AppGestionCurriculums.Views.Competencias;
+using AppGestionCurriculums.Views.CurriculumsPersonas;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -32,6 +35,16 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmProyectosList),typeof(FicViProyectosList) },
             { typeof(FicVmProyectosItem),typeof(FicViProyectosItem) },
             { typeof(FicVmProyectosDetalle),typeof(FicViProyectosDetalle) },
+            //Betsy
+            { typeof(FicVmCompetenciasList),typeof(FicViCompetenciasList) },
+            { typeof(FicVmCompetenciasItem), typeof(FicViCompetenciasItem) },
+            { typeof(FicVmCompetenciasDetalle),typeof(FicViCompetenciasDetalle) },
+            { typeof(FicVmCurriculumsPersonasList),typeof(FicViCurriculumsPersonasList) },
+            { typeof(FicVmCurriculumsPersonasDetalle),typeof(FicViCurriculumsPersonasDetalle) },
+            { typeof(FicVmDireccionWebDetalle),typeof(FicViPersonaDirWebDetalle) },
+            { typeof(FicVmDomicilioDetalle),typeof(FicViPersonaDomicilioDetalle) },
+            { typeof(FicVmTelefonoDetalle),typeof(FicViPersonaTelefonoDetalle) },
+            { typeof(FicVmCurriculumsPersonasItem),typeof(FicViCurriculumsPersonasItem) }
             /*{ typeof(FicVmExportarWebApi),typeof(ViExportarWebApi) },
             { typeof(FicVmImportarWebApi),typeof(ViImportarWebApi) },*/
         };

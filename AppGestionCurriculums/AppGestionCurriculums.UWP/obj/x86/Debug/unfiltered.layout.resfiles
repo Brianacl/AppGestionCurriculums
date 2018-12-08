@@ -1,6 +1,13 @@
 WinMetadata\Windows.winmd
 e_sqlite3.dll
 add.png
+Assets\competencias.png
+Assets\detalle.png
+Assets\editar.png
+Assets\grado_estudio.png
+Assets\ic_add.png
+Assets\ic_delete.png
+Assets\idiomas.png
 Assets\LargeTile.scale-100.png
 Assets\LargeTile.scale-200.png
 Assets\LargeTile.scale-400.png

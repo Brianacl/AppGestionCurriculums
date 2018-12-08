@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.Interfaces.Competencias;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
@@ -12,7 +12,7 @@ using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
 
 namespace AppGestionCurriculums.ViewModels.CurriculumsPersonas
 {
-    public class FicVmCurriculumsPersonasItem : FicVmBase
+    public class FicVmCurriculumsPersonasItem : FicViewModelBase
     {
         private Rh_cat_personas Fic_Eva_curriculo_persona_item;
 

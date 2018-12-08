@@ -10,7 +10,7 @@
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/detalle.png" />
+                    <On Platform="UWP" Value="Assets/competencias.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
@@ -20,7 +20,7 @@
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/detalle.png" />
+                    <On Platform="UWP" Value="Assets/grado_estudio.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
@@ -31,7 +31,7 @@
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/detalle.png" />
+                    <On Platform="UWP" Value="Assets/idiomas.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

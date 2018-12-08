@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.Interfaces.Competencias;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace AppGestionCurriculums.ViewModels.Competencias
 {
-    public class FicVmCompetenciasItem : FicVmBase
+    public class FicVmCompetenciasItem : FicViewModelBase
     {
         private Eva_curriculo_competencias Fic_Eva_curriculo_competencias_item;
 

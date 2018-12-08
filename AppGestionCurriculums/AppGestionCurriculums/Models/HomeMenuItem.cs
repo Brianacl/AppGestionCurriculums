@@ -9,7 +9,11 @@ namespace AppGestionCurriculums.Models
         Browse,
         About,
         CurriculumsPersonas,
-        Competencias
+        Competencias,
+        ListaIdiomas,
+        GradoEstudios,
+        Funciones,
+        Proyectos
     }
     public class HomeMenuItem
     {

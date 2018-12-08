@@ -9,8 +9,6 @@ namespace AppGestionCurriculums
 {
     public partial class App : Application
     {
-        private static FicVmLocator FicLocalVmLocator;
-
         private static FicViewModelLocator FicLocalVmLocator;
 
         public static FicViewModelLocator FicVmLocator

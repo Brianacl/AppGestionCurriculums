@@ -1,6 +1,6 @@
 ﻿using AppGestionCurriculums.Interfaces.Competencias;
 using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
-using AppGestionCurriculums.Interfaces.Navigation;
+using AppGestionCurriculums.Interfaces.Navegacion;
 using AppGestionCurriculums.Models;
 using AppGestionCurriculums.Services.CurriculumsPersonas;
 using AppGestionCurriculums.ViewModels.Base;
@@ -16,7 +16,7 @@ using Xamarin.Forms;
 
 namespace AppGestionCurriculums.ViewModels.Competencias
 {
-    public class FicVmCompetenciasList: FicVmBase
+    public class FicVmCompetenciasList: FicViewModelBase
     {
 
         public ObservableCollection<Eva_curriculo_competencias> _FicDataGrid_SourceCompetencias;

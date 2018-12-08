@@ -33,10 +33,9 @@ namespace AppGestionCurriculums.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                     
+                    case (int)MenuItemType.CurriculumsPersonas:
+                        MenuPages.Add(id, new NavigationPage(new FicViCurriculumsPersonasList(null)));
                         break;
                     case (int)MenuItemType.ListaIdiomas:
                         MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoIdiomasList(null)));

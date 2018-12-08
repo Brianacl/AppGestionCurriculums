@@ -231,8 +231,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "Microsoft.NETCore.Platforms/1.0.1": {
         "type": "package",
         "compile": {
@@ -300,7 +298,6 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "compile": {
@@ -356,36 +353,6 @@
           "lib/MonoAndroid/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-<<<<<<< HEAD
-      "Syncfusion.Licensing/16.3.0.36": {
-        "type": "package",
-        "compile": {
-          "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
-        }
-      },
-      "Syncfusion.Xamarin.Core/16.3.0.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Licensing": "16.3.0.36"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll": {},
-          "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll": {},
-          "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
-        }
-      },
-      "Syncfusion.Xamarin.GridCommon/16.3.0.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Xamarin.Core": "16.3.0.36"
-        },
-=======
       "Syncfusion.Xamarin.Core/15.4.0.20": {
         "type": "package",
         "compile": {
@@ -397,7 +364,6 @@
       },
       "Syncfusion.Xamarin.GridCommon/15.4.0.20": {
         "type": "package",
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "compile": {
           "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
         },
@@ -405,15 +371,6 @@
           "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-<<<<<<< HEAD
-      "Syncfusion.Xamarin.SfDataGrid/16.3.0.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Xamarin.Core": "16.3.0.36",
-          "Syncfusion.Xamarin.GridCommon": "16.3.0.36",
-          "Syncfusion.Xamarin.SfNumericTextBox": "16.3.0.36",
-          "Xamarin.Forms": "2.5.1.527436"
-=======
       "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
         "type": "package",
         "dependencies": {
@@ -421,7 +378,6 @@
           "Syncfusion.Xamarin.GridCommon": "15.4.0.20",
           "Syncfusion.Xamarin.SfNumericTextBox": "15.4.0.20",
           "Xamarin.Forms": "2.4.0.280"
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         },
         "compile": {
           "lib/MonoAndroid10/Syncfusion.Data.Portable.dll": {},
@@ -434,18 +390,10 @@
           "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.dll": {}
         }
       },
-<<<<<<< HEAD
-      "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Xamarin.Core": "16.3.0.36",
-          "Xamarin.Forms": "2.5.1.527436"
-=======
       "Syncfusion.Xamarin.SfNumericTextBox/15.4.0.20": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "2.4.0.280"
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         },
         "compile": {
           "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.Android.dll": {},
@@ -458,12 +406,6 @@
           "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.dll": {}
         }
       },
-<<<<<<< HEAD
-      "System.Buffers/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Buffers.dll": {}
-=======
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -477,14 +419,11 @@
         "type": "package",
         "compile": {
           "ref/netstandard2.0/_._": {}
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         },
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Collections/4.0.11": {
         "type": "package",
         "compile": {
@@ -503,7 +442,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "System.Collections.Immutable/1.5.0": {
         "type": "package",
         "compile": {
@@ -531,8 +469,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Console/4.0.0": {
         "type": "package",
         "compile": {
@@ -551,7 +487,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "System.Diagnostics.DiagnosticSource/4.5.1": {
         "type": "package",
         "compile": {
@@ -561,8 +496,6 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Diagnostics.Tools/4.0.1": {
         "type": "package",
         "compile": {
@@ -599,7 +532,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "System.Interactive.Async/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -612,8 +544,6 @@
           "lib/netstandard1.3/System.Interactive.Async.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.IO/4.1.0": {
         "type": "package",
         "compile": {
@@ -690,7 +620,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "System.Memory/4.5.1": {
         "type": "package",
         "dependencies": {
@@ -704,8 +633,6 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Net.Http/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -800,7 +727,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "System.Runtime.CompilerServices.Unsafe/4.5.1": {
         "type": "package",
         "compile": {
@@ -810,8 +736,6 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "System.Runtime.Extensions/4.1.0": {
         "type": "package",
         "compile": {
@@ -1005,7 +929,6 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
         "type": "package",
         "dependencies": {
@@ -1302,12 +1225,7 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
-<<<<<<< HEAD
-          "Syncfusion.Xamarin.SfDataGrid": "16.3.0.36",
-          "System.Buffers": "4.5.0",
-=======
           "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -1321,18 +1239,10 @@
   },
   "libraries": {
     "Autofac/4.8.1": {
-<<<<<<< HEAD
-      "sha512": "GYRLxd2wCzhvee2u1vs3AbUbF4CHDWfD7BCNjD3Vxb4wxQz3HC8bPm9Sj9uOT0gE8a6PC2fx1zufmhLgxK+cZg==",
-      "type": "package",
-      "path": "autofac/4.8.1",
-      "files": [
-        ".signature.p7s",
-=======
       "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
       "type": "package",
       "path": "autofac/4.8.1",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "autofac.4.8.1.nupkg.sha512",
         "autofac.nuspec",
         "lib/net45/Autofac.dll",
@@ -1559,14 +1469,6 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-<<<<<<< HEAD
-    "Remotion.Linq/2.2.0": {
-      "sha512": "twDAH8dAXXCAf3sRv1Tf94u66eEHvgU75hfn1nn2v4fSWXD50XoDOAk8WpSrbViNuMkB4kN1ElnOGm1c519IHg==",
-      "type": "package",
-      "path": "remotion.linq/2.2.0",
-      "files": [
-        ".signature.p7s",
-=======
     "Microsoft.NETCore.Platforms/1.0.1": {
       "sha512": "2G6OjjJzwBfNOO8myRV/nFrbTw5iA+DEm0N+qUqhrOmaVtn4pC77h38I1jsXGw5VH55+dPfQsqHD0We9sCl9FQ==",
       "type": "package",
@@ -1632,7 +1534,6 @@
       "type": "package",
       "path": "remotion.linq/2.2.0",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -1648,18 +1549,10 @@
       ]
     },
     "SQLitePCLRaw.bundle_green/1.1.11": {
-<<<<<<< HEAD
-      "sha512": "HOD1/Jg9VZtrOyPUCD9reQOXHq4r+fNe24qw5nghuiUcKch+9jePeRpt6MqGGUFhg2KW89KvE/RFlhpbfF8pKA==",
-      "type": "package",
-      "path": "sqlitepclraw.bundle_green/1.1.11",
-      "files": [
-        ".signature.p7s",
-=======
       "sha512": "Hqp8IF/RLjbypkLm+t+1RqAX8EKuWEkj7wkLXplfENQoPnE127cvTmaDvaQKtt7a5QsD/HNjFDr1z5f9q2wdPg==",
       "type": "package",
       "path": "sqlitepclraw.bundle_green/1.1.11",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "build/wp8/SQLitePCLRaw.bundle_green.targets",
         "build/wp80/arm/SQLitePCLRaw.batteries_green.dll",
         "build/wp80/arm/SQLitePCLRaw.batteries_v2.dll",
@@ -1701,18 +1594,10 @@
       ]
     },
     "SQLitePCLRaw.core/1.1.11": {
-<<<<<<< HEAD
-      "sha512": "bWiOso10I1vDuc5rbzT69LQT0+oXfYnoqx8vKJ8zim/CJ4ytSd20QNTE/FE0dvWEgXGnvDp7gGJFu6PeWnhx9g==",
-      "type": "package",
-      "path": "sqlitepclraw.core/1.1.11",
-      "files": [
-        ".signature.p7s",
-=======
       "sha512": "QT17CyQAQIbTCu6pW5+uVA8BXqRzquiDI1tr5Un6c1YZcQydPmGPuYYng9xMs2UHUDYHbTu+JDkp55WR+qo9bQ==",
       "type": "package",
       "path": "sqlitepclraw.core/1.1.11",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/MonoAndroid/SQLitePCLRaw.core.dll",
         "lib/Xamarin.Mac20/SQLitePCLRaw.core.dll",
         "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll",
@@ -1733,109 +1618,25 @@
       ]
     },
     "SQLitePCLRaw.lib.e_sqlite3.android/1.1.11": {
-<<<<<<< HEAD
-      "sha512": "yAil/hQP0D90J+LiAzcdOJ5Ro8FbqI1BDNMKqEEi9hMX16zjF4TVi6AIWugeP75qGjECNhTAShRU+sl0eL5RhA==",
-      "type": "package",
-      "path": "sqlitepclraw.lib.e_sqlite3.android/1.1.11",
-      "files": [
-        ".signature.p7s",
-=======
       "sha512": "+9Ubefxx0w/Nw1RX7OPawZNeOvZB87V7lzohLpBLqHPP7WGREi23YCABKaOe1oqN86teDSAG1yQERL0AKjP/iw==",
       "type": "package",
       "path": "sqlitepclraw.lib.e_sqlite3.android/1.1.11",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/MonoAndroid/SQLitePCLRaw.lib.e_sqlite3.dll",
         "sqlitepclraw.lib.e_sqlite3.android.1.1.11.nupkg.sha512",
         "sqlitepclraw.lib.e_sqlite3.android.nuspec"
       ]
     },
     "SQLitePCLRaw.provider.e_sqlite3.android/1.1.11": {
-<<<<<<< HEAD
-      "sha512": "mydVArXPWt1Cm5c1aemK6UHcmaj+S6Vi7kbh1kuWveYugyQk/jfVLsMZHWu4enKWpDDjgkA1Blcc3CgLgTJJfA==",
-      "type": "package",
-      "path": "sqlitepclraw.provider.e_sqlite3.android/1.1.11",
-      "files": [
-        ".signature.p7s",
-=======
       "sha512": "hSMP5nLbXPEM3gh26uHadE7a74VcydAtbRPadAu0ds7PEzLuaf1ruxnpvQdSdewnZ1Dprmkx29KxJcv1qeXbzw==",
       "type": "package",
       "path": "sqlitepclraw.provider.e_sqlite3.android/1.1.11",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/MonoAndroid/SQLitePCLRaw.provider.e_sqlite3.dll",
         "sqlitepclraw.provider.e_sqlite3.android.1.1.11.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.android.nuspec"
       ]
     },
-<<<<<<< HEAD
-    "Syncfusion.Licensing/16.3.0.36": {
-      "sha512": "0fOgFIP7I19QutnlFjwZjAP5l2SFXE7gHuwg9j2TORPG2o8hNxQsqAFo5+Cz4xFkuk2uindftVh8JDNWzRx5vA==",
-      "type": "package",
-      "path": "syncfusion.licensing/16.3.0.36",
-      "files": [
-        ".signature.p7s",
-        "lib/MonoAndroid10/Syncfusion.Licensing.dll",
-        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
-        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
-        "lib/net20/Syncfusion.Licensing.dll",
-        "lib/net35/Syncfusion.Licensing.dll",
-        "lib/net40/Syncfusion.Licensing.dll",
-        "lib/net45/Syncfusion.Licensing.dll",
-        "lib/net451/Syncfusion.Licensing.dll",
-        "lib/net46/Syncfusion.Licensing.dll",
-        "lib/netstandard1.0/Syncfusion.Licensing.dll",
-        "lib/netstandard1.2/Syncfusion.Licensing.dll",
-        "lib/netstandard1.4/Syncfusion.Licensing.dll",
-        "lib/netstandard2.0/Syncfusion.Licensing.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
-        "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.16.3.0.36.nupkg.sha512",
-        "syncfusion.licensing.nuspec"
-      ]
-    },
-    "Syncfusion.Xamarin.Core/16.3.0.36": {
-      "sha512": "cbhuoZZR0SxpsiKBWS1sNFPGGC63z3b5QDFmdFcrpCjYc/6c8H/RIC+0HJb3pJ2kMLOp7wIX8UjyRmI4uHScCQ==",
-      "type": "package",
-      "path": "syncfusion.xamarin.core/16.3.0.36",
-      "files": [
-        ".signature.p7s",
-        "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll",
-        "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
-        "lib/MonoAndroid10/Syncfusion.Core.XForms.xml",
-        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
-        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
-        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
-        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
-        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
-        "lib/netstandard1.0/Syncfusion.Core.XForms.dll",
-        "lib/netstandard1.0/Syncfusion.Core.XForms.xml",
-        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.xml",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xaml",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xbf",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xaml",
-        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xbf",
-        "lib/uap10.0/Syncfusion.Core.XForms.dll",
-        "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.16.3.0.36.nupkg.sha512",
-        "syncfusion.xamarin.core.nuspec"
-      ]
-    },
-    "Syncfusion.Xamarin.GridCommon/16.3.0.36": {
-      "sha512": "zZNWPAM5kdEWOa9weMEuF9fSGRZlcxAQ9a3/lq4temwPjs2nRO1sq6OrY6I0YANL4xlVsZCFGHo9MVlL8hZHbw==",
-      "type": "package",
-      "path": "syncfusion.xamarin.gridcommon/16.3.0.36",
-      "files": [
-        ".signature.p7s",
-        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
-        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
-        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
-        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
-=======
     "Syncfusion.Xamarin.Core/15.4.0.20": {
       "sha512": "Gg7o8wQqjpkobfSFFRoMavXlTakXPitT8plNlpe9Y8FC60hl2yJJq0k/NZb8VXO1c0D/B84BP4h8OXNXDr7dRQ==",
       "type": "package",
@@ -1862,7 +1663,6 @@
       "files": [
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
         "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
         "lib/netstandard1.0/Syncfusion.GridCommon.Portable.XML",
@@ -1871,18 +1671,6 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
-<<<<<<< HEAD
-        "syncfusion.xamarin.gridcommon.16.3.0.36.nupkg.sha512",
-        "syncfusion.xamarin.gridcommon.nuspec"
-      ]
-    },
-    "Syncfusion.Xamarin.SfDataGrid/16.3.0.36": {
-      "sha512": "9jkiw9bjIlMLpprS7u/Qi0shV5c8CHoErIzCGCQQSjj4tA48v5DPEx1mcGjN9AKJGvV2ydIQoLNl1H8shqofgw==",
-      "type": "package",
-      "path": "syncfusion.xamarin.sfdatagrid/16.3.0.36",
-      "files": [
-        ".signature.p7s",
-=======
         "syncfusion.xamarin.gridcommon.15.4.0.20.nupkg.sha512",
         "syncfusion.xamarin.gridcommon.nuspec"
       ]
@@ -1892,19 +1680,11 @@
       "type": "package",
       "path": "syncfusion.xamarin.sfdatagrid/15.4.0.20",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/MonoAndroid10/Syncfusion.Data.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.Data.Portable.dll",
         "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.dll",
         "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.xml",
-<<<<<<< HEAD
-        "lib/Xamarin.Mac/Syncfusion.Data.Portable.XML",
-        "lib/Xamarin.Mac/Syncfusion.Data.Portable.dll",
-        "lib/Xamarin.Mac/Syncfusion.SfDataGrid.XForms.dll",
-        "lib/Xamarin.Mac/Syncfusion.SfDataGrid.XForms.macOS.dll",
-=======
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/Xamarin.iOS10/Syncfusion.Data.Portable.XML",
         "lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll",
         "lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll",
@@ -1923,18 +1703,6 @@
         "lib/uap10.0/Syncfusion.SfDataGrid.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfDataGrid.XForms.dll",
         "lib/uap10.0/Syncfusion.SfDataGrid.XForms.xml",
-<<<<<<< HEAD
-        "syncfusion.xamarin.sfdatagrid.16.3.0.36.nupkg.sha512",
-        "syncfusion.xamarin.sfdatagrid.nuspec"
-      ]
-    },
-    "Syncfusion.Xamarin.SfNumericTextBox/16.3.0.36": {
-      "sha512": "B517odYyL3O7fUpprFwz94nFD9+7EFbZzX9VeGJtX8aAX8ACgz6B8Q8dXQIpcvC/R3rdDVEDg1ZDjRO8IINb7A==",
-      "type": "package",
-      "path": "syncfusion.xamarin.sfnumerictextbox/16.3.0.36",
-      "files": [
-        ".signature.p7s",
-=======
         "syncfusion.xamarin.sfdatagrid.15.4.0.20.nupkg.sha512",
         "syncfusion.xamarin.sfdatagrid.nuspec"
       ]
@@ -1944,7 +1712,6 @@
       "type": "package",
       "path": "syncfusion.xamarin.sfnumerictextbox/15.4.0.20",
       "files": [
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.dll",
@@ -1982,16 +1749,6 @@
         "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.xr.xml",
         "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xaml",
         "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xbf",
-<<<<<<< HEAD
-        "syncfusion.xamarin.sfnumerictextbox.16.3.0.36.nupkg.sha512",
-        "syncfusion.xamarin.sfnumerictextbox.nuspec"
-      ]
-    },
-    "System.Buffers/4.5.0": {
-      "sha512": "5BgE5qYF/TgftB9FlByFqfhwYVt8UKf748KGovHLkBnW67Z89VdY/8ZXDVXRU78RCtQ/gIJ3TPBLmXtFvhm5xA==",
-      "type": "package",
-      "path": "system.buffers/4.5.0",
-=======
         "syncfusion.xamarin.sfnumerictextbox.15.4.0.20.nupkg.sha512",
         "syncfusion.xamarin.sfnumerictextbox.nuspec"
       ]
@@ -2053,7 +1810,6 @@
       "sha512": "VCJfpWcYG1gT3WwivZWgT0KaqY678MQBvrOI2si6V8GHeQOtuW+wpiv5ss4KyfGG+cFFdPNaI+nw2/kExCtGgQ==",
       "type": "package",
       "path": "system.buffers/4.4.0",
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       "files": [
         ".signature.p7s",
         "LICENSE.TXT",
@@ -2063,30 +1819,17 @@
         "lib/netstandard1.1/System.Buffers.xml",
         "lib/netstandard2.0/System.Buffers.dll",
         "lib/netstandard2.0/System.Buffers.xml",
-<<<<<<< HEAD
-        "lib/uap10.0.16299/_._",
-        "ref/net45/System.Buffers.dll",
-        "ref/net45/System.Buffers.xml",
-=======
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "ref/netcoreapp2.0/_._",
         "ref/netstandard1.1/System.Buffers.dll",
         "ref/netstandard1.1/System.Buffers.xml",
         "ref/netstandard2.0/System.Buffers.dll",
         "ref/netstandard2.0/System.Buffers.xml",
-<<<<<<< HEAD
-        "ref/uap10.0.16299/_._",
-        "system.buffers.4.5.0.nupkg.sha512",
-=======
         "system.buffers.4.4.0.nupkg.sha512",
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
         "system.buffers.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Collections/4.0.11": {
       "sha512": "YUJGz6eFKqS0V//mLt25vFGrrCvOnsXjlvFQs+KimpwNxug9x0Pzy4PlFMU3Q2IzqAa9G2L4LsK3+9vCBK7oTg==",
       "type": "package",
@@ -2219,7 +1962,6 @@
         "system.collections.concurrent.nuspec"
       ]
     },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
     "System.Collections.Immutable/1.5.0": {
       "sha512": "erLSnZLBCA8EKIE2bKtXynjWBWSoMlmCFrOOYN+sPKCeYd3oGj9h8hqRPODtsRlPANkOW7L8tEQlEadHbUXC6A==",
       "type": "package",
@@ -2387,8 +2129,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-=======
     "System.Console/4.0.0": {
       "sha512": "qSKUSOIiYA/a0g5XXdxFcUFmv1hNICBD7QZ0QhGYVipPIhvpiydY8VZqr1thmCXvmn8aipMg64zuanB4eotK9A==",
       "type": "package",
@@ -2491,7 +2231,6 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
     "System.Diagnostics.DiagnosticSource/4.5.1": {
       "sha512": "m86SgxAIi5j0iGzx2y1LrcMcopIYfinfcojyQ9CcNRy3MZvi0dVuDlMj2M7kV6MMGSunqZ+OnQ+rQbxWafFBaw==",
       "type": "package",
@@ -2516,72 +2255,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
-    "System.Interactive.Async/3.1.1": {
-      "sha512": "x9y2omkjEudKbIVuhUzeWw7ZlouEzpk4W98woCEq1lq9gJxERBKRKDTHF5JPEws9E0f4/Uei/2vLxEy1IrfmMg==",
-      "type": "package",
-      "path": "system.interactive.async/3.1.1",
-      "files": [
-        ".signature.p7s",
-        "lib/net45/System.Interactive.Async.dll",
-        "lib/net45/System.Interactive.Async.xml",
-        "lib/net46/System.Interactive.Async.dll",
-        "lib/net46/System.Interactive.Async.xml",
-        "lib/netstandard1.0/System.Interactive.Async.dll",
-        "lib/netstandard1.0/System.Interactive.Async.xml",
-        "lib/netstandard1.3/System.Interactive.Async.dll",
-        "lib/netstandard1.3/System.Interactive.Async.xml",
-        "system.interactive.async.3.1.1.nupkg.sha512",
-        "system.interactive.async.nuspec"
-      ]
-    },
-    "System.Memory/4.5.1": {
-      "sha512": "oonnLQPZAGD21qtNMG4EtVmbYOInk2jV7M+g108B6OHOb67ZOaWnA/K8P5oQ6uK9wxKzB1iEXSChQOi2scKOqA==",
-      "type": "package",
-      "path": "system.memory/4.5.1",
-      "files": [
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "ref/netstandard1.1/System.Memory.dll",
-        "ref/netstandard1.1/System.Memory.xml",
-        "ref/netstandard2.0/System.Memory.dll",
-        "ref/netstandard2.0/System.Memory.xml",
-        "system.memory.4.5.1.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "x/3d5xb+mc9e4I2GOOT+HPRWMZLbYjNN/kYKsb0fyUKcWizn/t1CIrGRLIBhv7H0ptYEt+WTTztdPmwSUMyKig==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.1",
-      "files": [
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-=======
     "System.Diagnostics.Tools/4.0.1": {
       "sha512": "xBfJ8pnd4C17dWaC9FM6aShzbJcRNMChUMD42I6772KGGrqaFdumwhn9OdM68erj1ueNo3xdQ1EwiFjK5k8p0g==",
       "type": "package",
@@ -4880,15 +4553,13 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
->>>>>>> 6c59bf6951881b0a28c62606b3ed3af9a4f959d8
       ]
     },
     "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
-      "sha512": "b7BJQ9Qy34yy0R39H6rujYvQH/w2TFvS22FiVNovPgBC8eS15UXAjNdSSixYvLTnDFj2bpT+b9gk/PjdOpH/MQ==",
+      "sha512": "SaSUvYnc6ntGD/Rvo8O+Ks1yS5hgMFUPfPIEsBC337weZzyIeInKQJHt2myxCEER/5UutmBPlptlbn9Yki21RA==",
       "type": "package",
       "path": "xamarin.android.support.animated.vector.drawable/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
@@ -4898,11 +4569,10 @@
       ]
     },
     "Xamarin.Android.Support.Annotations/25.4.0.2": {
-      "sha512": "eqfj/Rol9f9aDKeCbIURasYBd4FmQbTECTU2fj03zKKnKsDMObvvM4NNVH0BZGwIYAoock1n+qrOZLFgcmNYxw==",
+      "sha512": "4Gkj6OCOJO7jn4drGZxeCCaEVHOjUu0RzsEzZaAZJzrLNqEHqoYrKwIlbsecfEpjbAcyT77Sb8wkZnZNFPdlaA==",
       "type": "package",
       "path": "xamarin.android.support.annotations/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll",
         "xamarin.android.support.annotations.25.4.0.2.nupkg.sha512",
@@ -4910,11 +4580,10 @@
       ]
     },
     "Xamarin.Android.Support.Compat/25.4.0.2": {
-      "sha512": "h5yKamHQGvNujZHBPL7m41797Fxw/THZ3udfBwfLb2Nk1MLaNDLWyaBUB53Z9/QOKQPlg2+taczaaAFbrs8alw==",
+      "sha512": "k+bZ2ArXV7x1U5xomEiCVRoWHAWr6VKhF6Ziqd1DdK4ZZ4W+J0Dsi5oR2QcQHhIodb7j7cfuDcBAEs0KYvOmuQ==",
       "type": "package",
       "path": "xamarin.android.support.compat/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Compat.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll",
@@ -4923,11 +4592,10 @@
       ]
     },
     "Xamarin.Android.Support.Core.UI/25.4.0.2": {
-      "sha512": "JoMfChBpF3fuFyDHaRVsi5ybdeA35bwKNvniUPw0A24jBi7VRrdrW8bPVFYIjHJnbIHKDx6gSuknEsj+2wKr2g==",
+      "sha512": "RKU0D2joAnk9bawGoS1/AGg+2CurKd4uK+ToYyueNN0iJTs3K/ZvnUGck8FGl6Iy8Hfy6NySv51ubMlFSXATuA==",
       "type": "package",
       "path": "xamarin.android.support.core.ui/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Core.UI.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Core.UI.dll",
@@ -4937,11 +4605,10 @@
       ]
     },
     "Xamarin.Android.Support.Core.Utils/25.4.0.2": {
-      "sha512": "u7B09hZWUHbAM8iqgDvzN+xdzdF2A0asdJ+IhDzUcrQQaY1GvaS1/v/m3RC8wFpjfrDaQdHhufx+gH2SPOjelg==",
+      "sha512": "ZF+yk8b1WVRfgmf3MNeUOVdd9Bq3EoIYsXjCW2sAouwbNsnPKyjwL91mYyVcoT5f8Sf0SL866GnBtRi14wQesQ==",
       "type": "package",
       "path": "xamarin.android.support.core.utils/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Core.Utils.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll",
@@ -4950,11 +4617,10 @@
       ]
     },
     "Xamarin.Android.Support.Design/25.4.0.2": {
-      "sha512": "DVnPueHkzB3xp8FVTz7H1BHoOMQnBXt0rzN6Upu2+mT05+TVA9Jn3/OVGMBwYBiA+zCTnE3+CuwseCuNWBneWA==",
+      "sha512": "V7eOsG2XYLFDcH69ZJxywa2PrgFLi2tVpmft3iJ1vHrzeagI33dAVxDuh41r+TW6NVqPwBRQ5DRkAPZjwSAkeA==",
       "type": "package",
       "path": "xamarin.android.support.design/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Design.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Design.dll",
@@ -4964,11 +4630,10 @@
       ]
     },
     "Xamarin.Android.Support.Fragment/25.4.0.2": {
-      "sha512": "TpaqHpjQSB4u/q4kskA91Q69gRWuy3DlkTpoBs+/5lhdDAd306hRgh11hv+WMEY8SV7tg8a2Ne4E1dC1W1PRZg==",
+      "sha512": "XBllQS9m18CvYj8Uzqr78p/9x2rUNOBMh/2PALayzXwhArCvXdE+pybzSi/+4jtcZc8w/06kWhqdXq/phrhBCw==",
       "type": "package",
       "path": "xamarin.android.support.fragment/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Fragment.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Fragment.dll",
@@ -4977,11 +4642,10 @@
       ]
     },
     "Xamarin.Android.Support.Media.Compat/25.4.0.2": {
-      "sha512": "TyS6TQoUVFOi8OvfajR5miAXRxE8hZ2W12campn97VsRgzQnWQEnbETo/Xs584L5uFpHeyYAn6N8i3BvwLkOag==",
+      "sha512": "cnjIL1GoLUifD1TA3QigOn9R3yKoidzahlS5GQHVYhO3AoZ5mknqWiZ7IbU9lVFVlMbVvI65ecSiG5j4T2ufCg==",
       "type": "package",
       "path": "xamarin.android.support.media.compat/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Media.Compat.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Media.Compat.dll",
@@ -4990,11 +4654,10 @@
       ]
     },
     "Xamarin.Android.Support.Transition/25.4.0.2": {
-      "sha512": "5We3J0MXt9hAsh0TuPM38Wp6hMKtKQBeZ8GIF2KJUZ6KAIwy8fe16VRPp/Su38yeWwbBc+MeU45I4KrCet1hHQ==",
+      "sha512": "sZJTv1NRfGwjzVFW8hn4SmJsrK7EXRAvEKu8aR9HKyg8Cw4QfbYLEN4hartq7AmwKJW492ksXzWnIjp0BnKjUQ==",
       "type": "package",
       "path": "xamarin.android.support.transition/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Transition.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.Transition.dll",
@@ -5003,11 +4666,10 @@
       ]
     },
     "Xamarin.Android.Support.v4/25.4.0.2": {
-      "sha512": "ntMpILUudFpNnMrkht5U/VTNcM6i1Fmhqp1gjIvDRIfLiEZkY86+Zhsy3t4wwSZz14xSNXC/Hi7SALL3H/vz6g==",
+      "sha512": "Ui29//+zltXe4Z+OmzdwjLWRGdcmCAm4sklF/As/dEwALxur8vff7/C4rIm/khJNo1ZbeKYnVseaaia/TsZeTA==",
       "type": "package",
       "path": "xamarin.android.support.v4/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v4.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v4.dll",
@@ -5016,11 +4678,10 @@
       ]
     },
     "Xamarin.Android.Support.v7.AppCompat/25.4.0.2": {
-      "sha512": "ZN7SYVZkFQXSNAYdGzm56takZ8Tq7xXEKyA8hjW60V9W9pDyDchhbav97h1mHBKLNmmdrnHlpBmkuhY54rFw9g==",
+      "sha512": "A3P9Hpw8FAGuZISw3hYZE6OjJwjDRbvoEJvsey0ZXmBFI/j4w8YBlwN+SsQse1oEx1yzYAXQwnU/KIYEuHMkQw==",
       "type": "package",
       "path": "xamarin.android.support.v7.appcompat/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.dll",
@@ -5029,11 +4690,10 @@
       ]
     },
     "Xamarin.Android.Support.v7.CardView/25.4.0.2": {
-      "sha512": "yRX2KbClrB0/Jat3BGuYHzA+x4AlMw08QQTEBei43Bmxp5UzkEYQjWWepnJ4GX6a9vCYoNIVF1xeu121kf9j3A==",
+      "sha512": "qVTkEeV+2vMpVOzvC+Ear4ZoYOPP2IWXaRDa7Lrg6ebVgg654nE8ARJfhaRqVczg2CwlgZm++uc9gDgASMV7iA==",
       "type": "package",
       "path": "xamarin.android.support.v7.cardview/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v7.CardView.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v7.CardView.dll",
@@ -5042,11 +4702,10 @@
       ]
     },
     "Xamarin.Android.Support.v7.MediaRouter/25.4.0.2": {
-      "sha512": "9bOkbTF2JzOzKOKpU4kVclPRBvdaD+AQb2jVfVB0XI/McPXVRnzVGBQkJQNGa9UPUZN351go0m8oMPQyvQMmlQ==",
+      "sha512": "HhNwWkbgUXE7g8wRt87AgUeBlurdczIzjeIcK8WMnXdn7iUcjF1uIh+IYjNXiY7DFVuyzew73UHRM0d8RjnM1A==",
       "type": "package",
       "path": "xamarin.android.support.v7.mediarouter/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.dll",
@@ -5055,11 +4714,10 @@
       ]
     },
     "Xamarin.Android.Support.v7.Palette/25.4.0.2": {
-      "sha512": "7AOo+5Id9D+oHeKEVdxK/Dr4Dkmzd+1M/SqIfdyzJkdeqc0dJ8T0CGkeDQ6E7wbprwEpP1nXKyjSiUiLx693lg==",
+      "sha512": "cMvjdILPDccRbAHAeKzqdCtkRHAt/lfDprc/D7oF7fFwgrzxEsv+k1oK9ix3TsQrTStnGmmbBd/Zx8xMoH9qeQ==",
       "type": "package",
       "path": "xamarin.android.support.v7.palette/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v7.Palette.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v7.Palette.dll",
@@ -5068,11 +4726,10 @@
       ]
     },
     "Xamarin.Android.Support.v7.RecyclerView/25.4.0.2": {
-      "sha512": "8Ap8d21NciM8zu1NVdQhLaPRCdfZV+M84ARCbSCwv3evES3NYnDMUn7TitoiCIHpQbWDcelReULLjNSRHaD+Tg==",
+      "sha512": "rBEs2Lk4P967ejGGWf+Wbk4OBuMmvv8XLbpJ2QZ+8YyXecMexzQTFaBj7DeUfqjJTSbAEhQJYltY0g7m6XYA+A==",
       "type": "package",
       "path": "xamarin.android.support.v7.recyclerview/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.targets",
         "lib/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.dll",
@@ -5082,11 +4739,10 @@
       ]
     },
     "Xamarin.Android.Support.Vector.Drawable/25.4.0.2": {
-      "sha512": "Zi7z5eIdHlSTzjkuJ2WF0w6J09wDD7FZ+hT2/eoFNyTzLXubGJLRWnWYJ6gFIE+zu0oMDvRMAJZcMrwuJSpP6Q==",
+      "sha512": "2zAGVOqmuhp/QCvDFmXkqvx+cJ5sMHFsZuwvoPEkx6mDRDo5sfPJaQzfiODquCL6EIs/vwoW+vHOcdFRbl+TLg==",
       "type": "package",
       "path": "xamarin.android.support.vector.drawable/25.4.0.2",
       "files": [
-        ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid70/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
         "build/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.targets",
@@ -5268,20 +4924,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\salinass\\.nuget\\packages\\": {}
+    "C:\\Users\\titab\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\salinass\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\AppGestionCurriculums.Android.csproj",
+      "projectUniqueName": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\AppGestionCurriculums.Android.csproj",
       "projectName": "AppGestionCurriculums.Android",
-      "projectPath": "C:\\Users\\salinass\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\AppGestionCurriculums.Android.csproj",
-      "packagesPath": "C:\\Users\\salinass\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\salinass\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\obj\\",
+      "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\AppGestionCurriculums.Android.csproj",
+      "packagesPath": "C:\\Users\\titab\\.nuget\\packages\\",
+      "outputPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\salinass\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\titab\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5294,8 +4950,8 @@
       "frameworks": {
         "monoandroid71": {
           "projectReferences": {
-            "C:\\Users\\salinass\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
-              "projectPath": "C:\\Users\\salinass\\Documents\\AE\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
+            "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
+              "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
             }
           }
         }
