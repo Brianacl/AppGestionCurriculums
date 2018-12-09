@@ -23,7 +23,7 @@ namespace AppGestionCurriculums.Views.Eva_Experiencias
 		}
         async void metodo_regresar(object sender, EventArgs e)
         {
-
+            await Navigation.PopModalAsync();
         }
 
         protected override void OnAppearing()

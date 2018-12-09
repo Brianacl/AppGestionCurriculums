@@ -15,6 +15,8 @@ namespace AppGestionCurriculums.ViewModels
     {
         public ObservableCollection<Eva_experiencia_laboral> _FicDataGrid_SourceExperienciaLaboral;
         public Eva_experiencia_laboral _FicDataGrid_SelectedExperienciaLaboral;
+        private ICommand _FicDetalleFuncionesCommand;
+        private ICommand _FicDetalleProyectosCommand;
         private ICommand _FicAddExperienciaLaboralCommand;
         private ICommand _FicEditExperienciaLaboralCommand;
         private ICommand _FicDetalleExperienciaLaboralCommand;
@@ -162,6 +164,9 @@ namespace AppGestionCurriculums.ViewModels
                 await new Page().DisplayAlert("alerta", e.Message.ToString(), "ok");
             }
         }
+
+         
+
 
 
 

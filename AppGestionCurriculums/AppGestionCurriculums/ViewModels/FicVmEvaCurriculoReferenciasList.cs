@@ -92,7 +92,7 @@ namespace AppGestionCurriculums.ViewModels
                     new FicVmDelegateCommand(FicMetDetalleReferencia);
             }
         }
-        public ICommand FicMetDeleteReferenciasICommand
+        public ICommand FicMetDeleteReferenciaICommand
         {
             get
             {

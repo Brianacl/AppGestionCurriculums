@@ -6,22 +6,22 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Name="Nuevo"
-            Command="{Binding FicMetAddExperienciaLaboralICommand}">
+            Command="{Binding FicMetAddReferenciaICommand}">
 
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
-            Command="{Binding FicMetEditExperienciaLaboralICommand}">
+            Command="{Binding FicMetEditReferenciaICommand}">
 
         </ToolbarItem>
         <ToolbarItem
             Name="Detalle"
-            Command="{Binding FicMetDetalleExperienciaLaboralICommand}">
+            Command="{Binding FicMetDetalleReferenciaICommand}">
 
         </ToolbarItem>
         <ToolbarItem
             Name="Eliminar"
-            Command="{Binding FicMetDeleteExperienciaLaboralICommand}">
+            Command="{Binding FicMetDeleteReferenciaICommand}">
 
         </ToolbarItem>
     </ContentPage.ToolbarItems>

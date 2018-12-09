@@ -4,6 +4,15 @@
              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="AppGestionCurriculums.Views.Eva_Experiencias.FicViEvaExperienciaLaboralList">
     <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="Funciones"
+                     Command="{Binding FicMetFuncionesICommand}">
+            
+        </ToolbarItem>
+        <ToolbarItem Name="Proyectos"
+                     Command="{Binding FicMetProyectosICommand}">
+
+        </ToolbarItem>
         <ToolbarItem
             Name="Nuevo"
             Command="{Binding FicMetAddExperienciaLaboralICommand}">

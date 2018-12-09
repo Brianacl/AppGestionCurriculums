@@ -22,7 +22,7 @@ namespace AppGestionCurriculums.Views.Eva_Referencias
 
         async void metodo_regresar(object sender, EventArgs e)
         {
-
+            await Navigation.PopModalAsync();
         }
         protected override void OnAppearing()
         {
