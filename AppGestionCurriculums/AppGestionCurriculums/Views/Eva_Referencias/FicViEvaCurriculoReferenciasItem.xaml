@@ -22,6 +22,9 @@
                 <Label Text="Apellido Materno"/>
                 <Entry Text="{Binding NuevoReferencia.ApMaterno}"/>
 
+                <Label Text="Sexo"/>
+                <Entry Text="{Binding NuevoReferencia.Sexo}"/>
+
                 <Label Text="Telefono"/>
                 <Entry Text="{Binding NuevoReferencia.Telefono}"/>
 
@@ -30,6 +33,9 @@
 
                 <Label Text="Domicilio"/>
                 <Entry Text="{Binding NuevoReferencia.Domicilio}"/>
+
+                <Label Text="Entre Calles"/>
+                <Entry Text="{Binding NuevoReferencia.EntreCalles}"/>
 
                 <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>

@@ -42,8 +42,8 @@ namespace AppGestionCurriculums.Services
                     FicInsertReferencia.FechaUltMod = DateTime.Today;
                     FicInsertReferencia.UsuarioReg = "Alegria";
                     FicInsertReferencia.UsuarioMod = "Alegria";
-                    FicInsertReferencia.Activo = true;
-                    FicInsertReferencia.Borrado = false;
+                    FicInsertReferencia.Activo = "S";
+                    FicInsertReferencia.Borrado = "N";
                     await LoDBContext.AddAsync(FicInsertReferencia);
                 }
                 else

@@ -16,14 +16,26 @@
                 <Label Text="DesOrganizacion"/>
                 <Entry Text="{Binding NuevoExperienciaLaboral.DesOrganizacion}"/>
 
+                <Label Text="Detalle"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.Detalle}"/>
+
                 <Label Text="Siglas"/>
                 <Entry Text="{Binding NuevoExperienciaLaboral.Siglas}"/>
+
+                <Label Text="Fecha de Inicio"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.FechaIni}"/>
 
                 <Label Text="Fecha de Registro"/>
                 <Entry Text="{Binding NuevoExperienciaLaboral.FechaReg}"/>
 
+                <Label Text="Fecha de Modificacion"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.FechaUltMod}"/>
+
                 <Label Text="Usuario"/>
                 <Entry Text="{Binding NuevoExperienciaLaboral.UsuarioReg}"/>
+
+                <Label Text="Activo"/>
+                <Entry Text="{Binding NuevoExperienciaLaboral.Activo}"/>
 
                 <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>

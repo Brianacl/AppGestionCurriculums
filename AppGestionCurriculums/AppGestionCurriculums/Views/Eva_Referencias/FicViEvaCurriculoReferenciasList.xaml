@@ -39,7 +39,8 @@
                SelectedItem="{Binding SelectedReferencia}"
                SelectionMode="Single">
                 <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdReferencia"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Id Cur" MappingName="IdCurriculo"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Id Ref" MappingName="IdReferencia"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Nombre" MappingName="Nombre"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Paterno" MappingName="ApPaterno"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Materno" MappingName="ApMaterno"/>

@@ -35,8 +35,8 @@ namespace AppGestionCurriculums.Services
                     //curriculo experiencia desorganizacion siglas fechareg usuarioreg
                     FicMetInsertExperiencia.FechaReg = DateTime.Today;
                     FicMetInsertExperiencia.UsuarioReg = "Alegria";
-                    FicMetInsertExperiencia.Activo = true;
-                    FicMetInsertExperiencia.Borrado = false;
+                    FicMetInsertExperiencia.Activo = "S";
+                    FicMetInsertExperiencia.Borrado = "N";
                     FicMetInsertExperiencia.FechaUltMod = DateTime.Today;
 
                     await LoDbContext.AddAsync(FicMetInsertExperiencia);
