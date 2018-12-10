@@ -7,21 +7,41 @@
         <ToolbarItem
             Name="Nuevo"
             Command="{Binding FicMetAddReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
             Command="{Binding FicMetEditReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
         <ToolbarItem
             Name="Detalle"
             Command="{Binding FicMetDetalleReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
         <ToolbarItem
             Name="Eliminar"
             Command="{Binding FicMetDeleteReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
     </ContentPage.ToolbarItems>

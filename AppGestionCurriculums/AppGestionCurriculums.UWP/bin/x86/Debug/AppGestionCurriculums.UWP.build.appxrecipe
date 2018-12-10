@@ -655,8 +655,32 @@
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\detalle.png">
+      <PackagePath>Assets\detalle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\editar.png">
+      <PackagePath>Assets\editar.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\function.png">
+      <PackagePath>Assets\function.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_add.png">
+      <PackagePath>Assets\ic_add.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_delete.png">
+      <PackagePath>Assets\ic_delete.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\list.png">
+      <PackagePath>Assets\list.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\project.png">
+      <PackagePath>Assets\project.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\touch.png">
+      <PackagePath>Assets\touch.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\whiteboard.png">
+      <PackagePath>Assets\whiteboard.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -777,6 +801,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\cancel.png">
       <PackagePath>cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.xr.xml">
       <PackagePath>AppGestionCurriculums.UWP.xr.xml</PackagePath>

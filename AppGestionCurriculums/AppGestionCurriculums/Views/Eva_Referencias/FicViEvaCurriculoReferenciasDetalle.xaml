@@ -38,22 +38,22 @@
                 <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferecia.IdGenParentezco}" Grid.Row="0" Grid.Column="7"/>
 
                 <Label Text="Nombre" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.Nombre}" Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.Nombre}" Grid.Row="1" Grid.Column="1"/>
 
                 <Label Text="ApPaterno" Grid.Row="1" Grid.Column="2" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.ApPaterno}" Grid.Row="1" Grid.Column="3"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.ApPaterno}" Grid.Row="1" Grid.Column="3"/>
 
                 <Label Text="ApMaterno" Grid.Row="1" Grid.Column="4" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.ApMaterno}" Grid.Row="1" Grid.Column="5"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.ApMaterno}" Grid.Row="1" Grid.Column="5"/>
 
                 <Label Text="Finado" Grid.Row="1" Grid.Column="6" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.Finado}" Grid.Row="1" Grid.Column="7"/>
 
                 <Label Text="Telefono" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.Telefono}" Grid.Row="2" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.Telefono}" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Text="Email" Grid.Row="2" Grid.Column="2" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.Email}" Grid.Row="2" Grid.Column="3"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.Email}" Grid.Row="2" Grid.Column="3"/>
 
                 <Label Text="Domicilio" Grid.Row="2" Grid.Column="4" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="3" Text="{Binding FicDatosReferencia.Domicilio}" Grid.Row="2" Grid.Column="5"/>
@@ -62,17 +62,17 @@
                 <Label Grid.ColumnSpan="3" Text="{Binding FicDatosReferencia.EntreCalles}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="FechaReg" Grid.Row="3" Grid.Column="4" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.FechaReg}" Grid.Row="3" Grid.Column="5"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.FechaReg}" Grid.Row="3" Grid.Column="5"/>
 
                 <Label Text="FechaUltMod" Grid.Row="3" Grid.Column="6" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.FechaUltMod}" Grid.Row="3" Grid.Column="7"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.FechaUltMod}" Grid.Row="3" Grid.Column="7"/>
 
 
                 <Label Text="UsuarioReg" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.UsuarioReg}" Grid.Row="4" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.UsuarioReg}" Grid.Row="4" Grid.Column="1"/>
 
                 <Label Text="UsuarioMod" Grid.Row="4" Grid.Column="2" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.UsuarioMod}" Grid.Row="4" Grid.Column="3"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosReferencia.UsuarioMod}" Grid.Row="4" Grid.Column="3"/>
 
                 <Label Text="Sexo" Grid.Row="4" Grid.Column="4" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="1" Text="{Binding FicDatosReferencia.Sexo}" Grid.Row="4" Grid.Column="5"/>

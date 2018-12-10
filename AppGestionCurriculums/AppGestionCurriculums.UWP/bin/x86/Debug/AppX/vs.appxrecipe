@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-09T11:41:19.498</Modified>
+      <Modified>2018-12-10T03:56:27.591</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-09T11:41:14.117</Modified>
+      <Modified>2018-12-10T03:56:19.382</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\.nuget\packages\autofac\4.9.0-beta1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -873,11 +873,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-12-09T11:40:44.996</Modified>
+      <Modified>2018-12-10T03:55:36.172</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-11-23T07:26:00.460</Modified>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\detalle.png">
+      <PackagePath>Assets\detalle.png</PackagePath>
+      <Modified>2018-12-10T03:41:18.189</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\editar.png">
+      <PackagePath>Assets\editar.png</PackagePath>
+      <Modified>2018-12-10T03:41:29.439</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\function.png">
+      <PackagePath>Assets\function.png</PackagePath>
+      <Modified>2018-12-10T03:54:46.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_add.png">
+      <PackagePath>Assets\ic_add.png</PackagePath>
+      <Modified>2018-12-10T03:41:38.592</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_delete.png">
+      <PackagePath>Assets\ic_delete.png</PackagePath>
+      <Modified>2018-12-10T03:41:08.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\list.png">
+      <PackagePath>Assets\list.png</PackagePath>
+      <Modified>2018-12-10T03:33:12.149</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\project.png">
+      <PackagePath>Assets\project.png</PackagePath>
+      <Modified>2018-12-10T03:33:22.830</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\touch.png">
+      <PackagePath>Assets\touch.png</PackagePath>
+      <Modified>2018-12-10T03:30:26.132</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\whiteboard.png">
+      <PackagePath>Assets\whiteboard.png</PackagePath>
+      <Modified>2018-12-10T03:55:08.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -1030,17 +1062,21 @@
       <PackagePath>cancel.png</PackagePath>
       <Modified>2018-11-23T07:26:01.027</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2018-11-23T07:26:00.460</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.xr.xml">
       <PackagePath>AppGestionCurriculums.UWP.xr.xml</PackagePath>
       <Modified>2018-11-23T07:26:01.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-09T11:41:13.165</Modified>
+      <Modified>2018-12-10T03:56:17.992</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-09T11:41:13.167</Modified>
+      <Modified>2018-12-10T03:56:17.996</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1141,11 +1177,11 @@
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-11-27T22:46:42.689</Modified>
+      <Modified>2018-12-10T03:56:24.737</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-09T11:41:19.480</Modified>
+      <Modified>2018-12-10T03:56:27.571</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

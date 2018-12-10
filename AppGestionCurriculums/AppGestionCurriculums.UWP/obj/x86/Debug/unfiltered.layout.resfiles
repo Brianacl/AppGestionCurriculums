@@ -1,8 +1,15 @@
 WinMetadata\Windows.winmd
 add.png
+Assets\detalle.png
+Assets\editar.png
+Assets\function.png
+Assets\ic_add.png
+Assets\ic_delete.png
 Assets\LargeTile.scale-100.png
 Assets\LargeTile.scale-200.png
 Assets\LargeTile.scale-400.png
+Assets\list.png
+Assets\project.png
 Assets\SmallTile.scale-100.png
 Assets\SmallTile.scale-200.png
 Assets\SmallTile.scale-400.png
@@ -24,6 +31,8 @@ Assets\Square44x44Logo.targetsize-48.png
 Assets\StoreLogo.scale-100.png
 Assets\StoreLogo.scale-200.png
 Assets\StoreLogo.scale-400.png
+Assets\touch.png
+Assets\whiteboard.png
 Assets\Wide310x150Logo.scale-100.png
 Assets\Wide310x150Logo.scale-200.png
 Assets\Wide310x150Logo.scale-400.png

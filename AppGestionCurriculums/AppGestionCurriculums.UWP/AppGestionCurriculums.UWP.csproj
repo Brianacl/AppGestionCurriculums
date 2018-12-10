@@ -105,6 +105,16 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\certificate.png" />
+    <Content Include="Assets\detalle.png" />
+    <Content Include="Assets\editar.png" />
+    <Content Include="Assets\function.png" />
+    <Content Include="Assets\ic_add.png" />
+    <Content Include="Assets\ic_delete.png" />
+    <Content Include="Assets\list.png" />
+    <Content Include="Assets\project.png" />
+    <Content Include="Assets\touch.png" />
+    <Content Include="Assets\whiteboard.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

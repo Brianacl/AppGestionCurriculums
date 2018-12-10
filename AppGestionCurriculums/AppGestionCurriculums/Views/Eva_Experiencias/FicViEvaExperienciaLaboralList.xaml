@@ -7,10 +7,20 @@
 
         <ToolbarItem Name="Funciones"
                      Command="{Binding FicMetFuncionesICommand}">
+                    <ToolbarItem.Icon>
+                        <OnPlatform x:TypeArguments="FileImageSource">
+                            <On Platform="UWP" Value="Assets/function.png" />
+                        </OnPlatform>
+                    </ToolbarItem.Icon>
             
         </ToolbarItem>
         <ToolbarItem Name="Proyectos"
                      Command="{Binding FicMetProyectosICommand}">
+                    <ToolbarItem.Icon>
+                        <OnPlatform x:TypeArguments="FileImageSource">
+                            <On Platform="UWP" Value="Assets/whiteboard.png" />
+                        </OnPlatform>
+                    </ToolbarItem.Icon>
 
         </ToolbarItem>
         <ToolbarItem
@@ -18,10 +28,10 @@
             Command="{Binding FicMetAddExperienciaLaboralICommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                <On Platform="UWP" Value="add.png>"/>
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
-            
+
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
@@ -36,11 +46,21 @@
         <ToolbarItem
             Name="Detalle"
             Command="{Binding FicMetDetalleExperienciaLaboralICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
         <ToolbarItem
             Name="Eliminar"
             Command="{Binding FicMetDeleteExperienciaLaboralICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
 
         </ToolbarItem>
     </ContentPage.ToolbarItems>
