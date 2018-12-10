@@ -1,1 +1,0 @@
-C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\AppGestionCurriculums.UWP.csproj;x86
