@@ -16,6 +16,7 @@ using AppGestionCurriculums.Interfaces.Competencias;
 using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
 using AppGestionCurriculums.ViewModels.Personas;
 using AppGestionCurriculums.ViewModels.Curriculos;
+using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 
 namespace AppGestionCurriculums.ViewModels.Base
 {
@@ -62,6 +63,11 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmCurriculosItem>();
             FicContainerBuilder.RegisterType<FicVmCurriculosDetalle>();
 
+            //Alegria
+            FicContainerBuilder.RegisterType<FicVmExperienciaList>();
+            FicContainerBuilder.RegisterType<FicVmExperienciaItem>();
+            FicContainerBuilder.RegisterType<FicVmExperienciaDetalle>();
+
             //Servicios
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
                 //Brian
@@ -73,9 +79,12 @@ namespace AppGestionCurriculums.ViewModels.Base
                 //Betsy
             FicContainerBuilder.RegisterType<FicSrvCompetencias>().As<IFicSrvCompetencias>().SingleInstance();
             //FicContainerBuilder.RegisterType<FicSrvCurriculumsPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
-
             FicContainerBuilder.RegisterType<FicSrvRhCatPersonas>().As<IFicSrvRhCatPersonas>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCurriculoPersonas>().As<IFicSrvEvaCurriculoPersonas>().SingleInstance();
+
+            //Alegria
+            FicContainerBuilder.RegisterType<FicSrvExperienciaLaboral>().As<IFicSrvExperienciaLaboral>().SingleInstance();
+
 
             if (FicIContainer != null) FicIContainer.Dispose();
 
@@ -205,6 +214,7 @@ namespace AppGestionCurriculums.ViewModels.Base
             get { return FicIContainer.Resolve<FicVmPersonasDetalle>(); }
         }
 
+        //Curriculo
         public FicVmCurriculosItem FicVmCurriculosItem
         {
             get { return FicIContainer.Resolve<FicVmCurriculosItem>(); }
@@ -213,6 +223,22 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmCurriculosDetalle FicVmCurriculosDetalle
         {
             get { return FicIContainer.Resolve<FicVmCurriculosDetalle>(); }
+        }
+
+        //Alegria
+        public FicVmExperienciaList FicVmExperienciaList
+        {
+            get { return FicIContainer.Resolve<FicVmExperienciaList>(); }
+        }
+
+        public FicVmExperienciaItem FicVmExperienciaItem
+        {
+            get { return FicIContainer.Resolve<FicVmExperienciaItem>(); }
+        }
+
+        public FicVmExperienciaDetalle FicVmExperienciaDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmExperienciaDetalle>(); }
         }
     }//Fin clase
 }

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.ExperienciaLaboral.FicViExperienciaItem"
+             Title="REGISTRO DE EXPERIENCIA LABORAL">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <Label Text="Descripción de la organización" />
+                <Entry Text="{Binding NuevaExperiencia.DesOrganizacion}"/>
+
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevaExperiencia.Detalle}"/>
+
+                <Label Text="Siglas" />
+                <Entry Text="{Binding NuevaExperiencia.Siglas}"/>
+                
+                <Label Text="Fecha de inicio" />
+                <DatePicker 
+                    MinimumDate="01/01/1980"
+                    MaximumDate="12/31/2025"
+                    Date="{Binding NuevaExperiencia.FechaIni}"/>
+
+                <Label Text="Fecha de fin" />
+                <DatePicker 
+                    MinimumDate="01/01/1980"
+                    MaximumDate="12/31/2025"
+                    Date="{Binding NuevaExperiencia.FechaFin}"/>
+
+                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

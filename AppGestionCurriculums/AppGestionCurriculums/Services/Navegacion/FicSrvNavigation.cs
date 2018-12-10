@@ -20,6 +20,8 @@ using AppGestionCurriculums.ViewModels.Personas;
 using AppGestionCurriculums.Views;
 using AppGestionCurriculums.ViewModels.Curriculos;
 using AppGestionCurriculums.Views.Curriculos;
+using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
+using AppGestionCurriculums.Views.ExperienciaLaboral;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -57,7 +59,12 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmPersonasItem),typeof(FicViPersonasItem) },
             //Curriculos
             { typeof(FicVmCurriculosDetalle),typeof(FicViCurriculosDetalle) },
-            { typeof(FicVmCurriculosItem),typeof(FicViCurriculosItem) }
+            { typeof(FicVmCurriculosItem),typeof(FicViCurriculosItem) },
+
+            //Alegria
+            { typeof(FicVmExperienciaList),typeof(FicViExperienciaList) },
+            { typeof(FicVmExperienciaDetalle),typeof(FicViExperienciaDetalle) },
+            { typeof(FicVmExperienciaItem),typeof(FicViExperienciaItem) },
         };
 
         #region METODOS DE IMPLEMENTACION DE LA INTERFACE -> IFicSrvNavigationInventario

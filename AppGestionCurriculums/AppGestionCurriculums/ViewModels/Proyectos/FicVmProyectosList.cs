@@ -15,6 +15,8 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
     {
         public ObservableCollection<Eva_proyectos> _FicDataGrid_SourceProyectos;
         public Eva_proyectos _FicDataGrid_SelectedProyecto;
+        public Eva_experiencia_laboral FicExperiencia;
+
         private ICommand _FicAddProyectoCommand;
         private ICommand _FicEditProyectoCommand;
         private ICommand _FicDetalleProyectoCommand;
@@ -59,6 +61,22 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
                 if (value != null)
                 {
                     _FicDataGrid_SelectedProyecto = value;
+                    RaisePropertyChanged();
+                }
+            }//ITEM SELECCIONADO
+        }//Fin de SelectedItem
+
+        public Eva_experiencia_laboral DatosExperiencia
+        {
+            get
+            {
+                return FicExperiencia;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    FicExperiencia = value;
                     RaisePropertyChanged();
                 }
             }//ITEM SELECCIONADO
@@ -120,8 +138,10 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
 
         public void FicMetAddProyecto()
         {
+            var nuevoProyecto = new Eva_proyectos();
+            nuevoProyecto.IdExperiencia = DatosExperiencia.IdExperiencia;
             IFicSrvNavigation.FicMetNavigateTo<FicVmProyectosItem>
-                (new Eva_proyectos());
+                (nuevoProyecto);
         }//Fin add
 
         private async void FicMetEditProyecto()
@@ -149,9 +169,17 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
         {
             try
             {
+                var experiencia = context as Eva_experiencia_laboral;
+
+                if(experiencia != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Trae experiencia");
+                    DatosExperiencia = experiencia;
+                }
+
                 SourceProyectos.Clear();
 
-                var source_local_inv = await IFicSrvProyectos.FicMetGetListProyectos();
+                var source_local_inv = await IFicSrvProyectos.FicMetGetListProyectos(DatosExperiencia);
 
                 if (source_local_inv != null)
                 {

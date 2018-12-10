@@ -8,7 +8,7 @@ namespace AppGestionCurriculums.Interfaces
 {
     public interface IFicSrvFunciones
     {
-        Task<IEnumerable<Eva_actividades_funciones>> FicMetGetListFunciones();
+        Task<IEnumerable<Eva_actividades_funciones>> FicMetGetListFunciones(Eva_experiencia_laboral experiencia);
         Task FicMetInsertNewFuncion(Eva_actividades_funciones FicPaFuncion);
         Task FicMetDeleteFuncion(Eva_actividades_funciones FicPaFuncion);
     }

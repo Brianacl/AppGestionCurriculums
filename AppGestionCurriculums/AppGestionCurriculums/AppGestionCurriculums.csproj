@@ -63,6 +63,15 @@
     <Compile Update="Views\Eva_proyectos\FicViProyectosList.xaml.cs">
       <DependentUpon>FicViProyectosList.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaDetalle.xaml.cs">
+      <DependentUpon>FicViExperienciaDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaItem.xaml.cs">
+      <DependentUpon>FicViExperienciaItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaList.xaml.cs">
+      <DependentUpon>FicViExperienciaList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Personas\FicViPersonasList.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGestionCurriculums.Views.Curriculos.FicViCurriculosDetalle"
-             Title="DETALLE DEL CURRICULO">
+             Title="CURRICULO">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -33,6 +33,28 @@
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="UWP" Value="Assets/idiomas.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Idiomas"
+            Command="{Binding FicMetEditCurriculoICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Idiomas"
+            Command="{Binding FicMetExperienciaCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/experiencia.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

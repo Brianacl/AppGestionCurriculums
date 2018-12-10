@@ -4,50 +4,16 @@
              x:Class="AppGestionCurriculums.Views.Curriculos.FicViCurriculosItem"
              Title="CURRICULO">
   
-        <ContentPage.ToolbarItems>
-            <ToolbarItem
-            Name="Ver Domicilio"
-            Command="{Binding FicMetDomicilioPersonasICommand}">
-
-                <ToolbarItem.Icon>
-                    <OnPlatform x:TypeArguments="FileImageSource">
-                        <On Platform="UWP" Value="Assets/detalle.png" />
-                    </OnPlatform>
-                </ToolbarItem.Icon>
-            </ToolbarItem>
-            <ToolbarItem
-            Name="Ver Telefono">
-                <!--Command="{Binding FicListCompetenciasICommand}"-->
-
-                <ToolbarItem.Icon>
-                    <OnPlatform x:TypeArguments="FileImageSource">
-                        <On Platform="UWP" Value="Assets/detalle.png" />
-                    </OnPlatform>
-                </ToolbarItem.Icon>
-            </ToolbarItem>
-
-            <ToolbarItem
-            Name="Ver Dirección Web">
-                <!--Command="{Binding FicListCompetenciasICommand}"-->
-
-                <ToolbarItem.Icon>
-                    <OnPlatform x:TypeArguments="FileImageSource">
-                        <On Platform="UWP" Value="Assets/detalle.png" />
-                    </OnPlatform>
-                </ToolbarItem.Icon>
-            </ToolbarItem>
-       
-        </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Label Text="Status Curriculo: "/>
                 
                 <Label Text="Activo: "/>
-                <Switch IsToggled="{Binding NuevoCurriculo.Activo}"></Switch>
+                <Switch IsToggled="{Binding NuevoCurriculo.Activo}"/>
 
                 <Label Text="Borrado: "/>
-                <Switch IsToggled="{Binding NuevoCurriculo.Borrado}"></Switch>
+                <Switch IsToggled="{Binding NuevoCurriculo.Borrado}"/>
 
                 <Grid Padding="16">
                     <Grid.RowDefinitions>

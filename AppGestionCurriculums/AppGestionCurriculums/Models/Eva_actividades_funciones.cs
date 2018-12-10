@@ -19,7 +19,11 @@ namespace AppGestionCurriculums.Models
         public bool Activo { get; set; }
         public bool Borrado { get; set; }
 
+        //FK
         public Int16 IdCurriculo { get; set; } //FK
+
+        public Eva_experiencia_laboral Experiencia { get; set; }
         public Int16 IdExperiencia { get; set; }//FK
+
     }
 }

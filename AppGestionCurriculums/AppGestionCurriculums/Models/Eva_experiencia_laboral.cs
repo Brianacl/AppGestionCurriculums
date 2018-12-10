@@ -6,30 +6,29 @@ using System.Text;
 
 namespace AppGestionCurriculums.Models
 {
-    public class Eva_proyectos
+    public class Eva_experiencia_laboral
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Int16 IdProyecto { get; set;}
-        public string NombreProyecto { get; set; }
+        public Int16 IdExperiencia { get; set; }
+        public string DesOrganizacion { get; set; }
+        public string Detalle { get; set; }
         public string Siglas { get; set; }
-        public string Descripcion { get; set; }
         public DateTime FechaIni { get; set; }
         public DateTime FechaFin { get; set; }
-        public string Herramientas { get; set; }
+        public Int16 IdTipoGenGiro { get; set; } //fk no se de donde
+        public Int16 IdGenGiro { get; set; } //fk no se de donde
         public DateTime FechaReg { get; set; }
         public DateTime FechaUltMod { get; set; }
         public string UsuarioReg { get; set; }
         public string UsuarioMod { get; set; }
         public bool Activo { get; set; }
         public bool Borrado { get; set; }
-        
-        //FK's
+
+        //FK
+        public Eva_curriculo_persona eva_Curriculo_Persona { get; set; }
         public Int16 IdCurriculo { get; set; }
 
-        public Eva_experiencia_laboral Experiencia { get; set; }
-        public Int16 IdExperiencia { get; set; }
-
-        public Int16 IdTipoEstatus { get; set; }
-        public Int16 IdEstatus { get; set; }
+        public List<Eva_actividades_funciones> Funciones { get; set; }
+        public List<Eva_proyectos> Proyectos { get; set; }
     }
 }

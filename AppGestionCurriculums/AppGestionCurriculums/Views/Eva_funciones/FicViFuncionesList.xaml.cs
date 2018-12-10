@@ -8,9 +8,12 @@ namespace AppGestionCurriculums.Views.Eva_funciones
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FicViFuncionesList : ContentPage
 	{
+        private object FicLoParameter { get; set; }
+
 		public FicViFuncionesList (object FicNavigationContext)
 		{
 			InitializeComponent ();
+            FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmFuncionesList;
 		}
 
@@ -19,7 +22,7 @@ namespace AppGestionCurriculums.Views.Eva_funciones
             var FicViewModel = BindingContext as FicVmFuncionesList;
             if (FicViewModel != null)
             {
-                FicViewModel.OnAppearing(null);
+                FicViewModel.OnAppearing(FicLoParameter);
             }
         }
     }

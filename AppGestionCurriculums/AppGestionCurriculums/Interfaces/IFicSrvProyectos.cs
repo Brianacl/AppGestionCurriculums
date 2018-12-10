@@ -8,7 +8,7 @@ namespace AppGestionCurriculums.Interfaces
 {
     public interface IFicSrvProyectos
     {
-        Task<IEnumerable<Eva_proyectos>> FicMetGetListProyectos();
+        Task<IEnumerable<Eva_proyectos>> FicMetGetListProyectos(Eva_experiencia_laboral experiencia);
         Task FicMetInsertNewProyecto(Eva_proyectos FicPaProyecto);
         Task FicMetDeleteProyecto(Eva_proyectos FicPaProyecto);
     }

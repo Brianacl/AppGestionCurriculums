@@ -649,6 +649,12 @@
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\editar.png">
       <PackagePath>Assets\editar.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\experiencia.png">
+      <PackagePath>Assets\experiencia.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\function.png">
+      <PackagePath>Assets\function.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\grado_estudio.png">
       <PackagePath>Assets\grado_estudio.png</PackagePath>
     </AppxPackagedFile>
@@ -660,6 +666,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\idiomas.png">
       <PackagePath>Assets\idiomas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\project.png">
+      <PackagePath>Assets\project.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>

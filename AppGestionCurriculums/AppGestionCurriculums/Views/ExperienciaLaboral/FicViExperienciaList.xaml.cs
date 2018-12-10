@@ -1,4 +1,5 @@
-﻿using AppGestionCurriculums.ViewModels.Proyectos;
+﻿using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
+using AppGestionCurriculums.ViewModels.GradoEstudios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +9,23 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppGestionCurriculums.Views.Eva_proyectos
+namespace AppGestionCurriculums.Views.ExperienciaLaboral
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FicViProyectosList : ContentPage
+	public partial class FicViExperienciaList : ContentPage
 	{
-        private object FicLoParameter { get; set; }
+        private object FicLoParameter;
 
-		public FicViProyectosList (object FicNavigationContext)
+		public FicViExperienciaList (object FicNavigationContext)
 		{
 			InitializeComponent ();
             FicLoParameter = FicNavigationContext;
-            BindingContext = App.FicVmLocator.FicVmProyectosList;
+            BindingContext = App.FicVmLocator.FicVmExperienciaList;
 		}
 
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmProyectosList;
+            var FicViewModel = BindingContext as FicVmExperienciaList;
             if (FicViewModel != null)
             {
                 FicViewModel.OnAppearing(FicLoParameter);

@@ -15,6 +15,8 @@ namespace AppGestionCurriculums.ViewModels.Funciones
     {
         public ObservableCollection<Eva_actividades_funciones> _FicDataGrid_SourceFunciones;
         public Eva_actividades_funciones _FicDataGrid_SelectedFuncion;
+        public Eva_experiencia_laboral _FicExperiencia;
+
         private ICommand _FicAddFuncionCommand;
         private ICommand _FicEditFuncionCommand;
         private ICommand _FicDetalleFuncionCommand;
@@ -60,6 +62,22 @@ namespace AppGestionCurriculums.ViewModels.Funciones
                 {
                     _FicDataGrid_SelectedFuncion = value;
                     RaisePropertyChanged("SelectedFuncion");
+                }
+            }//ITEM SELECCIONADO
+        }//Fin de SelectedItem
+
+        public Eva_experiencia_laboral DatosExperiencia
+        {
+            get
+            {
+                return _FicExperiencia;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _FicExperiencia = value;
+                    RaisePropertyChanged("DatosExperiencia");
                 }
             }//ITEM SELECCIONADO
         }//Fin de SelectedItem
@@ -120,8 +138,10 @@ namespace AppGestionCurriculums.ViewModels.Funciones
 
         public void FicMetAddFuncion()
         {
+            var nuevaFuncion = new Eva_actividades_funciones();
+            nuevaFuncion.IdExperiencia = DatosExperiencia.IdExperiencia;
             IFicSrvNavigation.FicMetNavigateTo<FicVmFuncionesItem>
-                (new Eva_actividades_funciones());
+                (nuevaFuncion);
         }//Fin add
 
         private async void FicMetEditFuncion()
@@ -149,9 +169,17 @@ namespace AppGestionCurriculums.ViewModels.Funciones
         {
             try
             {
+                var experiencia = context as Eva_experiencia_laboral;
+
+                if(experiencia != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Trae experiencia");
+                    DatosExperiencia = experiencia;
+                }
+
                 SourceFunciones.Clear();
 
-                var source_local_inv = await IFicSrvFunciones.FicMetGetListFunciones();
+                var source_local_inv = await IFicSrvFunciones.FicMetGetListFunciones(DatosExperiencia);
 
                 if (source_local_inv != null)
                 {

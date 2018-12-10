@@ -236,6 +236,8 @@ namespace AppGestionCurriculums.Data
         public DbSet<Eva_curriculo_idiomas> eva_curriculo_idiomas { get; set; }
         public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
         public DbSet<Eva_proyectos> eva_proyectos { get; set; }
+        //Alegria 
+        public DbSet<Eva_experiencia_laboral> eva_experiencia_laboral { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -274,6 +276,9 @@ namespace AppGestionCurriculums.Data
                 modelBuilder.Entity<Eva_proyectos>()
                     .HasKey(c => new { c.IdProyecto });
 
+                //Alegria
+                modelBuilder.Entity<Eva_experiencia_laboral>()
+                    .HasKey(c => new { c.IdExperiencia });
 
                 //Foreign keys
                 //Betsy
@@ -316,6 +321,26 @@ namespace AppGestionCurriculums.Data
                     .WithMany(b => b.Idiomas)
                     .HasForeignKey(p => p.IdCurriculo)
                     .HasConstraintName("FK_Curriculo_Idiomas");
+
+                //Alegria
+                modelBuilder.Entity<Eva_experiencia_laboral>()
+                    .HasOne(p => p.eva_Curriculo_Persona)
+                    .WithMany(b => b.ExperienciaLaboral)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Curriculo_Experiencia");
+
+                //Cristobal
+                modelBuilder.Entity<Eva_actividades_funciones>()
+                    .HasOne(p => p.Experiencia)
+                    .WithMany(b => b.Funciones)
+                    .HasForeignKey(p => p.IdExperiencia)
+                    .HasConstraintName("FK_Experiencia_Funciones");
+
+                modelBuilder.Entity<Eva_proyectos>()
+                    .HasOne(p => p.Experiencia)
+                    .WithMany(b => b.Proyectos)
+                    .HasForeignKey(p => p.IdExperiencia)
+                    .HasConstraintName("FK_Experiencia_Proyectos");
             }
             catch (Exception e)
             {

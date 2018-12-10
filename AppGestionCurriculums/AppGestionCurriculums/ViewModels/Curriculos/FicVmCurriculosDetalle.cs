@@ -4,6 +4,7 @@ using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using AppGestionCurriculums.ViewModels.Competencias;
 using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.ViewModels.GradoEstudios;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,14 @@ namespace AppGestionCurriculums.ViewModels.Curriculos
     {
         public Eva_curriculo_persona FicCurriculoSeleccionado;
 
+        private ICommand FicEditCurriculoCommand;
         private ICommand FicDeleteCommand;
         private ICommand FicCancelCommand;
 
         private ICommand FicCompetenciasCommand;
         private ICommand FicIdiomasCommand;
         private ICommand FicGradoEstudioCommand;
+        private ICommand FicExperienciaCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
         private IFicSrvEvaCurriculoPersonas IFicSrvEvaCurriculoPersonas;
@@ -65,6 +68,24 @@ namespace AppGestionCurriculums.ViewModels.Curriculos
             {
                 await new Page().DisplayAlert("ALERTA ITEM", e.Message.ToString(), "OK");
             }
+        }
+
+        public ICommand FicMetEditCurriculoICommand
+        {
+            get
+            {
+                return FicEditCurriculoCommand = FicEditCurriculoCommand ??
+                    new FicVmDelegateCommand(FicMetEditCurriculo);
+            }
+        }
+
+        private async void FicMetEditCurriculo()
+        {
+            if (FicDatosCurriculo != null)
+                IFicSrvNavigation.FicMetNavigateTo<FicVmCurriculosItem>
+                    (FicDatosCurriculo);
+            else
+                await new Page().DisplayAlert("ALERTA - editar", "Para editar primero seleccione un registro", "OK");
         }
 
         public ICommand FicMetDeleteCommand
@@ -153,6 +174,24 @@ namespace AppGestionCurriculums.ViewModels.Curriculos
             if (FicDatosCurriculo != null)
             {
                 IFicSrvNavigation.FicMetNavigateTo<FicVmGradoEstudiosList>
+                    (FicDatosCurriculo);
+            }
+        }
+
+        public ICommand FicMetExperienciaCommand
+        {
+            get
+            {
+                return FicExperienciaCommand = FicExperienciaCommand ??
+                    new FicVmDelegateCommand(ExperienciaCommandExecute);
+            }
+        }
+
+        private void ExperienciaCommandExecute()
+        {
+            if (FicDatosCurriculo != null)
+            {
+                IFicSrvNavigation.FicMetNavigateTo<FicVmExperienciaList>
                     (FicDatosCurriculo);
             }
         }

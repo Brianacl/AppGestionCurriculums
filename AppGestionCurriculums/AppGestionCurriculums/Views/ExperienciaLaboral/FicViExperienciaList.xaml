@@ -2,12 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
-             x:Class="AppGestionCurriculums.Views.Eva_proyectos.FicViProyectosList"
-             Title="LISTA PROYECTOS">
+             x:Class="AppGestionCurriculums.Views.ExperienciaLaboral.FicViExperienciaList"
+             Title="LISTA DE EXPERIENCIA LABORAL">
     <ContentPage.ToolbarItems>
-    <ToolbarItem
+        <ToolbarItem
+            Name="Funciones"
+            Command="{Binding FicMetFuncionesCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/function.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Proyectos"
+            Command="{Binding FicMetProyectosCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/project.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
+        <ToolbarItem
             Name="Nuevo"
-            Command="{Binding FicMetAddProyectoICommand}">
+            Command="{Binding FicMetAddExperienciaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -17,7 +39,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
-            Command="{Binding FicMetEditProyectoICommand}">
+            Command="{Binding FicMetEditExperienciaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -27,7 +49,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Detalle"
-            Command="{Binding FicMetDetalleProyectoICommand}">
+            Command="{Binding FicMetDetalleExperienciaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -61,15 +83,16 @@
                 ColumnSizer="Star"
                 AutoGenerateColumns="False"
                 AllowSorting="False"
-                ItemsSource="{Binding SourceProyectos,
-                                UpdateSourceEventName=RaisePropertyChanged}"
-                SelectedItem="{Binding SelectedProyecto}"
+                ItemsSource="{Binding SourceExperiencia}"
+                SelectedItem="{Binding SelectedExperiencia}"
                 SelectionMode="Single">
                     <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdProyecto"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NOMBRE" MappingName="NombreProyecto"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdExperiencia"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ORGANIZACIÓN" MappingName="DesOrganizacion"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DETALLE" MappingName="Detalle"/>
                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="SIGLAS" MappingName="Siglas"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÓN" MappingName="Descripcion"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="INICIO" MappingName="FechaIni"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="FIN" MappingName="FechaFin"/>
                 </syncfusion:SfDataGrid.Columns>
                 </syncfusion:SfDataGrid>
             </StackLayout>
