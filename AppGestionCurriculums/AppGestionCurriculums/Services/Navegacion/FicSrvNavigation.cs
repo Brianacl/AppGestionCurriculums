@@ -22,6 +22,10 @@ using AppGestionCurriculums.ViewModels.Curriculos;
 using AppGestionCurriculums.Views.Curriculos;
 using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.Views.ExperienciaLaboral;
+using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
+using AppGestionCurriculums.Views.Eva_herramientas;
+using AppGestionCurriculums.Views.Eva_conocimientos;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -65,6 +69,16 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmExperienciaList),typeof(FicViExperienciaList) },
             { typeof(FicVmExperienciaDetalle),typeof(FicViExperienciaDetalle) },
             { typeof(FicVmExperienciaItem),typeof(FicViExperienciaItem) },
+
+            //jjesusmonroy
+			{ typeof(FicVmEvaCurriculoHerramientasList),typeof(FicViEvaCurriculoHerramientasList) },
+            { typeof(FicVmEvaCurriculoHerramientasItem),typeof(FicViEvaCurriculoHerramientasItem) },
+            { typeof(FicVmEvaCurriculoHerramientasDetalle),typeof(FicViEvaCurriculoHerramientasDetalle) },
+
+            { typeof(FicVmEvaCurriculoConocimientosList),typeof(FicViEvaCurriculoConocimientosList) },
+            { typeof(FicVmEvaCurriculoConocimientosItem),typeof(FicViEvaCurriculoConocimientosItem) },
+            { typeof(FicVmEvaCurriculoConocimientosDetalle),typeof(FicViEvaCurriculoConocimientosItem) },
+
         };
 
         #region METODOS DE IMPLEMENTACION DE LA INTERFACE -> IFicSrvNavigationInventario

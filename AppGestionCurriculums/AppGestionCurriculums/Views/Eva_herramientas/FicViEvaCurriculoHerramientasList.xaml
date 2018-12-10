@@ -2,23 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
-             x:Class="AppGestionCurriculums.Views.Competencias.FicViCompetenciasList"
-             Title="LISTA DE COMPETENCIAS">
+             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasList">
     <ContentPage.ToolbarItems>
-        <ToolbarItem
-            Name="Conocimiento"
-            Command="{Binding FicMetConocimientosICommand}">
-
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/grado_estudio.png" />
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-        
-        <ToolbarItem
+    <ToolbarItem
             Name="Nuevo"
-            Command="{Binding FicMetAddCompetenciasICommand}">
+            Command="{Binding FicMetAddHerramientaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -28,7 +16,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
-            Command="{Binding FicMetEditCompetenciasICommand}">
+            Command="{Binding FicMetEditHerramientaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -38,7 +26,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Detalle"
-            Command="{Binding FicMetDetailCompetenciasICommand}">
+            Command="{Binding FicMetDetalleHerramientaICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -48,7 +36,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Eliminar"
-            Command="{Binding FicMetDeleteCompetenciasICommand}">
+            Command="{Binding FicMetDeleteICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -56,33 +44,33 @@
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>
+        </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <StackLayout Padding="10">
-            <SearchBar
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <SearchBar
                 HorizontalOptions="FillAndExpand"
                 Placeholder="Filtrar información"
                 PlaceholderColor="Red"
                 x:Name="SearchBar">
-            </SearchBar>
+                </SearchBar>
 
-            <syncfusion:SfDataGrid
+                <syncfusion:SfDataGrid
                 
                 ColumnSizer="Star"
                 AutoGenerateColumns="False"
                 AllowSorting="False"
-                ItemsSource="{Binding SourceCompetencias,
+                ItemsSource="{Binding SourceHerramientas,
                                 UpdateSourceEventName=RaisePropertyChanged}"
-                SelectedItem="{Binding SelectedCompetencias}"
+                SelectedItem="{Binding SelectedHerramienta}"
                 SelectionMode="Single">
-                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdCompetencia"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DOMINIO" MappingName="Dominio"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCOMPETENCIA" MappingName="DesCompetencia"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DETALLE" MappingName="Detalle"/>
-                </syncfusion:SfDataGrid.Columns>
-            </syncfusion:SfDataGrid>
-        </StackLayout>
-    </ContentPage.Content>
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdHerramienta"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÓN" MappingName="DesHerramienta"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DOMINIO" MappingName="Dominio"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DETALLE" MappingName="Detalle"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+        </ContentPage.Content>
 </ContentPage>

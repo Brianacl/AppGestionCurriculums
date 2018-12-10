@@ -236,8 +236,12 @@ namespace AppGestionCurriculums.Data
         public DbSet<Eva_curriculo_idiomas> eva_curriculo_idiomas { get; set; }
         public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
         public DbSet<Eva_proyectos> eva_proyectos { get; set; }
+        //jjesusmonroy
+        public DbSet<Eva_curriculo_herramientas> eva_curriculo_herramientas { get; set; }
+        public DbSet<Eva_curriculo_conocimientos> eva_curriculo_conocimientos { get; set; }
         //Alegria 
         public DbSet<Eva_experiencia_laboral> eva_experiencia_laboral { get; set; }
+        public DbSet<Eva_curriculo_referencias> eva_curriculo_referencias { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -275,10 +279,19 @@ namespace AppGestionCurriculums.Data
 
                 modelBuilder.Entity<Eva_proyectos>()
                     .HasKey(c => new { c.IdProyecto });
+                //peps
+                modelBuilder.Entity<Eva_curriculo_herramientas>()
+                    .HasKey(c => new { c.IdHerramienta });
+
+                modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                    .HasKey(c => new { c.IdConocimiento });
 
                 //Alegria
                 modelBuilder.Entity<Eva_experiencia_laboral>()
                     .HasKey(c => new { c.IdExperiencia });
+
+                modelBuilder.Entity<Eva_curriculo_referencias>()
+                    .HasKey(c => new { c.IdReferencia });
 
                 //Foreign keys
                 //Betsy
@@ -329,6 +342,12 @@ namespace AppGestionCurriculums.Data
                     .HasForeignKey(p => p.IdCurriculo)
                     .HasConstraintName("FK_Curriculo_Experiencia");
 
+                modelBuilder.Entity<Eva_curriculo_referencias>()
+                    .HasOne(p => p.eva_curriculo_personas)
+                    .WithMany(b => b.Referencias)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Curriculo_Referencias");
+
                 //Cristobal
                 modelBuilder.Entity<Eva_actividades_funciones>()
                     .HasOne(p => p.Experiencia)
@@ -341,6 +360,22 @@ namespace AppGestionCurriculums.Data
                     .WithMany(b => b.Proyectos)
                     .HasForeignKey(p => p.IdExperiencia)
                     .HasConstraintName("FK_Experiencia_Proyectos");
+
+                //Peps 
+                modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                    .HasOne(p => p.Competencia)
+                    .WithMany(b => b.Conocimientos)
+                    .HasForeignKey(p => p.IdCompetencia)
+                    .HasConstraintName("FK_Competencia_Conocimientos");
+
+                modelBuilder.Entity<Eva_curriculo_herramientas>()
+                    .HasOne(p => p.Conocimiento)
+                    .WithMany(b => b.Herramientas)
+                    .HasForeignKey(p => p.IdConocimiento)
+                    .HasConstraintName("FK_Conocimiento_Herramientas");
+
+
+
             }
             catch (Exception e)
             {

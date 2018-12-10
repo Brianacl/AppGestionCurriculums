@@ -17,6 +17,8 @@ using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
 using AppGestionCurriculums.ViewModels.Personas;
 using AppGestionCurriculums.ViewModels.Curriculos;
 using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
+using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 
 namespace AppGestionCurriculums.ViewModels.Base
 {
@@ -68,6 +70,15 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmExperienciaItem>();
             FicContainerBuilder.RegisterType<FicVmExperienciaDetalle>();
 
+            //Peps
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasList>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasItem>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasDetalle>();
+            //-----------------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosList>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosItem>();
+            FicContainerBuilder.RegisterType<FicVmEvaCurriculoConocimientosDetalle>();
+
             //Servicios
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
                 //Brian
@@ -84,6 +95,10 @@ namespace AppGestionCurriculums.ViewModels.Base
 
             //Alegria
             FicContainerBuilder.RegisterType<FicSrvExperienciaLaboral>().As<IFicSrvExperienciaLaboral>().SingleInstance();
+
+            //jjesusmonroy
+            FicContainerBuilder.RegisterType<FicSrvCurriculoHerrmaientas>().As<IFicSrvCurriculoHerramientas>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCurriculoConocimientos>().As<IFicSrvCurriculoConocimientos>().SingleInstance();
 
 
             if (FicIContainer != null) FicIContainer.Dispose();
@@ -239,6 +254,38 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmExperienciaDetalle FicVmExperienciaDetalle
         {
             get { return FicIContainer.Resolve<FicVmExperienciaDetalle>(); }
+        }
+
+        //jjesusmonroy
+
+        public FicVmEvaCurriculoHerramientasList FicVmHerramientasList
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasList>(); }
+        }
+
+        public FicVmEvaCurriculoHerramientasItem FicVmHerramientasItem
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasItem>(); }
+        }
+
+        public FicVmEvaCurriculoHerramientasDetalle FicVmHerramientasDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoHerramientasDetalle>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosList FicVmConocimientosList
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosList>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosItem FicVmConocimientosItem
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosItem>(); }
+        }
+
+        public FicVmEvaCurriculoConocimientosDetalle FicVmConocimientosDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmEvaCurriculoConocimientosDetalle>(); }
         }
     }//Fin clase
 }

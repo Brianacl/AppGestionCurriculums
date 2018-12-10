@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Eva_conocimientos.FicViEvaCurriculoConocimientosDetalle">
+    <ContentPage.Content>
+        <StackLayout
+        VerticalOptions="StartAndExpand"
+        Padding="20">
+
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <!--ID-->
+                <Label Text="Id conocimiento" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.IdConocimiento}" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Descripción" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.DesConocimiento}" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Nivel de dominio" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Dominio}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Detalle" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Detalle}" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Fecha registro" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.FechaReg}" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="Fecha modificación" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.FechaUltMod}" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Registro usuario" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.UsuarioReg}" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="Modifico usuario" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.UsuarioMod}" Grid.Row="7" Grid.Column="1"/>
+
+                <Label Text="Activo" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Activo}" Grid.Row="8" Grid.Column="1"/>
+
+                <Label Text="Borrado" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.Borrado}" Grid.Row="9" Grid.Column="1"/>
+            </Grid>
+
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnEliminar" BackgroundColor="#F44336" TextColor="White" Text="Eliminar" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Button Text="Regresar" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

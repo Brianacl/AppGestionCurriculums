@@ -6,6 +6,7 @@ using AppGestionCurriculums.Services.CurriculumsPersonas;
 using AppGestionCurriculums.ViewModels.Base;
 using AppGestionCurriculums.ViewModels.Competencias;
 using AppGestionCurriculums.ViewModels.CurriculumsPersonas;
+using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,10 +24,12 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         public int IdPersona;
         private Eva_curriculo_persona Fic_curriculo;
         public Eva_curriculo_competencias _FicDataGrid_SelectedCompetencias;
+
         private ICommand _FicAddCompetenciasCommand;
         private ICommand _FicEditCompetenciasCommand;
         private ICommand _FicDetailCompetenciasCommand;
         private ICommand _FicDeleteCompetenciasCommand;
+        private ICommand _FicConocimientosCommand;
 
         private IFicSrvNavigation IFicLoSrvNavigation;
         private IFicSrvCompetencias IFicLoSrvCompetencias;
@@ -111,6 +114,28 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                     new FicVmDelegateCommand(FicMetDeleteCompetencias);
             }
         }
+
+
+        public ICommand FicMetConocimientosICommand
+        {
+            get
+            {
+                return _FicConocimientosCommand = _FicConocimientosCommand ??
+                    new FicVmDelegateCommand(FicMetConocimientos);
+            }
+        }
+
+        private async void FicMetConocimientos()
+        {
+            if (_FicDataGrid_SelectedCompetencias != null)
+            {
+                IFicLoSrvNavigation.FicMetNavigateTo<FicVmEvaCurriculoConocimientosList>
+                    (_FicDataGrid_SelectedCompetencias);
+            }
+            else
+                await new Page().DisplayAlert("ALERTA", "Para ir a conocimientos seleccione un registro", "OK");
+        }
+
         private async void FicMetDeleteCompetencias()
         {
             try
@@ -136,6 +161,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             IFicLoSrvNavigation.FicMetNavigateTo<FicVmCompetenciasItem>
                 (nuevaCompetencia);
         }//Fin add
+
         private async void FicMetEditCompetencias()
         {
             if (_FicDataGrid_SelectedCompetencias != null)
@@ -146,6 +172,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             else
                 await new Page().DisplayAlert("ALERTA", "Para editar primero seleccione un registro", "OK");
         }
+
         private async void FicMetDetalleCompetencias()
         {
             if (_FicDataGrid_SelectedCompetencias != null)
