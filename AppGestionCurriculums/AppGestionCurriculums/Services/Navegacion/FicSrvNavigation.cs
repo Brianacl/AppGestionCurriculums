@@ -26,6 +26,8 @@ using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
 using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 using AppGestionCurriculums.Views.Eva_herramientas;
 using AppGestionCurriculums.Views.Eva_conocimientos;
+using AppGestionCurriculums.Views.Referencias;
+using AppGestionCurriculums.ViewModels.Referencias;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -69,6 +71,9 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmExperienciaList),typeof(FicViExperienciaList) },
             { typeof(FicVmExperienciaDetalle),typeof(FicViExperienciaDetalle) },
             { typeof(FicVmExperienciaItem),typeof(FicViExperienciaItem) },
+            { typeof(FicVmReferenciasList),typeof(FicViReferenciasList) },
+            { typeof(FicVmReferenciasDetalle),typeof(FicViReferenciasDetalle) },
+            { typeof(FicVmReferenciasItem),typeof(FicViReferenciasItem) },
 
             //jjesusmonroy
 			{ typeof(FicVmEvaCurriculoHerramientasList),typeof(FicViEvaCurriculoHerramientasList) },

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.Referencias.FicViReferenciasList"
+             Title="LISTA DE REFERENCIAS">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Nuevo"
+            Command="{Binding FicMetAddReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Eliminar"
+            Command="{Binding FicMetDeleteReferenciaICommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <SearchBar HorizontalOptions="FillAndExpand"
+                       Placeholder="Filtrar Información"
+                       PlaceholderColor="Red"
+                       x:Name="SearchBar"/>
+            <syncfusion:SfDataGrid
+               ColumnSizer="Star"
+               AutoGenerateColumns="False"
+               AllowSorting="False"
+               ItemsSource="{Binding SourceReferencias, UpdateSourceEventName=RaisePropertyChanged}"
+               SelectedItem="{Binding SelectedReferencia}"
+               SelectionMode="Single">
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Id Cur" MappingName="IdCurriculo"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Id Ref" MappingName="IdReferencia"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Nombre" MappingName="Nombre"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Paterno" MappingName="ApPaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Materno" MappingName="ApMaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Teléfono" MappingName="Telefono"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Email" MappingName="Email"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Domicilio" MappingName="Domicilio"/>
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,6 +6,7 @@ using AppGestionCurriculums.ViewModels.Competencias;
 using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
 using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.ViewModels.GradoEstudios;
+using AppGestionCurriculums.ViewModels.Referencias;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +27,7 @@ namespace AppGestionCurriculums.ViewModels.Curriculos
         private ICommand FicIdiomasCommand;
         private ICommand FicGradoEstudioCommand;
         private ICommand FicExperienciaCommand;
+        private ICommand FicReferenciaCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
         private IFicSrvEvaCurriculoPersonas IFicSrvEvaCurriculoPersonas;
@@ -192,6 +194,24 @@ namespace AppGestionCurriculums.ViewModels.Curriculos
             if (FicDatosCurriculo != null)
             {
                 IFicSrvNavigation.FicMetNavigateTo<FicVmExperienciaList>
+                    (FicDatosCurriculo);
+            }
+        }
+
+        public ICommand FicMetReferenciasCommand
+        {
+            get
+            {
+                return FicReferenciaCommand = FicReferenciaCommand ??
+                    new FicVmDelegateCommand(ReferenciaCommandExecute);
+            }
+        }
+
+        private void ReferenciaCommandExecute()
+        {
+            if (FicDatosCurriculo != null)
+            {
+                IFicSrvNavigation.FicMetNavigateTo<FicVmReferenciasList>
                     (FicDatosCurriculo);
             }
         }

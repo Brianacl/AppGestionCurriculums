@@ -38,7 +38,18 @@
         </ToolbarItem>
 
         <ToolbarItem
-            Name="Idiomas"
+            Name="Competencias"
+            Command="{Binding FicMetReferenciasCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/hola.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
+        <ToolbarItem
+            Name="Editar"
             Command="{Binding FicMetEditCurriculoICommand}">
 
             <ToolbarItem.Icon>

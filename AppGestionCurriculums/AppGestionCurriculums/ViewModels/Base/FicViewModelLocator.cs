@@ -19,6 +19,7 @@ using AppGestionCurriculums.ViewModels.Curriculos;
 using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
 using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
+using AppGestionCurriculums.ViewModels.Referencias;
 
 namespace AppGestionCurriculums.ViewModels.Base
 {
@@ -69,6 +70,10 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmExperienciaList>();
             FicContainerBuilder.RegisterType<FicVmExperienciaItem>();
             FicContainerBuilder.RegisterType<FicVmExperienciaDetalle>();
+            //---------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmReferenciasList>();
+            FicContainerBuilder.RegisterType<FicVmReferenciasItem>();
+            FicContainerBuilder.RegisterType<FicVmReferenciasDetalle>();
 
             //Peps
             FicContainerBuilder.RegisterType<FicVmEvaCurriculoHerramientasList>();
@@ -95,6 +100,7 @@ namespace AppGestionCurriculums.ViewModels.Base
 
             //Alegria
             FicContainerBuilder.RegisterType<FicSrvExperienciaLaboral>().As<IFicSrvExperienciaLaboral>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvReferencias>().As<IFicSrvReferencias>().SingleInstance();
 
             //jjesusmonroy
             FicContainerBuilder.RegisterType<FicSrvCurriculoHerrmaientas>().As<IFicSrvCurriculoHerramientas>().SingleInstance();
@@ -254,6 +260,21 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmExperienciaDetalle FicVmExperienciaDetalle
         {
             get { return FicIContainer.Resolve<FicVmExperienciaDetalle>(); }
+        }
+
+        public FicVmReferenciasList FicVmReferenciasList
+        {
+            get { return FicIContainer.Resolve<FicVmReferenciasList>(); }
+        }
+
+        public FicVmReferenciasItem FicVmReferenciasItem
+        {
+            get { return FicIContainer.Resolve<FicVmReferenciasItem>(); }
+        }
+
+        public FicVmReferenciasDetalle FicVmReferenciasDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmReferenciasDetalle>(); }
         }
 
         //jjesusmonroy
