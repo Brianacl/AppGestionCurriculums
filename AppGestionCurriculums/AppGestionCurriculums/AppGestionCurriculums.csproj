@@ -30,6 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Curriculos\FicViCurriculosDetalle.xaml.cs">
+      <DependentUpon>FicViCurriculosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Curriculos\FicViCurriculosItem.xaml.cs">
+      <DependentUpon>FicViCurriculosItem.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Eva_funciones\FicViFuncionesDetalle.xaml.cs">
       <DependentUpon>FicViFuncionesDetalle.xaml</DependentUpon>
     </Compile>
@@ -56,6 +62,15 @@
     </Compile>
     <Compile Update="Views\Eva_proyectos\FicViProyectosList.xaml.cs">
       <DependentUpon>FicViProyectosList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasList.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasDetalle.xaml.cs">
+      <DependentUpon>FicViPersonasDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasItem.xaml.cs">
+      <DependentUpon>FicViPersonasItem.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

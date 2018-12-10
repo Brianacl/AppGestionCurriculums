@@ -14,10 +14,12 @@ namespace AppGestionCurriculums.Views.Competencias
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FicViCompetenciasList : ContentPage
     {
+        private object FicLoParameter { get; set; }
 
         public FicViCompetenciasList(object navigationContext)
         {
             InitializeComponent();
+            FicLoParameter = navigationContext;
             BindingContext = App.FicVmLocator.FicVmCompetenciasList;
         }
 
@@ -26,7 +28,7 @@ namespace AppGestionCurriculums.Views.Competencias
             var FicViewModel = BindingContext as FicVmCompetenciasList;
             if (FicViewModel != null)
             {
-                FicViewModel.OnAppearing(null);
+                FicViewModel.OnAppearing(FicLoParameter);
             }
         }
     }

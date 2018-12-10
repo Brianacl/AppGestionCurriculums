@@ -10,12 +10,6 @@ namespace AppGestionCurriculums.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int16 IdPersona { get; set; }
-        public Rh_cat_domicilios rh_cat_domicilios { get; set; }
-        public Int16 IdDomicilio { get; set; }
-        public Rh_cat_telefonos rh_cat_telefonos { get; set; }
-        public Int16 IdTelefono { get; set; }
-        public Rh_cat_dir_web rh_cat_dir_web { get; set; }
-        public Int16 IdDirWeb { get; set; }
         [StringLength(20)]
         public string NumControl { get; set; }
         [StringLength(100)]
@@ -28,8 +22,8 @@ namespace AppGestionCurriculums.Models
         public string RFC { get; set; }
         [StringLength(25)]
         public string CURP { get; set; }
-        [StringLength(25)]
-        public string FechaNac { get; set; }
+
+        public DateTime FechaNac { get; set; }
         [StringLength(1)]
         public string TipoPersona { get; set; }
         [StringLength(1)]
@@ -38,8 +32,10 @@ namespace AppGestionCurriculums.Models
         public string RutaFoto { get; set; }
         [StringLength(20)]
         public string Alias { get; set; }
-        public DateTime? FechaReg { get; set; }
-        public DateTime? FechaUltMod { get; set; }
+
+        public DateTime FechaReg { get; set; }
+        public DateTime FechaUltMod { get; set; }
+
         [StringLength(20)]
         public string UsuarioReg { get; set; }
         [StringLength(20)]
@@ -48,5 +44,9 @@ namespace AppGestionCurriculums.Models
         public string Activo { get; set; }
         [StringLength(1)]
         public string Borrado { get; set; }
+
+        //Foreing keys
+        public List<Rh_cat_domicilios> Domicilios { get; set; }
+        public List<Eva_curriculo_persona> Curriculos { get; set; }
     }
 }

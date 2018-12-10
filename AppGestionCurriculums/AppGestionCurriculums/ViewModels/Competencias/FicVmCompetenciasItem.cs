@@ -48,6 +48,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                 
                 if (FicCompetenciasSeleccionada != null)
                 {
+                    System.Diagnostics.Debug.WriteLine("Trae una competencia " + FicCompetenciasSeleccionada.IdCurriculo);
                     NuevaCompetencias = FicCompetenciasSeleccionada;
                 }
 

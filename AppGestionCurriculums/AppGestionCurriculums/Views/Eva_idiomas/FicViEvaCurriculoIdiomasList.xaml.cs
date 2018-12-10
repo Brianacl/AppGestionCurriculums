@@ -13,9 +13,12 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FicViEvaCurriculoIdiomasList : ContentPage
 	{
+        private object FicLoParameter;
+
 		public FicViEvaCurriculoIdiomasList (object FicNavigationContext)
 		{
 			InitializeComponent ();
+            FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmIdiomasList;
 		}
 
@@ -24,7 +27,7 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
             var FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasList;
             if (FicViewModel != null)
             {
-                FicViewModel.OnAppearing(null);
+                FicViewModel.OnAppearing(FicLoParameter);
             }
         }
     }

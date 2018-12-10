@@ -17,6 +17,8 @@ namespace AppGestionCurriculums.Models
         public string UsuarioMod { get; set; }
         public bool Activo { get; set; }
         public bool Borrado { get; set; }
+
         public Int16 IdCurriculo { get; set; } //Foreign key
+        public Eva_curriculo_persona eva_Curriculo_Persona { get; set; }
     }
 }

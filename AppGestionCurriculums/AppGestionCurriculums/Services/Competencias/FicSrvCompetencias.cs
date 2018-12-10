@@ -21,13 +21,12 @@ namespace AppGestionCurriculums.Services.Competencias
         {
             FicLoBDContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
         }//Fin del constructor
-        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Rh_cat_personas persona)
+
+        public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Eva_curriculo_persona curriculo)
         {
-            idCurriculo = ObtenerCurriculo(persona);
-            return await (from Eva_curriculo_competencias in FicLoBDContext.eva_curriculo_competencias
-                          join Eva_curriculo_persona in FicLoBDContext.eva_curriculo_persona on Eva_curriculo_competencias.IdCurriculo equals Eva_curriculo_persona.IdCurriculo
-                          where Eva_curriculo_persona.IdPersona == persona.IdPersona
-                          select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
+            return await (from competencias in FicLoBDContext.eva_curriculo_competencias
+                          where competencias.IdCurriculo == curriculo.IdCurriculo
+                          select competencias).AsNoTracking().ToListAsync();
         }
         public async Task FicMetInsertCompetencias(Eva_curriculo_competencias FicInsertCompetencias)
         {
@@ -40,10 +39,8 @@ namespace AppGestionCurriculums.Services.Competencias
                         ).FirstOrDefaultAsync();
                 if (FicSourceCompetenciasExist == null)
                 {
-                    
-                    FicInsertCompetencias.IdCurriculo = idCurriculo;
-                    FicInsertCompetencias.FechaReg = DateTime.Today;
-                    FicInsertCompetencias.FechaUltMod = DateTime.Today;
+                    FicInsertCompetencias.FechaReg = DateTime.Now;
+                    FicInsertCompetencias.FechaUltMod = DateTime.Now;
                     FicInsertCompetencias.UsuarioReg = "Beth";
                     FicInsertCompetencias.UsuarioMod = "Beth";
                     FicInsertCompetencias.Activo = "S";

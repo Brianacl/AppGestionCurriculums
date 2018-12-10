@@ -286,17 +286,36 @@ namespace AppGestionCurriculums.Data
                     .HasOne(f => f.rh_cat_personas).WithMany()
                     .HasForeignKey(f => new { f.IdPersona });
 
-                modelBuilder.Entity<Rh_cat_personas>()
-                    .HasOne(f => f.rh_cat_telefonos).WithMany()
-                    .HasForeignKey(f => new { f.IdTelefono});
+                modelBuilder.Entity<Rh_cat_domicilios>()
+                    .HasOne(p => p.rh_Cat_Personas)
+                    .WithMany(b => b.Domicilios)
+                    .HasForeignKey(p => p.IdPersona)
+                    .HasConstraintName("FK_Persona_Domicilios");
 
-                modelBuilder.Entity<Rh_cat_personas>()
-                    .HasOne(f => f.rh_cat_domicilios).WithMany()
-                    .HasForeignKey(f => new { f.IdDomicilio });
+                modelBuilder.Entity<Eva_curriculo_persona>()
+                    .HasOne(p => p.rh_cat_personas)
+                    .WithMany(b => b.Curriculos)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Persona_Curriculo");
 
-                modelBuilder.Entity<Rh_cat_personas>()
-                    .HasOne(f => f.rh_cat_dir_web).WithMany()
-                    .HasForeignKey(f => new { f.IdDirWeb });
+                modelBuilder.Entity<Eva_curriculo_competencias>()
+                    .HasOne(p => p.eva_curriculo_persona)
+                    .WithMany(b => b.Competencias)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Curriculo_Competencias");
+
+                //Brian
+                modelBuilder.Entity<Eva_carrera_grado_estudios>()
+                    .HasOne(p => p.Eva_Curriculo_Persona)
+                    .WithMany(b => b.GradoEstudios)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Curriculo_GradoEstudios");
+
+                modelBuilder.Entity<Eva_curriculo_idiomas>()
+                    .HasOne(p => p.eva_Curriculo_Persona)
+                    .WithMany(b => b.Idiomas)
+                    .HasForeignKey(p => p.IdCurriculo)
+                    .HasConstraintName("FK_Curriculo_Idiomas");
             }
             catch (Exception e)
             {

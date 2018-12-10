@@ -25,6 +25,9 @@ namespace AppGestionCurriculums.Models
 
         public Int16 IdTipoGenGradoEstudio { get; set; } //FK
         public Int16 IdGenGradoEstudio { get; set; } //FK
-        public Int16 IdCurriculo { get; set; } //FK
+
+        //FK
+        public Eva_curriculo_persona Eva_Curriculo_Persona { get; set; }
+        public Int16 IdCurriculo { get; set; }
     }
 }

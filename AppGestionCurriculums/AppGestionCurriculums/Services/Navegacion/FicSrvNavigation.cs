@@ -15,6 +15,11 @@ using AppGestionCurriculums.ViewModels.Competencias;
 using AppGestionCurriculums.ViewModels.CurriculumsPersonas;
 using AppGestionCurriculums.Views.Competencias;
 using AppGestionCurriculums.Views.CurriculumsPersonas;
+using AppGestionCurriculums.Views.Personas;
+using AppGestionCurriculums.ViewModels.Personas;
+using AppGestionCurriculums.Views;
+using AppGestionCurriculums.ViewModels.Curriculos;
+using AppGestionCurriculums.Views.Curriculos;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -44,21 +49,28 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmDireccionWebDetalle),typeof(FicViPersonaDirWebDetalle) },
             { typeof(FicVmDomicilioDetalle),typeof(FicViPersonaDomicilioDetalle) },
             { typeof(FicVmTelefonoDetalle),typeof(FicViPersonaTelefonoDetalle) },
-            { typeof(FicVmCurriculumsPersonasItem),typeof(FicViCurriculumsPersonasItem) }
-            /*{ typeof(FicVmExportarWebApi),typeof(ViExportarWebApi) },
-            { typeof(FicVmImportarWebApi),typeof(ViImportarWebApi) },*/
+            { typeof(FicVmCurriculumsPersonasItem),typeof(FicViCurriculumsPersonasItem) },
+
+            //Personas
+            { typeof(FicVmPersonasList),typeof(FicViPersonasList) },
+            { typeof(FicVmPersonasDetalle),typeof(FicViPersonasDetalle) },
+            { typeof(FicVmPersonasItem),typeof(FicViPersonasItem) },
+            //Curriculos
+            { typeof(FicVmCurriculosDetalle),typeof(FicViCurriculosDetalle) },
+            { typeof(FicVmCurriculosItem),typeof(FicViCurriculosItem) }
         };
 
         #region METODOS DE IMPLEMENTACION DE LA INTERFACE -> IFicSrvNavigationInventario
         public void FicMetNavigateTo<FicTDestinationViewModel>(object FicNavigationContext = null)
         {
+            System.Diagnostics.Debug.WriteLine("En el NavigateTo");
             Type FicPageType = FicViewModelRouting[typeof(FicTDestinationViewModel)];
             var FicPage = Activator.CreateInstance(FicPageType, FicNavigationContext) as Page;
 
             if (FicPage != null)
             {
                 var mdp = Application.Current.MainPage as MasterDetailPage;
-                mdp.Detail.Navigation.PushModalAsync(FicPage);
+                mdp.Detail.Navigation.PushAsync(FicPage);
             }
         }
 
@@ -70,14 +82,14 @@ namespace AppGestionCurriculums.Services.Navegacion
             if (FicPage != null)
             {
                 var mdp = Application.Current.MainPage as MasterDetailPage;
-                mdp.Detail.Navigation.PushModalAsync(FicPage);
+                mdp.Detail.Navigation.PushAsync(FicPage);
             }
         }
 
         public void FicMetNavigateBack()
         {
             var mdp = Application.Current.MainPage as MasterDetailPage;
-            mdp.Detail.Navigation.PopModalAsync();
+            mdp.Detail.Navigation.PopAsync();
         }
         #endregion
     }

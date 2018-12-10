@@ -15,6 +15,8 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
     {
         public ObservableCollection<Eva_carrera_grado_estudios> _FicDataGrid_SourceGradoEstudios;
         public Eva_carrera_grado_estudios _FicDataGrid_SelectedGradoEstudio;
+        public Eva_curriculo_persona _FicCurriculo;
+
         private ICommand _FicAddGradoEstudioCommand;
         private ICommand _FicEditGradoEstudioCommand;
         private ICommand _FicDetalleGradoEstudioCommand;
@@ -60,6 +62,22 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
                 {
                     _FicDataGrid_SelectedGradoEstudio = value;
                     RaisePropertyChanged("SelectedGradoEstudio");
+                }
+            }//ITEM SELECCIONADO
+        }//Fin de SelectedItem
+
+        public Eva_curriculo_persona DatosCurriculo
+        {
+            get
+            {
+                return _FicCurriculo;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _FicCurriculo = value;
+                    RaisePropertyChanged("DatosCurriculo");
                 }
             }//ITEM SELECCIONADO
         }//Fin de SelectedItem
@@ -120,8 +138,10 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
 
         public void FicMetAddGradoEstudio()
         {
+            var nuevoGradoEstudio = new Eva_carrera_grado_estudios();
+            nuevoGradoEstudio.IdCurriculo = DatosCurriculo.IdCurriculo;
             IFicSrvNavigation.FicMetNavigateTo<FicVmGradoEstudiosItem>
-                (new Eva_carrera_grado_estudios());
+                (nuevoGradoEstudio);
         }//Fin add
 
         private async void FicMetEditGradoEstudio()
@@ -149,9 +169,17 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
         {
             try
             {
+                var curriculo = context as Eva_curriculo_persona;
+
+                if (curriculo != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Trae curriculo.");
+                    DatosCurriculo = curriculo;
+                }
+
                 SourceGradoEstudios.Clear();
 
-                var source_local_inv = await IFicSrvGradoEstudios.FicMetGetListGradoEstudios();
+                var source_local_inv = await IFicSrvGradoEstudios.FicMetGetListGradoEstudios(DatosCurriculo);
 
                 if (source_local_inv != null)
                 {

@@ -70,7 +70,7 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
             try
             {
                 await IFicSrvCurriculoIdiomas.FicMetInsertNewIdioma(NuevoIdioma);
-                //IFicSrvNavigation.FicMetNavigateBack();
+                IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {

@@ -12,7 +12,7 @@ using Xamarin.Forms;
 using System.Linq;
 
 namespace AppGestionCurriculums.Services.CurriculumsPersonas
-{
+{ /*
     public class FicSrvCurriculumsPersonas : IFicSrvCurriculumsPersonas
     {
         private readonly DBContext FicLoBDContext;
@@ -24,7 +24,7 @@ namespace AppGestionCurriculums.Services.CurriculumsPersonas
             FicLoBDContext.AddDataCurriculo(2, DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
             FicLoBDContext.AddDataCurriculo(3, DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
             FicLoBDContext.AddDataCurriculo(4, DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
-            FicLoBDContext.AddDataCurriculo(5, DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");*/
+            FicLoBDContext.AddDataCurriculo(5, DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
 
             FicLoBDContext.AddDataDomicilio(1, "Villa de Santisteban #544", "Hume", "Apolonio", "63173", "Mexico", "Nayarit", "Tepic","Aramara", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
             FicLoBDContext.AddDataDomicilio(2, "Ociel Sandoval #21", "Juan Flores", "Federico Loaiza", "63155", "Mexico", "Nayarit", "Tepic", "Caminera", DateTime.Today.ToString(), DateTime.Today.ToString(), "Beth", "Beth", "S", "N");
@@ -152,7 +152,7 @@ namespace AppGestionCurriculums.Services.CurriculumsPersonas
                           join Eva_curriculo_persona in FicLoBDContext.eva_curriculo_persona on Eva_curriculo_competencias.IdCurriculo equals Eva_curriculo_persona.IdCurriculo
                           where Eva_curriculo_persona.IdPersona == persona.IdPersona
                           select Eva_curriculo_competencias).AsNoTracking().ToListAsync();
-        }*/
+        }
     
-    }
+    }*/
 }

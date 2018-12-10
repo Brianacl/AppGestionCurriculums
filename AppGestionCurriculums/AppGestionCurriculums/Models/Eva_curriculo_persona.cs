@@ -10,8 +10,6 @@ namespace AppGestionCurriculums.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int16 IdCurriculo { get; set; }
-        public Rh_cat_personas rh_cat_personas { get; set; }
-        public Int16 IdPersona { get; set; }
         public DateTime FechaReg { get; set; }
         [StringLength(20)]
         public string UsuarioReg { get; set; }
@@ -22,5 +20,13 @@ namespace AppGestionCurriculums.Models
         public string Activo { get; set; }
         [StringLength(1)]
         public string Borrado { get; set; }
+
+        public List<Eva_curriculo_competencias> Competencias { get; set; }
+        public List<Eva_carrera_grado_estudios> GradoEstudios { get; set; }
+        public List<Eva_curriculo_idiomas> Idiomas { get; set; }
+
+        //FK
+        public Rh_cat_personas rh_cat_personas { get; set; }
+        public Int16 IdPersona { get; set; }
     }
 }

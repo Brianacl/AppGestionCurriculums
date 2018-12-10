@@ -21,7 +21,7 @@ namespace AppGestionCurriculums.ViewModels.Competencias
 
         public ObservableCollection<Eva_curriculo_competencias> _FicDataGrid_SourceCompetencias;
         public int IdPersona;
-        private Rh_cat_personas Fic_rh_cat_personas;
+        private Eva_curriculo_persona Fic_curriculo;
         public Eva_curriculo_competencias _FicDataGrid_SelectedCompetencias;
         private ICommand _FicAddCompetenciasCommand;
         private ICommand _FicEditCompetenciasCommand;
@@ -54,12 +54,12 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             }
         }//Fin SourceIdiomas
 
-        public Rh_cat_personas DatosPersona
+        public Eva_curriculo_persona DatosCurriculo
         {
-            get { return Fic_rh_cat_personas; }
+            get { return Fic_curriculo; }
             set
             {
-                Fic_rh_cat_personas = value;
+                Fic_curriculo = value;
                 RaisePropertyChanged();
             }
         }
@@ -130,14 +130,19 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         }//Fin delete
         public void FicMetAddCompetencias()
         {
+            var nuevaCompetencia = new Eva_curriculo_competencias();
+            nuevaCompetencia.IdCurriculo = DatosCurriculo.IdCurriculo;
+
             IFicLoSrvNavigation.FicMetNavigateTo<FicVmCompetenciasItem>
-                (new Eva_curriculo_competencias());
+                (nuevaCompetencia);
         }//Fin add
         private async void FicMetEditCompetencias()
         {
             if (_FicDataGrid_SelectedCompetencias != null)
+            {
                 IFicLoSrvNavigation.FicMetNavigateTo<FicVmCompetenciasItem>
                     (_FicDataGrid_SelectedCompetencias);
+            }
             else
                 await new Page().DisplayAlert("ALERTA", "Para editar primero seleccione un registro", "OK");
         }
@@ -155,21 +160,22 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         {
             try
             {
-                    var FicPersonaSeleccionada = navigationContext as Rh_cat_personas;
+                var FicCurriculoSeleccionado = navigationContext as Eva_curriculo_persona;
 
-                    if (FicPersonaSeleccionada != null)
-                    {
-                        DatosPersona = FicPersonaSeleccionada;
-                    }
+                if (FicCurriculoSeleccionado != null)
+                {
+                    DatosCurriculo = FicCurriculoSeleccionado;
+                    System.Diagnostics.Debug.WriteLine("Trae un curriculo " + DatosCurriculo.IdCurriculo);
+                }
                     base.OnAppearing(navigationContext);
                 
                 SourceCompetencias.Clear();
-                var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListCompetencias(DatosPersona);//FicMetGetListCurriculumsPersonas();
+                var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListCompetencias(DatosCurriculo);//FicMetGetListCurriculumsPersonas();
                 if (source_local_inv != null)
                 {
-                    foreach (Eva_curriculo_competencias curriculo in source_local_inv)
+                    foreach (Eva_curriculo_competencias competencias in source_local_inv)
                     {
-                        SourceCompetencias.Add(curriculo);
+                        SourceCompetencias.Add(competencias);
                     }
                 }
             }

@@ -22,9 +22,11 @@ namespace AppGestionCurriculums.Services
             LoDBContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
         }//Fin del constructor
 
-        public async Task<IEnumerable<Eva_carrera_grado_estudios>> FicMetGetListGradoEstudios()
+        public async Task<IEnumerable<Eva_carrera_grado_estudios>> FicMetGetListGradoEstudios(Eva_curriculo_persona curriculo)
         {
-            return await (from eva_curriculo_idiomas in LoDBContext.eva_grado_estudios select eva_curriculo_idiomas).AsNoTracking().ToListAsync();
+            return await (from gradoEstudios in LoDBContext.eva_grado_estudios
+                          where gradoEstudios.IdCurriculo == curriculo.IdCurriculo
+                          select gradoEstudios).AsNoTracking().ToListAsync();
         }
 
         public async Task FicMetInsertNewGradoEstudios(Eva_carrera_grado_estudios FicInsertGradoEstudios)

@@ -14,6 +14,8 @@ using AppGestionCurriculums.Services.Competencias;
 using AppGestionCurriculums.Services.CurriculumsPersonas;
 using AppGestionCurriculums.Interfaces.Competencias;
 using AppGestionCurriculums.Interfaces.CurriculumsPersonas;
+using AppGestionCurriculums.ViewModels.Personas;
+using AppGestionCurriculums.ViewModels.Curriculos;
 
 namespace AppGestionCurriculums.ViewModels.Base
 {
@@ -52,7 +54,13 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmDomicilioDetalle>();
             FicContainerBuilder.RegisterType<FicVmTelefonoDetalle>();
             FicContainerBuilder.RegisterType<FicVmCurriculumsPersonasItem>();
-
+            //Personas
+            FicContainerBuilder.RegisterType<FicVmPersonasList>();
+            FicContainerBuilder.RegisterType<FicVmPersonasItem>();
+            FicContainerBuilder.RegisterType<FicVmPersonasDetalle>();
+            //Curriculos
+            FicContainerBuilder.RegisterType<FicVmCurriculosItem>();
+            FicContainerBuilder.RegisterType<FicVmCurriculosDetalle>();
 
             //Servicios
             FicContainerBuilder.RegisterType<FicSrvNavigation>().As<IFicSrvNavigation>().SingleInstance();
@@ -64,7 +72,10 @@ namespace AppGestionCurriculums.ViewModels.Base
 
                 //Betsy
             FicContainerBuilder.RegisterType<FicSrvCompetencias>().As<IFicSrvCompetencias>().SingleInstance();
-            FicContainerBuilder.RegisterType<FicSrvCurriculumsPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
+            //FicContainerBuilder.RegisterType<FicSrvCurriculumsPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
+
+            FicContainerBuilder.RegisterType<FicSrvRhCatPersonas>().As<IFicSrvRhCatPersonas>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCurriculoPersonas>().As<IFicSrvEvaCurriculoPersonas>().SingleInstance();
 
             if (FicIContainer != null) FicIContainer.Dispose();
 
@@ -176,6 +187,32 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmTelefonoDetalle FicVmTelefonoDetalle
         {
             get { return FicIContainer.Resolve<FicVmTelefonoDetalle>(); }
+        }
+
+        //Personas
+        public FicVmPersonasList FicVmPersonasList
+        {
+            get { return FicIContainer.Resolve<FicVmPersonasList>(); }
+        }
+
+        public FicVmPersonasItem FicVmPersonasItem
+        {
+            get { return FicIContainer.Resolve<FicVmPersonasItem>(); }
+        }
+
+        public FicVmPersonasDetalle FicVmPersonasDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmPersonasDetalle>(); }
+        }
+
+        public FicVmCurriculosItem FicVmCurriculosItem
+        {
+            get { return FicIContainer.Resolve<FicVmCurriculosItem>(); }
+        }
+
+        public FicVmCurriculosDetalle FicVmCurriculosDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmCurriculosDetalle>(); }
         }
     }//Fin clase
 }

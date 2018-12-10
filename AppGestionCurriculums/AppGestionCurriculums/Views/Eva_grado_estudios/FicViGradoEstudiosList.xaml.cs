@@ -13,9 +13,12 @@ namespace AppGestionCurriculums.Views.Eva_grado_estudios
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FicViGradoEstudiosList : ContentPage
 	{
+        private object FicLoParameter;
+
 		public FicViGradoEstudiosList (object FicNavigationContext)
 		{
 			InitializeComponent ();
+            FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmGradoEstudiosList;
 		}
 
@@ -24,7 +27,7 @@ namespace AppGestionCurriculums.Views.Eva_grado_estudios
             var FicViewModel = BindingContext as FicVmGradoEstudiosList;
             if (FicViewModel != null)
             {
-                FicViewModel.OnAppearing(null);
+                FicViewModel.OnAppearing(FicLoParameter);
             }
         }
     }

@@ -21,9 +21,11 @@ namespace AppGestionCurriculums.Services
             LoDBContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
         }//Fin del constructor
 
-        public async Task<IEnumerable<Eva_curriculo_idiomas>> FicMetGetListIdiomas()
+        public async Task<IEnumerable<Eva_curriculo_idiomas>> FicMetGetListIdiomas(Eva_curriculo_persona curriculo)
         {
-            return await (from eva_curriculo_idiomas in LoDBContext.eva_curriculo_idiomas select eva_curriculo_idiomas).AsNoTracking().ToListAsync();
+            return await (from idiomas in LoDBContext.eva_curriculo_idiomas
+                          where idiomas.IdCurriculo == curriculo.IdCurriculo
+                          select idiomas).AsNoTracking().ToListAsync();
         }
 
         public async Task FicMetInsertNewIdioma(Eva_curriculo_idiomas FicInsertIdioma)
@@ -38,7 +40,6 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceIdiomaExist == null)
                 {
-
                     FicInsertIdioma.FechaReg = DateTime.Today;
                     FicInsertIdioma.FechaUltMod = DateTime.Today;
                     FicInsertIdioma.UsuarioReg = "Brian Casas";

@@ -15,6 +15,8 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
     {
         public ObservableCollection<Eva_curriculo_idiomas> _FicDataGrid_SourceIdiomas;
         public Eva_curriculo_idiomas _FicDataGrid_SelectedIdioma;
+        public Eva_curriculo_persona _FicCurriculo;
+
         private ICommand _FicAddIdiomaCommand;
         private ICommand _FicEditIdiomaCommand;
         private ICommand _FicDetalleIdiomaCommand;
@@ -60,6 +62,22 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
                 {
                     _FicDataGrid_SelectedIdioma = value;
                     RaisePropertyChanged();
+                }
+            }//ITEM SELECCIONADO
+        }//Fin de SelectedItem
+
+        public Eva_curriculo_persona DatosCurriculo
+        {
+            get
+            {
+                return _FicCurriculo;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _FicCurriculo = value;
+                    RaisePropertyChanged("DatosCurriculo");
                 }
             }//ITEM SELECCIONADO
         }//Fin de SelectedItem
@@ -120,8 +138,10 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
 
         public void FicMetAddIdioma()
         {
+            var nuevoIdioma = new Eva_curriculo_idiomas();
+            nuevoIdioma.IdCurriculo = DatosCurriculo.IdCurriculo;
             IFicSrvNavigation.FicMetNavigateTo<FicVmEvaCurriculoIdiomasItem>
-                (new Eva_curriculo_idiomas());
+                (nuevoIdioma);
         }
 
         private async void FicMetEditIdioma()
@@ -150,9 +170,17 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas
         {
             try
             {
+                var curriculo = context as Eva_curriculo_persona;
+
+                if (curriculo != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Trae curriculo.");
+                    DatosCurriculo = curriculo;
+                }
+
                 SourceIdiomas.Clear();
 
-                var source_local_inv = await IFicSrvCurriculoIdiomas.FicMetGetListIdiomas();
+                var source_local_inv = await IFicSrvCurriculoIdiomas.FicMetGetListIdiomas(DatosCurriculo);
 
                 if (source_local_inv != null)
                 {

@@ -8,6 +8,7 @@ namespace AppGestionCurriculums.Models
     {
         Browse,
         About,
+        Personas,
         CurriculumsPersonas,
         Competencias,
         ListaIdiomas,

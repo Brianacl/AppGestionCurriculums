@@ -38,6 +38,8 @@ namespace AppGestionCurriculums.Models
         public string ClaveReferencia { get; set; }
         [StringLength(1)]
         public string TipoDomicilio { get; set; }
+
+        //Datos generales
         public DateTime FechaReg { get; set; }
         public DateTime FechaUltMod { get; set; }
         [StringLength(20)]
@@ -48,5 +50,9 @@ namespace AppGestionCurriculums.Models
         public string Activo { get; set; }
         [StringLength(1)]
         public string Borrado { get; set; }
+
+        //Foreing key
+        public Rh_cat_personas rh_Cat_Personas { get; set; }
+        public Int16 IdPersona { get; set; }
     }
 }

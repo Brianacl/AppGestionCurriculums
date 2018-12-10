@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Personas.FicViPersonasItem"
+             Title="REGISTRO DE PERSONA">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label Text="Número de control" />
+                <Entry Text="{Binding NuevoPersona.NumControl}"/>
+
+                <Label Text="Nombre" />
+                <Entry Text="{Binding NuevoPersona.Nombre}"/>
+
+                <Label Text="Apellido paterno" />
+                <Entry Text="{Binding NuevoPersona.ApPaterno}"/>
+
+                <Label Text="Apellido materno" />
+                <Entry Text="{Binding NuevoPersona.ApMaterno}"/>
+
+                <Label Text="RFC" />
+                <Entry Text="{Binding NuevoPersona.RFC}"/>
+
+                <Label Text="CURP" />
+                <Entry Text="{Binding NuevoPersona.CURP}"/>
+
+                <Label Text="Fecha de nacimiento" />
+                <DatePicker 
+                    MinimumDate="01/01/1950"
+                    MaximumDate="12/31/2025"
+                    Date="{Binding NuevoPersona.FechaNac}"/>
+
+                <Label Text="Tipo persona" />
+                <Entry Text="{Binding NuevoPersona.TipoPersona}"/>
+
+                <Label Text="Sexo" />
+                <Entry Text="{Binding NuevoPersona.Sexo}"/>
+
+                <Label Text="Alias" />
+                <Entry Text="{Binding NuevoPersona.Alias}"/>
+
+                <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+        </ContentPage.Content>
+</ContentPage>
