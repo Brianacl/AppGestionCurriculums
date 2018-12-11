@@ -8,7 +8,9 @@ namespace AppGestionCurriculums.Interfaces.Competencias
 {
     public interface IFicSrvCompetencias
     {
-        Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Eva_curriculo_persona curriculo); 
+        Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Eva_curriculo_persona curriculo);
+        Task<IEnumerable<string>> FicMetGetListTiposCompetencias();
+        Task<IEnumerable<string>> FicMetGetListCatCompetencias(Int16 id);
         Task FicMetInsertCompetencias(Eva_curriculo_competencias FicPaCompetencias);
         Task FicMetDeleteCompetencias(Eva_curriculo_competencias FicPaCompetencias);
 

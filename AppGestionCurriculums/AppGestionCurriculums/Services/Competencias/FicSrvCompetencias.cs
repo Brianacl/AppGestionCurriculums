@@ -19,7 +19,7 @@ namespace AppGestionCurriculums.Services.Competencias
         public short idCurriculo;
         public FicSrvCompetencias()
         {
-            FicLoBDContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());
+            FicLoBDContext = new DBContext(DependencyService.Get<IFicConfigSQLite>().FicGetDataBasePath());          
         }//Fin del constructor
 
         public async Task<IEnumerable<Eva_curriculo_competencias>> FicMetGetListCompetencias(Eva_curriculo_persona curriculo)
@@ -111,6 +111,18 @@ namespace AppGestionCurriculums.Services.Competencias
             
         }//BUSCA SI EXISTE UN REGISTRO
 
+        public async Task<IEnumerable<string>> FicMetGetListTiposCompetencias()
+        {
+            return await(from Tcompetencias in FicLoBDContext.eva_cat_tipo_competencias
+                         select Tcompetencias.DesTipoCompetencia).AsNoTracking().ToListAsync();           
+        }
+
+        public async Task<IEnumerable<string>> FicMetGetListCatCompetencias(short id)
+        {
+            return await(from CatCompetencias in FicLoBDContext.eva_cat_competencias
+                         where CatCompetencias.IdTipoCompetencia==id
+                         select CatCompetencias.DesCompetencia).AsNoTracking().ToListAsync();
+        }
     }
 
     

@@ -152,7 +152,7 @@ namespace AppGestionCurriculums.ViewModels.Personas
                 IFicSrvNavigation.FicMetNavigateTo<FicVmCurriculosDetalle>
                     (_FicDataGrid_SelectedPersona);
             else
-                await new Page().DisplayAlert("ALERTA - editar", "Para editar primero seleccione un registro", "OK");
+                await new Page().DisplayAlert("ALERTA - detalle", "Para ver detalle primero seleccione un registro", "OK");
         }
 
         private async void FicMetDetallePersona()
@@ -163,7 +163,7 @@ namespace AppGestionCurriculums.ViewModels.Personas
                     (_FicDataGrid_SelectedPersona);
             }
             else
-                await new Page().DisplayAlert("ALERTA - editar", "Para ver los detalles primero seleccione un registro", "OK");
+                await new Page().DisplayAlert("ALERTA - detalle", "Para ver los detalles primero seleccione un registro", "OK");
         }
 
 

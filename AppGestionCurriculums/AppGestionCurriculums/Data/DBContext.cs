@@ -49,7 +49,7 @@ namespace AppGestionCurriculums.Data
                 await new Page().DisplayAlert("ALERTA", e.Message.ToString() + " 3", "OK");
             }
         }//CONFIGURACION DE LA CONEXION
-        
+        /*
         public void AddDataPersonas(int idDom, int idTel, int idDir,string numCtrl,string nom,string apPat,string apMat,string rfc,string curp,string fnac,string sex,string freg,string fmod,string ureg,string umod,string act,string bor)
         {
             int numPersonas=0;
@@ -223,9 +223,73 @@ namespace AppGestionCurriculums.Data
                 db.Close();
             }
 
+        }*/
+        public void AddDataCatCompetencias(string IdComp, string IdtipoComp, string desComp,string det, string freg, string fmod, string ureg, string umod, string act, string bor)
+        {
+            int numRegistros = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Eva_cat_competencias;";
+                numRegistros = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numRegistros <= 37)
+                {
+                    insertCommand.CommandText = "INSERT INTO Eva_cat_competencias (IdCompetencia, IdTipoCompetencia, DesCompetencia, Detalle, FechaReg, FechaUltMod,UsuarioReg,UsuarioMod,Activo,Borrado) VALUES (@Entry1,@Entry2,@Entry3,@Entry4,@Entry5,@Entry6,@Entry7,@Entry8,@Entry9,@Entry10);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdComp);
+                    insertCommand.Parameters.AddWithValue("@Entry2", IdtipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry3", desComp);
+                    insertCommand.Parameters.AddWithValue("@Entry4", det);
+                    insertCommand.Parameters.AddWithValue("@Entry5", freg);
+                    insertCommand.Parameters.AddWithValue("@Entry6", fmod);
+                    insertCommand.Parameters.AddWithValue("@Entry7", ureg);
+                    insertCommand.Parameters.AddWithValue("@Entry8", umod);
+                    insertCommand.Parameters.AddWithValue("@Entry9", act);
+                    insertCommand.Parameters.AddWithValue("@Entry10", bor);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+        }
+
+        public void AddDataCatTipoCompetencias(string IdtipoComp, string desTipoComp, string det, string freg, string fmod, string ureg, string umod, string act, string bor)
+        {
+            int numRegistros = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Eva_cat_tipo_competencias;";
+                numRegistros = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numRegistros <= 5)
+                {
+                    insertCommand.CommandText = "INSERT INTO Eva_cat_tipo_competencias (IdTipoCompetencia, DesTipoCompetencia, Detalle, FechaReg, FechaUltMod,UsuarioReg,UsuarioMod,Activo,Borrado) VALUES (@Entry1,@Entry2,@Entry3,@Entry5,@Entry6,@Entry7,@Entry8,@Entry9,@Entry10);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdtipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry2", desTipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry3", det);
+                    insertCommand.Parameters.AddWithValue("@Entry5", freg);
+                    insertCommand.Parameters.AddWithValue("@Entry6", fmod);
+                    insertCommand.Parameters.AddWithValue("@Entry7", ureg);
+                    insertCommand.Parameters.AddWithValue("@Entry8", umod);
+                    insertCommand.Parameters.AddWithValue("@Entry9", act);
+                    insertCommand.Parameters.AddWithValue("@Entry10", bor);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
         }
         //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
+        public DbSet<Eva_cat_competencias> eva_cat_competencias { get; set; }
+        public DbSet<Eva_cat_tipo_competencias> eva_cat_tipo_competencias { get; set; }
         public DbSet<Eva_curriculo_persona> eva_curriculo_persona { get; set; }
         public DbSet<Rh_cat_personas> rh_cat_personas { get; set; }
         public DbSet<Rh_cat_domicilios> rh_cat_domicilios { get; set; }
@@ -244,7 +308,13 @@ namespace AppGestionCurriculums.Data
                 //Primary keys
                 //Betsy
                 modelBuilder.Entity<Eva_curriculo_competencias>()
+                    .HasKey(pk => new {pk.IdCurriculo, pk.IdCompetencia, pk.IdCompetenciaCurriculum });
+
+                modelBuilder.Entity<Eva_cat_competencias>()
                     .HasKey(pk => new { pk.IdCompetencia });
+
+                modelBuilder.Entity<Eva_cat_tipo_competencias>()
+                    .HasKey(pk => new { pk.IdTipoCompetencia });
 
                 modelBuilder.Entity<Eva_curriculo_persona>()
                     .HasKey(pk => new { pk.IdCurriculo });
@@ -281,6 +351,16 @@ namespace AppGestionCurriculums.Data
                     .HasOne(f => f.eva_curriculo_persona)
                     .WithMany()
                     .HasForeignKey(f => new { f.IdCurriculo });
+
+                modelBuilder.Entity<Eva_curriculo_competencias>()
+                    .HasOne(f => f.eva_cat_competencias)
+                    .WithMany()
+                    .HasForeignKey(f => new { f.IdCompetencia });
+
+                modelBuilder.Entity<Eva_cat_competencias>()
+                    .HasOne(f => f.eva_cat_tipo_competencias)
+                    .WithMany()
+                    .HasForeignKey(f => new { f.IdTipoCompetencia });
 
                 modelBuilder.Entity<Eva_curriculo_persona>()
                     .HasOne(f => f.rh_cat_personas).WithMany()

@@ -6,19 +6,18 @@ using System.Text;
 
 namespace AppGestionCurriculums.Models
 {
-    public class Eva_curriculo_competencias
+    public class Eva_cat_tipo_competencias
     {
         //[Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Int16 IdCompetenciaCurriculum { get; set; }       
-        public float Dominio { get; set; }
+        public Int16 IdTipoCompetencia { get; set; }       
         [StringLength(255)]
-        public string DesCompetencia { get; set; }
+        public string DesTipoCompetencia { get; set; }
         [StringLength(255)]
         public string Detalle { get; set; }
         public DateTime FechaReg { get; set; }
-        [StringLength(20)]
-        public string UsuarioReg { get; set; }
         public DateTime FechaUltMod { get; set; }
+        [StringLength(20)]
+        public string UsuarioReg { get; set; }       
         [StringLength(20)]
         public string UsuarioMod { get; set; }
         [StringLength(1)]
@@ -27,9 +26,6 @@ namespace AppGestionCurriculums.Models
         public string Borrado { get; set; }
 
         //FK
-        public Int16 IdCurriculo { get; set; }
-        public Int16 IdCompetencia { get; set; }
-        public Eva_curriculo_persona eva_curriculo_persona { get; set; }
-        public Eva_cat_competencias eva_cat_competencias { get; set; }
+        //public Eva_curriculo_persona eva_curriculo_persona { get; set; }
     }
 }
