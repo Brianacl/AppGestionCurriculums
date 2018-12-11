@@ -29,38 +29,41 @@
                     <ColumnDefinition Width="25*"/>
                 </Grid.ColumnDefinitions>
                 <!--ID-->
-                <Label Text="IdCurriculo" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.IdCurriculo}" Grid.Row="0" Grid.Column="1"/>
-
-                <Label Text="IdCompetencia" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.IdCompetencia}" Grid.Row="1" Grid.Column="1"/>
-
-                <Label Text="Dominio" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Dominio}" Grid.Row="2" Grid.Column="1"/>
-
-                <Label Text="DesCompetencia" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.DesCompetencia}" Grid.Row="3" Grid.Column="1"/>
+                <Label Text="IdCompetenciaCurriculum" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.IdCompetenciaCurriculum}" Grid.Row="0" Grid.Column="1"/>
                 
-                <Label Text="Detalle" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Detalle}" Grid.Row="4" Grid.Column="1"/>
+                <Label Text="IdCurriculo" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.IdCurriculo}" Grid.Row="1" Grid.Column="1"/>
 
-                <Label Text="Fecha registro" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.FechaReg}" Grid.Row="5" Grid.Column="1"/>
+                <Label Text="IdCompetencia" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.IdCompetencia}" Grid.Row="2" Grid.Column="1"/>
 
-                <Label Text="Fecha modificación" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.FechaUltMod}" Grid.Row="6" Grid.Column="1"/>
+                <Label Text="Dominio" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Dominio}" Grid.Row="3" Grid.Column="1"/>
 
-                <Label Text="Registro usuario" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.UsuarioReg}" Grid.Row="7" Grid.Column="1"/>
+                <Label Text="DesCompetencia" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.DesCompetencia}" Grid.Row="4" Grid.Column="1"/>
+                
+                <Label Text="Detalle" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Detalle}" Grid.Row="5" Grid.Column="1"/>
 
-                <Label Text="Modifico usuario" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.UsuarioMod}" Grid.Row="8" Grid.Column="1"/>
+                <Label Text="Fecha registro" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.FechaReg}" Grid.Row="6" Grid.Column="1"/>
 
-                <Label Text="Activo" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Activo}" Grid.Row="9" Grid.Column="1"/>
+                <Label Text="Fecha modificación" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.FechaUltMod}" Grid.Row="7" Grid.Column="1"/>
 
-                <Label Text="Borrado" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Borrado}" Grid.Row="10" Grid.Column="1"/>
+                <Label Text="Registro usuario" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.UsuarioReg}" Grid.Row="8" Grid.Column="1"/>
+
+                <Label Text="Modifico usuario" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.UsuarioMod}" Grid.Row="9" Grid.Column="1"/>
+
+                <Label Text="Activo" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Activo}" Grid.Row="10" Grid.Column="1"/>
+
+                <Label Text="Borrado" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding DatosCompetencia.Borrado}" Grid.Row="11" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

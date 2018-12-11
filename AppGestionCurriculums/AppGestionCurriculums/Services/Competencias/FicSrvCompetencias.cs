@@ -117,13 +117,27 @@ namespace AppGestionCurriculums.Services.Competencias
                          select Tcompetencias.DesTipoCompetencia).AsNoTracking().ToListAsync();           
         }
 
-        public async Task<IEnumerable<string>> FicMetGetListCatCompetencias(short id)
+        public async Task<IEnumerable<string>> FicMetGetListCatCompetenciasID(Int16 id)
         {
             return await(from CatCompetencias in FicLoBDContext.eva_cat_competencias
                          where CatCompetencias.IdTipoCompetencia==id
                          select CatCompetencias.DesCompetencia).AsNoTracking().ToListAsync();
         }
+        public async Task<IEnumerable<string>> FicMetGetListCatCompetencias()
+        {
+            return await (from CatCompetencias in FicLoBDContext.eva_cat_competencias
+                          select CatCompetencias.DesCompetencia).AsNoTracking().ToListAsync();
+        }
+
+        public async Task<Eva_cat_competencias> FicMetObtenerIdsCompetencias(string nombreCompetencias)
+        {
+            return await(from competencias in FicLoBDContext.eva_cat_competencias
+                         where competencias.DesCompetencia == nombreCompetencias
+                         select competencias).AsNoTracking().SingleOrDefaultAsync();
+        }
+
+        public string contarCurriculoCompetencia() => FicLoBDContext.contarCompetencias();
     }
 
-    
+
 }

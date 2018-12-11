@@ -10,24 +10,28 @@ using Xamarin.Forms;
 using System.Linq;
 using System.Collections.ObjectModel;
 using Syncfusion.XForms.ComboBox;
+using AppGestionCurriculums.Views.Competencias;
+using AppGestionCurriculums.Data;
 
 namespace AppGestionCurriculums.ViewModels.Competencias
 {
     public class FicVmCompetenciasItem : FicViewModelBase
     {
         private Eva_curriculo_competencias Fic_Eva_curriculo_competencias_item;
+        private string Fic_Eva_nombre_cat_competencias_item;
         private Eva_cat_tipo_competencias Fic_Eva_cat_tipo_competencias_item;
         public ObservableCollection<string> _FicDataGrid_SourceTiposCompetencias;
         public ObservableCollection<string> _FicDataGrid_SourceCatCompetencias;
 
-        SfComboBox comboBox;
+        
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicLoSrvNavigation;
         private IFicSrvCompetencias IFicLoSrvCompetencias;
 
-
+        private DBContext DbLoContext;
+        public Int16 indexSeleccionado;
 
         public FicVmCompetenciasItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvCompetencias IFicSrvCompetencias)
         {
@@ -35,11 +39,16 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             IFicLoSrvCompetencias = IFicSrvCompetencias;
             _FicDataGrid_SourceTiposCompetencias = new ObservableCollection<string>();
             _FicDataGrid_SourceCatCompetencias = new ObservableCollection<string>();
-            comboBox =  new SfComboBox();
-            comboBox.SelectionChanged += (object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e) =>
-            {
-                Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Resolution", "Resolution was changed", "OK");
-            };
+            indexSeleccionado = 0;
+            //comboBox =  new SfComboBox();
+            // comboBox.SelectionChanged += (object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e) =>
+            // {
+            //     Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Resolution", "Resolution was changed", "OK");
+            // };
+        }
+
+        public FicVmCompetenciasItem()
+        {
         }
 
         public Eva_curriculo_competencias NuevaCompetencias
@@ -48,6 +57,16 @@ namespace AppGestionCurriculums.ViewModels.Competencias
             set
             {
                 Fic_Eva_curriculo_competencias_item = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string nombreCatCompetencias
+        {
+            get { return Fic_Eva_nombre_cat_competencias_item; }
+            set
+            {
+                Fic_Eva_nombre_cat_competencias_item = value;
                 RaisePropertyChanged();
             }
         }
@@ -83,6 +102,24 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                 }
             }
         }//Fin SourceIdiomas
+
+        public async void TraerCatCompetencias(Int16 id)
+        {
+            if (SourceCatCompetencias != null)
+            {
+                SourceCatCompetencias.Clear();
+            }
+
+                var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListCatCompetenciasID(id);//FicMetGetListCurriculumsPersonas();
+                if (source_local_inv != null)
+                {
+                    foreach (string Ccompetencias in source_local_inv)
+                    {
+                        SourceCatCompetencias.Add(Ccompetencias);
+                    }
+                }
+            
+        }
         public async override void OnAppearing(object navigationContext)
         {
             try
@@ -95,10 +132,8 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                     NuevaCompetencias = FicCompetenciasSeleccionada;
                 }
                     base.OnAppearing(navigationContext);
-                if (SourceTipoCompetencias != null)
-                {
                     SourceTipoCompetencias.Clear();
-                }
+                
                 var source_local_inv = await IFicLoSrvCompetencias.FicMetGetListTiposCompetencias();//FicMetGetListCurriculumsPersonas();
                 if (source_local_inv != null)
                 {
@@ -106,7 +141,22 @@ namespace AppGestionCurriculums.ViewModels.Competencias
                     {
                         SourceTipoCompetencias.Add(Tcompetencias);
                     }
-                }                
+                }
+                //FicViCompetenciasItem nViCompItem = new FicViCompetenciasItem(navigationContext);
+                //TraerCatCompetencias(nViCompItem.indexSeleccionado);
+                if (SourceCatCompetencias != null)
+                {
+                    SourceCatCompetencias.Clear();
+                }
+
+                var source_local_inv2 = await IFicLoSrvCompetencias.FicMetGetListCatCompetencias();//FicMetGetListCurriculumsPersonas();
+                if (source_local_inv2 != null)
+                {
+                    foreach (string Ccompetencias in source_local_inv2)
+                    {
+                        SourceCatCompetencias.Add(Ccompetencias);
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -127,6 +177,10 @@ namespace AppGestionCurriculums.ViewModels.Competencias
         {
             try
             {
+                Int16 idSig = Int16.Parse(IFicLoSrvCompetencias.contarCurriculoCompetencia());
+                Eva_cat_competencias com = IFicLoSrvCompetencias.FicMetObtenerIdsCompetencias(nombreCatCompetencias).Result;
+                NuevaCompetencias.IdCompetenciaCurriculum = idSig;
+                NuevaCompetencias.IdCompetencia = com.IdCompetencia;
                 await IFicLoSrvCompetencias.FicMetInsertCompetencias(NuevaCompetencias);
                 IFicLoSrvNavigation.FicMetNavigateBack();
             }

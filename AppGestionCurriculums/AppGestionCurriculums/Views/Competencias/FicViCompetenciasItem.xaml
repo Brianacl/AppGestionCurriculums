@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:combobox ="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+           xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              x:Class="AppGestionCurriculums.Views.Competencias.FicViCompetenciasItem"
              Title="REGISTRO DE COMPETENCIA">
   <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+               <!-- 
+                 xmlns:combobox ="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
                 <Label Text="Tipo Competencia" />
-                <combobox:SfComboBox HeightRequest="40" Watermark="Elige el tipo de competencia" WatermarkColor="#1976d2" x:Name="comboBox" DataSource="{Binding SourceTipoCompetencias}" >
+                <combobox:SfComboBox HeightRequest="40" Watermark="Elige el tipo de competencia" WatermarkColor="#1976d2" x:Name="comboBox" DataSource="{Binding SourceTipoCompetencias}"
+                                     SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed">
                 </combobox:SfComboBox>
                 <Label Text="Catalogo Competencia" />
-                <combobox:SfComboBox HeightRequest="40" Watermark="Elige el tipo de competencia" WatermarkColor="#1976d2" x:Name="comboBox2" DataSource="{Binding SourceCatCompetencias}">
-                </combobox:SfComboBox>
+                <combobox:SfComboBox HeightRequest="40" Watermark="Elige el tipo de competencia" WatermarkColor="#1976d2" x:Name="comboBox2" DataSource="{Binding SourceCatCompetencias}"
+                                     SelectionChanged="ComboBox_SelectionChanged2" DropDownClosed="ComboBox_DropDownClosed2">
+                </combobox:SfComboBox>-->
+                <Label Text="Cat Competencia" />
+                <autocomplete:SfAutoComplete HeightRequest="40" x:Name="autoComplete" DataSource="{Binding SourceCatCompetencias}" Text="{Binding nombreCatCompetencias}"/>
                 <Label Text="Dominio" />
                 <Entry Text="{Binding NuevaCompetencias.Dominio}"/>
 
@@ -21,10 +27,18 @@
                 
                 <Label Text="Detalle" />
                 <Entry Text="{Binding NuevaCompetencias.Detalle}"/>
-
-                <Button Text="Guardar"  Command="{Binding FicMetSaveCommand}"/>
-                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
-                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+                <Grid Padding="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Guardar"  Command="{Binding FicMetSaveCommand}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                    <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

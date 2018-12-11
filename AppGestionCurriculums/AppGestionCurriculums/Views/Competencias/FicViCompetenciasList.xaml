@@ -66,11 +66,16 @@
                 SelectedItem="{Binding SelectedCompetencias}"
                 SelectionMode="Single">
                 <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdCompetencia"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DOMINIO" MappingName="Dominio"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCOMPETENCIA" MappingName="DesCompetencia"/>
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DETALLE" MappingName="Detalle"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdCompetenciaCurriculum"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IdCurriculo" MappingName="IdCurriculo"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="IdCompetencia" MappingName="IdCompetencia"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Dominio" MappingName="Dominio"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DesCompetencia" MappingName="DesCompetencia"/>
                 </syncfusion:SfDataGrid.Columns>
+                <syncfusion:SfDataGrid.SortColumnDescriptions>
+                    <syncfusion:SortColumnDescription ColumnName="IdCompetenciaCurriculum" 
+                                          SortDirection="Ascending" />
+                </syncfusion:SfDataGrid.SortColumnDescriptions>
             </syncfusion:SfDataGrid>
         </StackLayout>
     </ContentPage.Content>

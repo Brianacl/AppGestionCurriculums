@@ -286,6 +286,28 @@ namespace AppGestionCurriculums.Data
                 db.Close();
             }
         }
+
+        public string contarCompetencias()
+        {
+            int numRegistros = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Eva_curriculo_competencias;";
+               
+                
+                numRegistros = Convert.ToInt32(insertCommand.ExecuteScalar())+1;
+                db.Close();
+                //new Page().DisplayAlert("ALERTA","Hay"+numRegistros + "registros", "OK");
+                return numRegistros + "";
+            }
+           
+        }
         //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
         public DbSet<Eva_cat_competencias> eva_cat_competencias { get; set; }
