@@ -34,8 +34,7 @@ namespace AppGestionCurriculums.ViewModels.Referencias
         public ObservableCollection<Tipo_gen_parentezco_referencias> SourceReferencias
         {
             get {
-                return _SourceReferencias
-                  ;
+                return _SourceReferencias;
             }
             set
             {
