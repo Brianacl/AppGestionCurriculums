@@ -781,7 +781,6 @@ C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\Syncfusion.SfShared.UWP.pri.xml
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\AppGestionCurriculums.UWP.csprojAssemblyReference.cache
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\e_sqlite3.dll
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf
@@ -1000,6 +999,7 @@ C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.dll
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.pdb
+C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\AppGestionCurriculums.UWP.csprojAssemblyReference.cache
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\App.g.i.cs
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\App.g.cs
 C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\MainPage.g.i.cs

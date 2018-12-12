@@ -18,7 +18,8 @@ namespace AppGestionCurriculums.Views.Competencias
 			InitializeComponent ();
             FicLoParameter = navigationContext;
             BindingContext = App.FicVmLocator.FicVmCompetenciasItem;
-		}
+            //autoComplete.Focus();
+        }
 
         protected override void OnAppearing()
         {

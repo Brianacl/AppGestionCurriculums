@@ -8,7 +8,7 @@ namespace AppGestionCurriculums.Models
 {
     public class Eva_cat_tipo_competencias
     {
-        //[Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Int16 IdTipoCompetencia { get; set; }       
         [StringLength(255)]
         public string DesTipoCompetencia { get; set; }

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-12T16:16:27.072</Modified>
+      <Modified>2018-12-12T19:18:36.662</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-12T16:16:23.854</Modified>
+      <Modified>2018-12-12T19:18:35.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\.nuget\packages\autofac\4.8.1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -864,7 +864,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-12-12T16:16:13.086</Modified>
+      <Modified>2018-12-12T19:18:28.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\competencias.png">
       <PackagePath>Assets\competencias.png</PackagePath>
@@ -1067,11 +1067,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-12T16:16:23.586</Modified>
+      <Modified>2018-12-12T19:18:35.158</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-12T16:16:23.586</Modified>
+      <Modified>2018-12-12T19:18:35.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1143,11 +1143,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-12-12T16:16:26.219</Modified>
+      <Modified>2018-12-12T17:13:37.814</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Betsy Sanchez\Documents\AE\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-12T16:16:27.065</Modified>
+      <Modified>2018-12-12T19:18:36.648</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
