@@ -8,8 +8,8 @@ namespace AppGestionCurriculums.Models
 {
     public class Eva_curriculo_competencias
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Int16 IdCompetencia { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Int16 IdCompetenciaCurriculum { get; set; }
         public float Dominio { get; set; }
         [StringLength(255)]
         public string DesCompetencia { get; set; }
@@ -28,7 +28,9 @@ namespace AppGestionCurriculums.Models
 
         //FK
         public Int16 IdCurriculo { get; set; }
+        public Int16 IdCompetencia { get; set; }
         public Eva_curriculo_persona eva_curriculo_persona { get; set; }
+        public Eva_cat_competencias eva_cat_competencias { get; set; }
         public List<Eva_curriculo_conocimientos> Conocimientos { get; set; }
     }
 }

@@ -33,12 +33,14 @@ namespace AppGestionCurriculums.Services.Competencias
             try
             {
                 var FicSourceCompetenciasExist = await (
-                       from competencias in FicLoBDContext.eva_curriculo_competencias 
+                       from competencias in FicLoBDContext.eva_curriculo_competencias
                        where competencias.IdCompetencia == FicInsertCompetencias.IdCompetencia
                        select competencias
                         ).FirstOrDefaultAsync();
                 if (FicSourceCompetenciasExist == null)
                 {
+                    var idUltimoCompetencia = ultimaCompetencia();
+                    FicInsertCompetencias.IdCompetenciaCurriculum = (short)++idUltimoCompetencia;
                     FicInsertCompetencias.FechaReg = DateTime.Now;
                     FicInsertCompetencias.FechaUltMod = DateTime.Now;
                     FicInsertCompetencias.UsuarioReg = "Beth";
@@ -94,9 +96,9 @@ namespace AppGestionCurriculums.Services.Competencias
 
         private short ObtenerCurriculo(Rh_cat_personas obtId)
         {
-             var s= (from competencias in FicLoBDContext.eva_curriculo_persona
-                          where competencias.IdPersona == obtId.IdPersona
-                          select competencias).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
+            var s = (from competencias in FicLoBDContext.eva_curriculo_persona
+                     where competencias.IdPersona == obtId.IdPersona
+                     select competencias).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
             if (s == true)
             {
                 var c = (from competencias in FicLoBDContext.eva_curriculo_persona
@@ -108,10 +110,38 @@ namespace AppGestionCurriculums.Services.Competencias
             {
                 return 0;
             }
-            
-        }//BUSCA SI EXISTE UN REGISTRO
 
+        }//BUSCA SI EXISTE UN REGISTRO
+        public async Task<IEnumerable<string>> FicMetGetListCatCompetencias()
+        {
+            return await (from CatCompetencias in FicLoBDContext.eva_cat_competencias
+                          select CatCompetencias.DesCompetencia).AsNoTracking().ToListAsync();
+        }
+
+        public async Task<Eva_cat_competencias> FicMetObtenerIdsCompetencias(string nombreCompetencias)
+        {
+            return await (from competencias in FicLoBDContext.eva_cat_competencias
+                          where competencias.DesCompetencia == nombreCompetencias
+                          select competencias).AsNoTracking().SingleOrDefaultAsync();
+        }
+
+        private int ultimaCompetencia()
+        {
+            if (FicLoBDContext.eva_curriculo_competencias.Count() == 0)
+            {
+                return 0;
+            }
+
+            return FicLoBDContext.eva_curriculo_competencias.Max(competencia => competencia.IdCompetenciaCurriculum);
+        }
+
+        public async Task<Eva_cat_competencias> FicMetObtenerNombreCompetencias(short idComp)
+        {
+            return await (from competencias in FicLoBDContext.eva_cat_competencias
+                          where competencias.IdCompetencia == idComp
+                          select competencias).AsNoTracking().SingleOrDefaultAsync();
+        }
     }
 
-    
+
 }
