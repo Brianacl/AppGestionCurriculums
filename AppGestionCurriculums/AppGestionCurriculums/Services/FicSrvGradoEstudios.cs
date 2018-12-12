@@ -41,12 +41,13 @@ namespace AppGestionCurriculums.Services
             {
                 var FicSourceGradoEstudioExist = await (
                        from gradoEstudios in LoDBContext.eva_grado_estudios
-                       where gradoEstudios.IdGradoEstudio == FicInsertGradoEstudios.IdGradoEstudio
+                       where gradoEstudios.IdUltimoGrado == FicInsertGradoEstudios.IdUltimoGrado
                        select gradoEstudios
                         ).FirstOrDefaultAsync();
 
                 if (FicSourceGradoEstudioExist == null)
                 {
+                    
                     var idUltimoGrado = ultimoGrado();
                     FicInsertGradoEstudios.IdUltimoGrado = (short)++idUltimoGrado;
                     FicInsertGradoEstudios.FechaReg = DateTime.Now;
@@ -61,7 +62,7 @@ namespace AppGestionCurriculums.Services
                 }
                 else
                 {
-                    FicInsertGradoEstudios.IdGradoEstudio = FicSourceGradoEstudioExist.IdGradoEstudio;
+                    FicInsertGradoEstudios.IdUltimoGrado = FicSourceGradoEstudioExist.IdUltimoGrado;
                     FicInsertGradoEstudios.FechaUltMod = DateTime.Now;
                     LoDBContext.Entry(FicSourceGradoEstudioExist).State = EntityState.Detached;
                     LoDBContext.Update(FicInsertGradoEstudios);
@@ -105,7 +106,7 @@ namespace AppGestionCurriculums.Services
         private async Task<bool> ExistIdioma(Eva_carrera_grado_estudios existGradoEstudio)
         {
             return await (from gradoEstudios in LoDBContext.eva_grado_estudios
-                          where gradoEstudios.IdGradoEstudio == existGradoEstudio.IdGradoEstudio
+                          where gradoEstudios.IdUltimoGrado == existGradoEstudio.IdUltimoGrado
                           select gradoEstudios).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
 

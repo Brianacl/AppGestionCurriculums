@@ -8,7 +8,7 @@ namespace AppGestionCurriculums.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Int16 IdUltimoGrado { get; set; } //Primary key
-        public Int16 IdGradoEstudio { get; set; }
+      
         public string NombreEstudioCarrera { get; set; }
         public string NombreEscuela { get; set; }
         public DateTime PeriodoIni { get; set; }

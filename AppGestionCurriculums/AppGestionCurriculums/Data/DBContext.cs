@@ -270,7 +270,7 @@ namespace AppGestionCurriculums.Data
 
                 //Brian
                 modelBuilder.Entity<Eva_carrera_grado_estudios>()
-                      .HasKey(c => new { c.IdGradoEstudio });
+                      .HasKey(c => new { c.IdUltimoGrado });
 
                 modelBuilder.Entity<Eva_curriculo_idiomas>()
                     .HasKey(c => new { c.IdIdioma });

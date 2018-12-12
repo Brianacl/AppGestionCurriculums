@@ -1,4 +1,5 @@
-﻿using AppGestionCurriculums.ViewModels.GradoEstudios;
+﻿using AppGestionCurriculums.Models;
+using AppGestionCurriculums.ViewModels.GradoEstudios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,15 @@ namespace AppGestionCurriculums.Views.Eva_grado_estudios
 	public partial class FicViGradoEstudiosItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
+        private FicVmGradoEstudiosItem FicViewModel;
 
         public FicViGradoEstudiosItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
+            pickerGradoEstudio.SelectedIndexChanged += (sender, args) =>
+            {
+                cambiarIdPickerSeleccionado();
+            };
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmGradoEstudiosItem;
         }
@@ -29,9 +35,16 @@ namespace AppGestionCurriculums.Views.Eva_grado_estudios
 
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmGradoEstudiosItem;
+            FicViewModel = BindingContext as FicVmGradoEstudiosItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
+        }
+
+        public void cambiarIdPickerSeleccionado()
+        {
+            var selectedItem = (Tipo_gen_grado_estudio)pickerGradoEstudio.SelectedItem;
+            FicViewModel.NuevoGradoEstudio.IdGenTipo = selectedItem.IdGeneral;
+            FicViewModel.NuevoGradoEstudio.IdGenGradoEstudio = selectedItem.IdTipoGeneral;
         }
     }
 }
