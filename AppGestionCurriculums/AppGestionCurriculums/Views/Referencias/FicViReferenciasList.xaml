@@ -65,6 +65,7 @@
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Nombre" MappingName="Nombre"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Paterno" MappingName="ApPaterno"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Apellido Materno" MappingName="ApMaterno"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Sexo" MappingName="Sexo"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Teléfono" MappingName="Telefono"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Email" MappingName="Email"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Domicilio" MappingName="Domicilio"/>

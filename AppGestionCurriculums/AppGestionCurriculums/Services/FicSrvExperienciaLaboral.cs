@@ -49,8 +49,8 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceExperienciaExist == null)
                 {
-                    var idUltimaExperiencia = ultimaExperiencia();
-                    FicInsertExperiencia.IdExperiencia = (short)++idUltimaExperiencia;
+                    var IdExperiencia = ultimaExperiencia();
+                    FicInsertExperiencia.IdExperiencia = (short)++IdExperiencia;
                     FicInsertExperiencia.FechaReg = DateTime.Now;
                     FicInsertExperiencia.FechaUltMod = DateTime.Now;
                     FicInsertExperiencia.UsuarioReg = "Alegria";

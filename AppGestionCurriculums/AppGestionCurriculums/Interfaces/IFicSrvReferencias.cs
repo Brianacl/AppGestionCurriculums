@@ -11,6 +11,6 @@ namespace AppGestionCurriculums.Interfaces
         Task<IEnumerable<Eva_curriculo_referencias>> FicMetGetListReferencias(Eva_curriculo_persona curriculo);
         Task FicMetInsertNewReferencia(Eva_curriculo_referencias FicPaReferencias);
         Task FicMetDeleteReferencia(Eva_curriculo_referencias FicPaReferencias);
-       // Task<IEnumerable<Tipo_gen_parentezco_referencias>> FicMetGetListTipoParentezcoReferencias();
+        Task<IEnumerable<Tipo_gen_parentezco_referencias>> FicMetGetListTipoParentezcoReferencias();
     }
 }

@@ -17,7 +17,13 @@
                 <Entry Text="{Binding NuevoReferencia.ApMaterno}"/>
 
                 <Label Text="Sexo"/>
-                <Entry Text="{Binding NuevoReferencia.Sexo}"/>
+                <Switch Toggled="OnToogleSwitch"/>
+                
+                <Label Text="Parentezco"/>
+                <Picker ItemsSource="{Binding SourceReferencias}"
+                        x:Name="pickerReferencias"
+                        ItemDisplayBinding="{Binding DesGeneral}"/>
+                
 
                 <Label Text="Telefono"/>
                 <Entry Text="{Binding NuevoReferencia.Telefono}"/>

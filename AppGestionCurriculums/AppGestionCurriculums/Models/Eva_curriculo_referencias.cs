@@ -28,7 +28,7 @@ namespace AppGestionCurriculums.Models
         [StringLength(255)]
         public string Observacion { get; set; }
         [StringLength(1)]
-        public string Sexo { get; set; }
+        public string Sexo { get; set; }//Switch
         [StringLength(100)]
         public string EntreCalles { get; set; }
         public DateTime FechaReg { get; set; }

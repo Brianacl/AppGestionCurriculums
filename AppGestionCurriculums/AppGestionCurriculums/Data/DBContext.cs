@@ -253,6 +253,37 @@ namespace AppGestionCurriculums.Data
             }
 
         }
+
+        public void AddDataGenParentezcoReferencias(int IdTipoGeneral, int IdGeneral, string DesGeneral)
+        {
+            int numPersonas = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                // Use parameterized query to prevent SQL injection attacks
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Tipo_gen_parentezco_referencias;";
+                numPersonas = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numPersonas <= 4)
+                {
+                    insertCommand.CommandText = "INSERT INTO Tipo_gen_parentezco_referencias (IdTipoGeneral,IdGeneral,DesGeneral)" +
+                        " VALUES (@Entry1,@Entry2,@Entry3);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdTipoGeneral);
+                    insertCommand.Parameters.AddWithValue("@Entry2", IdGeneral);
+                    insertCommand.Parameters.AddWithValue("@Entry10", DesGeneral);
+
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+
+        }
+
+
         //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
         public DbSet<Eva_curriculo_persona> eva_curriculo_persona { get; set; }
@@ -405,7 +436,7 @@ namespace AppGestionCurriculums.Data
                     .HasOne(p => p.tipoGenParentezco)
                     .WithMany(b => b.curriculoReferencias)
                     .HasForeignKey(p => new { p.IdGenParentezco, p.IdGenTipo })
-                    .HasConstraintName("FK_TipoGenParentezco_curriculoReferencias");
+                    .HasConstraintName("FK_tipo_gen_parentezco");
 
                 //Cristobal
                 modelBuilder.Entity<Eva_actividades_funciones>()
