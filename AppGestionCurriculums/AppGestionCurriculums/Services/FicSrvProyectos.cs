@@ -29,6 +29,12 @@ namespace AppGestionCurriculums.Services
                           select eva_proyectos).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Cat_estatus>> FicMetGetListEstatus()
+        {
+            return await (from cat_estatus in LoDBContext.cat_estatus
+                          select cat_estatus).AsNoTracking().ToListAsync();
+        }
+
         public async Task FicMetInsertNewProyecto(Eva_proyectos FicInsertProyecto)
         {
             try
@@ -41,13 +47,14 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceProyectoExist == null)
                 {
-
+                    var idProyecto = ultimoProyecto();
+                    FicInsertProyecto.IdProyecto = (short)++idProyecto;
                     FicInsertProyecto.FechaReg = DateTime.Now;
                     FicInsertProyecto.FechaUltMod = DateTime.Now;
                     FicInsertProyecto.UsuarioReg = "Cristobal Vega";
                     FicInsertProyecto.UsuarioMod = "Cristobal Vega";
-                    FicInsertProyecto.Activo = true;
-                    FicInsertProyecto.Borrado = false;
+                    FicInsertProyecto.Activo = 'S';
+                    FicInsertProyecto.Borrado = 'N';
 
                     await LoDBContext.AddAsync(FicInsertProyecto);
 
@@ -101,5 +108,15 @@ namespace AppGestionCurriculums.Services
                           where proyecto.IdProyecto == existProyecto.IdProyecto
                           select proyecto).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
+
+        private int ultimoProyecto()
+        {
+            if (LoDBContext.eva_proyectos.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_proyectos.Max(proyectos => proyectos.IdProyecto);
+        }
     }
 }

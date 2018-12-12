@@ -8,7 +8,7 @@ namespace AppGestionCurriculums.Models
 {
     public class Eva_proyectos
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Int16 IdProyecto { get; set;}
         public string NombreProyecto { get; set; }
         public string Siglas { get; set; }
@@ -20,15 +20,15 @@ namespace AppGestionCurriculums.Models
         public DateTime FechaUltMod { get; set; }
         public string UsuarioReg { get; set; }
         public string UsuarioMod { get; set; }
-        public bool Activo { get; set; }
-        public bool Borrado { get; set; }
+        public char Activo { get; set; }
+        public char Borrado { get; set; }
         
-        //FK's
-        public Int16 IdCurriculo { get; set; }
-
+        //FK'
         public Eva_experiencia_laboral Experiencia { get; set; }
         public Int16 IdExperiencia { get; set; }
+        public Int16 IdCurriculo { get; set; }
 
+        public Cat_estatus Estatus { get; set; }
         public Int16 IdTipoEstatus { get; set; }
         public Int16 IdEstatus { get; set; }
     }

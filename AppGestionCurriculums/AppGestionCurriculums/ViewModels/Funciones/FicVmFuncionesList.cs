@@ -140,6 +140,7 @@ namespace AppGestionCurriculums.ViewModels.Funciones
         {
             var nuevaFuncion = new Eva_actividades_funciones();
             nuevaFuncion.IdExperiencia = DatosExperiencia.IdExperiencia;
+            nuevaFuncion.IdCurriculo = DatosExperiencia.IdCurriculo;
             IFicSrvNavigation.FicMetNavigateTo<FicVmFuncionesItem>
                 (nuevaFuncion);
         }//Fin add

@@ -10,5 +10,6 @@ namespace AppGestionCurriculums.Interfaces
         Task FicMetInsertNewGradoEstudios(Eva_carrera_grado_estudios FicPaGradoEstudios);
         Task FicMetDeleteGradoEstudios(Eva_carrera_grado_estudios FicPaGradoEstudios);
         Task<IEnumerable<Tipo_gen_grado_estudio>> FicMetGetListTipoGradoEstudio();
+        Task<IEnumerable<Estatus_grado_estudios>> FicMetGetListEstatusGradoEstudio();
     }
 }

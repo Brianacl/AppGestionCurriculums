@@ -140,6 +140,7 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
         {
             var nuevoProyecto = new Eva_proyectos();
             nuevoProyecto.IdExperiencia = DatosExperiencia.IdExperiencia;
+            nuevoProyecto.IdCurriculo = DatosExperiencia.IdCurriculo;
             IFicSrvNavigation.FicMetNavigateTo<FicVmProyectosItem>
                 (nuevoProyecto);
         }//Fin add

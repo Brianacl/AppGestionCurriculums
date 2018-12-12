@@ -81,6 +81,15 @@
     <Compile Update="Views\ExperienciaLaboral\FicViExperienciaList.xaml.cs">
       <DependentUpon>FicViExperienciaList.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\OtrasActividades\FicViOtrasActividadesDetalle.xaml.cs">
+      <DependentUpon>FicViOtrasActividadesDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OtrasActividades\FicViOtrasActividadesItem.xaml.cs">
+      <DependentUpon>FicViOtrasActividadesItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OtrasActividades\FicViOtrasActividadesList.xaml.cs">
+      <DependentUpon>FicViOtrasActividadesList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Personas\FicViPersonasList.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

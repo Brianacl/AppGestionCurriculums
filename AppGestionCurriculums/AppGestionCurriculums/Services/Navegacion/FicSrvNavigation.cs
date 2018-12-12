@@ -28,6 +28,8 @@ using AppGestionCurriculums.Views.Eva_herramientas;
 using AppGestionCurriculums.Views.Eva_conocimientos;
 using AppGestionCurriculums.Views.Referencias;
 using AppGestionCurriculums.ViewModels.Referencias;
+using AppGestionCurriculums.ViewModels.OtrasActividades;
+using AppGestionCurriculums.Views.OtrasActividades;
 
 namespace AppGestionCurriculums.Services.Navegacion
 {
@@ -48,6 +50,9 @@ namespace AppGestionCurriculums.Services.Navegacion
             { typeof(FicVmProyectosList),typeof(FicViProyectosList) },
             { typeof(FicVmProyectosItem),typeof(FicViProyectosItem) },
             { typeof(FicVmProyectosDetalle),typeof(FicViProyectosDetalle) },
+            { typeof(FicVmOtrasActividadesList),typeof(FicViOtrasActividadesList) },
+            { typeof(FicVmOtrasActividadesItem),typeof(FicViOtrasActividadesItem) },
+            { typeof(FicVmOtrasActividadesDetalle),typeof(FicViOtrasActividadesDetalle) },
             //Betsy
             { typeof(FicVmCompetenciasList),typeof(FicViCompetenciasList) },
             { typeof(FicVmCompetenciasItem), typeof(FicViCompetenciasItem) },

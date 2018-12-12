@@ -20,6 +20,7 @@ using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas;
 using AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos;
 using AppGestionCurriculums.ViewModels.Referencias;
+using AppGestionCurriculums.ViewModels.OtrasActividades;
 
 namespace AppGestionCurriculums.ViewModels.Base
 {
@@ -47,6 +48,10 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmProyectosList>();
             FicContainerBuilder.RegisterType<FicVmProyectosItem>();
             FicContainerBuilder.RegisterType<FicVmProyectosDetalle>();
+            //------------------------------------------------------------
+            FicContainerBuilder.RegisterType<FicVmOtrasActividadesList>();
+            FicContainerBuilder.RegisterType<FicVmOtrasActividadesItem>();
+            FicContainerBuilder.RegisterType<FicVmOtrasActividadesDetalle>();
 
             //Betsy
             FicContainerBuilder.RegisterType<FicVmCompetenciasList>();
@@ -91,8 +96,9 @@ namespace AppGestionCurriculums.ViewModels.Base
             FicContainerBuilder.RegisterType<FicSrvGradoEstudios>().As<IFicSrvGradoEstudios>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvFunciones>().As<IFicSrvFunciones>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvProyectos>().As<IFicSrvProyectos>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvOtrasActividades>().As<IFicSrvOtrasActividades>().SingleInstance();
 
-                //Betsy
+            //Betsy
             FicContainerBuilder.RegisterType<FicSrvCompetencias>().As<IFicSrvCompetencias>().SingleInstance();
             //FicContainerBuilder.RegisterType<FicSrvCurriculumsPersonas>().As<IFicSrvCurriculumsPersonas>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvRhCatPersonas>().As<IFicSrvRhCatPersonas>().SingleInstance();
@@ -171,6 +177,21 @@ namespace AppGestionCurriculums.ViewModels.Base
         public FicVmProyectosDetalle FicVmProyectosDetalle
         {
             get { return FicIContainer.Resolve<FicVmProyectosDetalle>(); }
+        }
+
+        public FicVmOtrasActividadesList FicVmOtrasActividadesList
+        {
+            get { return FicIContainer.Resolve<FicVmOtrasActividadesList>(); }
+        }
+
+        public FicVmOtrasActividadesItem FicVmOtrasActividadesItem
+        {
+            get { return FicIContainer.Resolve<FicVmOtrasActividadesItem>(); }
+        }
+
+        public FicVmOtrasActividadesDetalle FicVmOtrasActividadesDetalle
+        {
+            get { return FicIContainer.Resolve<FicVmOtrasActividadesDetalle>(); }
         }
 
         //Betsy

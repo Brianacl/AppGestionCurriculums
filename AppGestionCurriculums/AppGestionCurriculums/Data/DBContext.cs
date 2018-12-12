@@ -237,6 +237,9 @@ namespace AppGestionCurriculums.Data
         public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
         public DbSet<Eva_proyectos> eva_proyectos { get; set; }
         public DbSet<Tipo_gen_grado_estudio> tipo_gen_grado_estudio { get; set; }
+        public DbSet<Estatus_grado_estudios> estatus_grado_estudios { get; set; }
+        public DbSet<Cat_estatus> cat_estatus { get; set; }
+        public DbSet<Eva_curriculo_otras_actividades> eva_otras_actividades { get; set; }
         //jjesusmonroy
         public DbSet<Eva_curriculo_herramientas> eva_curriculo_herramientas { get; set; }
         public DbSet<Eva_curriculo_conocimientos> eva_curriculo_conocimientos { get; set; }
@@ -276,13 +279,22 @@ namespace AppGestionCurriculums.Data
                     .HasKey(c => new { c.IdIdioma });
 
                 modelBuilder.Entity<Eva_actividades_funciones>()
-                    .HasKey(c => new { c.IdFuncionAct });
+                    .HasKey(c => new { c.IdCurriculo, c.IdExperiencia, c.IdFuncionAct });
 
                 modelBuilder.Entity<Eva_proyectos>()
                     .HasKey(c => new { c.IdProyecto });
 
                 modelBuilder.Entity<Tipo_gen_grado_estudio>()
                     .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
+
+                modelBuilder.Entity<Estatus_grado_estudios>()
+                    .HasKey(c => new { c.IdTipoEstatus, c.IdEstatus });
+
+                modelBuilder.Entity<Cat_estatus>()
+                    .HasKey(c => new { c.IdTipoEstatus, c.IdEstatus });
+
+                modelBuilder.Entity<Eva_curriculo_otras_actividades>()
+                    .HasKey(c => new { c.IdCurriculo, c.IdActividad });
 
                 //peps
                 modelBuilder.Entity<Eva_curriculo_herramientas>()
@@ -293,7 +305,7 @@ namespace AppGestionCurriculums.Data
 
                 //Alegria
                 modelBuilder.Entity<Eva_experiencia_laboral>()
-                    .HasKey(c => new { c.IdExperiencia });
+                    .HasKey(c => new { c.IdCurriculo, c.IdExperiencia });
 
                 modelBuilder.Entity<Eva_curriculo_referencias>()
                     .HasKey(c => new { c.IdReferencia });
@@ -346,6 +358,18 @@ namespace AppGestionCurriculums.Data
                     .HasForeignKey(p => new { p.IdGenGradoEstudio, p.IdGenTipo })
                     .HasConstraintName("FK_TipoGenGradoEstudio_GradoEstudio");
 
+                modelBuilder.Entity<Eva_carrera_grado_estudios>()
+                    .HasOne(p => p.Estatus_grado_estudios)
+                    .WithMany(b => b.GradosEstudio)
+                    .HasForeignKey(p => new { p.IdTipoEstatus, p.IdEstatus })
+                    .HasConstraintName("FK_Estatus_GradoEstudio");
+
+                modelBuilder.Entity<Eva_curriculo_otras_actividades>()
+                    .HasOne(p => p.eva_Curriculo_Persona)
+                    .WithMany(b => b.OtrasActividades)
+                    .HasForeignKey(p => new { p.IdCurriculo })
+                    .HasConstraintName("FK_Curriculo_OtraActividad");
+
                 //Alegria
                 modelBuilder.Entity<Eva_experiencia_laboral>()
                     .HasOne(p => p.eva_Curriculo_Persona)
@@ -363,14 +387,19 @@ namespace AppGestionCurriculums.Data
                 modelBuilder.Entity<Eva_actividades_funciones>()
                     .HasOne(p => p.Experiencia)
                     .WithMany(b => b.Funciones)
-                    .HasForeignKey(p => p.IdExperiencia)
+                    .HasForeignKey(p => new { p.IdCurriculo, p.IdExperiencia })
                     .HasConstraintName("FK_Experiencia_Funciones");
 
                 modelBuilder.Entity<Eva_proyectos>()
                     .HasOne(p => p.Experiencia)
                     .WithMany(b => b.Proyectos)
-                    .HasForeignKey(p => p.IdExperiencia)
+                    .HasForeignKey(p => new { p.IdExperiencia, p.IdCurriculo })
                     .HasConstraintName("FK_Experiencia_Proyectos");
+
+                modelBuilder.Entity<Eva_proyectos>()
+                    .HasOne(p => p.Estatus)
+                    .WithMany(b => b.Proyectos)
+                    .HasForeignKey(p => new { p.IdTipoEstatus, p.IdEstatus });
 
                 //Peps 
                 modelBuilder.Entity<Eva_curriculo_conocimientos>()

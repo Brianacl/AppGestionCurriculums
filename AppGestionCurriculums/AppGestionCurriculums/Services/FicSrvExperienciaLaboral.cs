@@ -41,7 +41,8 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceExperienciaExist == null)
                 {
-
+                    var idExperiencia = ultimaExperiencia();
+                    FicInsertExperiencia.IdExperiencia = (short)++idExperiencia;
                     FicInsertExperiencia.FechaReg = DateTime.Now;
                     FicInsertExperiencia.FechaUltMod = DateTime.Now;
                     FicInsertExperiencia.UsuarioReg = "Alegria";
@@ -65,6 +66,8 @@ namespace AppGestionCurriculums.Services
             catch (Exception e)
             {
                 await new Page().DisplayAlert("ALERTA - SrvInsert", e.Message.ToString(), "OK");
+                if (e.InnerException != null)
+                    System.Diagnostics.Debug.WriteLine("----> "+e.InnerException);
             }
         }//Insertar nuevo
 
@@ -94,6 +97,16 @@ namespace AppGestionCurriculums.Services
                 }
             }//ENTRA EN CONTEXTO DE TRANSACIONES
         }//Fin delete
+
+        private int ultimaExperiencia()
+        {
+            if (LoDBContext.eva_experiencia_laboral.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_experiencia_laboral.Max(experiencia => experiencia.IdExperiencia);
+        }
 
         private async Task<bool> ExistExperiencia(Eva_experiencia_laboral existExperiencia)
         {

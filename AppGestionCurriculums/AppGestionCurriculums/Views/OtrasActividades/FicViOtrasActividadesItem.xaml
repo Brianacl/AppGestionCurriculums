@@ -1,22 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppGestionCurriculums.Views.Eva_idiomas.FicViEvaCurriculoIdiomasItem"
+             x:Class="AppGestionCurriculums.Views.OtrasActividades.FicViOtrasActividadesItem"
              Title="REGISTRO DE IDIOMA">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
               
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevoIdioma.DesIdioma}"/>
+                <Editor Text="{Binding NuevaOtraActividad.DesActividad}"
+                        HeightRequest="80"/>
 
-                <Label Text="Nivel de dominio" />
-                <Entry Text="{Binding NuevoIdioma.Dominio}"/>
-
-                <Label Text="¿Es su idioma nativo?" />
-                <Switch 
-                    Toggled="OnToogleSwitch"
-                    />
+                <Label Text="Observaciones" />
+                <Editor Text="{Binding NuevaOtraActividad.Observaciones}"
+                        HeightRequest="80"/>
 
                 <Label Text="Activo" />
                 <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>

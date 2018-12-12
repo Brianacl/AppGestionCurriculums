@@ -41,13 +41,14 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceFuncionExist == null)
                 {
-
+                    var idFuncionAct = ultimaFuncion();
+                    FicInsertFuncion.IdFuncionAct = (short)++idFuncionAct;
                     FicInsertFuncion.FechaReg = DateTime.Now;
                     FicInsertFuncion.FechaUltMod = DateTime.Now;
                     FicInsertFuncion.UsuarioReg = "Cristobal Vega";
                     FicInsertFuncion.UsuarioMod = "Cristobal Vega";
-                    FicInsertFuncion.Activo = true;
-                    FicInsertFuncion.Borrado = false;
+                    FicInsertFuncion.Activo = 'S';
+                    FicInsertFuncion.Borrado = 'N';
 
                     await LoDBContext.AddAsync(FicInsertFuncion);
 
@@ -101,5 +102,15 @@ namespace AppGestionCurriculums.Services
                           where funcion.IdFuncionAct == existFuncion.IdFuncionAct
                           select funcion).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
+
+        private int ultimaFuncion()
+        {
+            if (LoDBContext.eva_actividades_funciones.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_actividades_funciones.Max(funcion => funcion.IdFuncionAct);
+        }
     }//Fin clase
 }

@@ -15,17 +15,22 @@
 
                 <Label Text="Fecha de inicio" />
                 <DatePicker 
+                    x:Name="pickerIni"
                     MinimumDate="01/01/1980"
-                    MaximumDate="12/31/2018"
+                    MaximumDate="12/31/2025"
                     Date="{Binding NuevoGradoEstudio.PeriodoIni}"/>
 
                 <Label Text="Fecha de fin" />
                 <DatePicker 
+                    x:Name="pickerFin"
                     MinimumDate="01/01/1980"
-                    MaximumDate="12/31/2018"
+                    MaximumDate="12/31/2025"
                     Date="{Binding NuevoGradoEstudio.PeriodoFin}"/>
 
-                <Label Text="Último grado de estudios" />
+                <Label Text="¿Último grado de estudios?" />
+                <Switch Toggled="OnToogleSwitch" x:Name="switchGradoEstudio"/>
+
+                <Label Text="Grado de estudios"/>
                 <Picker ItemsSource="{Binding SourceGradosEstudio}"
                     x:Name="pickerGradoEstudio"
                     ItemDisplayBinding="{Binding DesGeneral}"/>
@@ -33,7 +38,18 @@
                 <Label Text="Prefijo del grado de estudios" />
                 <Entry Text="{Binding NuevoGradoEstudio.PrefijoEstudio}"/>
 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Label Text="Estatus"/>
+                <Picker ItemsSource="{Binding SourceEstatusGradoEstudio}"
+                    x:Name="pickerEstatus"
+                    ItemDisplayBinding="{Binding DesEstatus}"/>
+
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+
+                <Button Text="Guardar"  x:Name="btnGuardar"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

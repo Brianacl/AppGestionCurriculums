@@ -1,4 +1,5 @@
 ﻿using AppGestionCurriculums.ViewModels.EvaCurriculoIdiomas;
+using AppGestionCurriculums.ViewModels.OtrasActividades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,44 +9,30 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppGestionCurriculums.Views.Eva_idiomas
+namespace AppGestionCurriculums.Views.OtrasActividades
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FicViEvaCurriculoIdiomasItem : ContentPage
+	public partial class FicViOtrasActividadesItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
-        private FicVmEvaCurriculoIdiomasItem FicViewModel;
+        private FicVmOtrasActividadesItem FicViewModel;
 
-        public FicViEvaCurriculoIdiomasItem (object FicNavigationContext)
+        public FicViOtrasActividadesItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
             FicLoParameter = FicNavigationContext;
-            BindingContext = App.FicVmLocator.FicVmIdiomasItem;
-        }
-
-        private void OnToogleSwitch(object sender, ToggledEventArgs e)
-        {
-            var value = e.Value;
-            if (value == true)
-            {
-                FicViewModel.NuevoIdioma.Nativo = 'S';
-            }
-            if (value == false)
-            {
-                FicViewModel.NuevoIdioma.Nativo = 'N';
-            }
-
+            BindingContext = App.FicVmLocator.FicVmOtrasActividadesItem;
         }
 
         protected override void OnAppearing()
         {
-            FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasItem;
+            FicViewModel = BindingContext as FicVmOtrasActividadesItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
-            if (FicViewModel.NuevoIdioma.Activo == 'S')
+            if (FicViewModel.NuevaOtraActividad.Activo == 'S')
                 switchActivo.IsToggled = true;
 
-            if (FicViewModel.NuevoIdioma.Borrado == 'S')
+            if (FicViewModel.NuevaOtraActividad.Borrado == 'S')
                 switchBorrado.IsToggled = true;
         }
 
@@ -54,11 +41,11 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
             var value = e.Value;
             if (value == true)
             {
-                FicViewModel.NuevoIdioma.Activo = 'S';
+                FicViewModel.NuevaOtraActividad.Activo = 'S';
             }
             if (value == false)
             {
-                FicViewModel.NuevoIdioma.Activo = 'N';
+                FicViewModel.NuevaOtraActividad.Activo = 'N';
             }
 
         }
@@ -68,11 +55,11 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
             var value = e.Value;
             if (value == true)
             {
-                FicViewModel.NuevoIdioma.Borrado = 'S';
+                FicViewModel.NuevaOtraActividad.Borrado = 'S';
             }
             if (value == false)
             {
-                FicViewModel.NuevoIdioma.Borrado = 'N';
+                FicViewModel.NuevaOtraActividad.Borrado = 'N';
             }
 
         }

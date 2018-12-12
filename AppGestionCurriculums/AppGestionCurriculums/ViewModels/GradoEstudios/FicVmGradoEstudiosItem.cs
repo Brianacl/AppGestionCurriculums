@@ -15,6 +15,7 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
     {
         private Eva_carrera_grado_estudios Fic_NuevoGradoEstudio;
         private ObservableCollection<Tipo_gen_grado_estudio> _SourceGradosEstudio;
+        private ObservableCollection<Estatus_grado_estudios> _SourceEstatusGradoEstudio;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -28,6 +29,7 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
             this.IFicSrvGradoEstudios = IFicSrvGradoEstudios;
 
             _SourceGradosEstudio = new ObservableCollection<Tipo_gen_grado_estudio>();
+            _SourceEstatusGradoEstudio = new ObservableCollection<Estatus_grado_estudios>();
         }
 
         public ObservableCollection<Tipo_gen_grado_estudio> SourceGradosEstudio
@@ -36,6 +38,16 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
             set
             {
                 _SourceGradosEstudio = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Estatus_grado_estudios> SourceEstatusGradoEstudio
+        {
+            get { return _SourceEstatusGradoEstudio; }
+            set
+            {
+                _SourceEstatusGradoEstudio = value;
                 RaisePropertyChanged();
             }
         }
@@ -54,15 +66,27 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
         {
             try
             {
+                //Grado estudios
                 var listaGradosEstudio = await IFicSrvGradoEstudios.FicMetGetListTipoGradoEstudio();
 
                 if (listaGradosEstudio != null)
                 {
-                    System.Diagnostics.Debug.WriteLine("Trae datos");
                     foreach (Tipo_gen_grado_estudio TiposGradoEstudios in listaGradosEstudio)
                     {
-                        System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
+                        //System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
                         SourceGradosEstudio.Add(TiposGradoEstudios);
+                    }
+                }
+
+                //Estatus
+                var listaEstatus = await IFicSrvGradoEstudios.FicMetGetListEstatusGradoEstudio();
+
+                if(listaEstatus != null)
+                {
+                    foreach (Estatus_grado_estudios estatus in listaEstatus)
+                    {
+                        //System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
+                        SourceEstatusGradoEstudio.Add(estatus);
                     }
                 }
 
@@ -91,7 +115,7 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
             }
         }
 
-        private async void SaveCommandExecute()
+        public async void SaveCommandExecute()
         {
             try
             {

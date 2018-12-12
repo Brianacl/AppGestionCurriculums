@@ -26,6 +26,7 @@ namespace AppGestionCurriculums.Models
         public List<Eva_curriculo_idiomas> Idiomas { get; set; }
         public List<Eva_experiencia_laboral> ExperienciaLaboral { get; set; }
         public List<Eva_curriculo_referencias> Referencias { get; set; }
+        public List<Eva_curriculo_otras_actividades> OtrasActividades { get; set; }
 
         //FK
         public Rh_cat_personas rh_cat_personas { get; set; }

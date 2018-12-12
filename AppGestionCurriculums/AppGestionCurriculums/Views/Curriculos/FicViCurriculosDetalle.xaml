@@ -47,17 +47,6 @@
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
-        
-        <ToolbarItem
-            Name="Editar"
-            Command="{Binding FicMetEditCurriculoICommand}">
-
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/editar.png" />
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
 
         <ToolbarItem
             Name="Experiencia"
@@ -66,6 +55,28 @@
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="UWP" Value="Assets/experiencia.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Otras actividades"
+            Command="{Binding FicMetOtrasActividadesCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/otrasactividades.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditCurriculoICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

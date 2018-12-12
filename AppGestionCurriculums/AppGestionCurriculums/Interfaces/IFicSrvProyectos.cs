@@ -11,5 +11,6 @@ namespace AppGestionCurriculums.Interfaces
         Task<IEnumerable<Eva_proyectos>> FicMetGetListProyectos(Eva_experiencia_laboral experiencia);
         Task FicMetInsertNewProyecto(Eva_proyectos FicPaProyecto);
         Task FicMetDeleteProyecto(Eva_proyectos FicPaProyecto);
+        Task<IEnumerable<Cat_estatus>> FicMetGetListEstatus();
     }
 }

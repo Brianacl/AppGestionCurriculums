@@ -11,9 +11,16 @@
                 <Entry Text="{Binding NuevaFuncion.DesActividad}"/>
 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevaFuncion.Detalle}"/>
+                <Editor Text="{Binding NuevaFuncion.Detalle}"
+                        HeightRequest="80"/>
 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+                
+                <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

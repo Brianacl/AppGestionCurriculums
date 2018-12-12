@@ -14,6 +14,7 @@ namespace AppGestionCurriculums.Views.Eva_funciones
 	public partial class FicViFuncionesItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
+        private FicVmFuncionesItem FicViewModel { get; set; }
 
         public FicViFuncionesItem (object FicNavigationContext)
 		{
@@ -22,15 +23,43 @@ namespace AppGestionCurriculums.Views.Eva_funciones
             BindingContext = App.FicVmLocator.FicVmFuncionesItem;
         }
 
-        async void metodo_regresar(object sender, EventArgs e)
-        {
-            //await Navigation.PopModalAsync();
-        }
-
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmFuncionesItem;
+            FicViewModel = BindingContext as FicVmFuncionesItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
+
+            if (FicViewModel.NuevaFuncion.Activo == 'S')
+                switchActivo.IsToggled = true;
+
+            if (FicViewModel.NuevaFuncion.Borrado == 'S')
+                switchBorrado.IsToggled = true;
+        }
+
+        private void OnToogleSwitchActivo(object sender, ToggledEventArgs e)
+        {
+            var value = e.Value;
+            if (value == true)
+            {
+                FicViewModel.NuevaFuncion.Activo = 'S';
+            }
+            if (value == false)
+            {
+                FicViewModel.NuevaFuncion.Activo = 'N';
+            }
+
+        }
+
+        private void OnToogleSwitchBorrado(object sender, ToggledEventArgs e)
+        {
+            var value = e.Value;
+            if (value == true)
+            {
+                FicViewModel.NuevaFuncion.Borrado = 'S';
+            }
+            if (value == false)
+            {
+                FicViewModel.NuevaFuncion.Borrado = 'N';
+            }
 
         }
     }

@@ -30,7 +30,7 @@
                 </Grid.ColumnDefinitions>
                 <!--ID-->
                 <Label Text="Id" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.IdGradoEstudio}" Grid.Row="0" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.IdUltimoGrado}" Grid.Row="0" Grid.Column="1"/>
 
                 <Label Text="Carrera" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.NombreEstudioCarrera}" Grid.Row="1" Grid.Column="1"/>

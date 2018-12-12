@@ -14,24 +14,39 @@
                 <Entry Text="{Binding NuevoProyecto.Siglas}"/>
 
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevoProyecto.Descripcion}"/>
+                <Editor Text="{Binding NuevoProyecto.Descripcion}"
+                        HeightRequest="80"/>
 
                 <Label Text="Fecha de inicio" />
                 <DatePicker 
+                    x:Name="pickerIni"
                     MinimumDate="01/01/1980"
-                    MaximumDate="12/31/2018"
+                    MaximumDate="12/31/2025"
                     Date="{Binding NuevoProyecto.FechaIni}"/>
 
                 <Label Text="Fecha fin" />
                 <DatePicker 
+                    x:Name="pickerFin"
                     MinimumDate="01/01/1980"
-                    MaximumDate="12/31/2018"
+                    MaximumDate="12/31/2025"
                     Date="{Binding NuevoProyecto.FechaFin}"/>
 
                 <Label Text="Herramientas" />
-                <Entry Text="{Binding NuevoProyecto.Herramientas}"/>
-                
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Editor Text="{Binding NuevoProyecto.Herramientas}"
+                        HeightRequest="80"/>
+
+                <Label Text="Estatus"/>
+                <Picker ItemsSource="{Binding SourceEstatus}"
+                    x:Name="pickerEstatus"
+                    ItemDisplayBinding="{Binding DesEstatus}"/>
+
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+
+                <Button Text="Guardar"  x:Name="btnGuardar"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

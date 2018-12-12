@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
-             x:Class="AppGestionCurriculums.Views.Eva_grado_estudios.FicViGradoEstudiosList"
-             Title="LISTA DE GRADOS DE ESTUDIO">
+             x:Class="AppGestionCurriculums.Views.OtrasActividades.FicViOtrasActividadesList"
+             Title="LISTA DE ACTIVIDADES">
     <ContentPage.ToolbarItems>
     <ToolbarItem
             Name="Nuevo"
-            Command="{Binding FicMetAddGradoEstudiosICommand}">
+            Command="{Binding FicMetAddOtraActividadICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -17,7 +17,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Editar"
-            Command="{Binding FicMetEditGradoEstudioICommand}">
+            Command="{Binding FicMetEditOtraActividadICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -27,7 +27,7 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Detalle"
-            Command="{Binding FicMetDetalleGradoEstudioICommand}">
+            Command="{Binding FicMetDetalleOtraActividadICommand}">
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -61,17 +61,16 @@
                 ColumnSizer="Star"
                 AutoGenerateColumns="False"
                 AllowSorting="False"
-                ItemsSource="{Binding SourceGradoEstudios,
+                ItemsSource="{Binding SourceOtrasActividades,
                                 UpdateSourceEventName=RaisePropertyChanged}"
-                SelectedItem="{Binding SelectedGradoEstudio}"
+                SelectedItem="{Binding SelectedOtraActividad}"
                 SelectionMode="Single">
                     <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
-                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdUltimoGrado"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="CARRERA" MappingName="NombreEstudioCarrera"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ESCUELA" MappingName="NombreEscuela"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="INICIO" MappingName="PeriodoIni"/>
-                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="FIN" MappingName="PeriodoFin"/>
-                </syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdActividad"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÓN" MappingName="DesActividad"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="OBSERVACIONES" MappingName="Observaciones"/>
+                        
+                    </syncfusion:SfDataGrid.Columns>
                 </syncfusion:SfDataGrid>
             </StackLayout>
         </ContentPage.Content>

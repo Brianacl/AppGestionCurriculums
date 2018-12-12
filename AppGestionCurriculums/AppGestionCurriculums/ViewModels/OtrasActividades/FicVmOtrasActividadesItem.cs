@@ -4,71 +4,47 @@ using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace AppGestionCurriculums.ViewModels.Proyectos
+namespace AppGestionCurriculums.ViewModels.OtrasActividades
 {
-    public class FicVmProyectosItem : FicViewModelBase
+    public class FicVmOtrasActividadesItem : FicViewModelBase
     {
-        private Eva_proyectos Fic_NuevoProyecto;
-        private ObservableCollection<Cat_estatus> _SourceEstatus;
+        private Eva_curriculo_otras_actividades Fic_NuevaOtraActividad;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
         private IFicSrvNavigation IFicSrvNavigation;
-        private IFicSrvProyectos IFicSrvProyectos;
+        private IFicSrvOtrasActividades IFicSrvOtrasActividades;
 
-        public FicVmProyectosItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvProyectos IFicSrvProyectos)
+        public FicVmOtrasActividadesItem(IFicSrvNavigation IFicSrvNavigation, IFicSrvOtrasActividades IFicSrvOtrasActividades)
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
-            this.IFicSrvProyectos = IFicSrvProyectos;
-
-            _SourceEstatus = new ObservableCollection<Cat_estatus>();
+            this.IFicSrvOtrasActividades = IFicSrvOtrasActividades;
         }
 
-        public Eva_proyectos NuevoProyecto
+        public Eva_curriculo_otras_actividades NuevaOtraActividad
         {
-            get { return Fic_NuevoProyecto; }
+            get { return Fic_NuevaOtraActividad; }
             set
             {
-                Fic_NuevoProyecto = value;
+                Fic_NuevaOtraActividad = value;
                 RaisePropertyChanged();
             }
         }//Fin NuevoIdioma
-
-        public ObservableCollection<Cat_estatus> SourceEstatus
-        {
-            get { return _SourceEstatus; }
-            set
-            {
-                _SourceEstatus = value;
-                RaisePropertyChanged();
-            }
-        }
 
         public async override void OnAppearing(object FicPaNavigationContext)
         {
             try
             {
-                var estatus = await IFicSrvProyectos.FicMetGetListEstatus();
+                var FicOtraActividadSeleccionado = FicPaNavigationContext as Eva_curriculo_otras_actividades;
 
-                if(estatus != null)
+                if (FicOtraActividadSeleccionado != null)
                 {
-                    foreach(Cat_estatus _estatus in estatus)
-                    {
-                        SourceEstatus.Add(_estatus);
-                    }
-                }
-
-                var FicProyectoSeleccionado = FicPaNavigationContext as Eva_proyectos;
-
-                if (FicProyectoSeleccionado != null)
-                {
-                    NuevoProyecto = FicProyectoSeleccionado;
+                    NuevaOtraActividad = FicOtraActividadSeleccionado;
                 }
 
 
@@ -89,11 +65,11 @@ namespace AppGestionCurriculums.ViewModels.Proyectos
             }
         }
 
-        public async void SaveCommandExecute()
+        private async void SaveCommandExecute()
         {
             try
             {
-                await IFicSrvProyectos.FicMetInsertNewProyecto(NuevoProyecto);
+                await IFicSrvOtrasActividades.FicMetInsertNewOtraActividad(NuevaOtraActividad);
                 IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)

@@ -35,6 +35,12 @@ namespace AppGestionCurriculums.Services
                           select tipoGradoEstudios).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Estatus_grado_estudios>> FicMetGetListEstatusGradoEstudio()
+        {
+            return await (from estatus in LoDBContext.estatus_grado_estudios
+                          select estatus).AsNoTracking().ToListAsync();
+        }
+
         public async Task FicMetInsertNewGradoEstudios(Eva_carrera_grado_estudios FicInsertGradoEstudios)
         {
             try
@@ -56,6 +62,12 @@ namespace AppGestionCurriculums.Services
                     FicInsertGradoEstudios.UsuarioMod = "Brian Casas";
                     FicInsertGradoEstudios.Activo = 'S';
                     FicInsertGradoEstudios.Borrado = 'N';
+
+                    if(FicInsertGradoEstudios.UltimoGradoEstudio != 'S' &&
+                        FicInsertGradoEstudios.UltimoGradoEstudio != 'N')
+                    {
+                        FicInsertGradoEstudios.UltimoGradoEstudio = 'N';
+                    }
 
                     await LoDBContext.AddAsync(FicInsertGradoEstudios);
 
