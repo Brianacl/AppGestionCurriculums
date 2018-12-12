@@ -8,10 +8,13 @@ namespace AppGestionCurriculums.Models
 {
     public class Eva_experiencia_laboral
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Int16 IdExperiencia { get; set; }
+        [StringLength(100)]
         public string DesOrganizacion { get; set; }
+        [StringLength(1000)]
         public string Detalle { get; set; }
+        [StringLength(20)]
         public string Siglas { get; set; }
         public DateTime FechaIni { get; set; }
         public DateTime FechaFin { get; set; }
@@ -19,10 +22,14 @@ namespace AppGestionCurriculums.Models
         public Int16 IdGenGiro { get; set; } //fk no se de donde
         public DateTime FechaReg { get; set; }
         public DateTime FechaUltMod { get; set; }
+        [StringLength(20)]
         public string UsuarioReg { get; set; }
+        [StringLength(20)]
         public string UsuarioMod { get; set; }
-        public bool Activo { get; set; }
-        public bool Borrado { get; set; }
+        [StringLength(1)]
+        public string Activo { get; set; }
+        [StringLength(1)]
+        public string Borrado { get; set; }
 
         //FK
         public Eva_curriculo_persona eva_Curriculo_Persona { get; set; }
@@ -30,5 +37,9 @@ namespace AppGestionCurriculums.Models
 
         public List<Eva_actividades_funciones> Funciones { get; set; }
         public List<Eva_proyectos> Proyectos { get; set; }
+
+        public Tipo_gen_giro_experienciaLaboral tipoGenExperienciaLaboral { get; set; }
+        public Int16 IdGenTipo { get; set; }
+        public Int16 IdGenExperienciaLaboral { get; set; } //FK
     }
 }

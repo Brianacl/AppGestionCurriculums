@@ -36,7 +36,7 @@
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.DesOrganizacion}" Grid.Row="1" Grid.Column="1"/>
 
                 <Label Text="Escuela" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.Detalle}" Grid.Row="2" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.Detalle}" Grid.Row="2" Grid.Column="1" HeightRequest="100"/>
 
                 <Label Text="Inició" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
                 <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.Siglas}" Grid.Row="3" Grid.Column="1"/>

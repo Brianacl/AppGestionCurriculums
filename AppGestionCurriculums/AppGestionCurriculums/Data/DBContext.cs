@@ -224,6 +224,35 @@ namespace AppGestionCurriculums.Data
             }
 
         }
+
+        public void AddDataGiroExperienciaLaboral(int IdTipoGeneral, int IdGeneral, string DesGeneral)
+        {
+            int numPersonas = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                // Use parameterized query to prevent SQL injection attacks
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Tipo_gen_giro_experienciaLaboral;";
+                numPersonas = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numPersonas <= 4)
+                {
+                    insertCommand.CommandText = "INSERT INTO Tipo_gen_giro_experienciaLaboral (IdTipoGeneral,IdGeneral,DesGeneral)" +
+                        " VALUES (@Entry1,@Entry2,@Entry3);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdTipoGeneral);
+                    insertCommand.Parameters.AddWithValue("@Entry2", IdGeneral);
+                    insertCommand.Parameters.AddWithValue("@Entry10", DesGeneral);
+                   
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+
+        }
         //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
         public DbSet<Eva_curriculo_persona> eva_curriculo_persona { get; set; }
@@ -243,6 +272,8 @@ namespace AppGestionCurriculums.Data
         //Alegria 
         public DbSet<Eva_experiencia_laboral> eva_experiencia_laboral { get; set; }
         public DbSet<Eva_curriculo_referencias> eva_curriculo_referencias { get; set; }
+        public DbSet<Tipo_gen_giro_experienciaLaboral> tipo_Gen_Giro_ExperienciaLaboral { get; set; }
+        public DbSet<Tipo_gen_parentezco_referencias> tipo_gen_parentezco_referencias { get;set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -297,6 +328,11 @@ namespace AppGestionCurriculums.Data
 
                 modelBuilder.Entity<Eva_curriculo_referencias>()
                     .HasKey(c => new { c.IdReferencia });
+                modelBuilder.Entity<Tipo_gen_giro_experienciaLaboral>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
+                modelBuilder.Entity<Tipo_gen_parentezco_referencias>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
+         
 
                 //Foreign keys
                 //Betsy
@@ -358,6 +394,18 @@ namespace AppGestionCurriculums.Data
                     .WithMany(b => b.Referencias)
                     .HasForeignKey(p => p.IdCurriculo)
                     .HasConstraintName("FK_Curriculo_Referencias");
+
+                modelBuilder.Entity<Eva_experiencia_laboral>()
+                    .HasOne(p => p.tipoGenExperienciaLaboral)
+                    .WithMany(b => b.experienciaLaboral)
+                    .HasForeignKey(p => new { p.IdGenExperienciaLaboral, p.IdGenTipo })
+                    .HasConstraintName("FK_TipoGenGiro_ExperienciaLaboral");
+
+                modelBuilder.Entity<Eva_curriculo_referencias>()
+                    .HasOne(p => p.tipoGenParentezco)
+                    .WithMany(b => b.curriculoReferencias)
+                    .HasForeignKey(p => new { p.IdGenParentezco, p.IdGenTipo })
+                    .HasConstraintName("FK_TipoGenParentezco_curriculoReferencias");
 
                 //Cristobal
                 modelBuilder.Entity<Eva_actividades_funciones>()

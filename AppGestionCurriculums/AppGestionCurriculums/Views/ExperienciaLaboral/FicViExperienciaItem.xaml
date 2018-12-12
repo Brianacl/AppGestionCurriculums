@@ -6,12 +6,19 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                
+
+                <Label Text="IdExperiencia" />
+                <Entry Text="{Binding NuevaExperiencia.IdExperiencia}"/>
+
+                <Picker ItemsSource="{Binding SourceExperienciaLaboral}"
+                        x:Name="pickerExperienciaLaboral"
+                        ItemDisplayBinding="{Binding DesGeneral}"/>
+
                 <Label Text="Descripción de la organización" />
                 <Entry Text="{Binding NuevaExperiencia.DesOrganizacion}"/>
 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevaExperiencia.Detalle}"/>
+                <Entry Text="{Binding NuevaExperiencia.Detalle}" HeightRequest="100"/>
 
                 <Label Text="Siglas" />
                 <Entry Text="{Binding NuevaExperiencia.Siglas}"/>

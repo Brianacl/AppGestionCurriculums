@@ -29,6 +29,14 @@ namespace AppGestionCurriculums.Services
                           select experiencias).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Tipo_gen_giro_experienciaLaboral>> FicMetGetListTipoGiroExperienciaLaboral()
+        {
+            return await (from tipo_Gen_Giro_ExperienciaLaboral in LoDBContext.tipo_Gen_Giro_ExperienciaLaboral
+                          select tipo_Gen_Giro_ExperienciaLaboral).AsNoTracking().ToListAsync();
+        }
+
+        
+
         public async Task FicMetInsertNewExperiencia(Eva_experiencia_laboral FicInsertExperiencia)
         {
             try
@@ -41,13 +49,14 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceExperienciaExist == null)
                 {
-
+                    var idUltimaExperiencia = ultimaExperiencia();
+                    FicInsertExperiencia.IdExperiencia = (short)++idUltimaExperiencia;
                     FicInsertExperiencia.FechaReg = DateTime.Now;
                     FicInsertExperiencia.FechaUltMod = DateTime.Now;
                     FicInsertExperiencia.UsuarioReg = "Alegria";
                     FicInsertExperiencia.UsuarioMod = "Alegria";
-                    FicInsertExperiencia.Activo = true;
-                    FicInsertExperiencia.Borrado = false;
+                    FicInsertExperiencia.Activo = "S";
+                    FicInsertExperiencia.Borrado = "N";
 
                     await LoDBContext.AddAsync(FicInsertExperiencia);
 
@@ -101,5 +110,14 @@ namespace AppGestionCurriculums.Services
                           where experiencia.IdExperiencia == existExperiencia.IdExperiencia
                           select experiencia).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
+
+        private int ultimaExperiencia()
+        {
+            if(LoDBContext.eva_experiencia_laboral.Count() == 0)
+            {
+                return 0;
+            }
+            return LoDBContext.eva_experiencia_laboral.Max(experienciaLaboral => experienciaLaboral.IdExperiencia);
+        }
     }//Clase
 }

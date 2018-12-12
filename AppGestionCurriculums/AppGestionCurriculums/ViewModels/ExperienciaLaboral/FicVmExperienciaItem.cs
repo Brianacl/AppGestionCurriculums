@@ -7,12 +7,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
 {
     public class FicVmExperienciaItem : FicViewModelBase
     {
         private Eva_experiencia_laboral Fic_NuevaExperiencia;
+        private ObservableCollection<Tipo_gen_giro_experienciaLaboral> _SourceExperienciaLaboral;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -24,6 +26,18 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvExperienciaLaboral = IFicSrvExperienciaLaboral;
+
+            _SourceExperienciaLaboral = new ObservableCollection<Tipo_gen_giro_experienciaLaboral>();
+        }
+
+        public ObservableCollection<Tipo_gen_giro_experienciaLaboral> SourceExperienciaLaboral
+        {
+            get { return _SourceExperienciaLaboral; }
+            set
+            {
+                _SourceExperienciaLaboral = value;
+                RaisePropertyChanged();
+            }
         }
 
         public Eva_experiencia_laboral NuevaExperiencia
@@ -40,6 +54,17 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
         {
             try
             {
+                var listaExperienciaLaboral = await IFicSrvExperienciaLaboral.FicMetGetListTipoGiroExperienciaLaboral();
+
+                if(listaExperienciaLaboral != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Traedatos");
+                    foreach(Tipo_gen_giro_experienciaLaboral TiposExperienciaLaboral in listaExperienciaLaboral)
+                    {
+                        System.Diagnostics.Debug.WriteLine(TiposExperienciaLaboral);
+                        SourceExperienciaLaboral.Add(TiposExperienciaLaboral);
+                    }
+                }
                 var FicExperienciaSeleccionado = FicPaNavigationContext as Eva_experiencia_laboral;
 
                 if (FicExperienciaSeleccionado != null)

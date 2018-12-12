@@ -4060,10 +4060,11 @@
   },
   "libraries": {
     "Autofac/4.8.1": {
-      "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
+      "sha512": "GYRLxd2wCzhvee2u1vs3AbUbF4CHDWfD7BCNjD3Vxb4wxQz3HC8bPm9Sj9uOT0gE8a6PC2fx1zufmhLgxK+cZg==",
       "type": "package",
       "path": "autofac/4.8.1",
       "files": [
+        ".signature.p7s",
         "autofac.4.8.1.nupkg.sha512",
         "autofac.nuspec",
         "lib/net45/Autofac.dll",
@@ -4449,10 +4450,11 @@
       ]
     },
     "Syncfusion.Xamarin.Core/15.4.0.20": {
-      "sha512": "Gg7o8wQqjpkobfSFFRoMavXlTakXPitT8plNlpe9Y8FC60hl2yJJq0k/NZb8VXO1c0D/B84BP4h8OXNXDr7dRQ==",
+      "sha512": "j7ah9V/St0hOylHCpsWsltcd/e29jBR/tfpfJJNqhKnx3hRNbzkA/bPMiyN7F3UjzyaCFCLkyZYn+Duv3HWjqQ==",
       "type": "package",
       "path": "syncfusion.xamarin.core/15.4.0.20",
       "files": [
+        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.XML",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
         "lib/Xamarin.iOS10/Syncfusion.Core.XForms.XML",
@@ -4468,10 +4470,11 @@
       ]
     },
     "Syncfusion.Xamarin.GridCommon/15.4.0.20": {
-      "sha512": "1yniwfwT2/WBPUcDjmKtLNIV8jOseE3hkNeZ6PSJz7l451c+Np1LkHId7ZKHvDWb5dp9+MOJD/bsBq6Z7m9bAg==",
+      "sha512": "EM4sg47YQC6jOfHOQJOT5gFyoSfdtAsPCZHJ21MefQ81jIi3lGVNhIBhsWrtlUkZtqpjgbnn8DplEdPb4waIdw==",
       "type": "package",
       "path": "syncfusion.xamarin.gridcommon/15.4.0.20",
       "files": [
+        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
         "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
@@ -4487,10 +4490,11 @@
       ]
     },
     "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
-      "sha512": "MzEMvrQhWXo3UlsSS1Kwv9bgwc86/jfuu5ZVtL9/n9KtMxyCY8HIBNkzcQXPMHEzdgkeqGZzhXM2ozWhwqL0IA==",
+      "sha512": "7u3fMbRWI2cVp1gU6C2wyJsIG4nLrcVZqXaK8PKhMEQLBq2EYB5qR/v5LvhD5faZ31h2mnvaahO6GnjInAKMlg==",
       "type": "package",
       "path": "syncfusion.xamarin.sfdatagrid/15.4.0.20",
       "files": [
+        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Data.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.Data.Portable.dll",
         "lib/MonoAndroid10/Syncfusion.SfDataGrid.XForms.Android.dll",
@@ -4519,10 +4523,11 @@
       ]
     },
     "Syncfusion.Xamarin.SfNumericTextBox/15.4.0.20": {
-      "sha512": "tsB8S6rjTUxw/0kZGq6K22gazEP9XIWskcJBdlXEXQUpwrBr5oS28Weoi6BUFQe+Oh5akG4YxC29gt1QK1Ld4A==",
+      "sha512": "KBGZEMTyP8mtugTbqDihYzXK9l7K/00XDkHNhODcNIS6OtL0e7oClbjK46wFGaZqZ3Qit88XGkoFBP5u+Z0a/A==",
       "type": "package",
       "path": "syncfusion.xamarin.sfnumerictextbox/15.4.0.20",
       "files": [
+        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.dll",
@@ -5312,10 +5317,11 @@
       ]
     },
     "System.Interactive.Async/3.1.1": {
-      "sha512": "hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
+      "sha512": "x9y2omkjEudKbIVuhUzeWw7ZlouEzpk4W98woCEq1lq9gJxERBKRKDTHF5JPEws9E0f4/Uei/2vLxEy1IrfmMg==",
       "type": "package",
       "path": "system.interactive.async/3.1.1",
       "files": [
+        ".signature.p7s",
         "lib/net45/System.Interactive.Async.dll",
         "lib/net45/System.Interactive.Async.xml",
         "lib/net46/System.Interactive.Async.dll",
@@ -7534,20 +7540,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\titab\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\AppGestionCurriculums.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\AppGestionCurriculums.iOS.csproj",
       "projectName": "AppGestionCurriculums.iOS",
-      "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\AppGestionCurriculums.iOS.csproj",
-      "packagesPath": "C:\\Users\\titab\\.nuget\\packages\\",
-      "outputPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\GitHub\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\AppGestionCurriculums.iOS.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\GitHub\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\titab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7560,8 +7566,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
-              "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
+            "C:\\Users\\user\\Documents\\GitHub\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\GitHub\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
             }
           }
         }
