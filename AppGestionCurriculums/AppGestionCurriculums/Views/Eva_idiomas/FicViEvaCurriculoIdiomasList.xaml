@@ -69,7 +69,7 @@
                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdIdioma"/>
                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÓN" MappingName="DesIdioma"/>
                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DOMINIO" MappingName="Dominio"/>
-                        <syncfusion:GridSwitchColumn HeaderFontAttribute="Bold" HeaderText="NATIVO" MappingName="Nativo"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NATIVO" MappingName="Nativo"/>
                     </syncfusion:SfDataGrid.Columns>
                 </syncfusion:SfDataGrid>
             </StackLayout>

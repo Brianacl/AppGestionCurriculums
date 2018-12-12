@@ -14,7 +14,8 @@
                 <Entry Text="{Binding NuevoIdioma.Dominio}"/>
 
                 <Label Text="¿Es su idioma nativo?" />
-                <Entry Text="{Binding NuevoIdioma.Nativo}"/>
+                <Switch 
+                    Toggled="OnToogleSwitch"/>
 
                 <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->

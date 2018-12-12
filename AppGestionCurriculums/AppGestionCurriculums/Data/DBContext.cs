@@ -236,6 +236,7 @@ namespace AppGestionCurriculums.Data
         public DbSet<Eva_curriculo_idiomas> eva_curriculo_idiomas { get; set; }
         public DbSet<Eva_actividades_funciones> eva_actividades_funciones { get; set; }
         public DbSet<Eva_proyectos> eva_proyectos { get; set; }
+        public DbSet<Tipo_gen_grado_estudio> tipo_gen_grado_estudio { get; set; }
         //jjesusmonroy
         public DbSet<Eva_curriculo_herramientas> eva_curriculo_herramientas { get; set; }
         public DbSet<Eva_curriculo_conocimientos> eva_curriculo_conocimientos { get; set; }
@@ -279,6 +280,10 @@ namespace AppGestionCurriculums.Data
 
                 modelBuilder.Entity<Eva_proyectos>()
                     .HasKey(c => new { c.IdProyecto });
+
+                modelBuilder.Entity<Tipo_gen_grado_estudio>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
+
                 //peps
                 modelBuilder.Entity<Eva_curriculo_herramientas>()
                     .HasKey(c => new { c.IdHerramienta });
@@ -334,6 +339,12 @@ namespace AppGestionCurriculums.Data
                     .WithMany(b => b.Idiomas)
                     .HasForeignKey(p => p.IdCurriculo)
                     .HasConstraintName("FK_Curriculo_Idiomas");
+
+                modelBuilder.Entity<Eva_carrera_grado_estudios>()
+                    .HasOne(p => p.tipoGenGradoEstudio)
+                    .WithMany(b => b.gradosEstudio)
+                    .HasForeignKey(p => new { p.IdGenGradoEstudio, p.IdGenTipo })
+                    .HasConstraintName("FK_TipoGenGradoEstudio_GradoEstudio");
 
                 //Alegria
                 modelBuilder.Entity<Eva_experiencia_laboral>()

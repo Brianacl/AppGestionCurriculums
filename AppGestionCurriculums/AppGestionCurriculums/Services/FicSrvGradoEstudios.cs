@@ -29,6 +29,12 @@ namespace AppGestionCurriculums.Services
                           select gradoEstudios).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Tipo_gen_grado_estudio>> FicMetGetListTipoGradoEstudio()
+        {
+            return await (from tipoGradoEstudios in LoDBContext.tipo_gen_grado_estudio
+                          select tipoGradoEstudios).AsNoTracking().ToListAsync();
+        }
+
         public async Task FicMetInsertNewGradoEstudios(Eva_carrera_grado_estudios FicInsertGradoEstudios)
         {
             try
@@ -41,13 +47,14 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceGradoEstudioExist == null)
                 {
-
+                    var idUltimoGrado = ultimoGrado();
+                    FicInsertGradoEstudios.IdUltimoGrado = (short)++idUltimoGrado;
                     FicInsertGradoEstudios.FechaReg = DateTime.Now;
                     FicInsertGradoEstudios.FechaUltMod = DateTime.Now;
                     FicInsertGradoEstudios.UsuarioReg = "Brian Casas";
                     FicInsertGradoEstudios.UsuarioMod = "Brian Casas";
-                    FicInsertGradoEstudios.Activo = true;
-                    FicInsertGradoEstudios.Borrado = false;
+                    FicInsertGradoEstudios.Activo = 'S';
+                    FicInsertGradoEstudios.Borrado = 'N';
 
                     await LoDBContext.AddAsync(FicInsertGradoEstudios);
 
@@ -101,5 +108,16 @@ namespace AppGestionCurriculums.Services
                           where gradoEstudios.IdGradoEstudio == existGradoEstudio.IdGradoEstudio
                           select gradoEstudios).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
+
+        private int ultimoGrado()
+        {
+            if (LoDBContext.eva_grado_estudios.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_grado_estudios.Max(gradoEstudio => gradoEstudio.IdUltimoGrado);
+        }
+
     }//Fin clase
 }

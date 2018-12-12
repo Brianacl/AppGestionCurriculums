@@ -24,7 +24,7 @@ namespace AppGestionCurriculums.Views.Referencias
 
         async void metodo_regresar(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            //await Navigation.PopModalAsync();
         }
         protected override void OnAppearing()
         {

@@ -19,6 +19,7 @@ namespace AppGestionCurriculums.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Personas, Title="Lista personas"},
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse"},
                 //new HomeMenuItem {Id = MenuItemType.CurriculumsPersonas, Title="Curriculums Personas" },
                 //new HomeMenuItem {Id = MenuItemType.Competencias, Title="Competencias" }
                 new HomeMenuItem {Id = MenuItemType.ListaIdiomas, Title= "Lista idiomas"},

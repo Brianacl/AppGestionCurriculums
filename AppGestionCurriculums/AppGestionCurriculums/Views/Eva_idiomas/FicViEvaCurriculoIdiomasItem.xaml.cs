@@ -14,6 +14,7 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
 	public partial class FicViEvaCurriculoIdiomasItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
+        private FicVmEvaCurriculoIdiomasItem FicViewModel;
 
         public FicViEvaCurriculoIdiomasItem (object FicNavigationContext)
 		{
@@ -22,15 +23,25 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
             BindingContext = App.FicVmLocator.FicVmIdiomasItem;
         }
 
-        async void metodo_regresar(object sender, EventArgs e)
+        private void OnToogleSwitch(object sender, ToggledEventArgs e)
         {
-            
+            var value = e.Value;
+            if (value == true)
+            {
+                FicViewModel.NuevoIdioma.Nativo = 'S';
+            }
+            if (value == false)
+            {
+                FicViewModel.NuevoIdioma.Nativo = 'N';
+            }
+
         }
 
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasItem;
+            FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
+
 
         }
     }

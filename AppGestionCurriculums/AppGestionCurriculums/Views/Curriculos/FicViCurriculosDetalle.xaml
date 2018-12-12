@@ -38,7 +38,7 @@
         </ToolbarItem>
 
         <ToolbarItem
-            Name="Competencias"
+            Name="Referencias"
             Command="{Binding FicMetReferenciasCommand}">
 
             <ToolbarItem.Icon>
@@ -60,7 +60,7 @@
         </ToolbarItem>
 
         <ToolbarItem
-            Name="Idiomas"
+            Name="Experiencia"
             Command="{Binding FicMetExperienciaCommand}">
 
             <ToolbarItem.Icon>

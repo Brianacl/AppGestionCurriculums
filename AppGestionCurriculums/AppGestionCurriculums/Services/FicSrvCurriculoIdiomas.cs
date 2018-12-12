@@ -40,12 +40,18 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceIdiomaExist == null)
                 {
+                    var idIdioma = ultimoIdioma();
+                    FicInsertIdioma.IdIdioma = (short) ++idIdioma;
                     FicInsertIdioma.FechaReg = DateTime.Today;
                     FicInsertIdioma.FechaUltMod = DateTime.Today;
                     FicInsertIdioma.UsuarioReg = "Brian Casas";
                     FicInsertIdioma.UsuarioMod = "Brian Casas";
-                    FicInsertIdioma.Activo = true;
-                    FicInsertIdioma.Borrado = false;
+                    FicInsertIdioma.Activo = 'S';
+                    FicInsertIdioma.Borrado = 'N';
+                    if (FicInsertIdioma.Nativo != 'S' && FicInsertIdioma.Nativo != 'N')
+                    {
+                        FicInsertIdioma.Nativo = 'N';
+                    }
 
                     await LoDBContext.AddAsync(FicInsertIdioma);
 
@@ -99,5 +105,15 @@ namespace AppGestionCurriculums.Services
                           where idioma.IdIdioma == existIdioma.IdIdioma
                           select idioma).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }//BUSCA SI EXISTE UN REGISTRO
+
+        private int ultimoIdioma()
+        {
+            if (LoDBContext.eva_curriculo_idiomas.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_curriculo_idiomas.Max(idioma => idioma.IdIdioma);
+        }
     }
 }

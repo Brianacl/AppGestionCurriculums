@@ -4,6 +4,7 @@ using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,6 +14,7 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
     public class FicVmGradoEstudiosItem : FicViewModelBase
     {
         private Eva_carrera_grado_estudios Fic_NuevoGradoEstudio;
+        private ObservableCollection<Tipo_gen_grado_estudio> _SourceGradosEstudio;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -24,6 +26,18 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvGradoEstudios = IFicSrvGradoEstudios;
+
+            _SourceGradosEstudio = new ObservableCollection<Tipo_gen_grado_estudio>();
+        }
+
+        public ObservableCollection<Tipo_gen_grado_estudio> SourceGradosEstudio
+        {
+            get { return _SourceGradosEstudio; }
+            set
+            {
+                _SourceGradosEstudio = value;
+                RaisePropertyChanged();
+            }
         }
 
         public Eva_carrera_grado_estudios NuevoGradoEstudio
@@ -40,6 +54,18 @@ namespace AppGestionCurriculums.ViewModels.GradoEstudios
         {
             try
             {
+                var listaGradosEstudio = await IFicSrvGradoEstudios.FicMetGetListTipoGradoEstudio();
+
+                if (listaGradosEstudio != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Trae datos");
+                    foreach (Tipo_gen_grado_estudio TiposGradoEstudios in listaGradosEstudio)
+                    {
+                        System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
+                        SourceGradosEstudio.Add(TiposGradoEstudios);
+                    }
+                }
+
                 var FicGradoEstudioSeleccionado = FicPaNavigationContext as Eva_carrera_grado_estudios;
 
                 if (FicGradoEstudioSeleccionado != null)

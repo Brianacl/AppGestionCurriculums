@@ -6,8 +6,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Nuevo grado de estudios" />
-
+               
                 <Label Text="Nombre de la carrera" />
                 <Entry Text="{Binding NuevoGradoEstudio.NombreEstudioCarrera}"/>
 
@@ -27,7 +26,9 @@
                     Date="{Binding NuevoGradoEstudio.PeriodoFin}"/>
 
                 <Label Text="Último grado de estudios" />
-                <Entry Text="{Binding NuevoGradoEstudio.UltimoGradoEstudio}"/>
+                <Picker ItemsSource="{Binding SourceGradosEstudio}"
+                    x:Name="pickerGradoEstudio"
+                    ItemDisplayBinding="{Binding DesGeneral}"/>
 
                 <Label Text="Prefijo del grado de estudios" />
                 <Entry Text="{Binding NuevoGradoEstudio.PrefijoEstudio}"/>
