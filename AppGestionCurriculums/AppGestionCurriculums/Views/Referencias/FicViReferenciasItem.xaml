@@ -17,8 +17,8 @@
                 <Entry Text="{Binding NuevoReferencia.ApMaterno}"/>
 
                 <Label Text="Sexo"/>
-                <Switch Toggled="OnToogleSwitch"/>
-                
+                <Switch Toggled="OnToogleSwitch" x:Name="switchReferencias"/>
+
                 <Label Text="Parentezco"/>
                 <Picker ItemsSource="{Binding SourceReferencias}"
                         x:Name="pickerReferencias"
@@ -40,7 +40,7 @@
                 <Label Text="Observacion"/>
                 <Entry Text="{Binding NuevoReferencia.Observacion}" HeightRequest="100"/>
 
-                <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Guardar" x:Name="btnGuardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>
         </ScrollView>

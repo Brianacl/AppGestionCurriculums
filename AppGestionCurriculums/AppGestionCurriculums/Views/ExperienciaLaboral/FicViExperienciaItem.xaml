@@ -25,17 +25,19 @@
                 
                 <Label Text="Fecha de inicio" />
                 <DatePicker 
+                    x:Name="pickerIni"
                     MinimumDate="01/01/1980"
                     MaximumDate="12/31/2025"
                     Date="{Binding NuevaExperiencia.FechaIni}"/>
 
                 <Label Text="Fecha de fin" />
                 <DatePicker 
+                    x:Name="pickerFin"
                     MinimumDate="01/01/1980"
                     MaximumDate="12/31/2025"
                     Date="{Binding NuevaExperiencia.FechaFin}"/>
 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Guardar"  x:Name="btnGuardar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

@@ -1,5 +1,5 @@
 ﻿using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
-using AppGestionCurriculums.ViewModels.GradoEstudios;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,22 +22,31 @@ namespace AppGestionCurriculums.Views.ExperienciaLaboral
         public FicViExperienciaItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
+            btnGuardar.Clicked += (sender, e) =>
+            {
+                guardarDatos();
+            };
+
             pickerExperienciaLaboral.SelectedIndexChanged += (sender, args) =>
             {
                 cambiarIdPickerSeleccionado();
             };
 
+            
+
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmExperienciaItem;
         }
 
-        async void metodo_regresar(object sender, EventArgs e)
-        {
-            //await Navigation.PopModalAsync();
-        }
+        
 
         protected override void OnAppearing()
         {
+            if(FicViewModel.NuevaExperiencia.IdExperiencia != 0)
+            {
+                pickerExperienciaLaboral.SelectedIndex = FicViewModel.NuevaExperiencia.IdGenExperienciaLaboral - 1;
+            }
+
              FicViewModel = BindingContext as FicVmExperienciaItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
@@ -48,6 +57,19 @@ namespace AppGestionCurriculums.Views.ExperienciaLaboral
             var selectedItem = (Tipo_gen_giro_experienciaLaboral)pickerExperienciaLaboral.SelectedItem;
             FicViewModel.NuevaExperiencia.IdGenTipo = selectedItem.IdGeneral;
             FicViewModel.NuevaExperiencia.IdGenExperienciaLaboral = selectedItem.IdTipoGeneral;
+        }
+
+        private async void guardarDatos()
+        {
+            System.Diagnostics.Debug.WriteLine("guardadatos");
+            if(pickerIni.Date > pickerFin.Date)
+            {
+                await DisplayAlert("Atención, la fecha de inicio no puede ser mayor a la fecha final", "ok");
+            }
+            else
+            {
+                FicViewModel.FicMetSaveCommand();
+            }
         }
     }
 }

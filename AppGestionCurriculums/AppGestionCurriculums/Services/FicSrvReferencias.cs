@@ -31,8 +31,8 @@ namespace AppGestionCurriculums.Services
 
         public async Task<IEnumerable<Tipo_gen_parentezco_referencias>> FicMetGetListTipoParentezcoReferencias()
         {
-            return await (from tipo_gen_parentezco_referencias in LoDBContext.tipo_gen_parentezco_referencias
-                          select tipo_gen_parentezco_referencias).AsNoTracking().ToListAsync();
+            return await (from parentezco in LoDBContext.tipo_gen_parentezco_referencias
+                          select parentezco).AsNoTracking().ToListAsync();
         }
 
         public async Task FicMetInsertNewReferencia(Eva_curriculo_referencias FicInsertReferencia)

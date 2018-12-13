@@ -23,6 +23,8 @@ namespace AppGestionCurriculums.Views.Referencias
         public FicViReferenciasItem(object FicNavigationContext)
         {
             InitializeComponent();
+
+            
             pickerReferencias.SelectedIndexChanged += (sender, args) =>
             {
                 cambiarIdPickerSeleccionado();
@@ -51,6 +53,14 @@ namespace AppGestionCurriculums.Views.Referencias
         }
         protected override void OnAppearing()
         {
+            if(FicViewModel.NuevoReferencia.IdReferencia != 0)
+            {
+                pickerReferencias.SelectedIndex = FicViewModel.NuevoReferencia.IdGenParentezco - 1;
+                
+            }
+
+            if (FicViewModel.NuevoReferencia.Sexo == "H")
+                switchReferencias.IsToggled = true;
             FicViewModel = BindingContext as FicVmReferenciasItem;            
              if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
         }
@@ -61,5 +71,7 @@ namespace AppGestionCurriculums.Views.Referencias
             FicViewModel.NuevoReferencia.IdGenTipo = selectedItem.IdGeneral;
             FicViewModel.NuevoReferencia.IdGenParentezco = selectedItem.IdTipoGeneral;
         }
+
+        
     }
 }
