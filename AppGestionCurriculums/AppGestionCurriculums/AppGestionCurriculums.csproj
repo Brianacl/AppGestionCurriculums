@@ -10,6 +10,87 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="15.4.0.20" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="15.4.0.20" />
+    <PackageReference Include="System.Buffers" Version="4.5.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Eva_idiomas\FicViEvaCurriculoIdiomasDetalle.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_idiomas\FicViEvaCurriculoIdiomasItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Eva_idiomas\FicViEvaCurriculoIdiomasList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Referencias\FicViReferenciasDetalle.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Referencias\FicViReferenciasItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Referencias\FicViReferenciasList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Curriculos\FicViCurriculosDetalle.xaml.cs">
+      <DependentUpon>FicViCurriculosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Curriculos\FicViCurriculosItem.xaml.cs">
+      <DependentUpon>FicViCurriculosItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesDetalle.xaml.cs">
+      <DependentUpon>FicViFuncionesDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesItem.xaml.cs">
+      <DependentUpon>FicViFuncionesItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_funciones\FicViFuncionesList.xaml.cs">
+      <DependentUpon>FicViFuncionesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosDetalle.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosItem.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_grado_estudios\FicViGradoEstudiosList.xaml.cs">
+      <DependentUpon>FicViGradoEstudiosList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosDetalle.xaml.cs">
+      <DependentUpon>FicViProyectosDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosItem.xaml.cs">
+      <DependentUpon>FicViProyectosItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Eva_proyectos\FicViProyectosList.xaml.cs">
+      <DependentUpon>FicViProyectosList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaDetalle.xaml.cs">
+      <DependentUpon>FicViExperienciaDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaItem.xaml.cs">
+      <DependentUpon>FicViExperienciaItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExperienciaLaboral\FicViExperienciaList.xaml.cs">
+      <DependentUpon>FicViExperienciaList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasList.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasDetalle.xaml.cs">
+      <DependentUpon>FicViPersonasDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Personas\FicViPersonasItem.xaml.cs">
+      <DependentUpon>FicViPersonasItem.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

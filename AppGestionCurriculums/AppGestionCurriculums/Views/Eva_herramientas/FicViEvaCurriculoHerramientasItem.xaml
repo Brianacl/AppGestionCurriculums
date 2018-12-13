@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasItem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Nuevo herramienta" />
+
+                <Label Text="Descripción" />
+                <Entry Text="{Binding NuevoHerramienta.DesHerramienta}"/>
+
+                <Label Text="Nivel de dominio" />
+                <Entry Text="{Binding NuevoHerramienta.Dominio}"/>
+
+                <Label Text="Detalle" />
+                <Entry Text="{Binding NuevoHerramienta.Detalle}"/>
+
+                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

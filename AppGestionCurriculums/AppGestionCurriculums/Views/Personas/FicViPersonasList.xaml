@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.Personas.FicViPersonasList"
+             Title="LISTA DE PERSONAS">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem
+            Name="Nuevo"
+            Command="{Binding FicMetAddPersonaICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditPersonaICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetallePersonaICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Eliminar"
+            Command="{Binding FicMetDeleteICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Curriculo"
+            Command="{Binding FicMetDetalleCurriculoICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/grado_estudio.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar información"
+                PlaceholderColor="Red"
+                x:Name="SearchBar">
+                </SearchBar>
+
+                <syncfusion:SfDataGrid
+                
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SourcePersonas}"
+                SelectedItem="{Binding SelectedPersona}"
+                SelectionMode="Single">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdPersona"/>
+                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NO. CONTROL" MappingName="NumControl"/>
+                         <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="NOMBRE" MappingName="Nombre"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO PAT." MappingName="ApPaterno"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="APELLIDO MAT." MappingName="ApMaterno"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="RFC" MappingName="RFC"/>
+                </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

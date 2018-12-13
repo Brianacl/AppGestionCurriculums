@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Curriculos.FicViCurriculosDetalle"
+             Title="CURRICULO">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Competencias"
+            Command="{Binding FicMetCompetenciasCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/competencias.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Grado estudios"
+            Command="{Binding FicMetGradoEstudioCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/grado_estudio.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Idiomas"
+            Command="{Binding FicMetIdiomasCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/idiomas.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Referencias"
+            Command="{Binding FicMetReferenciasCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/hola.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditCurriculoICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem
+            Name="Experiencia"
+            Command="{Binding FicMetExperienciaCommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/experiencia.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+        VerticalOptions="StartAndExpand"
+        Padding="20">
+                <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <!--ID-->
+                <Label Text="Id" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.IdCurriculo}" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Fecha de registro" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.FechaReg}" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Fecha de modificación" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.FechaUltMod}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Usuario registro" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.UsuarioReg}" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Usuario modificó" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.UsuarioMod}" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="Activo" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.Activo}" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Borrado" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosCurriculo.Borrado}" Grid.Row="6" Grid.Column="1"/>
+            </Grid>
+
+            <Grid Padding="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Button x:Name="btnEliminar" BackgroundColor="#F44336" TextColor="White" Text="Eliminar" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+             -->   <Button Text="Regresar" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

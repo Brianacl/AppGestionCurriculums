@@ -2,6 +2,7 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:AppGestionCurriculums.Views"
+                  xmlns:viewPersonas="clr-namespace:AppGestionCurriculums.Views.Personas"
             x:Class="AppGestionCurriculums.Views.MainPage">
 
     <MasterDetailPage.Master>
@@ -16,7 +17,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <viewPersonas:FicViPersonasList />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

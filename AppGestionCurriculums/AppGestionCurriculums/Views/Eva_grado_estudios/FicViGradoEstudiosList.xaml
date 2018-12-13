@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="AppGestionCurriculums.Views.Eva_grado_estudios.FicViGradoEstudiosList"
+             Title="LISTA DE GRADOS DE ESTUDIO">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem
+            Name="Nuevo"
+            Command="{Binding FicMetAddGradoEstudiosICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar"
+            Command="{Binding FicMetEditGradoEstudioICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/editar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Detalle"
+            Command="{Binding FicMetDetalleGradoEstudioICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/detalle.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Eliminar"
+            Command="{Binding FicMetDeleteICommand}">
+
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar información"
+                PlaceholderColor="Red"
+                x:Name="SearchBar">
+                </SearchBar>
+
+                <syncfusion:SfDataGrid
+                
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SourceGradoEstudios,
+                                UpdateSourceEventName=RaisePropertyChanged}"
+                SelectedItem="{Binding SelectedGradoEstudio}"
+                SelectionMode="Single">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdGradoEstudio"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="CARRERA" MappingName="NombreEstudioCarrera"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ESCUELA" MappingName="NombreEscuela"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="INICIO" MappingName="PeriodoIni"/>
+                        <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="FIN" MappingName="PeriodoFin"/>
+                </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

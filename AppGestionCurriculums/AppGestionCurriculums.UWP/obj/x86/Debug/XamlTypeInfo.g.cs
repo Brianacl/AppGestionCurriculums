@@ -56,7 +56,7 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
     /// <summary>
     /// Main class for providing metadata for the app or library
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
@@ -99,38 +99,41 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlTypeInfoProvider
     {
         public global::Windows.UI.Xaml.Markup.IXamlType GetXamlTypeByType(global::System.Type type)
         {
             global::Windows.UI.Xaml.Markup.IXamlType xamlType;
-            if (_xamlTypeCacheByType.TryGetValue(type, out xamlType))
-            {
-                return xamlType;
-            }
-            int typeIndex = LookupTypeIndexByType(type);
-            if(typeIndex != -1)
-            {
-                xamlType = CreateXamlType(typeIndex);
-            }
-            var userXamlType = xamlType as global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
-                if (libXamlType != null)
+            lock (_xamlTypeCacheByType) 
+            { 
+                if (_xamlTypeCacheByType.TryGetValue(type, out xamlType))
                 {
-                    if(libXamlType.IsConstructible || xamlType == null)
+                    return xamlType;
+                }
+                int typeIndex = LookupTypeIndexByType(type);
+                if(typeIndex != -1)
+                {
+                    xamlType = CreateXamlType(typeIndex);
+                }
+                var userXamlType = xamlType as global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlUserType;
+                if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+                {
+                    global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                    if (libXamlType != null)
                     {
-                        xamlType = libXamlType;
+                        if(libXamlType.IsConstructible || xamlType == null)
+                        {
+                            xamlType = libXamlType;
+                        }
                     }
                 }
-            }
-            if (xamlType != null)
-            {
-                _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
-                _xamlTypeCacheByType.Add(xamlType.UnderlyingType, xamlType);
+                if (xamlType != null)
+                {
+                    _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
+                    _xamlTypeCacheByType.Add(xamlType.UnderlyingType, xamlType);
+                }
             }
             return xamlType;
         }
@@ -142,31 +145,34 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
                 return null;
             }
             global::Windows.UI.Xaml.Markup.IXamlType xamlType;
-            if (_xamlTypeCacheByName.TryGetValue(typeName, out xamlType))
+            lock (_xamlTypeCacheByType)
             {
-                return xamlType;
-            }
-            int typeIndex = LookupTypeIndexByName(typeName);
-            if(typeIndex != -1)
-            {
-                xamlType = CreateXamlType(typeIndex);
-            }
-            var userXamlType = xamlType as global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
-                if (libXamlType != null)
+                if (_xamlTypeCacheByName.TryGetValue(typeName, out xamlType))
                 {
-                    if(libXamlType.IsConstructible || xamlType == null)
+                    return xamlType;
+                }
+                int typeIndex = LookupTypeIndexByName(typeName);
+                if(typeIndex != -1)
+                {
+                    xamlType = CreateXamlType(typeIndex);
+                }
+                var userXamlType = xamlType as global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlUserType;
+                if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+                {
+                    global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                    if (libXamlType != null)
                     {
-                        xamlType = libXamlType;
+                        if(libXamlType.IsConstructible || xamlType == null)
+                        {
+                            xamlType = libXamlType;
+                        }
                     }
                 }
-            }
-            if (xamlType != null)
-            {
-                _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
-                _xamlTypeCacheByType.Add(xamlType.UnderlyingType, xamlType);
+                if (xamlType != null)
+                {
+                    _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
+                    _xamlTypeCacheByType.Add(xamlType.UnderlyingType, xamlType);
+                }
             }
             return xamlType;
         }
@@ -178,14 +184,17 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
                 return null;
             }
             global::Windows.UI.Xaml.Markup.IXamlMember xamlMember;
-            if (_xamlMembers.TryGetValue(longMemberName, out xamlMember))
+            lock (_xamlMembers)
             {
-                return xamlMember;
-            }
-            xamlMember = CreateXamlMember(longMemberName);
-            if (xamlMember != null)
-            {
-                _xamlMembers.Add(longMemberName, xamlMember);
+                if (_xamlMembers.TryGetValue(longMemberName, out xamlMember))
+                {
+                    return xamlMember;
+                }
+                xamlMember = CreateXamlMember(longMemberName);
+                if (xamlMember != null)
+                {
+                    _xamlMembers.Add(longMemberName, xamlMember);
+                }
             }
             return xamlMember;
         }
@@ -204,19 +213,23 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "Xamarin.Forms.Platform.UWP.WindowsPage";
             _typeNameTable[1] = "Xamarin.Forms.Platform.UWP.WindowsBasePage";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[3] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[4] = "AppGestionCurriculums.UWP.MainPage";
+            _typeNameTable[5] = "Syncfusion.SfAutoComplete.XForms.UWP.ItemViewConverter";
+            _typeNameTable[6] = "Object";
 
-            _typeTable = new global::System.Type[5];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::Xamarin.Forms.Platform.UWP.WindowsPage);
             _typeTable[1] = typeof(global::Xamarin.Forms.Platform.UWP.WindowsBasePage);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[4] = typeof(global::AppGestionCurriculums.UWP.MainPage);
+            _typeTable[5] = typeof(global::Syncfusion.SfAutoComplete.XForms.UWP.ItemViewConverter);
+            _typeTable[6] = typeof(global::System.Object);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -253,6 +266,7 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
 
         private object Activate_0_WindowsPage() { return new global::Xamarin.Forms.Platform.UWP.WindowsPage(); }
         private object Activate_4_MainPage() { return new global::AppGestionCurriculums.UWP.MainPage(); }
+        private object Activate_5_ItemViewConverter() { return new global::Syncfusion.SfAutoComplete.XForms.UWP.ItemViewConverter(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -289,6 +303,17 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 5:   //  Syncfusion.SfAutoComplete.XForms.UWP.ItemViewConverter
+                userType = new global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_5_ItemViewConverter;
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Object
+                xamlType = new global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
@@ -302,6 +327,10 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
                 {
                     var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
                     global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Syncfusion.UI.Xaml.Controls.Input.Syncfusion_SfInput_UWP_2015_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    provider = new global::Syncfusion.UI.Xaml.Controls.Syncfusion_SfShared_UWP_2015_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
                     provider = new global::Xamarin.Forms.Platform.UAP.Xamarin_Forms_Platform_UAP_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     _otherProviders = otherProviders;
@@ -357,7 +386,7 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlSystemBaseType : global::Windows.UI.Xaml.Markup.IXamlType
     {
@@ -405,7 +434,7 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
     internal delegate void AddToDictionary(object instance, object key, object item);
     internal delegate object CreateFromStringMethod(string args);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlUserType : global::AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo.XamlSystemBaseType
     {
@@ -616,7 +645,7 @@ namespace AppGestionCurriculums.UWP.AppGestionCurriculums_UWP_XamlTypeInfo
     internal delegate object Getter(object instance);
     internal delegate void Setter(object instance, object value);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {

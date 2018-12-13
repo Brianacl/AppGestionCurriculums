@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGestionCurriculums.Views.Eva_grado_estudios.FicViGradoEstudiosItem"
+             Title="REGISTRO DE GRADO DE ESTUDIO">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+               
+                <Label Text="Nombre de la carrera" />
+                <Entry Text="{Binding NuevoGradoEstudio.NombreEstudioCarrera}"/>
+
+                <Label Text="Nombre de la escuela" />
+                <Entry Text="{Binding NuevoGradoEstudio.NombreEscuela}"/>
+
+                <Label Text="Fecha de inicio" />
+                <DatePicker 
+                    MinimumDate="01/01/1980"
+                    MaximumDate="12/31/2018"
+                    Date="{Binding NuevoGradoEstudio.PeriodoIni}"/>
+
+                <Label Text="Fecha de fin" />
+                <DatePicker 
+                    MinimumDate="01/01/1980"
+                    MaximumDate="12/31/2018"
+                    Date="{Binding NuevoGradoEstudio.PeriodoFin}"/>
+
+                <Label Text="Último grado de estudios" />
+                <Picker ItemsSource="{Binding SourceGradosEstudio}"
+                    x:Name="pickerGradoEstudio"
+                    ItemDisplayBinding="{Binding DesGeneral}"/>
+
+                <Label Text="Prefijo del grado de estudios" />
+                <Entry Text="{Binding NuevoGradoEstudio.PrefijoEstudio}"/>
+
+                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
+                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
