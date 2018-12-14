@@ -20,13 +20,15 @@ namespace AppGestionCurriculums.Views.Eva_herramientas
         public FicViEvaCurriculoHerramientasItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
-            FicLoParameter = FicNavigationContext;
-            BindingContext = App.FicVmLocator.FicVmHerramientasItem;
 
             pickerHerramienta.SelectedIndexChanged += (sender, args) =>
             {
                 cambiarIdPickerSeleccionado();
             };
+
+
+            FicLoParameter = FicNavigationContext;
+            BindingContext = App.FicVmLocator.FicVmHerramientasItem;
         }
 
         async void metodo_regresar(object sender, EventArgs e)
@@ -38,16 +40,16 @@ namespace AppGestionCurriculums.Views.Eva_herramientas
         {
             FicViewModel = BindingContext as FicVmEvaCurriculoHerramientasItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
+            if (FicViewModel.NuevoHerramienta.IdGenHerramienta != 0)
+            {
+                pickerHerramienta.SelectedIndex = FicViewModel.NuevoHerramienta.IdGenHerramienta - 1;
+            }
 
             if (FicViewModel.NuevoHerramienta.Activo == 'S')
                 switchActivo.IsToggled = true;
 
             if (FicViewModel.NuevoHerramienta.Borrado == 'S')
                 switchBorrado.IsToggled = true;
-
-            if (FicViewModel.NuevoHerramienta.IdGenHerramienta != 0) {
-                pickerHerramienta.SelectedIndex = FicViewModel.NuevoHerramienta.IdGenHerramienta = -1;
-            }
             
         }
 

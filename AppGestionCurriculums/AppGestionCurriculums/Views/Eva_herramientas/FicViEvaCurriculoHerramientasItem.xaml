@@ -27,7 +27,7 @@
                 <Label Text="Borrado" />
                 <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
                 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Guardar"  Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

@@ -52,15 +52,7 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
         public async override void OnAppearing(object FicPaNavigationContext)
         {
             try
-            {
-                var FicHerramientaSeleccionado = FicPaNavigationContext as Eva_curriculo_herramientas;
-
-                if (FicHerramientaSeleccionado != null)
-                {
-                    NuevoHerramienta = FicHerramientaSeleccionado;
-                }
-
-
+            { 
                 var listaGenHerramientas = await IFicSrvCurriculoHerramientas.FicMetGetListTipoHerramienta();
 
                 if (listaGenHerramientas != null)
@@ -71,6 +63,14 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
                         SourceGenHerramienta.Add(tiposGenHerramienta);
                     }
                 }
+
+                var FicHerramientaSeleccionado = FicPaNavigationContext as Eva_curriculo_herramientas;
+
+                if (FicHerramientaSeleccionado != null)
+                {
+                    NuevoHerramienta = FicHerramientaSeleccionado;
+                }
+
 
 
                 base.OnAppearing(FicPaNavigationContext);
