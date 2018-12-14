@@ -5,10 +5,11 @@
              Title="REGISTRO DE IDIOMA">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout  Padding="20">
               
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevoIdioma.DesIdioma}"/>
+                <Editor Text="{Binding NuevoIdioma.DesIdioma}"
+                        HeightRequest="80"/>
 
                 <Label Text="Nivel de dominio" />
                 <Entry Text="{Binding NuevoIdioma.Dominio}"/>
@@ -16,7 +17,7 @@
                 <Label Text="¿Es su idioma nativo?" />
                 <Switch 
                     Toggled="OnToogleSwitch"
-                    />
+                    x:Name="switchNativo"/>
 
                 <Label Text="Activo" />
                 <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>

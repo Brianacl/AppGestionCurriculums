@@ -54,7 +54,15 @@ namespace AppGestionCurriculums.Services
                     FicInsertReferencia.UsuarioMod = "Alegria";
                     FicInsertReferencia.Activo = "S";
                     FicInsertReferencia.Borrado = "N";
-                    FicInsertReferencia.IdGenTipo = 1;
+                    FicInsertReferencia.IdGenParentezco = 20;
+
+                    System.Diagnostics.Debug.WriteLine(
+                        FicInsertReferencia.IdCurriculo+" "+
+                        FicInsertReferencia.IdGenParentezco+" "+
+                        FicInsertReferencia.IdGenTipo+" "+
+                        FicInsertReferencia.IdReferencia
+                        );
+
                     await LoDBContext.AddAsync(FicInsertReferencia);
                 }
                 else

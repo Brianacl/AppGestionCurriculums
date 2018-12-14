@@ -48,7 +48,8 @@ namespace AppGestionCurriculums.Services
                 if (FicSourceConocimientoExist == null)
                 {
                     var IdConocimientoDet = ultimoRegistro();
-                    FicPaConocimientos.IdConocimientoDet = (short)IdConocimientoDet++;
+                    System.Diagnostics.Debug.WriteLine(IdConocimientoDet);
+                    FicPaConocimientos.IdConocimientoDet = (short)++IdConocimientoDet;
                     FicPaConocimientos.FechaReg = DateTime.Today;
                     FicPaConocimientos.FechaUltMod = DateTime.Today;
                     FicPaConocimientos.UsuarioReg = "Jesus Monroy";

@@ -95,6 +95,7 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
             try
             {
                 await IFicSrvCurriculoHerramientas.FicMetInsertNewHerramienta(NuevoHerramienta);
+                IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {

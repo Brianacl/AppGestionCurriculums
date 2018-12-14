@@ -6,7 +6,7 @@
              Title="REGISTRO REFERENCIA">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="20">
 
                 <Label Text="Parentezco"/>
                 <autocomplete:SfAutoComplete
@@ -57,7 +57,7 @@
                 <Label Text="Borrado" />
                 <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
                 
-                <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
+                <Button Text="Guardar" x:Name="btnGuardar"/>
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>
         </ScrollView>

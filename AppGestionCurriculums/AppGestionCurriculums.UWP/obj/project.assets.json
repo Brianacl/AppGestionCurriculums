@@ -7544,11 +7544,10 @@
   },
   "libraries": {
     "Autofac/4.8.1": {
-      "sha512": "GYRLxd2wCzhvee2u1vs3AbUbF4CHDWfD7BCNjD3Vxb4wxQz3HC8bPm9Sj9uOT0gE8a6PC2fx1zufmhLgxK+cZg==",
+      "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
       "type": "package",
       "path": "autofac/4.8.1",
       "files": [
-        ".signature.p7s",
         "autofac.4.8.1.nupkg.sha512",
         "autofac.nuspec",
         "lib/net45/Autofac.dll",
@@ -11507,11 +11506,10 @@
       ]
     },
     "runtime.win7.System.Private.Uri/4.0.1": {
-      "sha512": "5xoGgDCbX0TAH/81n16JDKRt+tUZagUr/uefNy3SFrodNzDGTT9HzWObLxItMWRk7EGc6iD8qmMWl4xSLATaYA==",
+      "sha512": "LPOuwNel9nJ+G751J/yb64zkodFzVUwYYukQ8vysjiHRBrnvsZOhIxvqKhG6od1szrBNkl8pw8VGvvcfQ/2VOA==",
       "type": "package",
       "path": "runtime.win7.system.private.uri/4.0.1",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard/_._",
@@ -11614,11 +11612,10 @@
       ]
     },
     "Syncfusion.Xamarin.Core/15.4.0.20": {
-      "sha512": "j7ah9V/St0hOylHCpsWsltcd/e29jBR/tfpfJJNqhKnx3hRNbzkA/bPMiyN7F3UjzyaCFCLkyZYn+Duv3HWjqQ==",
+      "sha512": "Gg7o8wQqjpkobfSFFRoMavXlTakXPitT8plNlpe9Y8FC60hl2yJJq0k/NZb8VXO1c0D/B84BP4h8OXNXDr7dRQ==",
       "type": "package",
       "path": "syncfusion.xamarin.core/15.4.0.20",
       "files": [
-        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.XML",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
         "lib/Xamarin.iOS10/Syncfusion.Core.XForms.XML",
@@ -11634,11 +11631,10 @@
       ]
     },
     "Syncfusion.Xamarin.GridCommon/15.4.0.20": {
-      "sha512": "EM4sg47YQC6jOfHOQJOT5gFyoSfdtAsPCZHJ21MefQ81jIi3lGVNhIBhsWrtlUkZtqpjgbnn8DplEdPb4waIdw==",
+      "sha512": "1yniwfwT2/WBPUcDjmKtLNIV8jOseE3hkNeZ6PSJz7l451c+Np1LkHId7ZKHvDWb5dp9+MOJD/bsBq6Z7m9bAg==",
       "type": "package",
       "path": "syncfusion.xamarin.gridcommon/15.4.0.20",
       "files": [
-        ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
         "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
@@ -12306,24 +12302,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pasto\\.nuget\\packages\\": {},
+    "C:\\Users\\titab\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pasto\\Documents\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\AppGestionCurriculums.UWP.csproj",
+      "projectUniqueName": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\AppGestionCurriculums.UWP.csproj",
       "projectName": "AppGestionCurriculums.UWP",
-      "projectPath": "C:\\Users\\pasto\\Documents\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\AppGestionCurriculums.UWP.csproj",
-      "packagesPath": "C:\\Users\\pasto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pasto\\Documents\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\obj\\",
+      "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\AppGestionCurriculums.UWP.csproj",
+      "packagesPath": "C:\\Users\\titab\\.nuget\\packages\\",
+      "outputPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\pasto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\titab\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12336,8 +12332,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\pasto\\Documents\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
-              "projectPath": "C:\\Users\\pasto\\Documents\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
+            "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj": {
+              "projectPath": "C:\\XAMARIN\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums\\AppGestionCurriculums.csproj"
             }
           }
         }

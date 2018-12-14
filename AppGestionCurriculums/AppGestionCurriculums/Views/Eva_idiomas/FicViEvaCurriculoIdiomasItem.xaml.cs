@@ -42,6 +42,9 @@ namespace AppGestionCurriculums.Views.Eva_idiomas
             FicViewModel = BindingContext as FicVmEvaCurriculoIdiomasItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
+            if (FicViewModel.NuevoIdioma.Nativo == 'S')
+                switchNativo.IsToggled = true;
+
             if (FicViewModel.NuevoIdioma.Activo == 'S')
                 switchActivo.IsToggled = true;
 

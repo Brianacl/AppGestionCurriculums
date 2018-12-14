@@ -2,20 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
-             x:Class="AppGestionCurriculums.Views.Eva_conocimientos.FicViEvaCurriculoConocimientosItem">
+             x:Class="AppGestionCurriculums.Views.Eva_conocimientos.FicViEvaCurriculoConocimientosItem"
+             Title="REGISTRO DE CONOCIMIENTO">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="Nuevo conocimiento" />
-
+            <StackLayout Padding="20">
+               
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevoConocimiento.DesConocimiento}"/>
+                <Editor Text="{Binding NuevoConocimiento.DesConocimiento}"
+                        HeightRequest="80"/>
 
                 <Label Text="Nivel de dominio" />
                 <Entry Text="{Binding NuevoConocimiento.Dominio}"/>
 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevoConocimiento.Detalle}"/>
+                <Editor Text="{Binding NuevoConocimiento.Detalle}"
+                        HeightRequest="80"/>
 
                 <Label Text="Conocimiento"/>
                 <autocomplete:SfAutoComplete HeightRequest="40" 

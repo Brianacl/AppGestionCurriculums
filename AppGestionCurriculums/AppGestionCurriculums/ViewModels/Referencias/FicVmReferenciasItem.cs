@@ -94,7 +94,7 @@ namespace AppGestionCurriculums.ViewModels.Referencias
             }
         }
 
-        private async void SaveCommandExecute()
+        public async void SaveCommandExecute()
         {
             try
             {

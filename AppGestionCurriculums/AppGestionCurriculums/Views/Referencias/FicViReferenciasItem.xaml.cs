@@ -25,6 +25,11 @@ namespace AppGestionCurriculums.Views.Referencias
                 cambiarParentezcoSeleccionado();
             };
 
+            btnGuardar.Clicked += (sender, e) =>
+            {
+                guardarDatos();
+            };
+
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmReferenciasItem;
         }
@@ -94,8 +99,23 @@ namespace AppGestionCurriculums.Views.Referencias
             var IdTipoGeneral = completeParentezco.SelectedValue;
             if (IdTipoGeneral != null)
             {
-                FicViewModel.NuevoReferencia.IdGenParentezco = (short)IdTipoGeneral;
+                FicViewModel.NuevoReferencia.IdGenTipo = (short)IdTipoGeneral;
             }
         }
+
+        private async void guardarDatos()
+        {
+            
+            if (FicViewModel.NuevoReferencia.IdGenTipo == 0)
+            {
+                await DisplayAlert("ATENCIÓN", "Elija un parentezco con la persona, por favor", "OK");
+            }
+            else
+            {
+                FicViewModel.SaveCommandExecute();
+            }
+        }
+
+
     }
 }

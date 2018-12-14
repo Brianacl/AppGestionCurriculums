@@ -87,7 +87,7 @@ namespace AppGestionCurriculums.Services.Navegacion
 
             { typeof(FicVmEvaCurriculoConocimientosList),typeof(FicViEvaCurriculoConocimientosList) },
             { typeof(FicVmEvaCurriculoConocimientosItem),typeof(FicViEvaCurriculoConocimientosItem) },
-            { typeof(FicVmEvaCurriculoConocimientosDetalle),typeof(FicViEvaCurriculoConocimientosItem) },
+            { typeof(FicVmEvaCurriculoConocimientosDetalle),typeof(FicViEvaCurriculoConocimientosDetalle) },
 
         };
 

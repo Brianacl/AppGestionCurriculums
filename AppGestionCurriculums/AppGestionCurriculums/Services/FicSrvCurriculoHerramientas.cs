@@ -41,7 +41,7 @@ namespace AppGestionCurriculums.Services
                 if (FicSourceHerramientaExist == null)
                 {
                     var IdHerramienta = ultimoRegistro();
-                    FicPaHerramientas.IdHerramienta = (short)IdHerramienta++;
+                    FicPaHerramientas.IdHerramienta = (short)++IdHerramienta;
                     FicPaHerramientas.FechaReg = DateTime.Today;
                     FicPaHerramientas.FechaUltMod = DateTime.Today;
                     FicPaHerramientas.UsuarioReg = "Jesus Monroy";

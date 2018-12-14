@@ -54,8 +54,8 @@ namespace AppGestionCurriculums.Views.ExperienciaLaboral
             System.Diagnostics.Debug.WriteLine(IdGeneral);
             if (IdGeneral != null)
             {
-                FicViewModel.NuevaExperiencia.IdGenExperienciaLaboral = (short)IdGeneral;
-                FicViewModel.NuevaExperiencia.IdGenTipo = 1;
+                FicViewModel.NuevaExperiencia.IdGenTipo = (short)IdGeneral;
+                FicViewModel.NuevaExperiencia.IdGenExperienciaLaboral = 19;
             }
         }
 
@@ -91,7 +91,11 @@ namespace AppGestionCurriculums.Views.ExperienciaLaboral
         {
             if (pickerIni.Date > pickerFin.Date)
             { 
-                await DisplayAlert("ATENCIÓN","La fecha de inicio no puede ser mayor a la fecha final", "ok");
+                await DisplayAlert("ATENCIÓN","La fecha de inicio no puede ser mayor a la fecha final", "Ok");
+            }
+            else if (FicViewModel.NuevaExperiencia.IdGenTipo == 0)
+            {
+                await DisplayAlert("ATENCIÓN","Seleccione un giro para su experiencia laboral","Ok");
             }
             else
             {

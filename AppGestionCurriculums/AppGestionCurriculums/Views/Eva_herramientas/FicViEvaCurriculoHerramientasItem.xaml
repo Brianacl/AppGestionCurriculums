@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasItem">
+             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasItem"
+             Title="REGISTRO DE HERRAMIENTA">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="Nueva herramienta" />
-
+            <StackLayout Padding="20">
+             
                 <Label Text="Descripción" />
-                <Entry Text="{Binding NuevoHerramienta.DesHerramienta}"/>
+                <Editor Text="{Binding NuevoHerramienta.DesHerramienta}"
+                        HeightRequest="80"/>
 
                 <Label Text="Nivel de dominio" />
                 <Entry Text="{Binding NuevoHerramienta.Dominio}"/>
 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevoHerramienta.Detalle}"/>
+                <Editor Text="{Binding NuevoHerramienta.Detalle}"
+                        HeightRequest="80"/>
 
                 <Label Text="Herramienta"/>
                 <Picker ItemsSource="{Binding SourceGenHerramienta}"

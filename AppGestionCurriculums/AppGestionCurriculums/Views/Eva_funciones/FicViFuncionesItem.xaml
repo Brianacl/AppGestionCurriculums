@@ -5,7 +5,7 @@
              Title="REGISTRO DE FUNCIÓN">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout  Padding="20">
                
                 <Label Text="Descripción" />
                 <Entry Text="{Binding NuevaFuncion.DesActividad}"/>

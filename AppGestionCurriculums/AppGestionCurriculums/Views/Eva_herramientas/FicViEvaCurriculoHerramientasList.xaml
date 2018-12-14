@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
-             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasList">
+             x:Class="AppGestionCurriculums.Views.Eva_herramientas.FicViEvaCurriculoHerramientasList"
+             Title="LISTA DE HERRAMIENTAS">
     <ContentPage.ToolbarItems>
     <ToolbarItem
             Name="Nuevo"

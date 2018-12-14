@@ -6,7 +6,7 @@
              Title="REGISTRO DE COMPETENCIA">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout  Padding="20">
                 <Label Text="Cat Competencia" />
                 <autocomplete:SfAutoComplete HeightRequest="40" 
                                      x:Name="autoComplete" 

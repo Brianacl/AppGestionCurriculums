@@ -181,6 +181,7 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
         {
             if (_FicDataGrid_SelectedConocimiento != null)
             {
+                System.Diagnostics.Debug.WriteLine("Detalle conocimiento");
                 IFicSrvNavigation.FicMetNavigateTo<FicVmEvaCurriculoConocimientosDetalle>
                     (_FicDataGrid_SelectedConocimiento);
             }
