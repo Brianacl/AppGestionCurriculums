@@ -29,7 +29,7 @@
                 </Grid.ColumnDefinitions>
                 <!--ID-->
                 <Label Text="Id conocimiento" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.IdConocimiento}" Grid.Row="0" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.IdConocimientoDet}" Grid.Row="0" Grid.Column="1"/>
 
                 <Label Text="Descripción" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
                 <Label Grid.ColumnSpan="2" Text="{Binding FicDatosConocimiento.DesConocimiento}" Grid.Row="1" Grid.Column="1"/>

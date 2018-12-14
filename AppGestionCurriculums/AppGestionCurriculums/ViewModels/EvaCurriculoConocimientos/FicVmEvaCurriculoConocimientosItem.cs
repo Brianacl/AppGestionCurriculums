@@ -7,12 +7,14 @@ using System.Windows.Input;
 using AppGestionCurriculums.Interfaces;
 using AppGestionCurriculums.Interfaces.Navegacion;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
 {
     public class FicVmEvaCurriculoConocimientosItem : FicViewModelBase
     {
         private Eva_curriculo_conocimientos Fic_NuevoConocimiento;
+        private ObservableCollection<Eva_cat_conocimientos> _SourceConocimiento;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -24,6 +26,8 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvCurriculoConocimientos = IFicSrvCurriculoConocimientos;
+
+            _SourceConocimiento = new ObservableCollection<Eva_cat_conocimientos>();
         }
 
         public Eva_curriculo_conocimientos NuevoConocimiento
@@ -36,6 +40,16 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
             }
         }//Fin NuevoConocimiento
 
+        public ObservableCollection<Eva_cat_conocimientos> SourceConocimiento
+        {
+            get { return _SourceConocimiento; }
+            set
+            {
+                _SourceConocimiento = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public async override void OnAppearing(object FicPaNavigationContext)
         {
             try
@@ -45,6 +59,18 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
                 if (FicConocimientoSeleccionado != null)
                 {
                     NuevoConocimiento = FicConocimientoSeleccionado;
+                }
+
+
+                var listaConocimiento = await IFicSrvCurriculoConocimientos.FicMetGetListConocimientos();
+
+                if (listaConocimiento != null)
+                {
+                    foreach (Eva_cat_conocimientos conocimiento in listaConocimiento)
+                    {
+                        //System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
+                        _SourceConocimiento.Add(conocimiento);
+                    }
                 }
 
 

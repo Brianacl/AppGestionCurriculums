@@ -160,6 +160,8 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
         public void FicMetAddConocimiento()
         {
             var nuevoConocimiento = new Eva_curriculo_conocimientos();
+            nuevoConocimiento.IdCurriculoCompetencia = DatosCompetencia.IdCompetenciaCurriculum;
+            nuevoConocimiento.IdCurriculo = DatosCompetencia.IdCurriculo;
             nuevoConocimiento.IdCompetencia = DatosCompetencia.IdCompetencia;
 
             IFicSrvNavigation.FicMetNavigateTo<FicVmEvaCurriculoConocimientosItem>

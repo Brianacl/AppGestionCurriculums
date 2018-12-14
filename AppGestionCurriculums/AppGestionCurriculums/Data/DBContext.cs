@@ -296,6 +296,8 @@ namespace AppGestionCurriculums.Data
         //jjesusmonroy
         public DbSet<Eva_curriculo_herramientas> eva_curriculo_herramientas { get; set; }
         public DbSet<Eva_curriculo_conocimientos> eva_curriculo_conocimientos { get; set; }
+        public DbSet<Eva_cat_conocimientos> eva_cat_conocimientos { get; set; }
+        public DbSet<Tipo_gen_herramienta> tipo_gen_herramienta { get; set; }
         //Alegria 
         public DbSet<Eva_experiencia_laboral> eva_experiencia_laboral { get; set; }
         public DbSet<Eva_curriculo_referencias> eva_curriculo_referencias { get; set; }
@@ -359,10 +361,16 @@ namespace AppGestionCurriculums.Data
 
                 //peps
                 modelBuilder.Entity<Eva_curriculo_herramientas>()
-                    .HasKey(c => new { c.IdHerramienta });
+                    .HasKey(c => new { c.IdCurriculo, c.IdCurriculoCompetencia, c.IdCompetencia, c.IdConocimientoDet, c.IdHerramienta });
 
                 modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                    .HasKey(c => new { c.IdCurriculo, c.IdCurriculoCompetencia, c.IdCompetencia, c.IdConocimientoDet });
+
+                modelBuilder.Entity<Eva_cat_conocimientos>()
                     .HasKey(c => new { c.IdConocimiento });
+
+                modelBuilder.Entity<Tipo_gen_herramienta>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
 
                 //Alegria
                 modelBuilder.Entity<Eva_experiencia_laboral>()
@@ -489,20 +497,36 @@ namespace AppGestionCurriculums.Data
                     .HasForeignKey(p => new { p.IdTipoEstatus, p.IdEstatus });
 
                 //Peps 
-                /*modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                modelBuilder.Entity<Eva_curriculo_conocimientos>()
                     .HasOne(p => p.Competencia)
                     .WithMany(b => b.Conocimientos)
-                    .HasForeignKey(p => p.IdCompetencia)
-                    .HasConstraintName("FK_Competencia_Conocimientos");*/
+                    .HasForeignKey(p => new { p.IdCurriculo, p.IdCompetencia, p.IdCurriculoCompetencia })
+                    .HasConstraintName("FK_Competencias_Conocimientos");
+
+                modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                    .HasOne(p => p.Conocimientos)
+                    .WithMany(b => b.listConocimientos)
+                    .HasForeignKey(p => p.IdConocimiento)
+                    .HasConstraintName("FK_CatConocimientos_Conocimientos");
 
                 modelBuilder.Entity<Eva_curriculo_herramientas>()
                     .HasOne(p => p.Conocimiento)
                     .WithMany(b => b.Herramientas)
-                    .HasForeignKey(p => p.IdConocimiento)
+                    .HasForeignKey(c => new { c.IdCurriculo, c.IdCurriculoCompetencia, c.IdCompetencia, c.IdConocimientoDet })
                     .HasConstraintName("FK_Conocimiento_Herramientas");
 
+                modelBuilder.Entity<Eva_curriculo_herramientas>()
+                    .HasOne(p => p.tipo_gen_herramienta)
+                    .WithMany(b => b.herramientas)
+                    .HasForeignKey(p => new { p.IdGenHerramienta, p.IdGenTipo })
+                    .HasConstraintName("FK_GenHerramienta_Tipo");
 
-
+                modelBuilder.Entity<Eva_cat_conocimientos>()
+                    .HasOne(p => p.eva_cat_competencias)
+                    .WithMany(b => b.Conocimientos)
+                    .HasForeignKey(p => new { p.IdCompetencia })
+                    .HasConstraintName("FK_CAT_Competencia_Conocimiento");
+                
             }
             catch (Exception e)
             {

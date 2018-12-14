@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Nuevo herramienta" />
+                <Label Text="Nueva herramienta" />
 
                 <Label Text="Descripción" />
                 <Entry Text="{Binding NuevoHerramienta.DesHerramienta}"/>
@@ -16,6 +16,17 @@
                 <Label Text="Detalle" />
                 <Entry Text="{Binding NuevoHerramienta.Detalle}"/>
 
+                <Label Text="Herramienta"/>
+                <Picker ItemsSource="{Binding SourceGenHerramienta}"
+                    x:Name="pickerHerramienta"
+                    ItemDisplayBinding="{Binding DesGeneral}"/>
+
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+                
                 <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>

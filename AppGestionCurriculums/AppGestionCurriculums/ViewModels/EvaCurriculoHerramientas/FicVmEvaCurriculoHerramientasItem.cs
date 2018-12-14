@@ -7,13 +7,14 @@ using System.Windows.Input;
 using AppGestionCurriculums.Interfaces;
 using AppGestionCurriculums.Interfaces.Navegacion;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
 {
     public class FicVmEvaCurriculoHerramientasItem : FicViewModelBase
     {
         private Eva_curriculo_herramientas Fic_NuevoHerramienta;
-
+        private ObservableCollection<Tipo_gen_herramienta> _SourceGenHerramienta;
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
 
@@ -24,6 +25,18 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvCurriculoHerramientas = IFicSrvCurriculoHerramientas;
+            _SourceGenHerramienta = new ObservableCollection<Tipo_gen_herramienta>();
+
+        }
+
+        public ObservableCollection<Tipo_gen_herramienta> SourceGenHerramienta
+        {
+            get { return _SourceGenHerramienta; }
+            set
+            {
+                _SourceGenHerramienta = value;
+                RaisePropertyChanged();
+            }
         }
 
         public Eva_curriculo_herramientas NuevoHerramienta
@@ -45,6 +58,18 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
                 if (FicHerramientaSeleccionado != null)
                 {
                     NuevoHerramienta = FicHerramientaSeleccionado;
+                }
+
+
+                var listaGenHerramientas = await IFicSrvCurriculoHerramientas.FicMetGetListTipoHerramienta();
+
+                if (listaGenHerramientas != null)
+                {
+                    foreach (Tipo_gen_herramienta tiposGenHerramienta in listaGenHerramientas)
+                    {
+                        //System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
+                        SourceGenHerramienta.Add(tiposGenHerramienta);
+                    }
                 }
 
 

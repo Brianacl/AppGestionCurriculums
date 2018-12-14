@@ -140,7 +140,10 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoHerramientas
         public void FicMetAddHerramienta()
         {
             var nuevaHerramienta = new Eva_curriculo_herramientas();
-            nuevaHerramienta.IdConocimiento = DatosConocimiento.IdConocimiento;
+            nuevaHerramienta.IdConocimientoDet = DatosConocimiento.IdConocimientoDet;
+            nuevaHerramienta.IdCurriculo = DatosConocimiento.IdCurriculo;
+            nuevaHerramienta.IdCurriculoCompetencia = DatosConocimiento.IdCurriculoCompetencia;
+            nuevaHerramienta.IdCompetencia = DatosConocimiento.IdCompetencia;
 
             IFicSrvNavigation.FicMetNavigateTo<FicVmEvaCurriculoHerramientasItem>
                 (nuevaHerramienta);

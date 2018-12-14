@@ -18,5 +18,6 @@ namespace AppGestionCurriculums.Models
         public Int16 IdTipoCompetencia { get; set; }
         public Eva_cat_tipo_competencias eva_cat_tipo_competencias { get; set; }
         public List<Eva_curriculo_competencias> curriculoCompetencias { get; set; }
+        public List<Eva_cat_conocimientos> Conocimientos { get; set; }
     }
 }

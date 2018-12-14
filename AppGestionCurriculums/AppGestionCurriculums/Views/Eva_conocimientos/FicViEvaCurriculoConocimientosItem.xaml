@@ -15,7 +15,18 @@
 
                 <Label Text="Detalle" />
                 <Entry Text="{Binding NuevoConocimiento.Detalle}"/>
+                
+                <Label Text="Conocimiento"/>
+                <Picker ItemsSource="{Binding SourceConocimiento}"
+                    x:Name="pickerConocimiento"
+                    ItemDisplayBinding="{Binding DesConocimiento}"/>
 
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+                
                 <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>

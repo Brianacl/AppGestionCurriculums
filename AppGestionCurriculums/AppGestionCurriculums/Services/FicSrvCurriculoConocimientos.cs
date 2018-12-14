@@ -25,8 +25,14 @@ namespace AppGestionCurriculums.Services
         public async Task<IEnumerable<Eva_curriculo_conocimientos>> FicMetGetListConocimientos(Eva_curriculo_competencias competencia)
         {
             return await(from eva_curriculo_conocimientos in LoDBContext.eva_curriculo_conocimientos
-                         where eva_curriculo_conocimientos.IdCompetencia == competencia.IdCompetencia
+                         where eva_curriculo_conocimientos.IdCurriculoCompetencia == competencia.IdCompetenciaCurriculum
                          select eva_curriculo_conocimientos).AsNoTracking().ToListAsync();
+        }
+
+        public async Task<IEnumerable<Eva_cat_conocimientos>> FicMetGetListConocimientos()
+        {
+            return await (from conocimientos in LoDBContext.eva_cat_conocimientos
+                          select conocimientos).AsNoTracking().ToListAsync();
         }
 
         public async Task FicMetInsertNewConocimiento(Eva_curriculo_conocimientos FicPaConocimientos)
@@ -35,26 +41,27 @@ namespace AppGestionCurriculums.Services
             {
                 var FicSourceConocimientoExist = await(
                        from conocimientos in LoDBContext.eva_curriculo_conocimientos
-                       where conocimientos.IdConocimiento == FicPaConocimientos.IdConocimiento
+                       where conocimientos.IdConocimientoDet == FicPaConocimientos.IdConocimientoDet
                        select conocimientos
                         ).FirstOrDefaultAsync();
 
                 if (FicSourceConocimientoExist == null)
                 {
-
+                    var IdConocimientoDet = ultimoRegistro();
+                    FicPaConocimientos.IdConocimientoDet = (short)IdConocimientoDet++;
                     FicPaConocimientos.FechaReg = DateTime.Today;
                     FicPaConocimientos.FechaUltMod = DateTime.Today;
                     FicPaConocimientos.UsuarioReg = "Jesus Monroy";
                     FicPaConocimientos.UsuarioMod = "Jesus Monroy";
-                    FicPaConocimientos.Activo = true;
-                    FicPaConocimientos.Borrado = false;
+                    FicPaConocimientos.Activo = 'S';
+                    FicPaConocimientos.Borrado = 'N';
 
                     await LoDBContext.AddAsync(FicPaConocimientos);
 
                 }
                 else
                 {
-                    FicPaConocimientos.IdConocimiento = FicSourceConocimientoExist.IdConocimiento;
+                    FicPaConocimientos.IdConocimientoDet = FicSourceConocimientoExist.IdConocimientoDet;
                     FicPaConocimientos.FechaUltMod = DateTime.Today;
                     LoDBContext.Entry(FicSourceConocimientoExist).State = EntityState.Detached;
                     LoDBContext.Update(FicPaConocimientos);
@@ -67,7 +74,14 @@ namespace AppGestionCurriculums.Services
                 await new Page().DisplayAlert("ALERTA - SrvInsert", e.Message.ToString(), "OK");
             }
         }
-
+        private int ultimoRegistro()
+        {
+            if (LoDBContext.eva_curriculo_conocimientos.Count() == 0)
+            {
+                return 0;
+            }
+            return LoDBContext.eva_curriculo_conocimientos.Max(r => r.IdConocimientoDet);
+        }
         public async Task FicMetDeleteConocimiento(Eva_curriculo_conocimientos FicPaConocimientos)
         {
             using (IDbContextTransaction transaction = LoDBContext.Database.BeginTransaction())
@@ -98,7 +112,7 @@ namespace AppGestionCurriculums.Services
         private async Task<bool> ExistConocimiento(Eva_curriculo_conocimientos existConocimiento)
         {
             return await (from conocimiento in LoDBContext.eva_curriculo_conocimientos
-                          where conocimiento.IdConocimiento == existConocimiento.IdConocimiento
+                          where conocimiento.IdConocimientoDet == existConocimiento.IdConocimientoDet
                           select conocimiento).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }
     }
