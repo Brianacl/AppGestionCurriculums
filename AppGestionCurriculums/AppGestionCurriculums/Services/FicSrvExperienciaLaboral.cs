@@ -29,6 +29,12 @@ namespace AppGestionCurriculums.Services
                           select experiencias).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Tipo_gen_giro_experienciaLaboral>> FicMetGetListTipoGiroExperienciaLaboral()
+        {
+            return await (from tipo_Gen_Giro_ExperienciaLaboral in LoDBContext.tipo_Gen_Giro_ExperienciaLaboral
+                          select tipo_Gen_Giro_ExperienciaLaboral).AsNoTracking().ToListAsync();
+        }
+
         public async Task FicMetInsertNewExperiencia(Eva_experiencia_laboral FicInsertExperiencia)
         {
             try
@@ -47,8 +53,8 @@ namespace AppGestionCurriculums.Services
                     FicInsertExperiencia.FechaUltMod = DateTime.Now;
                     FicInsertExperiencia.UsuarioReg = "Alegria";
                     FicInsertExperiencia.UsuarioMod = "Alegria";
-                    FicInsertExperiencia.Activo = true;
-                    FicInsertExperiencia.Borrado = false;
+                    FicInsertExperiencia.Activo = 'S';
+                    FicInsertExperiencia.Borrado = 'N';
 
                     await LoDBContext.AddAsync(FicInsertExperiencia);
 

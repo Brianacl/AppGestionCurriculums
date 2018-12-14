@@ -29,19 +29,48 @@
                     MinimumDate="01/01/1950"
                     MaximumDate="12/31/2025"
                     Date="{Binding NuevoPersona.FechaNac}"/>
-
+                <!--
                 <Label Text="Tipo persona" />
                 <Entry Text="{Binding NuevoPersona.TipoPersona}"/>
 
                 <Label Text="Sexo" />
-                <Entry Text="{Binding NuevoPersona.Sexo}"/>
+                <Entry Text="{Binding NuevoPersona.Sexo}"/>-->
+                <Label Text="Sexo" />
+                <Grid Padding="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Switch Toggled="OnToogleSwitch" x:Name="SwitchGender" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"/>
+                    <Label x:Name="SalidaSwitch" Text="H"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"/>
+
+                </Grid>
 
                 <Label Text="Alias" />
                 <Entry Text="{Binding NuevoPersona.Alias}"/>
 
-                <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
-                <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
-                <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+
+                <Grid Padding="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Guardar"  Command="{Binding FicMetSaveCommand}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                    <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
         </ContentPage.Content>

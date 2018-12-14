@@ -1,4 +1,5 @@
-﻿using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
+﻿using AppGestionCurriculums.Models;
+using AppGestionCurriculums.ViewModels.ExperienciaLaboral;
 using AppGestionCurriculums.ViewModels.GradoEstudios;
 using System;
 using System.Collections.Generic;
@@ -15,24 +16,88 @@ namespace AppGestionCurriculums.Views.ExperienciaLaboral
 	public partial class FicViExperienciaItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
+        private FicVmExperienciaItem FicViewModel;
 
         public FicViExperienciaItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
+
+            btnGuardar.Clicked += (sender, e) =>
+            {
+                guardarDatos();
+            };
+
+            pickerExperienciaLaboral.SelectionChanged += (sender, args) =>
+            {
+                cambiarIdPickerSeleccionado();
+            };
+
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmExperienciaItem;
         }
 
-        async void metodo_regresar(object sender, EventArgs e)
-        {
-            //await Navigation.PopModalAsync();
-        }
-
         protected override void OnAppearing()
         {
-            var FicViewModel = BindingContext as FicVmExperienciaItem;
+            FicViewModel = BindingContext as FicVmExperienciaItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
 
+            if (FicViewModel.NuevaExperiencia.Activo == 'S')
+                switchActivo.IsToggled = true;
+
+            if (FicViewModel.NuevaExperiencia.Borrado == 'S')
+                switchBorrado.IsToggled = true;
+        }
+
+        public void cambiarIdPickerSeleccionado()
+        {
+            var IdGeneral = pickerExperienciaLaboral.SelectedValue;
+            System.Diagnostics.Debug.WriteLine(IdGeneral);
+            if (IdGeneral != null)
+            {
+                FicViewModel.NuevaExperiencia.IdGenExperienciaLaboral = (short)IdGeneral;
+                FicViewModel.NuevaExperiencia.IdGenTipo = 1;
+            }
+        }
+
+        private void OnToogleSwitchActivo(object sender, ToggledEventArgs e)
+        {
+            var value = e.Value;
+            if (value == true)
+            {
+                FicViewModel.NuevaExperiencia.Activo = 'S';
+            }
+            if (value == false)
+            {
+                FicViewModel.NuevaExperiencia.Activo = 'N';
+            }
+
+        }
+
+        private void OnToogleSwitchBorrado(object sender, ToggledEventArgs e)
+        {
+            var value = e.Value;
+            if (value == true)
+            {
+                FicViewModel.NuevaExperiencia.Borrado = 'S';
+            }
+            if (value == false)
+            {
+                FicViewModel.NuevaExperiencia.Borrado = 'N';
+            }
+
+        }
+
+        private async void guardarDatos()
+        {
+            if (pickerIni.Date > pickerFin.Date)
+            { 
+                await DisplayAlert("ATENCIÓN","La fecha de inicio no puede ser mayor a la fecha final", "ok");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("guardadatos");
+                FicViewModel.SaveCommandExecute();
+            }
         }
     }
 }

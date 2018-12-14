@@ -589,6 +589,18 @@
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.gridcommon\15.4.0.20\lib\uap10.0\Syncfusion.GridCommon.Portable.dll">
       <PackagePath>Syncfusion.GridCommon.Portable.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfAutoComplete.XForms.UWP.dll">
+      <PackagePath>Syncfusion.SfAutoComplete.XForms.UWP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfAutoComplete.XForms.dll">
+      <PackagePath>Syncfusion.SfAutoComplete.XForms.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfInput.UWP.dll">
+      <PackagePath>Syncfusion.SfInput.UWP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfShared.UWP.dll">
+      <PackagePath>Syncfusion.SfShared.UWP.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfdatagrid\15.4.0.20\lib\uap10.0\Syncfusion.Data.Portable.dll">
       <PackagePath>Syncfusion.Data.Portable.dll</PackagePath>
     </AppxPackagedFile>
@@ -598,17 +610,11 @@
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfdatagrid\15.4.0.20\lib\uap10.0\Syncfusion.SfDataGrid.XForms.dll">
       <PackagePath>Syncfusion.SfDataGrid.XForms.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfInput.UWP.dll">
-      <PackagePath>Syncfusion.SfInput.UWP.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfNumericTextBox.XForms.UWP.dll">
       <PackagePath>Syncfusion.SfNumericTextBox.XForms.UWP.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfNumericTextBox.XForms.dll">
       <PackagePath>Syncfusion.SfNumericTextBox.XForms.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfShared.UWP.dll">
-      <PackagePath>Syncfusion.SfShared.UWP.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\system.collections.immutable\1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll">
       <PackagePath>System.Collections.Immutable.dll</PackagePath>
@@ -640,6 +646,9 @@
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\actividades.png">
+      <PackagePath>Assets\actividades.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\competencias.png">
       <PackagePath>Assets\competencias.png</PackagePath>
     </AppxPackagedFile>
@@ -669,6 +678,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\project.png">
       <PackagePath>Assets\project.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\usuarios.png">
+      <PackagePath>Assets\usuarios.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>

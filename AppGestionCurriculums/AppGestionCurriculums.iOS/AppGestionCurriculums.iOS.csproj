@@ -148,6 +148,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
       <Version>2.1.4</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
+      <Version>15.4.0.20</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid">
       <Version>15.4.0.20</Version>
     </PackageReference>

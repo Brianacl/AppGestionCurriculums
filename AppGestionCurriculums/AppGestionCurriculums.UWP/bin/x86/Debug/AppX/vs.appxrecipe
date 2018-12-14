@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-12T17:59:01.202</Modified>
+      <Modified>2018-12-14T01:34:21.018</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-12T17:58:58.510</Modified>
+      <Modified>2018-12-14T01:34:16.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\autofac\4.8.1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -787,6 +787,22 @@
       <PackagePath>Syncfusion.GridCommon.Portable.dll</PackagePath>
       <Modified>2017-12-28T20:50:48.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfAutoComplete.XForms.UWP.dll">
+      <PackagePath>Syncfusion.SfAutoComplete.XForms.UWP.dll</PackagePath>
+      <Modified>2017-12-28T20:49:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfAutoComplete.XForms.dll">
+      <PackagePath>Syncfusion.SfAutoComplete.XForms.dll</PackagePath>
+      <Modified>2017-12-28T20:49:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfInput.UWP.dll">
+      <PackagePath>Syncfusion.SfInput.UWP.dll</PackagePath>
+      <Modified>2017-12-28T20:49:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfautocomplete\15.4.0.20\lib\uap10.0\Syncfusion.SfShared.UWP.dll">
+      <PackagePath>Syncfusion.SfShared.UWP.dll</PackagePath>
+      <Modified>2017-12-28T20:49:44.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfdatagrid\15.4.0.20\lib\uap10.0\Syncfusion.Data.Portable.dll">
       <PackagePath>Syncfusion.Data.Portable.dll</PackagePath>
       <Modified>2017-12-28T20:49:52.000</Modified>
@@ -799,20 +815,12 @@
       <PackagePath>Syncfusion.SfDataGrid.XForms.dll</PackagePath>
       <Modified>2017-12-28T20:49:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfInput.UWP.dll">
-      <PackagePath>Syncfusion.SfInput.UWP.dll</PackagePath>
-      <Modified>2017-12-28T20:49:48.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfNumericTextBox.XForms.UWP.dll">
       <PackagePath>Syncfusion.SfNumericTextBox.XForms.UWP.dll</PackagePath>
       <Modified>2017-12-28T20:49:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfNumericTextBox.XForms.dll">
       <PackagePath>Syncfusion.SfNumericTextBox.XForms.dll</PackagePath>
-      <Modified>2017-12-28T20:49:48.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\syncfusion.xamarin.sfnumerictextbox\15.4.0.20\lib\uap10.0\Syncfusion.SfShared.UWP.dll">
-      <PackagePath>Syncfusion.SfShared.UWP.dll</PackagePath>
       <Modified>2017-12-28T20:49:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\titab\.nuget\packages\system.collections.immutable\1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll">
@@ -853,47 +861,55 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-12-12T17:58:39.257</Modified>
+      <Modified>2018-12-14T01:33:56.131</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\actividades.png">
+      <PackagePath>Assets\actividades.png</PackagePath>
+      <Modified>2018-12-14T01:33:36.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\competencias.png">
       <PackagePath>Assets\competencias.png</PackagePath>
-      <Modified>2018-12-08T21:54:11.034</Modified>
+      <Modified>2018-12-13T09:54:33.180</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\detalle.png">
       <PackagePath>Assets\detalle.png</PackagePath>
-      <Modified>2018-12-08T21:49:41.371</Modified>
+      <Modified>2018-12-13T09:54:33.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\editar.png">
       <PackagePath>Assets\editar.png</PackagePath>
-      <Modified>2018-12-08T21:49:41.388</Modified>
+      <Modified>2018-12-13T09:54:33.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\experiencia.png">
       <PackagePath>Assets\experiencia.png</PackagePath>
-      <Modified>2018-12-10T04:02:35.278</Modified>
+      <Modified>2018-12-13T09:54:33.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\function.png">
       <PackagePath>Assets\function.png</PackagePath>
-      <Modified>2018-12-10T05:07:47.434</Modified>
+      <Modified>2018-12-13T09:54:33.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\grado_estudio.png">
       <PackagePath>Assets\grado_estudio.png</PackagePath>
-      <Modified>2018-12-08T21:54:11.010</Modified>
+      <Modified>2018-12-13T09:54:33.492</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_add.png">
       <PackagePath>Assets\ic_add.png</PackagePath>
-      <Modified>2018-12-08T21:49:41.405</Modified>
+      <Modified>2018-12-13T09:54:33.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\ic_delete.png">
       <PackagePath>Assets\ic_delete.png</PackagePath>
-      <Modified>2018-12-08T21:49:41.424</Modified>
+      <Modified>2018-12-13T09:54:33.535</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\idiomas.png">
       <PackagePath>Assets\idiomas.png</PackagePath>
-      <Modified>2018-12-08T21:54:11.049</Modified>
+      <Modified>2018-12-13T09:54:33.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\project.png">
       <PackagePath>Assets\project.png</PackagePath>
-      <Modified>2018-12-10T05:07:47.318</Modified>
+      <Modified>2018-12-13T09:54:33.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\usuarios.png">
+      <PackagePath>Assets\usuarios.png</PackagePath>
+      <Modified>2018-12-14T01:28:25.149</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -1056,11 +1072,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-12T17:58:57.910</Modified>
+      <Modified>2018-12-14T01:34:16.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-12T17:58:57.913</Modified>
+      <Modified>2018-12-14T01:34:16.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1133,11 +1149,11 @@
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-10T05:09:08.450</Modified>
+      <Modified>2018-12-14T01:34:19.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-12T17:59:01.189</Modified>
+      <Modified>2018-12-14T01:34:21.005</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

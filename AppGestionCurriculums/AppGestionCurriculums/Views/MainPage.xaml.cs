@@ -33,27 +33,12 @@ namespace AppGestionCurriculums.Views
             {
                 switch (id)
                 {
-                    
-                    case (int)MenuItemType.CurriculumsPersonas:
-                        MenuPages.Add(id, new NavigationPage(new FicViCurriculumsPersonasList(null)));
-                        break;
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.ListaIdiomas:
-                        MenuPages.Add(id, new NavigationPage(new FicViEvaCurriculoIdiomasList(null)));
-                        break;
-                    case (int)MenuItemType.GradoEstudios:
-                        MenuPages.Add(id, new NavigationPage(new FicViGradoEstudiosList(null)));
-                        break;
-                    case (int)MenuItemType.Funciones:
-                        MenuPages.Add(id, new NavigationPage(new FicViFuncionesList(null)));
-                        break;
-                    case (int)MenuItemType.Proyectos:
-                        MenuPages.Add(id, new NavigationPage(new FicViProyectosList(null)));
-                        break;
                     case (int)MenuItemType.Personas:
                         MenuPages.Add(id, new NavigationPage(new FicViPersonasList(null)));
+                        break;
+
+                    case (int)MenuItemType.Browse:
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                 }
             }

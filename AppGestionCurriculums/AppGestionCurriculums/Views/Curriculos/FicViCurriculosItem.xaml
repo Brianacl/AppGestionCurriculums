@@ -10,10 +10,12 @@
                 <Label Text="Status Curriculo: "/>
                 
                 <Label Text="Activo: "/>
-                <Switch IsToggled="{Binding NuevoCurriculo.Activo}"/>
+                <Switch IsToggled="{Binding NuevoCurriculo.Activo}"
+                        x:Name="switchActivo"/>
 
                 <Label Text="Borrado: "/>
-                <Switch IsToggled="{Binding NuevoCurriculo.Borrado}"/>
+                <Switch IsToggled="{Binding NuevoCurriculo.Borrado}"
+                        x:Name="switchBorrado"/>
 
                 <Grid Padding="16">
                     <Grid.RowDefinitions>

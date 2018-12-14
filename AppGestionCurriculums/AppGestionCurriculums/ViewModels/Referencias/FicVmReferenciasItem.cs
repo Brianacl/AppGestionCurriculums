@@ -4,6 +4,7 @@ using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,6 +14,7 @@ namespace AppGestionCurriculums.ViewModels.Referencias
     public class FicVmReferenciasItem : FicViewModelBase
     {
         private Eva_curriculo_referencias Fic_NuevoReferencia;
+        private ObservableCollection<Tipo_gen_parentezco_referencias> _SourceReferencias;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -25,6 +27,20 @@ namespace AppGestionCurriculums.ViewModels.Referencias
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvReferencias = IFicSrvReferencias;
 
+            _SourceReferencias = new ObservableCollection<Tipo_gen_parentezco_referencias>();
+        }
+
+        public ObservableCollection<Tipo_gen_parentezco_referencias> SourceReferencias
+        {
+            get
+            {
+                return _SourceReferencias;
+            }
+            set
+            {
+                _SourceReferencias = value;
+                RaisePropertyChanged();
+            }
         }
 
         public Eva_curriculo_referencias NuevoReferencia
@@ -45,6 +61,18 @@ namespace AppGestionCurriculums.ViewModels.Referencias
         {
             try
             {
+                var listaReferencia = await IFicSrvReferencias.FicMetGetListTipoParentezcoReferencias();
+
+                if (listaReferencia != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("traedatos");
+                    foreach (Tipo_gen_parentezco_referencias TiposReferencias in listaReferencia)
+                    {
+                        SourceReferencias.Add(TiposReferencias);
+                    }
+                }
+
+                //--------------------------------------
                 var FicReferenciaSeleccionado = FicPaNavigationContext as Eva_curriculo_referencias;
                 if (FicReferenciaSeleccionado != null)
                 {
@@ -71,6 +99,7 @@ namespace AppGestionCurriculums.ViewModels.Referencias
             try
             {
                 await IFicSrvReferencias.FicMetInsertNewReferencia(NuevoReferencia);
+                IFicSrvNavigation.FicMetNavigateBack();
             }
             catch (Exception e)
             {

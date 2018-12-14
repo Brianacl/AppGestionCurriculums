@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              x:Class="AppGestionCurriculums.Views.Referencias.FicViReferenciasItem"
              Title="REGISTRO REFERENCIA">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
 
+                <Label Text="Parentezco"/>
+                <autocomplete:SfAutoComplete
+                    DataSource="{Binding SourceReferencias}"
+                    DisplayMemberPath="DesGeneral"
+                        x:Name="completeParentezco"/>
+                
                 <Label Text="Nombre"/>
                 <Entry Text="{Binding NuevoReferencia.Nombre}"/>
 
@@ -16,8 +23,20 @@
                 <Label Text="Apellido Materno"/>
                 <Entry Text="{Binding NuevoReferencia.ApMaterno}"/>
 
-                <Label Text="Sexo"/>
-                <Entry Text="{Binding NuevoReferencia.Sexo}"/>
+                <Label Text="Sexo" />
+                <Grid Padding="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Switch Toggled="OnToogleSwitch" x:Name="SwitchGender" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"/>
+                    <Label x:Name="SalidaSwitch" Text="H"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"/>
+
+                </Grid>
 
                 <Label Text="Telefono"/>
                 <Entry Text="{Binding NuevoReferencia.Telefono}"/>
@@ -29,9 +48,16 @@
                 <Entry Text="{Binding NuevoReferencia.Domicilio}"/>
 
                 <Label Text="Entre Calles"/>
-                <Entry Text="{Binding NuevoReferencia.EntreCalles}"/>
+                <Editor Text="{Binding NuevoReferencia.EntreCalles}"
+                        HeightRequest="40"/>
 
-                <Button Text="Guardar" Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+                
+                <Button Text="Guardar" Command="{Binding FicMetSaveCommand}"/>
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>
         </ScrollView>

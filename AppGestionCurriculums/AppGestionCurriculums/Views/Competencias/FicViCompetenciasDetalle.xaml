@@ -4,6 +4,7 @@
              x:Class="AppGestionCurriculums.Views.Competencias.FicViCompetenciasDetalle"
              Title="DETALLE DE COMPETENCIA">
   <ContentPage.Content>
+        <ScrollView>
         <StackLayout
         VerticalOptions="StartAndExpand"
         Padding="20">
@@ -76,5 +77,6 @@
                 <Button Text="Regresar" Command="{Binding FicMetCancelCommand}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
             </Grid>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

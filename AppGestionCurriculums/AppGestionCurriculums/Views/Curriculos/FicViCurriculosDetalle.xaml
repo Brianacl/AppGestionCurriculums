@@ -43,7 +43,7 @@
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/hola.png" />
+                    <On Platform="UWP" Value="Assets/usuarios.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
@@ -65,7 +65,7 @@
 
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="Assets/otrasactividades.png" />
+                    <On Platform="UWP" Value="Assets/actividades.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

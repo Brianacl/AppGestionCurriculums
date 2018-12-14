@@ -8,13 +8,9 @@ namespace AppGestionCurriculums.Models
 {
     public class Eva_curriculo_referencias
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Int16 IdReferencia { get; set; }
         [StringLength(20)]
-        public Int16 IdTipoGenParentezco { get; set; } //fk no se de donde
-        [StringLength(20)]
-        public Int16 IdGenParentezco { get; set; } //fk no se donde
-        [StringLength(100)]
         public string Nombre { get; set; }
         [StringLength(60)]
         public string ApPaterno { get; set; }
@@ -48,6 +44,10 @@ namespace AppGestionCurriculums.Models
         //FK
         public Int16 IdCurriculo { get; set; }
         public Eva_curriculo_persona eva_curriculo_personas { get; set; }
+
+        public Tipo_gen_parentezco_referencias tipoGenParentezco { get; set; }
+        public Int16 IdGenTipo { get; set; }
+        public Int16 IdGenParentezco { get; set; } //FK 
     }
 }
 

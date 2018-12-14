@@ -1,34 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              x:Class="AppGestionCurriculums.Views.ExperienciaLaboral.FicViExperienciaItem"
              Title="REGISTRO DE EXPERIENCIA LABORAL">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Label Text="Giro"/>
+                <autocomplete:SfAutoComplete
+                    DataSource="{Binding SourceGenGiroExperienciaLaboral}"
+                    DisplayMemberPath="DesGeneral"
+                    SelectedValuePath="IdGeneral"
+                        x:Name="pickerExperienciaLaboral"/>
                 
                 <Label Text="Descripción de la organización" />
-                <Entry Text="{Binding NuevaExperiencia.DesOrganizacion}"/>
+                <Editor Text="{Binding NuevaExperiencia.DesOrganizacion}"
+                        HeightRequest="80"/>
 
                 <Label Text="Detalle" />
-                <Entry Text="{Binding NuevaExperiencia.Detalle}"/>
+                <Editor Text="{Binding NuevaExperiencia.Detalle}"
+                        HeightRequest="80"/>
 
                 <Label Text="Siglas" />
                 <Entry Text="{Binding NuevaExperiencia.Siglas}"/>
-                
+
                 <Label Text="Fecha de inicio" />
                 <DatePicker 
+                    x:Name="pickerIni"
                     MinimumDate="01/01/1980"
                     MaximumDate="12/31/2025"
                     Date="{Binding NuevaExperiencia.FechaIni}"/>
 
                 <Label Text="Fecha de fin" />
                 <DatePicker 
+                    x:Name="pickerFin"
                     MinimumDate="01/01/1980"
                     MaximumDate="12/31/2025"
                     Date="{Binding NuevaExperiencia.FechaFin}"/>
 
-                <Button Text="Guardar"  Clicked="metodo_regresar" Command="{Binding FicMetSaveCommand}"/>
+                <Label Text="Activo" />
+                <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>
+
+                <Label Text="Borrado" />
+                <Switch Toggled="OnToogleSwitchBorrado" x:Name="switchBorrado"/>
+                
+                <Button Text="Guardar"   x:Name="btnGuardar"/>
                 <!--<Button Text="Eliminar" Command="{Binding FicMetDeleteCommand}"/>-->
                 <Button Text="Cancelar" Command="{Binding FicMetCancelCommand}"/>
             </StackLayout>

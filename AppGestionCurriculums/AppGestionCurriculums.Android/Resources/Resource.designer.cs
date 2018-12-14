@@ -26,6 +26,23 @@ namespace AppGestionCurriculums.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.layoutManager = global::AppGestionCurriculums.Droid.Resource.Attribute.layoutManager;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.reverseLayout = global::AppGestionCurriculums.Droid.Resource.Attribute.reverseLayout;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.spanCount = global::AppGestionCurriculums.Droid.Resource.Attribute.spanCount;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.stackFromEnd = global::AppGestionCurriculums.Droid.Resource.Attribute.stackFromEnd;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::AppGestionCurriculums.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::AppGestionCurriculums.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::AppGestionCurriculums.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.icon = global::AppGestionCurriculums.Droid.Resource.Id.icon;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.item_touch_helper_previous_elevation = global::AppGestionCurriculums.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Com.Syncfusion.Autocomplete.Resource.String.library_name = global::AppGestionCurriculums.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_descendantFocusability = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_orientation = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_layoutManager = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_reverseLayout = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_spanCount = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_stackFromEnd = global::AppGestionCurriculums.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
 			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Layout.ScrollViewer = global::AppGestionCurriculums.Droid.Resource.Layout.ScrollViewer;
 			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.library_name = global::AppGestionCurriculums.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AppGestionCurriculums.Droid.Resource.Attribute.actionBarSize;

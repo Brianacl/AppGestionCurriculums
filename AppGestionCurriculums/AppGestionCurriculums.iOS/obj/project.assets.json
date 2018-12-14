@@ -361,6 +361,22 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfAutoComplete/15.4.0.20": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.4.0.280"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
         "type": "package",
         "dependencies": {
@@ -1049,6 +1065,7 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
+          "Syncfusion.Xamarin.SfAutoComplete": "15.4.0.20",
           "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
           "Xamarin.Forms": "3.1.0.697729"
         },
@@ -1420,6 +1437,22 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfAutoComplete/15.4.0.20": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.4.0.280"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
         "type": "package",
         "dependencies": {
@@ -2048,6 +2081,7 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
+          "Syncfusion.Xamarin.SfAutoComplete": "15.4.0.20",
           "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
           "Xamarin.Forms": "3.1.0.697729"
         },
@@ -2419,6 +2453,22 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfAutoComplete/15.4.0.20": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.4.0.280"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
         "type": "package",
         "dependencies": {
@@ -3047,6 +3097,7 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
+          "Syncfusion.Xamarin.SfAutoComplete": "15.4.0.20",
           "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
           "Xamarin.Forms": "3.1.0.697729"
         },
@@ -3418,6 +3469,22 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfAutoComplete/15.4.0.20": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.4.0.280"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
         "type": "package",
         "dependencies": {
@@ -4046,6 +4113,7 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
+          "Syncfusion.Xamarin.SfAutoComplete": "15.4.0.20",
           "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
           "Xamarin.Forms": "3.1.0.697729"
         },
@@ -4484,6 +4552,53 @@
         "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
         "syncfusion.xamarin.gridcommon.15.4.0.20.nupkg.sha512",
         "syncfusion.xamarin.gridcommon.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfAutoComplete/15.4.0.20": {
+      "sha512": "0CLo/EUemUfamjJ0P3Pga+VPSdfkDt/x56hVzuByny2v45cCBbxwg4wBhCsmvv6qZ1s4pX1aYvHPD83OdHA0ZA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfautocomplete/15.4.0.20",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfAutoComplete.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfAutoComplete.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfAutoComplete.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfAutoComplete.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfAutoComplete.iOS.xml",
+        "lib/netstandard1.0/Syncfusion.SfAutoComplete.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfAutoComplete.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfAutoComplete.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfAutoComplete.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfAutoComplete.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfAutoComplete.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfAutoComplete.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Properties/Syncfusion.SfInput.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfShared.UWP.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xbf",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Properties/Syncfusion.SfShared.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xbf",
+        "syncfusion.xamarin.sfautocomplete.15.4.0.20.nupkg.sha512",
+        "syncfusion.xamarin.sfautocomplete.nuspec"
       ]
     },
     "Syncfusion.Xamarin.SfDataGrid/15.4.0.20": {
@@ -7529,6 +7644,7 @@
       "Autofac >= 4.8.1",
       "Microsoft.EntityFrameworkCore >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
+      "Syncfusion.Xamarin.SfAutoComplete >= 15.4.0.20",
       "Syncfusion.Xamarin.SfDataGrid >= 15.4.0.20",
       "Xamarin.Forms >= 3.1.0.697729"
     ]
@@ -7581,6 +7697,10 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[2.1.4, )"
+          },
+          "Syncfusion.Xamarin.SfAutoComplete": {
+            "target": "Package",
+            "version": "[15.4.0.20, )"
           },
           "Syncfusion.Xamarin.SfDataGrid": {
             "target": "Package",

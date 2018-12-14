@@ -26,6 +26,12 @@ namespace AppGestionCurriculums.Views.Curriculos
         {
             var FicViewModel = BindingContext as FicVmCurriculosItem;
             if (FicViewModel != null) FicViewModel.OnAppearing(FicLoParameter);
+
+            if (FicViewModel.NuevoCurriculo.Activo == "S")
+                switchActivo.IsToggled = true;
+
+            if (FicViewModel.NuevoCurriculo.Borrado == "S")
+                switchBorrado.IsToggled = true;
         }
 
     }

@@ -141,6 +141,7 @@ namespace AppGestionCurriculums.ViewModels.Referencias
         public void FicMetAddReferencia()
         {
             var nuevaReferencia = new Eva_curriculo_referencias();
+            nuevaReferencia.IdCurriculo = DatosCurriculo.IdCurriculo;
             IFicSrvNavigation.FicMetNavigateTo<FicVmReferenciasItem>
                 (nuevaReferencia);
 

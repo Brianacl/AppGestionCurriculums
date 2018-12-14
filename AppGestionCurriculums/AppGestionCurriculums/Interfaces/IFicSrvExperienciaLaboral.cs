@@ -11,5 +11,6 @@ namespace AppGestionCurriculums.Interfaces
         Task<IEnumerable<Eva_experiencia_laboral>> FicMetGetListExperiencias(Eva_curriculo_persona curriculo);
         Task FicMetInsertNewExperiencia(Eva_experiencia_laboral FicPaExperiencia);
         Task FicMetDeleteExperiencia(Eva_experiencia_laboral FicPaExperiencias);
+        Task<IEnumerable<Tipo_gen_giro_experienciaLaboral>> FicMetGetListTipoGiroExperienciaLaboral();
     }
 }

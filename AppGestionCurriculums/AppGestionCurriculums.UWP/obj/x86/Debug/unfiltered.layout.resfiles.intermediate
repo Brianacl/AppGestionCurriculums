@@ -1,6 +1,7 @@
 WinMetadata\Windows.winmd
 e_sqlite3.dll
 add.png
+Assets\actividades.png
 Assets\competencias.png
 Assets\detalle.png
 Assets\editar.png
@@ -35,6 +36,7 @@ Assets\Square44x44Logo.targetsize-48.png
 Assets\StoreLogo.scale-100.png
 Assets\StoreLogo.scale-200.png
 Assets\StoreLogo.scale-400.png
+Assets\usuarios.png
 Assets\Wide310x150Logo.scale-100.png
 Assets\Wide310x150Logo.scale-200.png
 Assets\Wide310x150Logo.scale-400.png

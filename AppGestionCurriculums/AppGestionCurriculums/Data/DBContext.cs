@@ -224,8 +224,61 @@ namespace AppGestionCurriculums.Data
             }
 
         }
+
+        public void AddDataCatCompetencias(string IdComp, string IdtipoComp, string desComp, string det)
+        {
+            int numRegistros = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Eva_cat_competencias;";
+                numRegistros = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numRegistros <= 37)
+                {
+                    insertCommand.CommandText = "INSERT INTO Eva_cat_competencias (IdCompetencia, IdTipoCompetencia, DesCompetencia, Detalle) VALUES (@Entry1,@Entry2,@Entry3,@Entry4);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdComp);
+                    insertCommand.Parameters.AddWithValue("@Entry2", IdtipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry3", desComp);
+                    insertCommand.Parameters.AddWithValue("@Entry4", det);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+        }
+
+        public void AddDataCatTipoCompetencias(string IdtipoComp, string desTipoComp, string det)
+        {
+            int numRegistros = 0;
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={FicDataBasePath}"))
+            {
+                db.Open();
+
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "SELECT COUNT(*) FROM Eva_cat_tipo_competencias;";
+                numRegistros = Convert.ToInt32(insertCommand.ExecuteScalar());
+                if (numRegistros <= 5)
+                {
+                    insertCommand.CommandText = "INSERT INTO Eva_cat_tipo_competencias (IdTipoCompetencia, DesTipoCompetencia, Detalle) VALUES (@Entry1,@Entry2,@Entry3);";
+                    insertCommand.Parameters.AddWithValue("@Entry1", IdtipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry2", desTipoComp);
+                    insertCommand.Parameters.AddWithValue("@Entry3", det);
+                    insertCommand.ExecuteReader();
+                }
+                db.Close();
+            }
+        }
         //Betsy
         public DbSet<Eva_curriculo_competencias> eva_curriculo_competencias { get; set; }
+        public DbSet<Eva_cat_competencias> eva_cat_competencias { get; set; }
+        public DbSet<Eva_cat_tipo_competencias> eva_cat_tipo_competencias { get; set; }
         public DbSet<Eva_curriculo_persona> eva_curriculo_persona { get; set; }
         public DbSet<Rh_cat_personas> rh_cat_personas { get; set; }
         public DbSet<Rh_cat_domicilios> rh_cat_domicilios { get; set; }
@@ -246,6 +299,8 @@ namespace AppGestionCurriculums.Data
         //Alegria 
         public DbSet<Eva_experiencia_laboral> eva_experiencia_laboral { get; set; }
         public DbSet<Eva_curriculo_referencias> eva_curriculo_referencias { get; set; }
+        public DbSet<Tipo_gen_giro_experienciaLaboral> tipo_Gen_Giro_ExperienciaLaboral { get; set; }
+        public DbSet<Tipo_gen_parentezco_referencias> tipo_gen_parentezco_referencias { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -254,7 +309,13 @@ namespace AppGestionCurriculums.Data
                 //Primary keys
                 //Betsy
                 modelBuilder.Entity<Eva_curriculo_competencias>()
+                     .HasKey(pk => new { pk.IdCurriculo, pk.IdCompetencia, pk.IdCompetenciaCurriculum });
+
+                modelBuilder.Entity<Eva_cat_competencias>()
                     .HasKey(pk => new { pk.IdCompetencia });
+
+                modelBuilder.Entity<Eva_cat_tipo_competencias>()
+                    .HasKey(pk => new { pk.IdTipoCompetencia });
 
                 modelBuilder.Entity<Eva_curriculo_persona>()
                     .HasKey(pk => new { pk.IdCurriculo });
@@ -308,18 +369,38 @@ namespace AppGestionCurriculums.Data
                     .HasKey(c => new { c.IdCurriculo, c.IdExperiencia });
 
                 modelBuilder.Entity<Eva_curriculo_referencias>()
-                    .HasKey(c => new { c.IdReferencia });
+                    .HasKey(c => new { c.IdCurriculo, c.IdReferencia });
+
+                modelBuilder.Entity<Tipo_gen_giro_experienciaLaboral>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
+
+                modelBuilder.Entity<Tipo_gen_parentezco_referencias>()
+                    .HasKey(c => new { c.IdTipoGeneral, c.IdGeneral });
 
                 //Foreign keys
                 //Betsy
+                /*
+               modelBuilder.Entity<Eva_curriculo_competencias>()
+                   .HasOne(f => f.eva_curriculo_persona)
+                   .WithMany(f=> f.Competencias)
+                   .HasForeignKey(f => new { f.IdCurriculo })
+                   .HasConstraintName("FK_Competencias_Curriculo");
+               */
                 modelBuilder.Entity<Eva_curriculo_competencias>()
-                    .HasOne(f => f.eva_curriculo_persona)
-                    .WithMany()
-                    .HasForeignKey(f => new { f.IdCurriculo });
+                    .HasOne(f => f.eva_cat_competencias)
+                    .WithMany(f => f.curriculoCompetencias)
+                    .HasForeignKey(f => new { f.IdCompetencia })
+                    .HasConstraintName("FK_Competencias_CatCompetencias");
 
+                modelBuilder.Entity<Eva_cat_competencias>()
+                    .HasOne(f => f.eva_cat_tipo_competencias)
+                    .WithMany(f => f.catCompetencias)
+                    .HasForeignKey(f => new { f.IdTipoCompetencia })
+                    .HasConstraintName("FK_Competencias_TipoCompetencias"); ;
+                /*
                 modelBuilder.Entity<Eva_curriculo_persona>()
                     .HasOne(f => f.rh_cat_personas).WithMany()
-                    .HasForeignKey(f => new { f.IdPersona });
+                    .HasForeignKey(f => new { f.IdPersona });*/
 
                 modelBuilder.Entity<Rh_cat_domicilios>()
                     .HasOne(p => p.rh_Cat_Personas)
@@ -377,11 +458,17 @@ namespace AppGestionCurriculums.Data
                     .HasForeignKey(p => p.IdCurriculo)
                     .HasConstraintName("FK_Curriculo_Experiencia");
 
+                modelBuilder.Entity<Eva_experiencia_laboral>()
+                    .HasOne(p => p.tipoGenExperienciaLaboral)
+                    .WithMany(b => b.experienciaLaboral)
+                    .HasForeignKey(p => new { p.IdGenExperienciaLaboral, p.IdGenTipo })
+                    .HasConstraintName("FK_TipoGenGiro_ExperienciaLaboral");
+
                 modelBuilder.Entity<Eva_curriculo_referencias>()
-                    .HasOne(p => p.eva_curriculo_personas)
-                    .WithMany(b => b.Referencias)
-                    .HasForeignKey(p => p.IdCurriculo)
-                    .HasConstraintName("FK_Curriculo_Referencias");
+                    .HasOne(p => p.tipoGenParentezco)
+                    .WithMany(b => b.curriculoReferencias)
+                    .HasForeignKey(p => new { p.IdGenParentezco, p.IdGenTipo })
+                    .HasConstraintName("FK_tipo_gen_parentezco");
 
                 //Cristobal
                 modelBuilder.Entity<Eva_actividades_funciones>()
@@ -402,11 +489,11 @@ namespace AppGestionCurriculums.Data
                     .HasForeignKey(p => new { p.IdTipoEstatus, p.IdEstatus });
 
                 //Peps 
-                modelBuilder.Entity<Eva_curriculo_conocimientos>()
+                /*modelBuilder.Entity<Eva_curriculo_conocimientos>()
                     .HasOne(p => p.Competencia)
                     .WithMany(b => b.Conocimientos)
                     .HasForeignKey(p => p.IdCompetencia)
-                    .HasConstraintName("FK_Competencia_Conocimientos");
+                    .HasConstraintName("FK_Competencia_Conocimientos");*/
 
                 modelBuilder.Entity<Eva_curriculo_herramientas>()
                     .HasOne(p => p.Conocimiento)

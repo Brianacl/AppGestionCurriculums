@@ -20,7 +20,9 @@ namespace AppGestionCurriculums.Models
         public bool Borrado { get; set; }
 
         //Fk
+        public Eva_curriculo_persona Curriculos { get; set; }
         public Int16 IdCurriculo { get; set; }
+
         public Int16 IdCompetencia { get; set; }
         public Eva_curriculo_competencias Competencia { get; set; }
         public List<Eva_curriculo_herramientas> Herramientas { get; set; }

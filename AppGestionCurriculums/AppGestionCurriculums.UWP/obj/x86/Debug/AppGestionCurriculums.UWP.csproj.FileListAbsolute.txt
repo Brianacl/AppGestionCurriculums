@@ -1175,3 +1175,5 @@ C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\Syncfusion.SfShared.UWP.pri.xml
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Syncfusion.SfAutoComplete.XForms.UWP.dll
+C:\XAMARIN\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Syncfusion.SfAutoComplete.XForms.dll

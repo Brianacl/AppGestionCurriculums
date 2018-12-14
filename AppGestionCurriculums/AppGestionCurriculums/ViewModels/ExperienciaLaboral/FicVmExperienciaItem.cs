@@ -4,6 +4,7 @@ using AppGestionCurriculums.Models;
 using AppGestionCurriculums.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,6 +14,7 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
     public class FicVmExperienciaItem : FicViewModelBase
     {
         private Eva_experiencia_laboral Fic_NuevaExperiencia;
+        private ObservableCollection<Tipo_gen_giro_experienciaLaboral> _SourceGenGiroExperienciaLaboral;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -24,6 +26,18 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
         {
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvExperienciaLaboral = IFicSrvExperienciaLaboral;
+
+            _SourceGenGiroExperienciaLaboral = new ObservableCollection<Tipo_gen_giro_experienciaLaboral>();
+        }
+
+        public ObservableCollection<Tipo_gen_giro_experienciaLaboral> SourceGenGiroExperienciaLaboral
+        {
+            get { return _SourceGenGiroExperienciaLaboral; }
+            set
+            {
+                _SourceGenGiroExperienciaLaboral = value;
+                RaisePropertyChanged();
+            }
         }
 
         public Eva_experiencia_laboral NuevaExperiencia
@@ -40,6 +54,17 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
         {
             try
             {
+                var listaExperienciaLaboral = await IFicSrvExperienciaLaboral.FicMetGetListTipoGiroExperienciaLaboral();
+
+                if (listaExperienciaLaboral != null)
+                {
+                    foreach (Tipo_gen_giro_experienciaLaboral TiposExperienciaLaboral in listaExperienciaLaboral)
+                    {
+                        System.Diagnostics.Debug.WriteLine(TiposExperienciaLaboral.DesGeneral);
+                        SourceGenGiroExperienciaLaboral.Add(TiposExperienciaLaboral);
+                    }
+                }
+                //----------------------------
                 var FicExperienciaSeleccionado = FicPaNavigationContext as Eva_experiencia_laboral;
 
                 if (FicExperienciaSeleccionado != null)
@@ -65,7 +90,7 @@ namespace AppGestionCurriculums.ViewModels.ExperienciaLaboral
             }
         }
 
-        private async void SaveCommandExecute()
+        public async void SaveCommandExecute()
         {
             try
             {

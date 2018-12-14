@@ -48,22 +48,22 @@
                 <Label  Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.FechaFin}" Grid.Row="5" Grid.Column="1"/>
 
                 <Label Text="Fecha registro" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.FechaReg}" Grid.Row="6" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.FechaReg}" Grid.Row="6" Grid.Column="1"/>
 
                 <Label Text="Fecha modificación" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.FechaUltMod}" Grid.Row="7" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.FechaUltMod}" Grid.Row="7" Grid.Column="1"/>
 
                 <Label Text="Registro usuario" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.UsuarioReg}" Grid.Row="8" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.UsuarioReg}" Grid.Row="8" Grid.Column="1"/>
 
                 <Label Text="Modifico usuario" Grid.Row="9" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.UsuarioMod}" Grid.Row="9" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.UsuarioMod}" Grid.Row="9" Grid.Column="1"/>
 
                 <Label Text="Activo" Grid.Row="10" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.Activo}" Grid.Row="10" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.Activo}" Grid.Row="10" Grid.Column="1"/>
 
                 <Label Text="Borrado" Grid.Row="11" Grid.Column="0" VerticalOptions="Center"/>
-                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosGradoEstudio.Borrado}" Grid.Row="11" Grid.Column="1"/>
+                <Label Grid.ColumnSpan="2" Text="{Binding FicDatosExperiencia.Borrado}" Grid.Row="11" Grid.Column="1"/>
             </Grid>
 
             <Grid Padding="16">

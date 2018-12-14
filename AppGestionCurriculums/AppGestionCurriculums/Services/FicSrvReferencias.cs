@@ -29,6 +29,12 @@ namespace AppGestionCurriculums.Services
                           select Eva_curriculo_referencias).AsNoTracking().ToListAsync();
         }
 
+        public async Task<IEnumerable<Tipo_gen_parentezco_referencias>> FicMetGetListTipoParentezcoReferencias()
+        {
+            return await (from parentezco in LoDBContext.tipo_gen_parentezco_referencias
+                          select parentezco).AsNoTracking().ToListAsync();
+        }
+
         public async Task FicMetInsertNewReferencia(Eva_curriculo_referencias FicInsertReferencia)
         {
             try
@@ -40,12 +46,15 @@ namespace AppGestionCurriculums.Services
 
                 if (FicSourceReferenciaExist == null)
                 {
+                    var IdReferencia = ultimaReferencia();
+                    FicInsertReferencia.IdReferencia = (short)++IdReferencia;
                     FicInsertReferencia.FechaReg = DateTime.Now;
                     FicInsertReferencia.FechaUltMod = DateTime.Now;
                     FicInsertReferencia.UsuarioReg = "Alegria";
                     FicInsertReferencia.UsuarioMod = "Alegria";
                     FicInsertReferencia.Activo = "S";
                     FicInsertReferencia.Borrado = "N";
+                    FicInsertReferencia.IdGenTipo = 1;
                     await LoDBContext.AddAsync(FicInsertReferencia);
                 }
                 else
@@ -60,6 +69,8 @@ namespace AppGestionCurriculums.Services
             catch (Exception e)
             {
                 await new Page().DisplayAlert("alerta - srv", e.Message.ToString(), "ok");
+                if (e.InnerException != null)
+                    System.Diagnostics.Debug.WriteLine(e.InnerException);
             }
         }//insert
 
@@ -99,6 +110,16 @@ namespace AppGestionCurriculums.Services
             return await (from referencia in LoDBContext.eva_curriculo_referencias
                           where referencia.IdReferencia == existReferencia.IdReferencia
                           select referencia).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
+        }
+
+        private int ultimaReferencia()
+        {
+            if (LoDBContext.eva_curriculo_referencias.Count() == 0)
+            {
+                return 0;
+            }
+
+            return LoDBContext.eva_curriculo_referencias.Max(referencia => referencia.IdReferencia);
         }
     }
 }
