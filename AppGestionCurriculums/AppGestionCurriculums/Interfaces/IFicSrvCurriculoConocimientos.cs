@@ -9,6 +9,8 @@ namespace AppGestionCurriculums.Interfaces
         Task<IEnumerable<Eva_curriculo_conocimientos>> FicMetGetListConocimientos(Eva_curriculo_competencias competencia);
         Task FicMetInsertNewConocimiento(Eva_curriculo_conocimientos FicPaConocimientos);
         Task FicMetDeleteConocimiento(Eva_curriculo_conocimientos FicPaConocimientos);
-        Task<IEnumerable<Eva_cat_conocimientos>> FicMetGetListConocimientos();
+        Task<IEnumerable<string>> FicMetGetListCatConocimientos();
+        Task<Eva_cat_conocimientos> FicMetObtenerIdsConocimientos(string FicPaConocimientos);
+        Task<Eva_cat_conocimientos> FicMetObtenerNombreConocimientos(short idCono);
     }
 }

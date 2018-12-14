@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              x:Class="AppGestionCurriculums.Views.Eva_conocimientos.FicViEvaCurriculoConocimientosItem">
     <ContentPage.Content>
         <ScrollView>
@@ -15,11 +16,12 @@
 
                 <Label Text="Detalle" />
                 <Entry Text="{Binding NuevoConocimiento.Detalle}"/>
-                
+
                 <Label Text="Conocimiento"/>
-                <Picker ItemsSource="{Binding SourceConocimiento}"
-                    x:Name="pickerConocimiento"
-                    ItemDisplayBinding="{Binding DesConocimiento}"/>
+                <autocomplete:SfAutoComplete HeightRequest="40" 
+                                     x:Name="autoComplete" 
+                                     DataSource="{Binding SourceCatConocimientos}" 
+                                     Text="{Binding nombreCatConocimientos}"/>
 
                 <Label Text="Activo" />
                 <Switch Toggled="OnToogleSwitchActivo" x:Name="switchActivo"/>

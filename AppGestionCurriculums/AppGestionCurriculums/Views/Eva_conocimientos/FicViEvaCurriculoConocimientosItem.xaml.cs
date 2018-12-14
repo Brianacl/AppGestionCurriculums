@@ -15,29 +15,20 @@ namespace AppGestionCurriculums.Views.Eva_conocimientos
 	public partial class FicViEvaCurriculoConocimientosItem : ContentPage
 	{
         private object FicLoParameter { get; set; }
-        private FicVmEvaCurriculoConocimientosItem FicViewModel;
+        private FicVmEvaCurriculoConocimientosItem FicViewModel { get; set; }
         public FicViEvaCurriculoConocimientosItem (object FicNavigationContext)
 		{
 			InitializeComponent ();
             FicLoParameter = FicNavigationContext;
             BindingContext = App.FicVmLocator.FicVmConocimientosItem;
-
-            pickerConocimiento.SelectedIndexChanged += (sender, args) =>
-            {
-                cambiarConocimiento();
-            };
+            
         }
 
         async void metodo_regresar(object sender, EventArgs e)
         {
            
         }
-
-        public void cambiarConocimiento()
-        {
-            var selectedItem = (Eva_cat_conocimientos)pickerConocimiento.SelectedItem;
-            FicViewModel.NuevoConocimiento.IdConocimiento = selectedItem.IdConocimiento;
-        }
+        
 
         protected override void OnAppearing()
         {
@@ -48,11 +39,7 @@ namespace AppGestionCurriculums.Views.Eva_conocimientos
 
             if (FicViewModel.NuevoConocimiento.Borrado == 'S')
                 switchBorrado.IsToggled = true;
-
-            if (FicViewModel.NuevoConocimiento.IdConocimiento != 0)
-            {
-                pickerConocimiento.SelectedIndex = FicViewModel.NuevoConocimiento.IdConocimiento - 1;
-            }
+            
         }
 
         private void OnToogleSwitchActivo(object sender, ToggledEventArgs e)

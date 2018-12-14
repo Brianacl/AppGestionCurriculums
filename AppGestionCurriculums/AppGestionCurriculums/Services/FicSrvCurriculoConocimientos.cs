@@ -115,5 +115,25 @@ namespace AppGestionCurriculums.Services
                           where conocimiento.IdConocimientoDet == existConocimiento.IdConocimientoDet
                           select conocimiento).AsNoTracking().SingleOrDefaultAsync() == null ? true : false;
         }
+
+        public async Task<IEnumerable<string>> FicMetGetListCatConocimientos()
+        {
+            return await(from CatConocimientos in LoDBContext.eva_cat_conocimientos
+                          select CatConocimientos.DesConocimiento).AsNoTracking().ToListAsync();
+        }
+
+        public async Task<Eva_cat_conocimientos> FicMetObtenerIdsConocimientos(string FicPaConocimientos)
+        {
+            return await(from conocimientos in LoDBContext.eva_cat_conocimientos
+                         where conocimientos.DesConocimiento == FicPaConocimientos
+                         select conocimientos).AsNoTracking().SingleOrDefaultAsync();
+        }
+
+        public async Task<Eva_cat_conocimientos> FicMetObtenerNombreConocimientos(short idCono)
+        {
+            return await(from conocimientos in LoDBContext.eva_cat_conocimientos
+                         where conocimientos.IdConocimiento == idCono
+                         select conocimientos).AsNoTracking().SingleOrDefaultAsync();
+        }
     }
 }
