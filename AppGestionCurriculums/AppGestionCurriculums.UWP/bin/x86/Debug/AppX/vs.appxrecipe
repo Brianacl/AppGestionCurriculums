@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-14T07:58:19.056</Modified>
+      <Modified>2018-12-14T08:39:02.078</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\AppGestionCurriculums.UWP.exe">
       <PackagePath>entrypoint\AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-14T07:58:17.105</Modified>
+      <Modified>2018-12-14T08:38:59.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\.nuget\packages\autofac\4.8.1\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -861,7 +861,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums\bin\Debug\netstandard2.0\AppGestionCurriculums.dll">
       <PackagePath>AppGestionCurriculums.dll</PackagePath>
-      <Modified>2018-12-14T07:58:05.945</Modified>
+      <Modified>2018-12-14T08:38:46.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\Assets\actividades.png">
       <PackagePath>Assets\actividades.png</PackagePath>
@@ -1072,11 +1072,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-14T07:58:16.727</Modified>
+      <Modified>2018-12-14T08:38:58.601</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-14T07:58:16.728</Modified>
+      <Modified>2018-12-14T08:38:58.602</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1153,7 +1153,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pasto\Documents\AppGestionCurriculums\AppGestionCurriculums\AppGestionCurriculums.UWP\bin\x86\Debug\Core\AppGestionCurriculums.UWP.exe">
       <PackagePath>AppGestionCurriculums.UWP.exe</PackagePath>
-      <Modified>2018-12-14T07:58:19.047</Modified>
+      <Modified>2018-12-14T08:39:02.063</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

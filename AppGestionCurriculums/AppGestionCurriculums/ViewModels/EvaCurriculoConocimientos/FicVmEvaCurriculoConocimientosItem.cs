@@ -14,7 +14,8 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
     public class FicVmEvaCurriculoConocimientosItem : FicViewModelBase
     {
         private Eva_curriculo_conocimientos Fic_NuevoConocimiento;
-        private ObservableCollection<Eva_cat_conocimientos> _SourceConocimiento;
+        private string Fic_Eva_nombre_cat_conocimientos_item;
+        public ObservableCollection<string> _FicDataGrid_SourceCatConocimientos;
 
         private ICommand FicSaveCommand;
         private ICommand FicCancelCommand;
@@ -27,7 +28,7 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
             this.IFicSrvNavigation = IFicSrvNavigation;
             this.IFicSrvCurriculoConocimientos = IFicSrvCurriculoConocimientos;
 
-            _SourceConocimiento = new ObservableCollection<Eva_cat_conocimientos>();
+            _FicDataGrid_SourceCatConocimientos = new ObservableCollection<string>();
         }
 
         public Eva_curriculo_conocimientos NuevoConocimiento
@@ -40,12 +41,27 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
             }
         }//Fin NuevoConocimiento
 
-        public ObservableCollection<Eva_cat_conocimientos> SourceConocimiento
+         public ObservableCollection<string> SourceCatConocimientos
         {
-            get { return _SourceConocimiento; }
+            get
+            {
+                return _FicDataGrid_SourceCatConocimientos;
+            }
             set
             {
-                _SourceConocimiento = value;
+                if (_FicDataGrid_SourceCatConocimientos != value)
+                {
+                    _FicDataGrid_SourceCatConocimientos = value;
+                    RaisePropertyChanged("SourceCatCompetencias");
+                }
+            }
+         }
+        public string nombreCatConocimientos
+        {
+            get { return Fic_Eva_nombre_cat_conocimientos_item; }
+            set
+            {
+                Fic_Eva_nombre_cat_conocimientos_item = value;
                 RaisePropertyChanged();
             }
         }
@@ -54,24 +70,29 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
         {
             try
             {
+                var listaCatConocimientos = await IFicSrvCurriculoConocimientos.FicMetGetListCatConocimientos();
+
+                if (listaCatConocimientos != null)
+                {
+                    // System.Diagnostics.Debug.WriteLine("Trae datos");
+                    foreach (string catConocimientos in listaCatConocimientos)
+                    {
+                        // System.Diagnostics.Debug.WriteLine(catCompetencias);
+                        SourceCatConocimientos.Add(catConocimientos);
+                    }
+                }
+
                 var FicConocimientoSeleccionado = FicPaNavigationContext as Eva_curriculo_conocimientos;
 
                 if (FicConocimientoSeleccionado != null)
                 {
                     NuevoConocimiento = FicConocimientoSeleccionado;
+
+                    Eva_cat_conocimientos ecc = new Eva_cat_conocimientos();
+                    ecc = IFicSrvCurriculoConocimientos.FicMetObtenerNombreConocimientos(NuevoConocimiento.IdConocimiento).Result;
+                    if (ecc != null) { nombreCatConocimientos = ecc.DesConocimiento; }
                 }
-
-
-                var listaConocimiento = await IFicSrvCurriculoConocimientos.FicMetGetListConocimientos();
-
-                if (listaConocimiento != null)
-                {
-                    foreach (Eva_cat_conocimientos conocimiento in listaConocimiento)
-                    {
-                        //System.Diagnostics.Debug.WriteLine(TiposGradoEstudios);
-                        _SourceConocimiento.Add(conocimiento);
-                    }
-                }
+                
 
 
                 base.OnAppearing(FicPaNavigationContext);
@@ -95,8 +116,18 @@ namespace AppGestionCurriculums.ViewModels.EvaCurriculoConocimientos
         {
             try
             {
-                await IFicSrvCurriculoConocimientos.FicMetInsertNewConocimiento(NuevoConocimiento);
-                //IFicSrvNavigation.FicMetNavigateBack();
+                Eva_cat_conocimientos com = IFicSrvCurriculoConocimientos.FicMetObtenerIdsConocimientos(nombreCatConocimientos).Result;
+                if (com == null)
+                {
+                    await new Page().DisplayAlert("ALERTA - SaveCommand", "Ingrese un item valido en Cat Competencias", "OK");
+                }
+                else
+                {
+                    NuevoConocimiento.IdConocimiento = com.IdConocimiento;
+                    await IFicSrvCurriculoConocimientos.FicMetInsertNewConocimiento(NuevoConocimiento);
+                    IFicSrvNavigation.FicMetNavigateBack();
+                }
+
             }
             catch (Exception e)
             {
